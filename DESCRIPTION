@@ -1,0 +1,29 @@
+Package: rCAX
+Type: Package
+Title: Coordinated Assessments Client
+Description: An 'API' key is required.
+Version: 0.1.0
+Authors@R: 
+    c(person(given = "Eli",
+             family = "Holmes",
+             role = c("aut", "cre"),
+             email = "eli.holmes@noaa.gov"),
+      person(given = "Mari",
+             family = "Williams",
+             role = c("aut"),
+             email = "mari.williams@noaa.gov")
+      )
+License: MIT + file LICENSE
+URL: https://github.com/nwfsc-math-bio/rCAX
+BugReports: https://github.com/nwfsc-math-bio/rCAX/issues
+Encoding: UTF-8
+Language: en-US
+Imports: crul (>= 0.3.8), jsonlite (>= 1.1)
+RoxygenNote: 7.2.1
+NeedsCompilation: no
+Author: Eli Holmes [aut, cre],
+  Mari Williams [aut]
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
