@@ -1,7 +1,13 @@
 #' Get nosa table
+#' 
+#' Returns nosa table sorted by popid and spawningyear. The default
+#' columns to return are "recoverydomain", "esu_dps", "commonpopname",
+#'  "commonname", "run", "popid", "majorpopgroup", "spawningyear", 
+#'  "nosaij", "nosaej"
 #'
 #' @export
 #' @param table_id table id eg 4EF09E86-2AA8-4C98-A983-A272C2C2C7E3
+#' @param cols column names to return
 #' @param ... other query params. Enter as abc=1, def=2, etc.
 
 #' @template all
@@ -10,10 +16,11 @@
 #' rcax_nosa("4EF09E86-2AA8-4C98-A983-A272C2C2C7E3")
 #' rcax_nosa_()
 #' }
-rcax_nosa <- function(table_id, key = NULL, parse = TRUE, ...) {
+rcax_nosa <- function(table_id, key = NULL, parse = TRUE, cols = c("recoverydomain", "esu_dps", "commonpopname", "commonname", "run", "popid", "majorpopgroup", "spawningyear", "nosaij", "nosaej"), ...) {
   assert_is(table_id, 'character')
   assert_is(parse, 'logical')
-  rcax_parse(rcax_nosa_(table_id, key, ...), parse)
+  tab <- rcax_parse(rcax_nosa_(table_id, key, ...), parse)$records
+  tab[order(tab$popid, tab$spawningyear),cols]
 }
 
 #' @export

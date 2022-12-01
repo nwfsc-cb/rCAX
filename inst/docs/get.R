@@ -40,8 +40,8 @@ age<-fromJSON(content(
   bind_rows
 
 
-nosa = GET("https://api.streamnet.org/api/v1/ca.json?table_id=4EF09E86-2AA8-4C98-A983-A272C2C2C7E3&XApiKey=7A2F1EA9-4882-49E8-B23D-7DC202C2ACA5&page=1&per_page=10")
+nosa = httr::GET("https://api.streamnet.org/api/v1/ca.json?table_id=4EF09E86-2AA8-4C98-A983-A272C2C2C7E3&XApiKey=7A2F1EA9-4882-49E8-B23D-7DC202C2ACA5&page=1&per_page=10")
 
-data = fromJSON(rawToChar((nosa$content)))
+data = jsonlite::fromJSON(rawToChar((nosa$content)))
 
 makes a pull successfully - so I think we can pull the whole table if I drop the &page=1&per_page=10

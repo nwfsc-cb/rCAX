@@ -5,7 +5,14 @@
 \alias{rcax_nosa_}
 \title{Get nosa table}
 \usage{
-rcax_nosa(table_id, key = NULL, parse = TRUE, ...)
+rcax_nosa(
+  table_id,
+  key = NULL,
+  parse = TRUE,
+  cols = c("recoverydomain", "esu_dps", "commonpopname", "commonname", "run", "popid",
+    "majorpopgroup", "spawningyear", "nosaij", "nosaej"),
+  ...
+)
 
 rcax_nosa_(table_id, key = NULL, ...)
 }
@@ -17,6 +24,8 @@ rcax_nosa_(table_id, key = NULL, ...)
 \item{parse}{(logical) Whether to parse to list (\code{FALSE}) or
 data.frame (\code{TRUE}). Default: \code{TRUE}}
 
+\item{cols}{column names to return}
+
 \item{...}{Curl options passed to \code{\link[crul]{HttpClient}}}
 }
 \value{
@@ -25,7 +34,10 @@ a function with a trailing underscore, in which case json as character
 string is returned.
 }
 \description{
-Get nosa table
+Returns nosa table sorted by popid and spawningyear. The default
+columns to return are "recoverydomain", "esu_dps", "commonpopname",
+ "commonname", "run", "popid", "majorpopgroup", "spawningyear", 
+ "nosaij", "nosaej"
 }
 \examples{
 \dontrun{
