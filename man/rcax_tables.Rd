@@ -33,9 +33,8 @@ string is returned.
 Get the list of CAX tables with ids
 }
 \examples{
-\dontrun{
-rcax_tables()
-}
+head(rcax_tables()[,1:2])
+
 }
 \references{
 API docs at https://www.streamnet.org/resources/exchange-tools/rest-api-documentation/

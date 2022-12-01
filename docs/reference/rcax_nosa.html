@@ -105,7 +105,7 @@ columns to return are "recoverydomain", "esu_dps", "commonpopname",
 
     <div id="ref-usage">
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">rcax_nosa</span><span class="op">(</span></span>
-<span>  <span class="va">table_id</span>,</span>
+<span>  table_id <span class="op">=</span> <span class="st">"4EF09E86-2AA8-4C98-A983-A272C2C2C7E3"</span>,</span>
 <span>  extra <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  key <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  parse <span class="op">=</span> <span class="cn">TRUE</span>,</span>
@@ -114,12 +114,7 @@ columns to return are "recoverydomain", "esu_dps", "commonpopname",
 <span>  <span class="va">...</span></span>
 <span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu">rcax_nosa_</span><span class="op">(</span></span>
-<span>  table_id <span class="op">=</span> <span class="st">"4EF09E86-2AA8-4C98-A983-A272C2C2C7E3"</span>,</span>
-<span>  extra <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  key <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  <span class="va">...</span></span>
-<span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu">rcax_nosa_</span><span class="op">(</span><span class="va">table_id</span>, extra <span class="op">=</span> <span class="cn">NULL</span>, key <span class="op">=</span> <span class="cn">NULL</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -142,7 +137,7 @@ data.frame (<code>TRUE</code>). Default: <code>TRUE</code></p></dd>
 
 
 <dt>cols</dt>
-<dd><p>column names to return</p></dd>
+<dd><p>column names to return. Use cols=NULL if you want all columns</p></dd>
 
 
 <dt>...</dt>
@@ -164,10 +159,29 @@ string is returned.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
-<span class="r-in"><span><span class="fu">rcax_nosa</span><span class="op">(</span><span class="st">"4EF09E86-2AA8-4C98-A983-A272C2C2C7E3"</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="fu">rcax_nosa_</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="op">}</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu">rcax_nosa</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        recoverydomain                                             esu_dps</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 495 Interior Columbia Salmon, Chinook (Snake River spring/summer-run ESU)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 441 Interior Columbia Salmon, Chinook (Snake River spring/summer-run ESU)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3   Interior Columbia Salmon, Chinook (Snake River spring/summer-run ESU)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 634 Interior Columbia Salmon, Chinook (Snake River spring/summer-run ESU)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21  Interior Columbia Salmon, Chinook (Snake River spring/summer-run ESU)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 387 Interior Columbia Salmon, Chinook (Snake River spring/summer-run ESU)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                      commonpopname     commonname    run popid</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 495 Catherine Creek spring Chinook Chinook salmon Spring     7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 441 Catherine Creek spring Chinook Chinook salmon Spring     7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3   Catherine Creek spring Chinook Chinook salmon Spring     7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 634 Catherine Creek spring Chinook Chinook salmon Spring     7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21  Catherine Creek spring Chinook Chinook salmon Spring     7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 387                          GRCAT Chinook salmon spring     7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           majorpopgroup spawningyear nosaij nosaej</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 495 Grande Ronde/Imnaha         1993    107     99</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 441 Grande Ronde/Imnaha         1997     72     72</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3   Grande Ronde/Imnaha         2005     38     35</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 634 Grande Ronde/Imnaha         2010    463    438</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21  Grande Ronde/Imnaha         2011    615    540</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 387 Grande Ronde/Imnaha         2013    511       </span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </div>

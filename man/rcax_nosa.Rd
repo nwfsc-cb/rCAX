@@ -6,7 +6,7 @@
 \title{Get nosa table}
 \usage{
 rcax_nosa(
-  table_id,
+  table_id = "4EF09E86-2AA8-4C98-A983-A272C2C2C7E3",
   extra = NULL,
   key = NULL,
   parse = TRUE,
@@ -15,12 +15,7 @@ rcax_nosa(
   ...
 )
 
-rcax_nosa_(
-  table_id = "4EF09E86-2AA8-4C98-A983-A272C2C2C7E3",
-  extra = NULL,
-  key = NULL,
-  ...
-)
+rcax_nosa_(table_id, extra = NULL, key = NULL, ...)
 }
 \arguments{
 \item{table_id}{table id eg 4EF09E86-2AA8-4C98-A983-A272C2C2C7E3}
@@ -32,7 +27,7 @@ rcax_nosa_(
 \item{parse}{(logical) Whether to parse to list (\code{FALSE}) or
 data.frame (\code{TRUE}). Default: \code{TRUE}}
 
-\item{cols}{column names to return}
+\item{cols}{column names to return. Use cols=NULL if you want all columns}
 
 \item{...}{Curl options passed to \code{\link[crul]{HttpClient}}}
 }
@@ -50,10 +45,8 @@ columns to return are "recoverydomain", "esu_dps", "commonpopname",
 The NOSA table is "4EF09E86-2AA8-4C98-A983-A272C2C2C7E3"
 }
 \examples{
-\dontrun{
-rcax_nosa("4EF09E86-2AA8-4C98-A983-A272C2C2C7E3")
-rcax_nosa_()
-}
+head(rcax_nosa())
+
 }
 \references{
 API docs at https://www.streamnet.org/resources/exchange-tools/rest-api-documentation/

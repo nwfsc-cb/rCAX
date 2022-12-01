@@ -4,9 +4,9 @@
 #' @param cols the columns to return. default is name, description and id
 #' @template all
 #' @template info
-#' @examples \dontrun{
-#' rcax_tables()
-#' }
+#' @examples
+#' head(rcax_tables()[,1:2])
+#' 
 rcax_tables <- function(key = NULL, parse = TRUE, cols = c("name", "id", "description"), ...) {
   assert_is(parse, 'logical')
   tab <- rcax_parse(rcax_tables_(key, ...), parse)$tables
