@@ -2,6 +2,7 @@
 % Please edit documentation in R/rcax_tables.R
 \name{rcax_tables}
 \alias{rcax_tables}
+\alias{rcax_tables_}
 \title{Get the list of CAX tables with ids}
 \usage{
 rcax_tables(
@@ -10,6 +11,8 @@ rcax_tables(
   cols = c("name", "id", "description"),
   ...
 )
+
+rcax_tables_(key = NULL, ...)
 }
 \arguments{
 \item{key}{A CAX API token. See \code{\link{rcax_use_iucn}}.}

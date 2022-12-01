@@ -6,9 +6,6 @@
 \usage{
 rcax_citation(...)
 }
-\arguments{
-\item{...}{Curl options passed to [crul::verb-GET]}
-}
 \value{
 API citation as character string
 }

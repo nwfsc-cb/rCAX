@@ -18,6 +18,6 @@ Make a GET call to API
 }
 \examples{
 \dontrun{
-rcax_GET('Fratercula arctica')
+rcax_GET("ca/tables")
 }
 }

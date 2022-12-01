@@ -14,7 +14,7 @@ rcax_tables <- function(key = NULL, parse = TRUE, cols = c("name", "id", "descri
 }
 
 #' @export
-#' @rdname rcax_nosa
+#' @rdname rcax_tables
 rcax_tables_ <- function(key = NULL, ...) {
   assert_is(key, 'character')
   rcax_GET("ca/tables", key, ...)

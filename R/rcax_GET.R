@@ -5,7 +5,7 @@
 #' @param key the api key
 #' @param ... extra info
 #' @examples \dontrun{
-#' rcax_GET('Fratercula arctica')
+#' rcax_GET("ca/tables")
 #' }
 rcax_GET <- function(path, key = NULL, query=NULL, ...){
   cli <- crul::HttpClient$new(
