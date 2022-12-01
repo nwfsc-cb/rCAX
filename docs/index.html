@@ -127,8 +127,8 @@
 <h2 id="using">Using<a class="anchor" aria-label="anchor" href="#using"></a>
 </h2>
 <p>First you need to get a pull api key from StreamNet. Then run <code><a href="https://usethis.r-lib.org/reference/edit.html" class="external-link">usethis::edit_r_environ()</a></code> to find or create your <code>.Renviron</code> file. Open that file and paste in <code>CAX_KEY = "whateveryourkeyis"</code>. Then restart R (Session &gt; Restart R in RStudio).</p>
-<p>There is only one function at the moment <code><a href="reference/rcax_nosa.html">rcax_nosa()</a></code> to download a nosa table. Needs the table id.</p>
-<pre><code><span><span class="va">a</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/rcax_nosa.html">rcax_nosa</a></span><span class="op">(</span><span class="st">"4EF09E86-2AA8-4C98-A983-A272C2C2C7E3"</span><span class="op">)</span></span></code></pre>
+<p>There are just two functions at the moment <code><a href="reference/rcax_nosa.html">rcax_nosa()</a></code> and <code><a href="reference/rcax_tables.html">rcax_tables()</a></code>. <code><a href="reference/rcax_nosa.html">rcax_nosa()</a></code> download a NOSA table. <code><a href="reference/rcax_tables.html">rcax_tables()</a></code> downloads the tables names and ids.</p>
+<pre><code><span><span class="va">a</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/rcax_nosa.html">rcax_nosa</a></span><span class="op">(</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="section level2">
 <h2 id="contributing">Contributing<a class="anchor" aria-label="anchor" href="#contributing"></a>

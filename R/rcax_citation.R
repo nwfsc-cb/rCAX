@@ -6,7 +6,7 @@
 #' @examples \dontrun{
 #' rcax_citation()
 #' }
-rl_citation <- function(...) {
+rcax_citation <- function(...) {
   sprintf('Coordinated Assessments. Version %s <https://www.streamnet.org/home/data-maps/fish-hlis/>',
           rcax_version(...))
 }

@@ -7,5 +7,5 @@
 #' rcax_version()
 #' }
 rcax_version <- function(...) {
-  rl_parse(rcax_GET("version", NULL, ...), TRUE)$version
+  rcax_parse(rcax_GET("version", NULL, ...), TRUE)$version
 }
