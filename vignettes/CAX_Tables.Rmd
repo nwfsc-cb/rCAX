@@ -1,0 +1,35 @@
+---
+title: "CAX Tables"
+description: "This vignette shows the available tables along with their table ids needed for API queries."
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{CAX Tables}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(rCAX)
+```
+
+The tables available in CAX along with their descriptions are:
+
+```{r}
+tab <- rcax_tables()
+knitr::kable(tab[,c("name","description")])
+```
+
+The table ids for these are
+
+The tables available in CAX along with their descriptions are:
+
+```{r}
+knitr::kable(tab[,c("name","id")])
+```

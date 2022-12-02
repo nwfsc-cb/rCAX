@@ -5,18 +5,17 @@
 #'  "commonname", "run", "popid", "majorpopgroup", "spawningyear", 
 #'  "nosaij", "nosaej"
 #'  
-#'  The NOSA table_id is "4EF09E86-2AA8-4C98-A983-A272C2C2C7E3"
+#'  The NOSA table_id is "4EF09E86-2AA8-4C98-A983-A272C2C2C7E3" and 
+#'  is set automatically using a saved data frame from a `rcax_tables()` call. The table is saved in `R/sysdata.rda`.
 #'  
 #'  `rcax_nosa()` will download 1000 records from the NOSA table. You will 
 #'  probably want to make a filtered query by passing in value for a specific popid, e.g. `rcax_nosa(popid=7)`
 #'  
 #' @export
-#' @param table_id table id eg 4EF09E86-2AA8-4C98-A983-A272C2C2C7E3
-#' @param popid a popid number
-#' @param extra extra query params or column values. Enter as a list, e.g. list(pageno=7)
-#' @param cols column names to return. Use cols=NULL if you want all columns
+#' @param table_id not normally needed as this is set automatically to the table id for NOSA using the table saved from `rcax_table()`. But you can set it if needed.
 #' @template all
 #' @template info
+#' @template commonargs
 #' @examples 
 #' a <- rcax_nosa(popid=7)
 #' a[, c("popid", "spawningyear", "nosaij", "nosaej")]
@@ -32,14 +31,18 @@
 #' This function is modeled off the functions in \url{https://github.com/ropensci/rredlist}
 #' 
 rcax_nosa <- function(
-    table_id = "4EF09E86-2AA8-4C98-A983-A272C2C2C7E3", 
     popid = NULL,
-    extra = NULL, key = NULL, parse = TRUE, 
+    extra = NULL, 
+    table_id = NULL,
+    key = NULL, parse = TRUE, 
     cols = c("recoverydomain", "esu_dps", "commonpopname", "commonname", "run", "popid", "majorpopgroup", "spawningyear", "nosaij", "nosaej"), ...) {
   # error checking
   assert_is(table_id, 'character')
   assert_is(extra, 'list')
   assert_is(parse, 'logical')
+  
+  # get the table_id for the NOSA table
+  if(is.null(table_id)) table_id = subset(rCAX:::caxtabs, name=="NOSA")$id
   
   # set up query list
   query_list <- list(table_id = table_id)

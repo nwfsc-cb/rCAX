@@ -1,8 +1,9 @@
 ---
-title: "API"
+title: "rCAX API query function"
+description: "This vignette shows how the rCAX_GET() function works."
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{API}
+  %\VignetteIndexEntry{rCAX API query function}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

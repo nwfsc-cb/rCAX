@@ -1,8 +1,9 @@
 ---
-title: "Basics"
+title: "Basic functions"
+description: "This vignette shows the functions for querying the CAX tables."
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Basics}
+  %\VignetteIndexEntry{Basic functions}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -22,18 +23,21 @@ library(rCAX)
 
 Only the name and id columns are shown.
 ```{r}
-rcax_tables(cols=c("name", "id"))
+tab <- rcax_tables(cols=c("name", "id"))
+head(tab)
 ```
 
 ## Get a NOSA table for a popid
 
 Here the columns are restricted.
 ```{r}
-rcax_nosa(popid=7, cols=c("popid", "spawningyear", "nosaij", "nosaej"))
+tab <- rcax_nosa(popid=7, cols=c("popid", "spawningyear", "nosaij", "nosaej"))
+head(tab)
 ```
 
 ## Get a NOSA table with all the columns
 
+Get the table and show all the column names.
 ```{r}
 a <- rcax_nosa(popid=7, cols=NULL)
 colnames(a)

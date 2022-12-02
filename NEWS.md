@@ -1,3 +1,9 @@
+rCAX 0.3.0
+===================
+
+* Add the tables vignette.
+* Add CAX table dataframe to sysdata.rda
+
 rCAX 0.2.0
 ===================
 

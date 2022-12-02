@@ -3,7 +3,8 @@
 columns to return are "recoverydomain", "esu_dps", "commonpopname",
 "commonname", "run", "popid", "majorpopgroup", "spawningyear",
 "nosaij", "nosaej"
-The NOSA table_id is "4EF09E86-2AA8-4C98-A983-A272C2C2C7E3"
+The NOSA table_id is "4EF09E86-2AA8-4C98-A983-A272C2C2C7E3" and
+is set automatically using a saved data frame from a rcax_tables() call. The table is saved in R/sysdata.rda.
 rcax_nosa() will download 1000 records from the NOSA table. You will
 probably want to make a filtered query by passing in value for a specific popid, e.g. rcax_nosa(popid=7)'><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -23,7 +24,7 @@ probably want to make a filtered query by passing in value for a specific popid,
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">rCAX</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.3.0</span>
       </span>
     </div>
 
@@ -102,16 +103,17 @@ probably want to make a filtered query by passing in value for a specific popid,
 columns to return are "recoverydomain", "esu_dps", "commonpopname",
 "commonname", "run", "popid", "majorpopgroup", "spawningyear",
 "nosaij", "nosaej"</p>
-<p>The NOSA table_id is "4EF09E86-2AA8-4C98-A983-A272C2C2C7E3"</p>
+<p>The NOSA table_id is "4EF09E86-2AA8-4C98-A983-A272C2C2C7E3" and
+is set automatically using a saved data frame from a <code><a href="rcax_tables.html">rcax_tables()</a></code> call. The table is saved in <code>R/sysdata.rda</code>.</p>
 <p><code>rcax_nosa()</code> will download 1000 records from the NOSA table. You will
 probably want to make a filtered query by passing in value for a specific popid, e.g. <code>rcax_nosa(popid=7)</code></p>
     </div>
 
     <div id="ref-usage">
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">rcax_nosa</span><span class="op">(</span></span>
-<span>  table_id <span class="op">=</span> <span class="st">"4EF09E86-2AA8-4C98-A983-A272C2C2C7E3"</span>,</span>
 <span>  popid <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  extra <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  table_id <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  key <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  parse <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  cols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"recoverydomain"</span>, <span class="st">"esu_dps"</span>, <span class="st">"commonpopname"</span>, <span class="st">"commonname"</span>, <span class="st">"run"</span>, <span class="st">"popid"</span>,</span>
@@ -122,16 +124,16 @@ probably want to make a filtered query by passing in value for a specific popid,
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>table_id</dt>
-<dd><p>table id eg 4EF09E86-2AA8-4C98-A983-A272C2C2C7E3</p></dd>
-
-
-<dt>popid</dt>
-<dd><p>a popid number</p></dd>
+    <dl><dt>popid</dt>
+<dd><p>(character or number) A NMFS_POPID for a population</p></dd>
 
 
 <dt>extra</dt>
 <dd><p>extra query params or column values. Enter as a list, e.g. list(pageno=7)</p></dd>
+
+
+<dt>table_id</dt>
+<dd><p>not normally needed as this is set automatically to the table id for NOSA using the table saved from <code>rcax_table()</code>. But you can set it if needed.</p></dd>
 
 
 <dt>key</dt>

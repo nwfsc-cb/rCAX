@@ -2,9 +2,10 @@ pandoc: 2.19.2
 pkgdown: 2.0.6
 pkgdown_sha: ~
 articles:
+  CAX_Tables: CAX_Tables.html
   api_get: api_get.html
   basics: basics.html
-last_built: 2022-12-02T01:14Z
+last_built: 2022-12-02T17:24Z
 urls:
   reference: https://nwfsc-math-bio.github.io/rCAX/reference
   article: https://nwfsc-math-bio.github.io/rCAX/articles

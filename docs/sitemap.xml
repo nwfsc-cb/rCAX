@@ -7,6 +7,9 @@
     <loc>https://nwfsc-math-bio.github.io/rCAX/LICENSE-text.html</loc>
   </url>
   <url>
+    <loc>https://nwfsc-math-bio.github.io/rCAX/articles/CAX_Tables.html</loc>
+  </url>
+  <url>
     <loc>https://nwfsc-math-bio.github.io/rCAX/articles/api_get.html</loc>
   </url>
   <url>
@@ -46,6 +49,9 @@
     <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_citation.html</loc>
   </url>
   <url>
+    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_escdata.html</loc>
+  </url>
+  <url>
     <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_key.html</loc>
   </url>
   <url>
@@ -53,6 +59,9 @@
   </url>
   <url>
     <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_parse.html</loc>
+  </url>
+  <url>
+    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_superpops.html</loc>
   </url>
   <url>
     <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_tables.html</loc>
