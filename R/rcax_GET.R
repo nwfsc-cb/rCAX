@@ -1,4 +1,5 @@
 #' Make a GET call to API
+#' 
 #'
 #' @export
 #' @param path what to add after the base api path
@@ -7,6 +8,9 @@
 #' @examples \dontrun{
 #' rcax_GET("ca/tables")
 #' }
+#' @references 
+#' This function is modeled off the functions in \url{https://github.com/ropensci/rredlist}
+
 rcax_GET <- function(path, key = NULL, query=NULL, ...){
   cli <- crul::HttpClient$new(
     url = file.path(rcax_base(), path),

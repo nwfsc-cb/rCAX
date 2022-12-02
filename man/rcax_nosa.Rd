@@ -2,11 +2,11 @@
 % Please edit documentation in R/rcax_nosa.R
 \name{rcax_nosa}
 \alias{rcax_nosa}
-\alias{rcax_nosa_}
-\title{Get nosa table}
+\title{Get nosa table for a popid}
 \usage{
 rcax_nosa(
   table_id = "4EF09E86-2AA8-4C98-A983-A272C2C2C7E3",
+  popid = NULL,
   extra = NULL,
   key = NULL,
   parse = TRUE,
@@ -14,27 +14,21 @@ rcax_nosa(
     "majorpopgroup", "spawningyear", "nosaij", "nosaej"),
   ...
 )
-
-rcax_nosa_(table_id, extra = NULL, key = NULL, ...)
 }
 \arguments{
 \item{table_id}{table id eg 4EF09E86-2AA8-4C98-A983-A272C2C2C7E3}
 
-\item{extra}{extra query params. Enter as a list, e.g. list(pageno=1)}
+\item{popid}{a popid number}
 
-\item{key}{A CAX API token. See \code{\link{rcax_use_iucn}}.}
+\item{extra}{extra query params or column values. Enter as a list, e.g. list(pageno=7)}
 
-\item{parse}{(logical) Whether to parse to list (\code{FALSE}) or
-data.frame (\code{TRUE}). Default: \code{TRUE}}
+\item{key}{A CAX API token. See \code{\link{rcax_key}}.}
+
+\item{parse}{(logical) Whether to parse to list (\code{FALSE}) or data.frame (\code{TRUE}). Default: \code{TRUE}}
 
 \item{cols}{column names to return. Use cols=NULL if you want all columns}
 
 \item{...}{Curl options passed to \code{\link[crul]{HttpClient}}}
-}
-\value{
-A list, with the data in the \code{result} slot, unless using
-a function with a trailing underscore, in which case json as character
-string is returned.
 }
 \description{
 Returns nosa table sorted by popid and spawningyear. The default
@@ -42,12 +36,25 @@ columns to return are "recoverydomain", "esu_dps", "commonpopname",
 "commonname", "run", "popid", "majorpopgroup", "spawningyear",
 "nosaij", "nosaej"
 
-The NOSA table is "4EF09E86-2AA8-4C98-A983-A272C2C2C7E3"
+The NOSA table_id is "4EF09E86-2AA8-4C98-A983-A272C2C2C7E3"
+
+\code{rcax_nosa()} will download 1000 records from the NOSA table. You will
+probably want to make a filtered query by passing in value for a specific popid, e.g. \code{rcax_nosa(popid=7)}
 }
 \examples{
-head(rcax_nosa())
+a <- rcax_nosa(popid=7)
+a[, c("popid", "spawningyear", "nosaij", "nosaej")]
+
+a <- rcax_nosa()
+head(a)
+
+# to get all columns and print the column names
+# a <- rcax_nosa(cols = NULL)
+# colnames(a)
 
 }
 \references{
-API docs at https://www.streamnet.org/resources/exchange-tools/rest-api-documentation/
+API docs at \url{https://www.streamnet.org/resources/exchange-tools/rest-api-documentation/}
+
+This function is modeled off the functions in \url{https://github.com/ropensci/rredlist}
 }

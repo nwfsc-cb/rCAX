@@ -21,3 +21,6 @@ Make a GET call to API
 rcax_GET("ca/tables")
 }
 }
+\references{
+This function is modeled off the functions in \url{https://github.com/ropensci/rredlist}
+}

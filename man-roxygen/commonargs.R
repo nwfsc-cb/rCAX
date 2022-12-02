@@ -1,3 +1,1 @@
-#' @param name (character) A taxonomic name
-#' @param id (character) An identifier
-#' @param region (character) A region name
+#' @param popid (character or number) A NMFS_POPID for a population

@@ -1,0 +1,40 @@
+---
+title: "Basics"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Basics}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(rCAX)
+```
+
+## Show the available tables
+
+Only the name and id columns are shown.
+```{r}
+rcax_tables(cols=c("name", "id"))
+```
+
+## Get a NOSA table for a popid
+
+Here the columns are restricted.
+```{r}
+rcax_nosa(popid=7, cols=c("popid", "spawningyear", "nosaij", "nosaej"))
+```
+
+## Get a NOSA table with all the columns
+
+```{r}
+a <- rcax_nosa(popid=7, cols=NULL)
+colnames(a)
+```

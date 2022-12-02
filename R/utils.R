@@ -1,3 +1,6 @@
+# These functions are from 
+# https://github.com/ropensci/rredlist
+
 ct <- function(l) Filter(Negate(is.null), l)
 
 err_catcher <- function(x) {

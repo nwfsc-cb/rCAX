@@ -2,7 +2,6 @@
 % Please edit documentation in R/rcax_tables.R
 \name{rcax_tables}
 \alias{rcax_tables}
-\alias{rcax_tables_}
 \title{Get the list of CAX tables with ids}
 \usage{
 rcax_tables(
@@ -11,31 +10,26 @@ rcax_tables(
   cols = c("name", "id", "description"),
   ...
 )
-
-rcax_tables_(key = NULL, ...)
 }
 \arguments{
-\item{key}{A CAX API token. See \code{\link{rcax_use_iucn}}.}
+\item{key}{A CAX API token. See \code{\link{rcax_key}}.}
 
-\item{parse}{(logical) Whether to parse to list (\code{FALSE}) or
-data.frame (\code{TRUE}). Default: \code{TRUE}}
+\item{parse}{(logical) Whether to parse to list (\code{FALSE}) or data.frame (\code{TRUE}). Default: \code{TRUE}}
 
-\item{cols}{the columns to return. default is name, description and id}
+\item{cols}{the columns to return. default is name, description and id. use cols=NULL to get all the columns}
 
 \item{...}{Curl options passed to \code{\link[crul]{HttpClient}}}
-}
-\value{
-A list, with the data in the \code{result} slot, unless using
-a function with a trailing underscore, in which case json as character
-string is returned.
 }
 \description{
 Get the list of CAX tables with ids
 }
 \examples{
-head(rcax_tables()[,1:2])
+a <- rcax_tables(cols=NULL)
+colnames(a)
+
+head(a[,1:2])
 
 }
 \references{
-API docs at https://www.streamnet.org/resources/exchange-tools/rest-api-documentation/
+API docs at \url{https://www.streamnet.org/resources/exchange-tools/rest-api-documentation/}
 }

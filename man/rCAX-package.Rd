@@ -30,8 +30,4 @@ key parameter, but it's better to store the key as a
 environment variable (CAX_KEY).
 }
 
-\section{Citing the CAX data}{
-
-}
-
 \keyword{package}

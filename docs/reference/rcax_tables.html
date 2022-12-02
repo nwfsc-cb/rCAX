@@ -101,53 +101,48 @@
 <span>  parse <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  cols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"name"</span>, <span class="st">"id"</span>, <span class="st">"description"</span><span class="op">)</span>,</span>
 <span>  <span class="va">...</span></span>
-<span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu">rcax_tables_</span><span class="op">(</span>key <span class="op">=</span> <span class="cn">NULL</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>key</dt>
-<dd><p>A CAX API token. See <code>rcax_use_iucn</code>.</p></dd>
+<dd><p>A CAX API token. See <code><a href="rcax_key.html">rcax_key</a></code>.</p></dd>
 
 
 <dt>parse</dt>
-<dd><p>(logical) Whether to parse to list (<code>FALSE</code>) or
-data.frame (<code>TRUE</code>). Default: <code>TRUE</code></p></dd>
+<dd><p>(logical) Whether to parse to list (<code>FALSE</code>) or data.frame (<code>TRUE</code>). Default: <code>TRUE</code></p></dd>
 
 
 <dt>cols</dt>
-<dd><p>the columns to return. default is name, description and id</p></dd>
+<dd><p>the columns to return. default is name, description and id. use cols=NULL to get all the columns</p></dd>
 
 
 <dt>...</dt>
 <dd><p>Curl options passed to <code><a href="https://docs.ropensci.org/crul/reference/HttpClient.html" class="external-link">HttpClient</a></code></p></dd>
 
 </dl></div>
-    <div id="value">
-    <h2>Value</h2>
-    
-
-<p>A list, with the data in the <code>result</code> slot, unless using
-a function with a trailing underscore, in which case json as character
-string is returned.</p>
-    </div>
     <div id="references">
     <h2>References</h2>
-    <p>API docs at https://www.streamnet.org/resources/exchange-tools/rest-api-documentation/</p>
+    <p>API docs at <a href="https://www.streamnet.org/resources/exchange-tools/rest-api-documentation/" class="external-link">https://www.streamnet.org/resources/exchange-tools/rest-api-documentation/</a></p>
     </div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu">rcax_tables</span><span class="op">(</span><span class="op">)</span><span class="op">[</span>,<span class="fl">1</span><span class="op">:</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                           name                                   id</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1             SuperPopulations 009A08FE-6479-44FC-9B6F-01C55E2C8BA3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                  XPortCA_PNI 0474CE96-789B-4E16-8FD5-05C431E5034A</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                  EscData4GIS 0603946B-84FF-450D-8F3E-C2513517126D</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4 XPortCA_PresmoltAbundance_01 086448AE-4F1F-4FE1-B794-6CC4FB0C451F</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                    Reference 1FB86FDA-2DC0-4FCD-9B7F-E37C0C57114F</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6             HatchRetMain4GIS 26F6E3E9-E5C8-40FF-9AEC-B7F8500F1A44</span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">a</span> <span class="op">&lt;-</span> <span class="fu">rcax_tables</span><span class="op">(</span>cols<span class="op">=</span><span class="cn">NULL</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">a</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "can_delete"     "name"           "can_update"     "lastmodifiedby"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [5] "primary_key"    "description"    "can_append"     "lastmodifiedon"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [9] "count"          "id"             "can_read"       "type"          </span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">a</span><span class="op">[</span>,<span class="fl">1</span><span class="op">:</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   can_delete                         name</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1          0             SuperPopulations</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2          0                  XPortCA_PNI</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3          0                  EscData4GIS</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4          0 XPortCA_PresmoltAbundance_01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5          0                    Reference</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6          0             HatchRetMain4GIS</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
