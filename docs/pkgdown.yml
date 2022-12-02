@@ -4,7 +4,7 @@ pkgdown_sha: ~
 articles:
   api_get: api_get.html
   basics: basics.html
-last_built: 2022-12-02T01:09Z
+last_built: 2022-12-02T01:14Z
 urls:
   reference: https://nwfsc-math-bio.github.io/rCAX/reference
   article: https://nwfsc-math-bio.github.io/rCAX/articles

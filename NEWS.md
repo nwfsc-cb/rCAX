@@ -1,4 +1,10 @@
+rCAX 0.2.0
+===================
+
+* Cleaned up `rcax_nosa()` and figured out that you can pass in popid as a query param. Subset the columns.
+* Make `rcax_tables()` to get the table ids that we need for queries.
+
 rCAX 0.1.0
 ===================
 
-* Testing
+* Got the API get function working
