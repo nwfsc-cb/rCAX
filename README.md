@@ -15,25 +15,20 @@ remotes::install_github("nwfsc-math-bio/rCAX")
 
 First you need to get a pull api key from StreamNet. Then run `usethis::edit_r_environ()` to find or create your `.Renviron` file. Open that file and paste in `CAX_KEY = "whateveryourkeyis"`. Then restart R (Session > Restart R in RStudio).
 
-There are just two functions at the moment `rcax_nosa()` and `rcax_tables()`. `rcax_nosa()` download a NOSA table. `rcax_tables()` downloads the tables names and ids.
+Read the vignettes on the documentation to get started. There are just two functions at the moment `rcax_nosa()` and `rcax_tables()`. `rcax_nosa()` download a NOSA table. `rcax_tables()` downloads the CAX table names and ids.
 
 ```
 library(rCAX)
-a <- rcax_nosa()
+a <- rcax_nosa(popid=7)
 ```
 
 ## Contributing
 
 Fork and put in a pull request.
 
-First to-dos
-
-* Figure out how to download the whole table.  `rcax_nosa()` is just getting a few lines.
-* Edit `rcax_nosa()` so it returns something with a better format. Right now just a list.
-
 ## Reference
 
-The core functions in this package are modeled off \url{https://github.com/ropensci/rredlist}
+The core functions in this package are modeled off [rredlist](https://github.com/ropensci/rredlist)
 
 <hr>
 
