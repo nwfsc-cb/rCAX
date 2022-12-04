@@ -23,8 +23,11 @@ rcax_superpops <- function(
     popid = NULL,
     extra = NULL, 
     table_id = NULL,
-    key = NULL, parse = TRUE, 
-    cols = NULL, ...) {
+    key = NULL, parse = TRUE, recordloc = "records",
+    cols = NULL, 
+    type = c("data.frame", "colnames"), 
+    tablename = "NOSA", 
+    sortcols = c("popid"), ...) {
   # error checking
   assert_is(table_id, 'character')
   assert_is(extra, 'list')
@@ -38,11 +41,17 @@ rcax_superpops <- function(
   if(!is.null(popid)) query_list$popid <- popid
   if(!is.null(extra)) query_list <- c(query_list, extra)
   
-  # Make API call
+  # Make API call; returns a list
   tab <- rcax_parse(rcax_GET("ca", key, query=query_list, ...), parse)
-  tab <- tab$records
+  # The list record that we want
+  tab <- tab[[recordloc]]
   
-  # filter and sort
+  # if type is colnames, return that
+  if(type=="colnames") return(colnames(tab))
+  
+  # if type is data.frame, filter and sort
+  for(i in sortcols)
+    if(sortcols[i] %in% colnames(tab)) tab <- tab[order(tab[sortcols[i]]),]
   if("popid" %in% colnames(tab)) tab <- tab[order(tab$popid),]
   if(!is.null(cols)) tab <- tab[,cols]
   tab

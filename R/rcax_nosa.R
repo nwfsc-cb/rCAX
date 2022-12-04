@@ -32,30 +32,50 @@
 #' 
 rcax_nosa <- function(
     popid = NULL,
+    cols = c("recoverydomain", "esu_dps", "commonpopname", "commonname", "run", "popid", "majorpopgroup", "spawningyear", "nosaij", "nosaej"),
+    sortcols = c("spawningyear", "popid"),
+    type = c("data.frame", "colnames"), 
     extra = NULL, 
-    table_id = NULL,
-    key = NULL, parse = TRUE, 
-    cols = c("recoverydomain", "esu_dps", "commonpopname", "commonname", "run", "popid", "majorpopgroup", "spawningyear", "nosaij", "nosaej"), ...) {
+    GETargs = list(tablename = "NOSA", table_id = NULL, recordloc = "records", key = NULL, parse = TRUE), ...) {
   # error checking
+  type <- match.arg(type)
   assert_is(table_id, 'character')
   assert_is(extra, 'list')
+  assert_is(GETargs, 'list')
   assert_is(parse, 'logical')
+  # Update GETargs list with any values that the user passed in
+  if (!missing(GETargs)) {
+    formal.args <- formals(sys.function(sysP <- sys.parent()))
+    defaultlist <- eval(formal.args[[as.character(substitute(GETargs))]], 
+                    envir = sys.frame(sysP))
+    
+    for(i in names(GETargs)){
+      if(!(i %in% names(defaultlist))) stop(paste(i, "is not a value in GETargs."))
+      defaultlist[[i]] <- GETargs[[i]]
+    }
+    GETargs <- defaultlist
+  }
   
   # get the table_id for the NOSA table
-  if(is.null(table_id)) table_id = subset(rCAX:::caxtabs, name=="NOSA")$id
+  if(is.null(table_id)) table_id = subset(rCAX:::caxtabs, name==tablename)$id
   
   # set up query list
   query_list <- list(table_id = table_id)
   if(!is.null(popid)) query_list$popid <- popid
   if(!is.null(extra)) query_list <- c(query_list, extra)
+  # if just returning colnames, set limit to 1
+  if(type=="colnames") query_list$limit <- 1
   
   # Make API call; for NOSA data is in records
   tab <- rcax_parse(rcax_GET("ca", key, query=query_list, ...), parse)
   tab <- tab$records
   
-  # filter and sort
-  if("spawningyear" %in% colnames(tab)) tab <- tab[order(tab$spawningyear),]
-  if("popid" %in% colnames(tab)) tab <- tab[order(tab$popid),]
+  # if type is colnames, return that
+  if(type=="colnames") return(colnames(tab))
+  
+  # if type is data.frame, filter and sort
+  for(i in sortcols)
+    if(sortcols[i] %in% colnames(tab)) tab <- tab[order(tab[sortcols[i]]),]
   if(!is.null(cols)) tab <- tab[,cols]
   tab
 }

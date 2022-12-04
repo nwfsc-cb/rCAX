@@ -23,26 +23,35 @@ rcax_escdata <- function(
     extra = NULL, 
     table_id = NULL,
     key = NULL, parse = TRUE, 
-    cols = NULL, ...) {
+    cols = NULL, 
+    type = c("data.frame", "colnames"), 
+    tablename = "EscData", 
+    sortcols = c("countdate", "refid"), ...) {
   # error checking
+  type <- match.arg(type)
   assert_is(table_id, 'character')
   assert_is(extra, 'list')
   assert_is(parse, 'logical')
   
   # get the table_id for the table
-  if(is.null(table_id)) table_id = subset(rCAX:::caxtabs, name=="EscData")$id
+  if(is.null(table_id)) table_id = subset(rCAX:::caxtabs, name==tablename)$id
   
   # set up query list
   query_list <- list(table_id = table_id)
   if(!is.null(extra)) query_list <- c(query_list, extra)
+  # if just returning colnames, set limit to 1
+  if(type=="colnames") query_list$limit <- 1
   
   # Make API call
   tab <- rcax_parse(rcax_GET("ca", key, query=query_list, ...), parse)
   tab <- tab$records
   
-  # filter and sort
-  if("countdate" %in% colnames(tab)) tab <- tab[order(tab$countdate),]
-  if("refid" %in% colnames(tab)) tab <- tab[order(tab$refid),]
+  # if type is colnames, return that
+  if(type=="colnames") return(colnames(tab))
+  
+  # if type is data.frame, filter and sort
+  for(i in sortcols)
+    if(sortcols[i] %in% colnames(tab)) tab <- tab[order(tab[sortcols[i]]),]
   if(!is.null(cols)) tab <- tab[,cols]
   tab
 }
