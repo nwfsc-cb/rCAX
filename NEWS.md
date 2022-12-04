@@ -1,3 +1,10 @@
+rCAX 0.4.0
+===================
+
+* added more sysdata: caxpops The Populations table. I had to download table from (StreamNet pop page)[https://www.streamnet.org/cap/current-hli/current-pop/] since the "Populations" table query is throwing an error), caxesus ESU_DPS names, caxsuperpops The SuperPopulations table.
+* created `rcax_table_query()` as the base function for all the table query functions. That way I am not repeating the same code for each table.
+* added info to `rcax_table_query()` documentation about the possible query params.
+
 rCAX 0.3.0
 ===================
 

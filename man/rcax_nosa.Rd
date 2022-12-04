@@ -5,30 +5,34 @@
 \title{Get nosa table for a popid}
 \usage{
 rcax_nosa(
-  popid = NULL,
-  extra = NULL,
-  table_id = NULL,
-  key = NULL,
-  parse = TRUE,
+  tablename = "NOSA",
+  flist = NULL,
+  qlist = NULL,
   cols = c("recoverydomain", "esu_dps", "commonpopname", "commonname", "run", "popid",
     "majorpopgroup", "spawningyear", "nosaij", "nosaej"),
+  sortcols = c("spawningyear", "popid"),
+  type = c("data.frame", "colnames"),
+  GETargs = list(table_id = NULL, recordloc = "records", key = NULL, parse = TRUE),
   ...
 )
 }
 \arguments{
-\item{popid}{(character or number) A NMFS_POPID for a population}
+\item{tablename}{(character) The CAX name for the table; ignored if \code{GETargs$table_id} passed in.}
 
-\item{extra}{extra query params or column values. Enter as a list, e.g. list(pageno=7)}
+\item{flist}{A filter for the query. See details and \code{rcax_filter()}}
 
-\item{table_id}{not normally needed as this is set automatically to the table id for NOSA using the table saved from \code{rcax_table()}. But you can set it if needed.}
-
-\item{key}{A CAX API token. See \code{\link{rcax_key}}.}
-
-\item{parse}{(logical) Whether to parse to list (\code{FALSE}) or data.frame (\code{TRUE}). Default: \code{TRUE}}
+\item{qlist}{Additional query params. See \code{rcax_table_query()} for details.}
 
 \item{cols}{column names to return. Use cols=NULL if you want all columns}
 
-\item{...}{Curl options passed to \code{\link[crul]{HttpClient}}}
+\item{sortcols}{The columns to sort on for the returned table. The order of sortcols indicates the order of sorting. Start with the smallest group and work outwards, e.g. \code{c("spawningyear", "popid", "MPG")}}
+
+\item{type}{whether to return the table ("data.frame") or colnames ("colnames"). Default is to return the table as a data frame.}
+
+\item{GETargs}{A list of arguments for the \code{rcax_GET()} call. These do not normally need to be specified by the user. \code{table_id} This is the CAX table id. It is looked up using \code{tablename} and \code{caxpops}. \code{recordloc} This is the name of the record we want in the list returned from the GET call. \code{key} is the API key. See \code{rcax_GET()} for API key details.}
+}
+\value{
+data frame if \code{type="data.frame"} (default) and the colnames if \code{type="colnames"}
 }
 \description{
 Returns nosa table sorted by popid and spawningyear. The default
@@ -36,26 +40,33 @@ columns to return are "recoverydomain", "esu_dps", "commonpopname",
 "commonname", "run", "popid", "majorpopgroup", "spawningyear",
 "nosaij", "nosaej"
 
+\code{rcax_nosa()} will download 1000 records from the NOSA table. You will
+probably want to make a filtered query by passing in value to filter on
+via \code{flist}. See \code{rcax_filter()}. Examples for the NOSA table:
+\itemize{
+\item \verb{rcax_nosa(flist=list(popid=7)} return values for popid 7.
+\item \verb{rcax_nosa(flist=list(esu_dps="Salmon, coho (Oregon Coast ESU)")} return values for one ESU See \code{caxpops$esu_dps} for ESU_DPS names.
+}
+}
+\details{
 The NOSA table_id is "4EF09E86-2AA8-4C98-A983-A272C2C2C7E3" and
 is set automatically using a saved data frame from a \code{rcax_tables()} call. The table is saved in \code{R/sysdata.rda}.
-
-\code{rcax_nosa()} will download 1000 records from the NOSA table. You will
-probably want to make a filtered query by passing in value for a specific popid, e.g. \code{rcax_nosa(popid=7)}
 }
 \examples{
-a <- rcax_nosa(popid=7)
-a[, c("popid", "spawningyear", "nosaij", "nosaej")]
+a <- rcax_nosa(qlist=list(popid=7))
+a[, c("popid", "spawningyear", "nosaij", "nosaej")] |> head()
 
-a <- rcax_nosa()
-head(a)
+rcax_nosa() |> head()
 
-# to get all columns and print the column names
-# a <- rcax_nosa(cols = NULL)
-# colnames(a)
+# to print the first 5 column names
+rcax_nosa(type="colnames")[1:5]
 
 }
 \references{
 API docs at \url{https://www.streamnet.org/resources/exchange-tools/rest-api-documentation/}
 
 This function is modeled off the functions in \url{https://github.com/ropensci/rredlist}
+}
+\seealso{
+\code{rcax_table_query()}, \code{rcax_filter()}, \code{rcax_key()}
 }

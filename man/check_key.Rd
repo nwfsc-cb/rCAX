@@ -2,7 +2,7 @@
 % Please edit documentation in R/rcax_GET.R
 \name{check_key}
 \alias{check_key}
-\title{Check to make sure key looks ok}
+\title{Get the key from the user system environment variable}
 \usage{
 check_key(key)
 }
@@ -10,5 +10,8 @@ check_key(key)
 \item{key}{the key}
 }
 \description{
-Check to make sure key looks ok
+Saved in \code{CAX_KEY} in the \code{.Renviron} file. Alternatively it can be passed in.
+}
+\references{
+This function is modeled off the functions in \url{https://github.com/ropensci/rredlist}
 }

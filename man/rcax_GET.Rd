@@ -9,12 +9,23 @@ rcax_GET(path, key = NULL, query = NULL, ...)
 \arguments{
 \item{path}{what to add after the base api path}
 
-\item{key}{the api key}
+\item{key}{A CAX API token. See \code{\link{rcax_key}}.}
 
-\item{...}{extra info}
+\item{...}{Curl options passed to \code{\link[crul]{HttpClient}}}
+
+\item{parse}{(logical) Whether to parse to list (\code{FALSE}) or data.frame (\code{TRUE}). Default: \code{TRUE}}
 }
 \description{
 Make a GET call to API
+}
+\details{
+You will need an API key to make GET queries. Contact Streamnet to request a pull key or guest key. https://www.streamnet.org/resources/exchange-tools/rest-api-documentation/
+
+After getting your key set it as CAX_KEY in your \code{.Renviron} file by pasting this text into that file. \code{CAX_KEY='youractualkeynotthisstring'}
+
+To find (and create if necessary) your \code{.Renviron} file, use \code{usethis::edit_r_environ()}
+then open that file and paste in the key text above.
+After you edit the file, you will need to restart R. If you are in RStudio use Session > Restart R.
 }
 \examples{
 \dontrun{
@@ -22,5 +33,7 @@ rcax_GET("ca/tables")
 }
 }
 \references{
+API docs at \url{https://www.streamnet.org/resources/exchange-tools/rest-api-documentation/}
+
 This function is modeled off the functions in \url{https://github.com/ropensci/rredlist}
 }

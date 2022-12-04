@@ -20,7 +20,7 @@ rcax_escdata() will download 1000 records.'><!-- mathjax --><script src="https:/
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">rCAX</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.3.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.4.0</span>
       </span>
     </div>
 
@@ -103,58 +103,116 @@ is set automatically using a saved data frame from a <code><a href="rcax_tables.
 
     <div id="ref-usage">
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">rcax_escdata</span><span class="op">(</span></span>
-<span>  extra <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  table_id <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  key <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  parse <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  tablename <span class="op">=</span> <span class="st">"EscData"</span>,</span>
+<span>  flist <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  qlist <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  cols <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  sortcols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"countdate"</span>, <span class="st">"refid"</span><span class="op">)</span>,</span>
+<span>  type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"data.frame"</span>, <span class="st">"colnames"</span><span class="op">)</span>,</span>
+<span>  GETargs <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>table_id <span class="op">=</span> <span class="cn">NULL</span>, recordloc <span class="op">=</span> <span class="st">"records"</span>, key <span class="op">=</span> <span class="cn">NULL</span>, parse <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
 <span>  <span class="va">...</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>extra</dt>
-<dd><p>extra query params or column values. Enter as a list, e.g. list(pageno=7)</p></dd>
+    <dl><dt>tablename</dt>
+<dd><p>(character) The CAX name for the table; ignored if <code>GETargs$table_id</code> passed in.</p></dd>
 
 
-<dt>table_id</dt>
-<dd><p>not normally needed as this is set automatically to the table id for NOSA using the table saved from <code>rcax_table()</code>. But you can set it if needed.</p></dd>
+<dt>flist</dt>
+<dd><p>A filter for the query. See details and <code><a href="rcax_filter.html">rcax_filter()</a></code></p></dd>
 
 
-<dt>key</dt>
-<dd><p>A CAX API token. See <code><a href="rcax_key.html">rcax_key</a></code>.</p></dd>
-
-
-<dt>parse</dt>
-<dd><p>(logical) Whether to parse to list (<code>FALSE</code>) or data.frame (<code>TRUE</code>). Default: <code>TRUE</code></p></dd>
+<dt>qlist</dt>
+<dd><p>Additional query params. See <code><a href="rcax_table_query.html">rcax_table_query()</a></code> for details.</p></dd>
 
 
 <dt>cols</dt>
 <dd><p>column names to return. Use cols=NULL if you want all columns</p></dd>
 
 
-<dt>...</dt>
-<dd><p>Curl options passed to <code><a href="https://docs.ropensci.org/crul/reference/HttpClient.html" class="external-link">HttpClient</a></code></p></dd>
+<dt>sortcols</dt>
+<dd><p>The columns to sort on for the returned table. The order of sortcols indicates the order of sorting. Start with the smallest group and work outwards, e.g. <code>c("spawningyear", "popid", "MPG")</code></p></dd>
 
 
-<dt>popid</dt>
-<dd><p>(character or number) A NMFS_POPID for a population</p></dd>
+<dt>type</dt>
+<dd><p>whether to return the table ("data.frame") or colnames ("colnames"). Default is to return the table as a data frame.</p></dd>
+
+
+<dt>GETargs</dt>
+<dd><p>A list of arguments for the <code><a href="rcax_GET.html">rcax_GET()</a></code> call. These do not normally need to be specified by the user. <code>table_id</code> This is the CAX table id. It is looked up using <code>tablename</code> and <code>caxpops</code>. <code>recordloc</code> This is the name of the record we want in the list returned from the GET call. <code>key</code> is the API key. See <code><a href="rcax_GET.html">rcax_GET()</a></code> for API key details.</p></dd>
 
 </dl></div>
+    <div id="value">
+    <h2>Value</h2>
+    
+
+<p>data frame if <code>type="data.frame"</code> (default) and the colnames if <code>type="colnames"</code></p>
+
+
+    </div>
     <div id="references">
     <h2>References</h2>
     <p>API docs at <a href="https://www.streamnet.org/resources/exchange-tools/rest-api-documentation/" class="external-link">https://www.streamnet.org/resources/exchange-tools/rest-api-documentation/</a></p>
-<p>This function is modeled off the functions in <a href="https://github.com/ropensci/rredlist" class="external-link">https://github.com/ropensci/rredlist</a></p>
     </div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># to get all columns and print the column names</span></span></span>
-<span class="r-in"><span><span class="co"># a &lt;- rcax_escdata(cols = NULL)</span></span></span>
-<span class="r-in"><span><span class="co"># colnames(a)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">rcax_escdata</span><span class="op">(</span>cols <span class="op">=</span> <span class="cn">NULL</span>, qlist<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>limit<span class="op">=</span><span class="fl">5</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ascode countpermile repeatspawners asnid agencyid countcidisttype</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1     98                                98       15                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2     98            0                   98       10                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3     98                                98       15                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4     98                                98       36                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5     98                                98       15                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   countciuplim compilerrecordid                   begindate</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                                November, 01 1979 00:00:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                               September, 03 2002 00:00:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                                   March, 01 1973 00:00:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                                   March, 15 1962 00:00:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                                 October, 01 1961 00:00:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                     id                   upddate num</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 00000A70-075A-4AE1-857D-42BC1048939C    June, 01 2011 00:00:00   1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 0000219F-A662-4A16-8F46-ED171C56990A   March, 27 2006 00:00:00   2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 0000578E-E906-41CA-A778-7EC7A8C06DDA     May, 23 2014 00:00:00   3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4 00010D89-9D97-44FD-A9F5-D55C75C4EC6E  August, 16 2010 00:00:00   4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5 0001112D-987D-4F27-88B3-EF027074AE6A January, 18 2000 16:53:00   5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                dataentry</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 Disk 97-12, ed 0611 KG</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2         IDFG StreamNet</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3   April Waters, ed JLC</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4               cshannon</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5        Briana Sounhein</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                                                                                                                                                          countcom</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                                                                                                                                                                                                                                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                                                                                                                                                                                                                                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                                                                                                                                                                                                       No counts made this year.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4 No mainstem estimate was developed and a grand total for spring-run spawning was not made.  Tributary estimates were Mill Creek, 2000, Big Chico Creek, 200, Butte Creek, 2000 and there was no estimate for the Feather River.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                                                                                                                                                                                                                         Table 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   publish                   countdate refid sampmethid</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1     Yes                             53391        203</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2     Yes September, 03 2002 00:00:00 46758        213</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3     Yes                             50038         98</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4     Yes                             90001         98</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5     Yes                             50061        105</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                       enddate calcmethid countvalue trendid timessurveyed</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1   October, 31 1980 00:00:00        314       1024   54227              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 September, 03 2002 00:00:00        304          0   44227             1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3   October, 31 1973 00:00:00         98              53571              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4   October, 14 1962 00:00:00         98              90661              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5   January, 31 1962 00:00:00        304          3   50321              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   asmethod assource countcilowlim milessurveyed countcilevel nullflag</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1       98                                                         No</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2       98                            2.9820075                    No</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3       98                                                        Yes</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4       98                                                        Yes</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5       98                                  0.3                    No</span>
 <span class="r-in"><span></span></span>
-<span class="r-in"></span>
+<span class="r-in"><span><span class="co"># to print the first 5 column names</span></span></span>
+<span class="r-in"><span><span class="fu">rcax_escdata</span><span class="op">(</span>type<span class="op">=</span><span class="st">"colnames"</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">]</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "ascode"         "countpermile"   "repeatspawners" "asnid"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [5] "agencyid"      </span>
 </code></pre></div>
     </div>
   </div>
@@ -165,7 +223,7 @@ is set automatically using a saved data frame from a <code><a href="rcax_tables.
 
 
       <footer><div class="copyright">
-  <p></p><p>Developed by Eli Holmes, Mari Williams.</p>
+  <p></p><p>Developed by Eli Holmes.</p>
 </div>
 
 <div class="pkgdown">

@@ -5,29 +5,33 @@
 \title{Get SuperPopulations table}
 \usage{
 rcax_superpops(
-  popid = NULL,
-  extra = NULL,
-  table_id = NULL,
-  key = NULL,
-  parse = TRUE,
+  tablename = "SuperPopulations",
+  flist = NULL,
+  qlist = NULL,
   cols = NULL,
+  sortcols = c("popid"),
+  type = c("data.frame", "colnames"),
+  GETargs = list(table_id = NULL, recordloc = "records", key = NULL, parse = TRUE),
   ...
 )
 }
 \arguments{
-\item{popid}{(character or number) A NMFS_POPID for a population}
+\item{tablename}{(character) The CAX name for the table; ignored if \code{GETargs$table_id} passed in.}
 
-\item{extra}{extra query params or column values. Enter as a list, e.g. list(pageno=7)}
+\item{flist}{A filter for the query. See details and \code{rcax_filter()}}
 
-\item{table_id}{not normally needed as this is set automatically to the table id for NOSA using the table saved from \code{rcax_table()}. But you can set it if needed.}
-
-\item{key}{A CAX API token. See \code{\link{rcax_key}}.}
-
-\item{parse}{(logical) Whether to parse to list (\code{FALSE}) or data.frame (\code{TRUE}). Default: \code{TRUE}}
+\item{qlist}{Additional query params. See \code{rcax_table_query()} for details.}
 
 \item{cols}{column names to return. Use cols=NULL if you want all columns}
 
-\item{...}{Curl options passed to \code{\link[crul]{HttpClient}}}
+\item{sortcols}{The columns to sort on for the returned table. The order of sortcols indicates the order of sorting. Start with the smallest group and work outwards, e.g. \code{c("spawningyear", "popid", "MPG")}}
+
+\item{type}{whether to return the table ("data.frame") or colnames ("colnames"). Default is to return the table as a data frame.}
+
+\item{GETargs}{A list of arguments for the \code{rcax_GET()} call. These do not normally need to be specified by the user. \code{table_id} This is the CAX table id. It is looked up using \code{tablename} and \code{caxpops}. \code{recordloc} This is the name of the record we want in the list returned from the GET call. \code{key} is the API key. See \code{rcax_GET()} for API key details.}
+}
+\value{
+data frame if \code{type="data.frame"} (default) and the colnames if \code{type="colnames"}
 }
 \description{
 Returns SuperPopulations table
@@ -35,16 +39,19 @@ Returns SuperPopulations table
 The SuperPopulations table_id is "009A08FE-6479-44FC-9B6F-01C55E2C8BA3" and
 is set automatically using a saved data frame from a \code{rcax_tables()} call. The table is saved in \code{R/sysdata.rda}.
 
-\code{rcax_superpops()} will download 1000 records.
+\code{rcax_superpops()} will download 1000 records. Pass in \code{flist} to filter.
 }
 \examples{
 # to get all columns and print the column names
-a <- rcax_superpops(cols = NULL)
-colnames(a)
+rcax_superpops(type="colnames")
+
+# get one record
+rcax_superpops(qlist=list(limit=1))
 
 }
 \references{
 API docs at \url{https://www.streamnet.org/resources/exchange-tools/rest-api-documentation/}
-
-This function is modeled off the functions in \url{https://github.com/ropensci/rredlist}
+}
+\seealso{
+\code{rcax_table_query()}, \code{rcax_filter()}, \code{rcax_key()}
 }

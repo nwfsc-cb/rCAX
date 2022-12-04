@@ -13,7 +13,6 @@ API citation as character string
 Get the citation CAX version
 }
 \examples{
-\dontrun{
 rcax_citation()
-}
+
 }

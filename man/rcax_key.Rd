@@ -10,5 +10,9 @@ rcax_key()
 Provides instruction on how to store the key.
 }
 \details{
-Contact Streamnet to request a pull key. https://www.streamnet.org/resources/exchange-tools/rest-api-documentation/
+Contact Streamnet to request a pull key or guest key. https://www.streamnet.org/resources/exchange-tools/rest-api-documentation/
+
+After getting your key set it as CAX_KEY in your \code{.Renviron} file by pasting this text into that file. \code{CAX_KEY='youractualkeynotthisstring'}
+
+To find (and create if necessary) your \code{.Renviron} file, use \code{usethis::edit_r_environ()}  then open that file and paste in the key text above. After you edit the file, you will need to restart R. If you are in RStudio use Session > Restart R.
 }

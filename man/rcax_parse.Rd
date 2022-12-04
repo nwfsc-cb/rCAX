@@ -14,3 +14,6 @@ rcax_parse(x, parse)
 \description{
 Parse results from API call
 }
+\seealso{
+\code{rcax_GET()} for examples
+}

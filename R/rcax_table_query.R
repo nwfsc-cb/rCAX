@@ -3,22 +3,34 @@
 #' This is the base function for queries to most of the CAX tables, e.g. `rcax_nosa()`
 #' Default queries will download 1000 records. You will 
 #'  want to make a filtered query by passing in `flist` as a list with the column name values to filter on.
-#'  
+#'
+#' @details 
+#' The required query parameters are table_id and XAPIKEY. These are set from the information in `GETargs`. table_id is normally looked up from `rcax_tables()` using `tablename` and `XAPIKEY` is looked up from `CAX_KEY` in the user environment (saved in `.Renviron` file. See `rcax_key()` for how to set the key.  The `qlist` argument is any additional query parameters. The following are some of the available extra (meaning not required) query parameters.
+#' * page=num Integer of the page selected.
+#' * per_page=num  Integer for the number of records per page.
+#' * limit=num Maximum number of records to return. Default is 1000.
+#' * agency=character Agency that submitted the record. You can designate one or more (comma-separated) agency acronyms: IDFG, WDFW, ODFW, CRITFC, CCT, NOAA. 
+#' * updated_since	Date since epoch in seconds: 2012-04-24 15:05:22 -0400 = 1335294322.
+#' * popid Population id in NOSA tables.
+#' 
+#' Filtering, i.e. subsetting, the query is specified using the `flist` argument. 
+#' This is a list with the column name and value. See `rcax_filter()` for the filtering code which writes the filter query parameter that is added to the GET query. See `rcax_filter()` for examples of how one passes in `flist`.
+#' 
 #' @export
-#' @template all
 #' @template info
-#' @template commonargs
+#' @template tableargs
+#' @seealso `rcax_GET()`, `rcax_nosa()`, `rcax_escdata()`, `rcax_superpops()`
 #' @examples 
-#' a <- rcax_nosa(popid=7)
+#' a <- rcax_table_query(tablename="NOSA", qlist = list(limit=5))
 #' a[, c("popid", "spawningyear", "nosaij", "nosaej")]
 #' 
 #' @references 
-#' This function is modeled off the functions in \url{https://github.com/ropensci/rredlist}
+#' This function was originally modeled off the functions in \url{https://github.com/ropensci/rredlist} but was greatly modified.
 #' 
 rcax_table_query <- function(
     tablename = NULL,
-    extra = NULL, 
-    flist = list(),
+    flist = NULL,
+    qlist = NULL, 
     cols = NULL,
     sortcols = NULL,
     type = c("data.frame", "colnames"), 
@@ -27,12 +39,12 @@ rcax_table_query <- function(
   type <- match.arg(type)
   assert_is(tablename, 'character')
   assert_is(flist, 'list')
-  assert_is(extra, 'list')
+  assert_is(qlist, 'list')
   assert_is(GETargs, 'list')
   # Update GETargs list with any values that the user passed in
   if (!missing(GETargs)) {
     formal.args <- formals(sys.function(sysP <- sys.parent()))
-    defaultlist <- eval(formal.args[[as.character(substitute(GETargs))]], 
+    defaultlist <- eval(formal.args[["GETargs"]], 
                     envir = sys.frame(sysP))
     
     for(i in names(GETargs)){
@@ -45,18 +57,18 @@ rcax_table_query <- function(
   # get the table_id
   if(is.null(tablename) & is.null(GETargs$table_id))
     stop("Need either tablename or GETargs$table_id specified.")
-  if(is.null(GETargs$table_id)) table_id = subset(rCAX:::caxtabs, name==tablename)$id
+  if(is.null(GETargs$table_id)) GETargs$table_id <- subset(rCAX:::caxtabs, name==tablename)$id
   if(is.null(GETargs$table_id))
     stop("Something wrong. GETargs$table_id is NULL. Perhaps tablename is misspelled? Check the CAX table names from a call to `rcax_tables()`. Alternatively the sysdata `caxtabs` might be out of date. In which case, you will need to look up the correct table_id and pass that into `GETargs`.")
     
   # set up query list
   query_list <- list(table_id = GETargs$table_id)
-  if(!is.null(extra)) query_list <- c(query_list, extra)
+  if(!is.null(qlist)) query_list <- c(query_list, qlist)
   # if just returning colnames, set limit to 1
   if(type=="colnames") query_list$limit <- 1
   
   # Make API call
-  tab <- rcax_parse(rcax_GET("ca", key, query=query_list, ...), GETargs$parse)
+  tab <- rcax_parse(rcax_GET("ca", GETargs$key, query=query_list, ...), GETargs$parse)
   tab <- tab[[GETargs$recordloc]]
   
   # if type is colnames, return that

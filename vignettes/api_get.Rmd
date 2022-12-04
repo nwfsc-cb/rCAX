@@ -19,7 +19,7 @@ knitr::opts_chunk$set(
 library(rCAX)
 ```
 
-The main behind the scenes function is `rcax_GET(path, key = NULL, query=NULL, ...)`. 
+The main behind the scenes function is `rcax_GET(path, key = NULL, query=NULL, ...)` which appears in functions `rcax_table_query()` and `rcax_table()`.
 
 ## rcax_GET params
 

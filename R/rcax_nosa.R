@@ -4,85 +4,59 @@
 #' columns to return are "recoverydomain", "esu_dps", "commonpopname",
 #'  "commonname", "run", "popid", "majorpopgroup", "spawningyear", 
 #'  "nosaij", "nosaej"
-#'  
-#'  The NOSA table_id is "4EF09E86-2AA8-4C98-A983-A272C2C2C7E3" and 
+#'    
+#'  `rcax_nosa()` will download 1000 records from the NOSA table. You will 
+#'  probably want to make a filtered query by passing in value to filter on 
+#'  via `flist`. See `rcax_filter()`. Examples for the NOSA table:
+#'  * `rcax_nosa(flist=list(popid=7)` return values for popid 7.
+#'  * `rcax_nosa(flist=list(esu_dps="Salmon, coho (Oregon Coast ESU)")` return values for one ESU See `caxpops$esu_dps` for ESU_DPS names.
+#' @details 
+#' The NOSA table_id is "4EF09E86-2AA8-4C98-A983-A272C2C2C7E3" and 
 #'  is set automatically using a saved data frame from a `rcax_tables()` call. The table is saved in `R/sysdata.rda`.
 #'  
-#'  `rcax_nosa()` will download 1000 records from the NOSA table. You will 
-#'  probably want to make a filtered query by passing in value for a specific popid, e.g. `rcax_nosa(popid=7)`
-#'  
 #' @export
-#' @param table_id not normally needed as this is set automatically to the table id for NOSA using the table saved from `rcax_table()`. But you can set it if needed.
-#' @template all
 #' @template info
-#' @template commonargs
+#' @template tableargs
+#' @seealso `rcax_table_query()`, `rcax_filter()`, `rcax_key()`
 #' @examples 
-#' a <- rcax_nosa(popid=7)
-#' a[, c("popid", "spawningyear", "nosaij", "nosaej")]
+#' a <- rcax_nosa(qlist=list(popid=7))
+#' a[, c("popid", "spawningyear", "nosaij", "nosaej")] |> head()
 #' 
-#' a <- rcax_nosa()
-#' head(a)
+#' rcax_nosa() |> head()
 #' 
-#' # to get all columns and print the column names
-#' # a <- rcax_nosa(cols = NULL)
-#' # colnames(a)
+#' # to print the first 5 column names
+#' rcax_nosa(type="colnames")[1:5]
 #' 
 #' @references 
 #' This function is modeled off the functions in \url{https://github.com/ropensci/rredlist}
 #' 
 rcax_nosa <- function(
-    popid = NULL,
+    tablename = "NOSA",
+    flist = NULL,
+    qlist = NULL, 
     cols = c("recoverydomain", "esu_dps", "commonpopname", "commonname", "run", "popid", "majorpopgroup", "spawningyear", "nosaij", "nosaej"),
     sortcols = c("spawningyear", "popid"),
     type = c("data.frame", "colnames"), 
-    extra = NULL, 
-    GETargs = list(tablename = "NOSA", table_id = NULL, recordloc = "records", key = NULL, parse = TRUE), ...) {
-  # error checking
-  type <- match.arg(type)
-  assert_is(table_id, 'character')
-  assert_is(extra, 'list')
-  assert_is(GETargs, 'list')
-  assert_is(parse, 'logical')
-  # Update GETargs list with any values that the user passed in
-  if (!missing(GETargs)) {
-    formal.args <- formals(sys.function(sysP <- sys.parent()))
-    defaultlist <- eval(formal.args[[as.character(substitute(GETargs))]], 
-                    envir = sys.frame(sysP))
-    
-    for(i in names(GETargs)){
-      if(!(i %in% names(defaultlist))) stop(paste(i, "is not a value in GETargs."))
-      defaultlist[[i]] <- GETargs[[i]]
-    }
-    GETargs <- defaultlist
+    GETargs = list(table_id = NULL, recordloc = "records", key = NULL, parse = TRUE), ...) {
+  # Error checking. Most happens in rcax_table_query.
+  assert_is(flist, 'list')
+  assert_is(qlist, 'list')
+  
+  # If user passed in popid in flist, move this to extra so appears as a query param
+  # Seems to work as a query param
+  if(("popid" %in% names(flist)) & ("popid" %in% names(qlist)))
+     cat("popid appears in both flist and qlist. Ignoring the value in qlist.\n")
+  if("popid" %in% names(flist)){
+    if(is.null(qlist)) qlist <- list(popid = flist$popid)
+      else qlist$popid <- flist$popid
   }
   
-  # get the table_id for the NOSA table
-  if(is.null(table_id)) table_id = subset(rCAX:::caxtabs, name==tablename)$id
+  # API call and table filtering and sorting
+  rcax_table_query(
+    tablename = tablename, 
+    flist = flist, qlist = qlist, 
+    cols = cols, sortcols = sortcols,
+    type = type, 
+    GETargs = list(recordloc = "records"), ...)
   
-  # set up query list
-  query_list <- list(table_id = table_id)
-  if(!is.null(popid)) query_list$popid <- popid
-  if(!is.null(extra)) query_list <- c(query_list, extra)
-  # if just returning colnames, set limit to 1
-  if(type=="colnames") query_list$limit <- 1
-  
-  # Make API call; for NOSA data is in records
-  tab <- rcax_parse(rcax_GET("ca", key, query=query_list, ...), parse)
-  tab <- tab$records
-  
-  # if type is colnames, return that
-  if(type=="colnames") return(colnames(tab))
-  
-  # if type is data.frame, filter and sort
-  for(i in sortcols)
-    if(sortcols[i] %in% colnames(tab)) tab <- tab[order(tab[sortcols[i]]),]
-  if(!is.null(cols)) tab <- tab[,cols]
-  tab
-}
-
-# Not used; this would return just the json
-rcax_nosa_ <- function(table_id, extra = NULL, key = NULL, ...) {
-  assert_is(table_id, 'character')
-  assert_is(key, 'character')
-  rcax_GET("ca", key, query=c(list(table_id=table_id), extra), ...)
 }

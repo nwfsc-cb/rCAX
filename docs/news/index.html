@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">rCAX</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.3.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.4.0</span>
       </span>
     </div>
 
@@ -91,6 +91,12 @@
     </div>
 
     <div class="section level2">
+<h2 class="page-header" data-toc-text="0.4.0" id="rcax-040">rCAX 0.4.0<a class="anchor" aria-label="anchor" href="#rcax-040"></a></h2>
+<ul><li>added more sysdata: caxpops The Populations table. I had to download table from (StreamNet pop page)[<a href="https://www.streamnet.org/cap/current-hli/current-pop/" class="external-link uri">https://www.streamnet.org/cap/current-hli/current-pop/</a>] since the “Populations” table query is throwing an error), caxesus ESU_DPS names, caxsuperpops The SuperPopulations table.</li>
+<li>created <code><a href="../reference/rcax_table_query.html">rcax_table_query()</a></code> as the base function for all the table query functions. That way I am not repeating the same code for each table.</li>
+<li>added info to <code><a href="../reference/rcax_table_query.html">rcax_table_query()</a></code> documentation about the possible query params.</li>
+</ul></div>
+    <div class="section level2">
 <h2 class="page-header" data-toc-text="0.3.0" id="rcax-030">rCAX 0.3.0<a class="anchor" aria-label="anchor" href="#rcax-030"></a></h2>
 <ul><li>Add the tables vignette.</li>
 <li>Add CAX table dataframe to sysdata.rda</li>
@@ -114,7 +120,7 @@
 
 
       <footer><div class="copyright">
-  <p></p><p>Developed by Eli Holmes, Mari Williams.</p>
+  <p></p><p>Developed by Eli Holmes.</p>
 </div>
 
 <div class="pkgdown">

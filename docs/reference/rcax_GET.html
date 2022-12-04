@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">rCAX</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.3.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.4.0</span>
       </span>
     </div>
 
@@ -106,16 +106,29 @@
 
 
 <dt>key</dt>
-<dd><p>the api key</p></dd>
+<dd><p>A CAX API token. See <code><a href="rcax_key.html">rcax_key</a></code>.</p></dd>
 
 
 <dt>...</dt>
-<dd><p>extra info</p></dd>
+<dd><p>Curl options passed to <code><a href="https://docs.ropensci.org/crul/reference/HttpClient.html" class="external-link">HttpClient</a></code></p></dd>
+
+
+<dt>parse</dt>
+<dd><p>(logical) Whether to parse to list (<code>FALSE</code>) or data.frame (<code>TRUE</code>). Default: <code>TRUE</code></p></dd>
 
 </dl></div>
+    <div id="details">
+    <h2>Details</h2>
+    <p>You will need an API key to make GET queries. Contact Streamnet to request a pull key or guest key. https://www.streamnet.org/resources/exchange-tools/rest-api-documentation/</p>
+<p>After getting your key set it as CAX_KEY in your <code>.Renviron</code> file by pasting this text into that file. <code>CAX_KEY='youractualkeynotthisstring'</code></p>
+<p>To find (and create if necessary) your <code>.Renviron</code> file, use <code><a href="https://usethis.r-lib.org/reference/edit.html" class="external-link">usethis::edit_r_environ()</a></code>
+then open that file and paste in the key text above.
+After you edit the file, you will need to restart R. If you are in RStudio use Session &gt; Restart R.</p>
+    </div>
     <div id="references">
     <h2>References</h2>
-    <p>This function is modeled off the functions in <a href="https://github.com/ropensci/rredlist" class="external-link">https://github.com/ropensci/rredlist</a></p>
+    <p>API docs at <a href="https://www.streamnet.org/resources/exchange-tools/rest-api-documentation/" class="external-link">https://www.streamnet.org/resources/exchange-tools/rest-api-documentation/</a></p>
+<p>This function is modeled off the functions in <a href="https://github.com/ropensci/rredlist" class="external-link">https://github.com/ropensci/rredlist</a></p>
     </div>
 
     <div id="ref-examples">
@@ -133,7 +146,7 @@
 
 
       <footer><div class="copyright">
-  <p></p><p>Developed by Eli Holmes, Mari Williams.</p>
+  <p></p><p>Developed by Eli Holmes.</p>
 </div>
 
 <div class="pkgdown">

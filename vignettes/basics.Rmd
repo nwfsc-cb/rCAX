@@ -29,9 +29,11 @@ head(tab)
 
 ## Get a NOSA table for a popid
 
-Here the columns are restricted.
+Here the columns are restricted. `popid` is passed in as a query param to limit the query to popid=7.
 ```{r}
-tab <- rcax_nosa(popid=7, cols=c("popid", "spawningyear", "nosaij", "nosaej"))
+tab <- rcax_nosa(
+  qlist=list(popid=7), 
+  cols=c("popid", "spawningyear", "nosaij", "nosaej"))
 head(tab)
 ```
 
@@ -39,6 +41,5 @@ head(tab)
 
 Get the table and show all the column names.
 ```{r}
-a <- rcax_nosa(popid=7, cols=NULL)
-colnames(a)
+rcax_nosa(type="colnames")
 ```

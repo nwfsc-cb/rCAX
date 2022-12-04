@@ -2,8 +2,8 @@
 #' 
 #' @export
 #' @param cols the columns to return. default is name, description and id. use cols=NULL to get all the columns
-#' @template all
 #' @template info
+#' @template getargs
 #' @examples
 #' a <- rcax_tables(cols=NULL)
 #' colnames(a)

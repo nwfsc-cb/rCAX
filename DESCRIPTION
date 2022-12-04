@@ -2,7 +2,7 @@ Package: rCAX
 Type: Package
 Title: Coordinated Assessments Client
 Description: An 'API' key is required.
-Version: 0.3.0
+Version: 0.4.0
 Authors@R: 
     c(person(given = "Eli",
              family = "Holmes",
@@ -10,7 +10,7 @@ Authors@R:
              email = "eli.holmes@noaa.gov"),
       person(given = "Mari",
              family = "Williams",
-             role = c("aut"),
+             role = c("ctb"),
              email = "mari.williams@noaa.gov")
       )
 License: MIT + file LICENSE
@@ -23,7 +23,7 @@ RoxygenNote: 7.2.1
 Roxygen: list(markdown = TRUE)
 NeedsCompilation: no
 Author: Eli Holmes [aut, cre],
-  Mari Williams [aut]
+  Mari Williams [ctb]
 Suggests: 
     knitr,
     rmarkdown
