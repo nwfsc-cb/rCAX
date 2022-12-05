@@ -1,7 +1,7 @@
 rCAX
 ========
 
-`rCAX` is an R client for the [Coordinated Assessments API](https://www.streamnet.org/resources/exchange-tools/rest-api-documentation/). 
+`rCAX` is an R client for the [Coordinated Assessments API](https://www.streamnet.org/resources/exchange-tools/rest-api-documentation/). Make sure to review the [StreamNet Terms of Use](https://nwfsc-math-bio.github.io/rCAX/articles/terms.html) for these data and the [citation information](https://www.streamnet.org/resources/citing-sn/) for database queries.
 
 ## Installation
 

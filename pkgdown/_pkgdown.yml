@@ -60,6 +60,7 @@ reference:
   contents: 
   - rCAX-package
   - rcax_citation
+  - rcax_termsofuse
 - title: "Connecting to API"
   desc: >
     Functions for connecting to the API. These are for 

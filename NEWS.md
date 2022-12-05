@@ -1,3 +1,8 @@
+rCAX 0.5.0
+===================
+
+* Added `rcax_termsofuse()` and a Terms of Use vignette.
+
 rCAX 0.4.0
 ===================
 

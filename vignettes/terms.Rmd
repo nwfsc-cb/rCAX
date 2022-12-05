@@ -1,0 +1,25 @@
+---
+title: "CAX Data Terms of Use"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{CAX Data Terms of Use}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup, include=FALSE}
+library(rCAX)
+```
+
+The following is the terms of use from StreamNet for the CAX data accessed by the rCAX client.
+
+```{r results='asis', echo=FALSE}
+rcax_termsofuse()
+```
