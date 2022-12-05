@@ -83,7 +83,7 @@
   <ul class="dropdown-menu" role="menu">
 <li class="dropdown-header">Releases</li>
     <li>
-      <a href="https://github.com/nwfsc-math-mbio/rCAX/releases/tag/v0.1.0" class="external-link">Version 0.1.0</a>
+      <a href="https://github.com/nwfsc-math-mbio/rCAX/releases/tag/v0.4.0" class="external-link">Version 0.4.0</a>
     </li>
     <li class="divider">
     </li>
@@ -141,82 +141,127 @@
 <span><span class="co">#&gt; 6             HatchRetMain4GIS 26F6E3E9-E5C8-40FF-9AEC-B7F8500F1A44</span></span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="get-a-nosa-table-for-a-popid">Get a NOSA table for a popid<a class="anchor" aria-label="anchor" href="#get-a-nosa-table-for-a-popid"></a>
+<h2 id="show-internal-tables">Show internal tables<a class="anchor" aria-label="anchor" href="#show-internal-tables"></a>
 </h2>
-<p>Here the columns are restricted. <code>popid</code> is passed in as a
-query param to limit the query to popid=7.</p>
+<p>These are internal tables. Access with <code>rCAX:::</code></p>
+<ul>
+<li>
+<code>caxesu</code> The ESU and DPS names, which appear in the
+<code>esu_dps</code> column in tables.</li>
+<li>
+<code>caxpops</code> The Populations table with all the population
+metadata, like NMFS_PopID and MPG.</li>
+<li>
+<code>caxsuperpops</code> The SuperPopulations table.</li>
+</ul>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">tab</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/rcax_nosa.html">rcax_nosa</a></span><span class="op">(</span></span>
-<span>  qlist<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>popid<span class="op">=</span><span class="fl">7</span><span class="op">)</span>, </span>
-<span>  cols<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"popid"</span>, <span class="st">"spawningyear"</span>, <span class="st">"nosaij"</span>, <span class="st">"nosaej"</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">tab</span><span class="op">)</span></span>
-<span><span class="co">#&gt;   popid spawningyear nosaij nosaej</span></span>
-<span><span class="co">#&gt; 1     7         2005     38     35</span></span>
-<span><span class="co">#&gt; 2     7         2011    615    540</span></span>
-<span><span class="co">#&gt; 3     7         2014    570    531</span></span>
-<span><span class="co">#&gt; 4     7         2013    511       </span></span>
-<span><span class="co">#&gt; 5     7         1997     72     72</span></span>
-<span><span class="co">#&gt; 6     7         1993    107     99</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">rCAX</span><span class="fu">:::</span><span class="va">caxesu</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">2</span><span class="op">]</span></span>
+<span><span class="co">#&gt; [1] "N/A"                                       </span></span>
+<span><span class="co">#&gt; [2] "Salmon, Chinook (Lower Columbia River ESU)"</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="fu">rCAX</span><span class="fu">:::</span><span class="va">caxpops</span><span class="op">)</span></span>
+<span><span class="co">#&gt;  [1] "popid"               "recoverydomain"      "esu_dps"            </span></span>
+<span><span class="co">#&gt;  [4] "majorpopgroup"       "populationname"      "esapopname"         </span></span>
+<span><span class="co">#&gt;  [7] "nmfs_popid"          "nmfs_population"     "nmfs_popcode"       </span></span>
+<span><span class="co">#&gt; [10] "nmfs_species"        "nmfs_common_species" "nmfs_run"           </span></span>
+<span><span class="co">#&gt; [13] "popstatus"           "nmfs_type"           "listing_status"     </span></span>
+<span><span class="co">#&gt; [16] "bpa_priority"        "species"             "run"                </span></span>
+<span><span class="co">#&gt; [19] "fcrps_sectiontitle"  "recordnote"</span></span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="get-a-nosa-table-with-all-the-columns">Get a NOSA table with all the columns<a class="anchor" aria-label="anchor" href="#get-a-nosa-table-with-all-the-columns"></a>
+<h2 id="table-queries">Table queries<a class="anchor" aria-label="anchor" href="#table-queries"></a>
 </h2>
-<p>Get the table and show all the column names.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/rcax_nosa.html">rcax_nosa</a></span><span class="op">(</span>type<span class="op">=</span><span class="st">"colnames"</span><span class="op">)</span></span>
-<span><span class="co">#&gt;   [1] "nosaijupperlimit"        "tsaej"                  </span></span>
-<span><span class="co">#&gt;   [3] "age8propupperlimit"      "metriclocation"         </span></span>
-<span><span class="co">#&gt;   [5] "popfitnotes"             "cbfwapopname"           </span></span>
-<span><span class="co">#&gt;   [7] "age9proplowerlimit"      "phosejalpha"            </span></span>
-<span><span class="co">#&gt;   [9] "contactpersonfirst"      "compilerrecordid"       </span></span>
-<span><span class="co">#&gt;  [11] "id"                      "age3propupperlimit"     </span></span>
-<span><span class="co">#&gt;  [13] "nosaejlowerlimit"        "nosjf"                  </span></span>
-<span><span class="co">#&gt;  [15] "phosej"                  "nosjflowerlimit"        </span></span>
-<span><span class="co">#&gt;  [17] "popfit"                  "spawningyear"           </span></span>
-<span><span class="co">#&gt;  [19] "contactpersonlast"       "dataentry"              </span></span>
-<span><span class="co">#&gt;  [21] "age10propupperlimit"     "age4proplowerlimit"     </span></span>
-<span><span class="co">#&gt;  [23] "publish"                 "nosaej"                 </span></span>
-<span><span class="co">#&gt;  [25] "age3prop"                "escapementlat"          </span></span>
-<span><span class="co">#&gt;  [27] "age6propupperlimit"      "phosejupperlimit"       </span></span>
-<span><span class="co">#&gt;  [29] "waterbody"               "comments"               </span></span>
-<span><span class="co">#&gt;  [31] "age5prop"                "age3proplowerlimit"     </span></span>
-<span><span class="co">#&gt;  [33] "age2proplowerlimit"      "majorpopgroup"          </span></span>
-<span><span class="co">#&gt;  [35] "otherdatasources"        "tsaejalpha"             </span></span>
-<span><span class="co">#&gt;  [37] "age5propupperlimit"      "nosaijalpha"            </span></span>
-<span><span class="co">#&gt;  [39] "age10proplowerlimit"     "nosaijlowerlimit"       </span></span>
-<span><span class="co">#&gt;  [41] "nosjfupperlimit"         "phosij"                 </span></span>
-<span><span class="co">#&gt;  [43] "num"                     "phosejlowerlimit"       </span></span>
-<span><span class="co">#&gt;  [45] "age7prop"                "run"                    </span></span>
-<span><span class="co">#&gt;  [47] "refid"                   "hosjf"                  </span></span>
-<span><span class="co">#&gt;  [49] "measurelocation"         "tsaijlowerlimit"        </span></span>
-<span><span class="co">#&gt;  [51] "escapementtiming"        "commonname"             </span></span>
-<span><span class="co">#&gt;  [53] "contactphone"            "age4propupperlimit"     </span></span>
-<span><span class="co">#&gt;  [55] "estimatetype"            "phosijupperlimit"       </span></span>
-<span><span class="co">#&gt;  [57] "popid"                   "age11pluspropupperlimit"</span></span>
-<span><span class="co">#&gt;  [59] "tsaijupperlimit"         "phosijalpha"            </span></span>
-<span><span class="co">#&gt;  [61] "tsaij"                   "datastatus"             </span></span>
-<span><span class="co">#&gt;  [63] "escapementlong"          "tsaejlowerlimit"        </span></span>
-<span><span class="co">#&gt;  [65] "age5proplowerlimit"      "nobroodstockremoved"    </span></span>
-<span><span class="co">#&gt;  [67] "methodnumber"            "age9prop"               </span></span>
-<span><span class="co">#&gt;  [69] "dataentrynotes"          "agepropalpha"           </span></span>
-<span><span class="co">#&gt;  [71] "recoverydomain"          "age7propupperlimit"     </span></span>
-<span><span class="co">#&gt;  [73] "nosjfalpha"              "nosaij"                 </span></span>
-<span><span class="co">#&gt;  [75] "phosijlowerlimit"        "age8proplowerlimit"     </span></span>
-<span><span class="co">#&gt;  [77] "metacomments"            "contactagency"          </span></span>
-<span><span class="co">#&gt;  [79] "age2propupperlimit"      "age2prop"               </span></span>
-<span><span class="co">#&gt;  [81] "nullrecord"              "protmethdocumentation"  </span></span>
-<span><span class="co">#&gt;  [83] "bestvalue"               "tsaijalpha"             </span></span>
-<span><span class="co">#&gt;  [85] "protmethurl"             "indicatorlocation"      </span></span>
-<span><span class="co">#&gt;  [87] "nosaejalpha"             "nosaejupperlimit"       </span></span>
-<span><span class="co">#&gt;  [89] "submitagency"            "age7proplowerlimit"     </span></span>
-<span><span class="co">#&gt;  [91] "age4prop"                "age8prop"               </span></span>
-<span><span class="co">#&gt;  [93] "protmethname"            "upddate"                </span></span>
-<span><span class="co">#&gt;  [95] "age9propupperlimit"      "esu_dps"                </span></span>
-<span><span class="co">#&gt;  [97] "methodadjustments"       "contactemail"           </span></span>
-<span><span class="co">#&gt;  [99] "age10prop"               "age11plusprop"          </span></span>
-<span><span class="co">#&gt; [101] "age11plusproplowerlimit" "commonpopname"          </span></span>
-<span><span class="co">#&gt; [103] "age6prop"                "tsaejupperlimit"        </span></span>
-<span><span class="co">#&gt; [105] "age6proplowerlimit"</span></span></code></pre></div>
+<p>The following table query functions are available:</p>
+<ul>
+<li>
+<code><a href="../reference/rcax_nosa.html">rcax_nosa()</a></code> The NOSA table</li>
+<li>
+<code><a href="../reference/rcax_escdata.html">rcax_escdata()</a></code> The EscData table</li>
+<li>
+<code><a href="../reference/rcax_superpops.html">rcax_superpops()</a></code> The SuperPopulations table</li>
+</ul>
+<p>The basic functionality is shown with the NOSA table but the syntax
+is the same for the other table functions.</p>
+</div>
+<div class="section level2">
+<h2 id="show-the-columns-for-the-nosa-table">Show the columns for the NOSA table<a class="anchor" aria-label="anchor" href="#show-the-columns-for-the-nosa-table"></a>
+</h2>
+<p>Get the table and show all the column names. Only first 10 are
+shown.</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/rcax_nosa.html">rcax_nosa</a></span><span class="op">(</span>type<span class="op">=</span><span class="st">"colnames"</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">]</span></span>
+<span><span class="co">#&gt;  [1] "nosaijupperlimit"   "tsaej"              "age8propupperlimit"</span></span>
+<span><span class="co">#&gt;  [4] "metriclocation"     "popfitnotes"        "cbfwapopname"      </span></span>
+<span><span class="co">#&gt;  [7] "age9proplowerlimit" "phosejalpha"        "contactpersonfirst"</span></span>
+<span><span class="co">#&gt; [10] "compilerrecordid"</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="get-records-from-the-nosa-table">Get records from the NOSA table<a class="anchor" aria-label="anchor" href="#get-records-from-the-nosa-table"></a>
+</h2>
+<p>Here the columns returned are restricted by <code>cols</code>. The
+table is filtered with <code>flist</code> to be just the columns with
+<code>popid</code> equal to 7.</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">tab</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/rcax_nosa.html">rcax_nosa</a></span><span class="op">(</span></span>
+<span>  flist <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>popid <span class="op">=</span> <span class="fl">7</span><span class="op">)</span>,</span>
+<span>  cols<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"popid"</span>, <span class="st">"spawningyear"</span>, <span class="st">"tsaej"</span>, <span class="st">"nosaej"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">tab</span><span class="op">)</span></span>
+<span><span class="co">#&gt;    popid spawningyear tsaej nosaej</span></span>
+<span><span class="co">#&gt; 31     7         1953  3485   3484</span></span>
+<span><span class="co">#&gt; 46     7         1954   816    816</span></span>
+<span><span class="co">#&gt; 16     7         1955   106    106</span></span>
+<span><span class="co">#&gt; 17     7         1956  2338   2338</span></span>
+<span><span class="co">#&gt; 20     7         1957  1620   1619</span></span>
+<span><span class="co">#&gt; 13     7         1958   456    456</span></span></code></pre></div>
+<p>Return data for a single ESU.</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">tab</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/rcax_nosa.html">rcax_nosa</a></span><span class="op">(</span></span>
+<span>  flist <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>esu_dps <span class="op">=</span> <span class="st">"Salmon, Chinook (Snake River fall-run ESU)"</span><span class="op">)</span>,</span>
+<span>  cols<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"popid"</span>, <span class="st">"spawningyear"</span>, <span class="st">"tsaej"</span>, <span class="st">"nosaej"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p>Keep in mind that not all ESU and DPS are in the CAX database. Go to
+<a href="https://www.streamnet.org/data/hli/" class="external-link uri">https://www.streamnet.org/data/hli/</a> to do a search to
+quickly see what is in the NOSA table.</p>
+</div>
+<div class="section level2">
+<h2 id="filtering">Filtering<a class="anchor" aria-label="anchor" href="#filtering"></a>
+</h2>
+<p>The <code>flist</code> argument is a list with the columns and values
+you want to filter on. Here are some examples:</p>
+<p>Filter based on one value.</p>
+<pre><code><span><span class="va">flist</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>esu_dps <span class="op">=</span> <span class="st">"Steelhead (Middle Columbia River DPS)"</span><span class="op">)</span></span></code></pre>
+<p>Filter based on multiple values. In this case, data with popid 7, 8
+or 9 are returned.</p>
+<pre><code><span><span class="va">flist</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>popid <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">7</span>,<span class="fl">8</span>,<span class="fl">9</span><span class="op">)</span><span class="op">)</span></span></code></pre>
+<p>Filter based on two columns. Here we getting the the summer run data
+for one ESU. Note the values are not case sensitive so “Summer” will
+return both “Summer” and “summer”.</p>
+<pre><code><span><span class="va">flist</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>esu_dps <span class="op">=</span> <span class="st">"Salmon, Chinook (Snake River spring/summer-run ESU)"</span>, run <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Summer"</span><span class="op">)</span><span class="op">)</span></span></code></pre>
+<p>Unfortunately there seems to be a server-side problem with passing in
+multiple values with multiple columns. This works</p>
+<pre><code><span><span class="va">flist</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>run <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Summer"</span>, <span class="st">"Spring"</span><span class="op">)</span><span class="op">)</span></span></code></pre>
+<p>But this throws an error.</p>
+<pre><code><span><span class="va">flist</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>esu_dps <span class="op">=</span> <span class="st">"Salmon, Chinook (Snake River spring/summer-run ESU)"</span>, run <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Summer"</span>, <span class="st">"Spring"</span><span class="op">)</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="section level2">
+<h2 id="increase-the-number-of-records-returned">Increase the number of records returned<a class="anchor" aria-label="anchor" href="#increase-the-number-of-records-returned"></a>
+</h2>
+<p>The default maximum number of records is 1000. You can increase (or
+decrease) this by passing in the limit query parameter.</p>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">tab</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/rcax_nosa.html">rcax_nosa</a></span><span class="op">(</span></span>
+<span>  qlist <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>limit<span class="op">=</span><span class="fl">1</span><span class="op">)</span>,</span>
+<span>  cols<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"popid"</span>, <span class="st">"spawningyear"</span>, <span class="st">"tsaej"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">tab</span></span>
+<span><span class="co">#&gt;   popid spawningyear tsaej</span></span>
+<span><span class="co">#&gt; 1    58         2001</span></span></code></pre></div>
+<p>Increase the limit to 2000 to ensure all the data are returned. Not
+run.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>tab <span class="ot">&lt;-</span> <span class="fu">rcax_nosa</span>(</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">flist =</span> <span class="fu">list</span>(<span class="at">esu_dps=</span><span class="st">"Salmon, Chinook (Snake River spring/summer-run ESU)"</span>)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">qlist =</span> <span class="fu">list</span>(<span class="at">limit=</span><span class="dv">2000</span>),</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">cols=</span><span class="fu">c</span>(<span class="st">"popid"</span>, <span class="st">"spawningyear"</span>, <span class="st">"tsaej"</span>))</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>tab</span></code></pre></div>
 </div>
   </div>
 

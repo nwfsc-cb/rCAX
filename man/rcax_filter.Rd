@@ -4,27 +4,30 @@
 \alias{rcax_filter}
 \title{Create filter to add to GET call}
 \usage{
-rcax_filter(flist)
+rcax_filter(x)
 }
 \arguments{
-\item{flist}{list of property (column) names, values in this format \code{list(colname=value)}}
-
-\item{type}{(optional) a list with type for property names. If not passed in, the type will be inferred from the value in \code{flist}.}
+\item{x}{list of property (column) names, values in this format \code{list(colname=value)}. If the property can take multiple values, this is passed in as \code{list(colname=c(value1, value2))}}
+}
+\value{
+The JSON for the filter query param
 }
 \description{
-Create filter to add to GET call
+The table returned by an API query can be filtered using
+the filter query param. The value of the param is JSON. An examples are
+\itemize{
+\item \verb{filter=[\{"field":"popid","value":"7","type":"string"\}]')}
+\item \verb{filter=[\{"field":"popid","value":[7,8],"type":"list"\}]')}
+\item \verb{filter=[\{"field":"esu_dps","value":"Salmon, coho(Oregon Coast ESU)","type":"string"\}]')}
+}
 }
 \details{
-\itemize{
-\item Any spaces in the values in \code{flist} will be replaced with \verb{\%20}. This is done automatically but can also be done by the user.
-\item \code{type} The type of the value, for example "string" will be inferred from \code{class(flist$value)} but if you run into problems, you can pass in type for that property. It is not necessary to include all property names in \code{flist}. Only properties for which \code{class(flist$value)} is not producing the correct type.
-\item The property names in \code{flist} are the column names in a table being returned by \code{rcax_GET()}.
-}
+The property names in \code{x} are the column names in a table being returned by \code{rcax_table_query()}.
+Note the values are not case sensitive. So a value of \code{Spring} will return the data with \code{Spring} and \code{spring}.
 }
 \examples{
-\dontrun{
-rcax_GET("ca/tables")
-}
+rcax_filter(list(commonpopname="GRCAT"))
+rcax_filter(list(popid=c(7,8)))
 }
 \author{
 EE Holmes

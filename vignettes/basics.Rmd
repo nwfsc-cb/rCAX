@@ -27,19 +27,102 @@ tab <- rcax_tables(cols=c("name", "id"))
 head(tab)
 ```
 
-## Get a NOSA table for a popid
+## Show internal tables
 
-Here the columns are restricted. `popid` is passed in as a query param to limit the query to popid=7.
+These are internal tables. Access with `rCAX:::`
+
+* `caxesu` The ESU and DPS names, which appear in the `esu_dps` column in tables.
+* `caxpops` The Populations table with all the population metadata, like NMFS_PopID and MPG.
+* `caxsuperpops` The SuperPopulations table.
+
+```{r}
+rCAX:::caxesu[1:2]
+```
+
+```{r}
+colnames(rCAX:::caxpops)
+```
+
+## Table queries
+
+The following table query functions are available:
+
+* `rcax_nosa()` The NOSA table
+* `rcax_escdata()` The EscData table
+* `rcax_superpops()` The SuperPopulations table
+
+The basic functionality is shown with the NOSA table but the syntax is the same for the other table functions.
+
+## Show the columns for the NOSA table
+
+Get the table and show all the column names. Only first 10 are shown.
+```{r}
+rcax_nosa(type="colnames")[1:10]
+```
+
+## Get records from the NOSA table
+
+Here the columns returned are restricted by `cols`. The table is filtered with `flist` to be just the columns with `popid` equal to 7.
 ```{r}
 tab <- rcax_nosa(
-  qlist=list(popid=7), 
-  cols=c("popid", "spawningyear", "nosaij", "nosaej"))
+  flist = list(popid = 7),
+  cols=c("popid", "spawningyear", "tsaej", "nosaej"))
 head(tab)
 ```
 
-## Get a NOSA table with all the columns
+Return data for a single ESU.
+```{r eval=FALSE}
+tab <- rcax_nosa(
+  flist = list(esu_dps = "Salmon, Chinook (Snake River fall-run ESU)"),
+  cols=c("popid", "spawningyear", "tsaej", "nosaej"))
+```
 
-Get the table and show all the column names.
+Keep in mind that not all ESU and DPS are in the CAX database. Go to https://www.streamnet.org/data/hli/ to do a search to quickly see what is in the NOSA table.
+
+## Filtering
+
+The `flist` argument is a list with the columns and values you want to filter on. Here are some examples:
+
+Filter based on one value.
+```
+flist = list(esu_dps = "Steelhead (Middle Columbia River DPS)")
+```
+
+Filter based on multiple values. In this case, data with popid 7, 8 or 9 are returned.
+```
+flist = list(popid = c(7,8,9))
+```
+
+Filter based on two columns. Here we getting the the summer run data for one ESU. Note the values are not case sensitive so "Summer" will return both "Summer" and "summer".
+```
+flist = list(esu_dps = "Salmon, Chinook (Snake River spring/summer-run ESU)", run = c("Summer"))
+```
+Unfortunately there seems to be a server-side problem with passing in multiple values with multiple columns. This works
+```
+flist = list(run = c("Summer", "Spring"))
+```
+But this throws an error.
+```
+flist = list(esu_dps = "Salmon, Chinook (Snake River spring/summer-run ESU)", run = c("Summer", "Spring"))
+```
+
+## Increase the number of records returned
+
+The default maximum number of records is 1000. You can increase (or decrease) this by passing in the limit query parameter.
+
 ```{r}
-rcax_nosa(type="colnames")
+tab <- rcax_nosa(
+  qlist = list(limit=1),
+  cols=c("popid", "spawningyear", "tsaej"))
+tab
+```
+
+Increase the limit to 2000 to ensure all the data are returned. Not run.
+```{r eval=FALSE}
+
+tab <- rcax_nosa(
+  flist = list(esu_dps="Salmon, Chinook (Snake River spring/summer-run ESU)")
+  qlist = list(limit=2000),
+  cols=c("popid", "spawningyear", "tsaej"))
+tab
 ```

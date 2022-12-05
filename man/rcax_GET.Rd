@@ -35,5 +35,5 @@ rcax_GET("ca/tables")
 \references{
 API docs at \url{https://www.streamnet.org/resources/exchange-tools/rest-api-documentation/}
 
-This function is modeled off the functions in \url{https://github.com/ropensci/rredlist}
+This function is modeled off \code{rl_GET()} in \url{https://github.com/ropensci/rredlist}
 }

@@ -64,7 +64,7 @@
   </a>
   <ul class="dropdown-menu" role="menu"><li class="dropdown-header">Releases</li>
     <li>
-      <a href="https://github.com/nwfsc-math-mbio/rCAX/releases/tag/v0.1.0" class="external-link">Version 0.1.0</a>
+      <a href="https://github.com/nwfsc-math-mbio/rCAX/releases/tag/v0.4.0" class="external-link">Version 0.4.0</a>
     </li>
     <li class="divider">
     <li>
@@ -90,18 +90,46 @@
     </div>
 
     <table class="ref-index"><colgroup><col class="alias"><col class="title"></colgroup><tbody><tr><th colspan="2">
-          <h2 id="all-functions">All functions <a href="#all-functions" class="anchor" aria-hidden="true"></a></h2>
+          <h2 id="table-queries">Table Queries <a href="#table-queries" class="anchor" aria-hidden="true"></a></h2>
+          <p class="section-desc"></p><p>Main functions for querying the CAX HLI database.</p>
+        </th>
+      </tr></tbody><tbody><tr><td>
+          <p><code><a href="rcax_nosa.html">rcax_nosa()</a></code> </p>
+        </td>
+        <td><p>Get nosa table for a popid</p></td>
+      </tr><tr><td>
+          <p><code><a href="rcax_escdata.html">rcax_escdata()</a></code> </p>
+        </td>
+        <td><p>Get EscData table</p></td>
+      </tr><tr><td>
+          <p><code><a href="rcax_superpops.html">rcax_superpops()</a></code> </p>
+        </td>
+        <td><p>Get SuperPopulations table</p></td>
+      </tr><tr><td>
+          <p><code><a href="rcax_tables.html">rcax_tables()</a></code> </p>
+        </td>
+        <td><p>Get the list of CAX tables with ids</p></td>
+      </tr><tr><td>
+          <p><code><a href="rcax_table_query.html">rcax_table_query()</a></code> </p>
+        </td>
+        <td><p>Returns a filtered table or colnames</p></td>
+      </tr></tbody><tbody><tr><th colspan="2">
+          <h2 id="package-information">Package Information <a href="#package-information" class="anchor" aria-hidden="true"></a></h2>
           <p class="section-desc"></p>
         </th>
       </tr></tbody><tbody><tr><td>
-          <p><code><a href="check_key.html">check_key()</a></code> </p>
-        </td>
-        <td><p>Get the key from the user system environment variable</p></td>
-      </tr><tr><td>
           <p><code><a href="rCAX-package.html">rCAX-package</a></code> <code><a href="rCAX-package.html">rCAX</a></code> </p>
         </td>
         <td><p>rCAX</p></td>
       </tr><tr><td>
+          <p><code><a href="rcax_citation.html">rcax_citation()</a></code> </p>
+        </td>
+        <td><p>Get the citation CAX version</p></td>
+      </tr></tbody><tbody><tr><th colspan="2">
+          <h2 id="connecting-to-api">Connecting to API <a href="#connecting-to-api" class="anchor" aria-hidden="true"></a></h2>
+          <p class="section-desc"></p><p>Functions for connecting to the API. These are for internal and developers use.</p>
+        </th>
+      </tr></tbody><tbody><tr><td>
           <p><code><a href="rcax_GET.html">rcax_GET()</a></code> </p>
         </td>
         <td><p>Make a GET call to API</p></td>
@@ -110,45 +138,25 @@
         </td>
         <td><p>Set the base API url</p></td>
       </tr><tr><td>
-          <p><code><a href="rcax_citation.html">rcax_citation()</a></code> </p>
+          <p><code><a href="rcax_ua.html">rcax_ua()</a></code> </p>
         </td>
-        <td><p>Get the citation CAX version</p></td>
-      </tr><tr><td>
-          <p><code><a href="rcax_escdata.html">rcax_escdata()</a></code> </p>
-        </td>
-        <td><p>Get EscData table</p></td>
-      </tr><tr><td>
-          <p><code><a href="rcax_filter.html">rcax_filter()</a></code> </p>
-        </td>
-        <td><p>Create filter to add to GET call</p></td>
+        <td><p>Make the user agent string</p></td>
       </tr><tr><td>
           <p><code><a href="rcax_key.html">rcax_key()</a></code> </p>
         </td>
         <td><p>Print message re how to get CAX API key</p></td>
       </tr><tr><td>
-          <p><code><a href="rcax_nosa.html">rcax_nosa()</a></code> </p>
+          <p><code><a href="check_key.html">check_key()</a></code> </p>
         </td>
-        <td><p>Get nosa table for a popid</p></td>
+        <td><p>Get the key from the user system environment variable</p></td>
       </tr><tr><td>
           <p><code><a href="rcax_parse.html">rcax_parse()</a></code> </p>
         </td>
         <td><p>Parse results from API call</p></td>
       </tr><tr><td>
-          <p><code><a href="rcax_superpops.html">rcax_superpops()</a></code> </p>
+          <p><code><a href="rcax_filter.html">rcax_filter()</a></code> </p>
         </td>
-        <td><p>Get SuperPopulations table</p></td>
-      </tr><tr><td>
-          <p><code><a href="rcax_table_query.html">rcax_table_query()</a></code> </p>
-        </td>
-        <td><p>Returns a filtered table or colnames</p></td>
-      </tr><tr><td>
-          <p><code><a href="rcax_tables.html">rcax_tables()</a></code> </p>
-        </td>
-        <td><p>Get the list of CAX tables with ids</p></td>
-      </tr><tr><td>
-          <p><code><a href="rcax_ua.html">rcax_ua()</a></code> </p>
-        </td>
-        <td><p>Make the user agent string</p></td>
+        <td><p>Create filter to add to GET call</p></td>
       </tr></tbody></table></div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

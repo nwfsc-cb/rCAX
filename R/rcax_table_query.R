@@ -64,6 +64,7 @@ rcax_table_query <- function(
   # set up query list
   query_list <- list(table_id = GETargs$table_id)
   if(!is.null(qlist)) query_list <- c(query_list, qlist)
+  if(!is.null(flist)) query_list <- c(query_list, list(filter=rcax_filter(flist)))
   # if just returning colnames, set limit to 1
   if(type=="colnames") query_list$limit <- 1
   
@@ -71,12 +72,17 @@ rcax_table_query <- function(
   tab <- rcax_parse(rcax_GET("ca", GETargs$key, query=query_list, ...), GETargs$parse)
   tab <- tab[[GETargs$recordloc]]
   
+  if(is.null(tab) || length(tab)==0){
+    if(is.null(flist)) return("No data were returned")
+    return("No data were returned. Check that you did not misspell a column name in your filter list (flist).")
+  }
+  
   # if type is colnames, return that
   if(type=="colnames") return(colnames(tab))
   
   # if type is data.frame, filter and sort
   for(i in sortcols)
-    if(sortcols[i] %in% colnames(tab)) tab <- tab[order(tab[sortcols[i]]),]
+    if(i %in% colnames(tab)) tab <- tab[order(tab[[i]]),]
   if(!is.null(cols)) tab <- tab[,cols]
   tab
 }

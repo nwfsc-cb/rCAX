@@ -9,6 +9,9 @@ rcax_ua()
 \description{
 Make the user agent string
 }
+\examples{
+rcax_ua()
+}
 \references{
 This function is modeled off the functions in \url{https://github.com/ropensci/rredlist}
 }

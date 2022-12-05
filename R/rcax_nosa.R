@@ -34,7 +34,7 @@ rcax_nosa <- function(
     tablename = "NOSA",
     flist = NULL,
     qlist = NULL, 
-    cols = c("recoverydomain", "esu_dps", "commonpopname", "commonname", "run", "popid", "majorpopgroup", "spawningyear", "nosaij", "nosaej"),
+    cols = c("recoverydomain", "esu_dps", "commonpopname", "commonname", "run", "popid", "majorpopgroup", "spawningyear", "tsaij", "tsaej", "nosaij", "nosaej"),
     sortcols = c("spawningyear", "popid"),
     type = c("data.frame", "colnames"), 
     GETargs = list(table_id = NULL, recordloc = "records", key = NULL, parse = TRUE), ...) {
@@ -42,15 +42,11 @@ rcax_nosa <- function(
   assert_is(flist, 'list')
   assert_is(qlist, 'list')
   
-  # If user passed in popid in flist, move this to extra so appears as a query param
-  # Seems to work as a query param
-  if(("popid" %in% names(flist)) & ("popid" %in% names(qlist)))
+  if(("popid" %in% names(flist)) & ("popid" %in% names(qlist))){
      cat("popid appears in both flist and qlist. Ignoring the value in qlist.\n")
-  if("popid" %in% names(flist)){
-    if(is.null(qlist)) qlist <- list(popid = flist$popid)
-      else qlist$popid <- flist$popid
+    qlist$popid <- NULL
   }
-  
+
   # API call and table filtering and sorting
   rcax_table_query(
     tablename = tablename, 
