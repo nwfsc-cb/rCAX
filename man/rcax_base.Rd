@@ -9,3 +9,6 @@ rcax_base()
 \description{
 Set the base API url
 }
+\examples{
+rcax_base()
+}

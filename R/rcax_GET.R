@@ -16,7 +16,7 @@
 #' rcax_GET("ca/tables")
 #' }
 #' @references 
-#' This function is modeled off the functions in \url{https://github.com/ropensci/rredlist}
+#' This function is modeled off `rl_GET()` in \url{https://github.com/ropensci/rredlist}
 
 rcax_GET <- function(path, key = NULL, query=NULL, ...){
   cli <- crul::HttpClient$new(
@@ -33,7 +33,7 @@ rcax_GET <- function(path, key = NULL, query=NULL, ...){
 #' Set the base API url
 #'
 #' @export
-#' @example
+#' @examples
 #' rcax_base()
 #' @rdname rcax_base
 rcax_base <- function() "https://api.streamnet.org/api/v1"
@@ -71,7 +71,7 @@ check_key <- function(key){
 #' Make the user agent string
 #'
 #' @export
-#' @example 
+#' @examples 
 #' rcax_ua()
 #' @rdname rcax_ua
 #' @references 

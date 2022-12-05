@@ -74,7 +74,7 @@ rcax_nosa(flist=list(esu_dps="Salmon, coho (Oregon Coast ESU)") return values fo
   </a>
   <ul class="dropdown-menu" role="menu"><li class="dropdown-header">Releases</li>
     <li>
-      <a href="https://github.com/nwfsc-math-mbio/rCAX/releases/tag/v0.1.0" class="external-link">Version 0.1.0</a>
+      <a href="https://github.com/nwfsc-math-mbio/rCAX/releases/tag/v0.4.0" class="external-link">Version 0.4.0</a>
     </li>
     <li class="divider">
     <li>
@@ -118,7 +118,7 @@ via <code>flist</code>. See <code><a href="rcax_filter.html">rcax_filter()</a></
 <span>  flist <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  qlist <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  cols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"recoverydomain"</span>, <span class="st">"esu_dps"</span>, <span class="st">"commonpopname"</span>, <span class="st">"commonname"</span>, <span class="st">"run"</span>, <span class="st">"popid"</span>,</span>
-<span>    <span class="st">"majorpopgroup"</span>, <span class="st">"spawningyear"</span>, <span class="st">"nosaij"</span>, <span class="st">"nosaej"</span><span class="op">)</span>,</span>
+<span>    <span class="st">"majorpopgroup"</span>, <span class="st">"spawningyear"</span>, <span class="st">"tsaij"</span>, <span class="st">"tsaej"</span>, <span class="st">"nosaij"</span>, <span class="st">"nosaej"</span><span class="op">)</span>,</span>
 <span>  sortcols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"spawningyear"</span>, <span class="st">"popid"</span><span class="op">)</span>,</span>
 <span>  type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"data.frame"</span>, <span class="st">"colnames"</span><span class="op">)</span>,</span>
 <span>  GETargs <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>table_id <span class="op">=</span> <span class="cn">NULL</span>, recordloc <span class="op">=</span> <span class="st">"records"</span>, key <span class="op">=</span> <span class="cn">NULL</span>, parse <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
@@ -183,36 +183,36 @@ is set automatically using a saved data frame from a <code><a href="rcax_tables.
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">a</span> <span class="op">&lt;-</span> <span class="fu">rcax_nosa</span><span class="op">(</span>qlist<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>popid<span class="op">=</span><span class="fl">7</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">a</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"popid"</span>, <span class="st">"spawningyear"</span>, <span class="st">"nosaij"</span>, <span class="st">"nosaej"</span><span class="op">)</span><span class="op">]</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   popid spawningyear nosaij nosaej</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1     7         2005     38     35</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2     7         2011    615    540</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3     7         2014    570    531</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4     7         2013    511       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5     7         1997     72     72</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6     7         1993    107     99</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    popid spawningyear nosaij nosaej</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31     7         1953   4273   3484</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 46     7         1954    973    816</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16     7         1955    122    106</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17     7         1956   2606   2338</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20     7         1957   1754   1619</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13     7         1958    486    456</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">rcax_nosa</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      recoverydomain                                             esu_dps</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 Interior Columbia               Steelhead (Middle Columbia River DPS)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2      Oregon Coast                     Salmon, coho (Oregon Coast ESU)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 Interior Columbia Salmon, Chinook (Snake River spring/summer-run ESU)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4 Interior Columbia Salmon, Chinook (Snake River spring/summer-run ESU)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5      Oregon Coast                     Salmon, coho (Oregon Coast ESU)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                                                                      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                    commonpopname     commonname    run popid</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1       Deschutes River eastside      Steelhead Summer    58</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                   Salmon River    Coho salmon   Fall   130</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 Catherine Creek spring Chinook Chinook salmon Spring     7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4    Wenaha River spring Chinook Chinook salmon Spring    13</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                   South Umpqua    Coho salmon   Fall   164</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                                Chinook salmon Spring    35</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        majorpopgroup spawningyear nosaij nosaej</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 Cascades Eastern Slope Tributaries         2001   8637       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                          Mid-Coast         2010          1382</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                Grande Ronde/Imnaha         2005     38     35</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                Grande Ronde/Imnaha         1967   1778   1715</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                             Umpqua         1991          2233</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                                            1992    179    166</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        recoverydomain                                             esu_dps</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 495 Interior Columbia Salmon, Chinook (Snake River spring/summer-run ESU)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 441 Interior Columbia Salmon, Chinook (Snake River spring/summer-run ESU)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3   Interior Columbia Salmon, Chinook (Snake River spring/summer-run ESU)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 634 Interior Columbia Salmon, Chinook (Snake River spring/summer-run ESU)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21  Interior Columbia Salmon, Chinook (Snake River spring/summer-run ESU)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 387 Interior Columbia Salmon, Chinook (Snake River spring/summer-run ESU)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                      commonpopname     commonname    run popid</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 495 Catherine Creek spring Chinook Chinook salmon Spring     7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 441 Catherine Creek spring Chinook Chinook salmon Spring     7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3   Catherine Creek spring Chinook Chinook salmon Spring     7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 634 Catherine Creek spring Chinook Chinook salmon Spring     7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21  Catherine Creek spring Chinook Chinook salmon Spring     7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 387                          GRCAT Chinook salmon spring     7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           majorpopgroup spawningyear tsaij tsaej nosaij nosaej</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 495 Grande Ronde/Imnaha         1993   268   257    107     99</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 441 Grande Ronde/Imnaha         1997    72    72     72     72</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3   Grande Ronde/Imnaha         2005   146   134     38     35</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 634 Grande Ronde/Imnaha         2010   973   914    463    438</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21  Grande Ronde/Imnaha         2011  1657  1112    615    540</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 387 Grande Ronde/Imnaha         2013                511       </span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># to print the first 5 column names</span></span></span>
 <span class="r-in"><span><span class="fu">rcax_nosa</span><span class="op">(</span>type<span class="op">=</span><span class="st">"colnames"</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">]</span></span></span>

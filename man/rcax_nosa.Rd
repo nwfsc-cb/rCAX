@@ -9,7 +9,7 @@ rcax_nosa(
   flist = NULL,
   qlist = NULL,
   cols = c("recoverydomain", "esu_dps", "commonpopname", "commonname", "run", "popid",
-    "majorpopgroup", "spawningyear", "nosaij", "nosaej"),
+    "majorpopgroup", "spawningyear", "tsaij", "tsaej", "nosaij", "nosaej"),
   sortcols = c("spawningyear", "popid"),
   type = c("data.frame", "colnames"),
   GETargs = list(table_id = NULL, recordloc = "records", key = NULL, parse = TRUE),

@@ -20,7 +20,7 @@ navbar:
       text: Functions
       icon: far fa-file-code fa-lg
       href: reference/index.html
-
+        
     sourcecode:
       text: Source Code
       icon: fab fa-github fa-lg
@@ -38,10 +38,37 @@ navbar:
       
 news:
   releases:
-  - text: "Version 0.1.0"
-    href: https://github.com/nwfsc-math-mbio/rCAX/releases/tag/v0.1.0
+  - text: "Version 0.4.0"
+    href: https://github.com/nwfsc-math-mbio/rCAX/releases/tag/v0.4.0
 
 authors:
   Elizabeth Holmes:
     href: https://github.com/eeholmes
   Mari Williams:
+  
+reference:
+- title: "Table Queries"
+  desc: >
+    Main functions for querying the CAX HLI database.
+  contents: 
+  - rcax_nosa
+  - rcax_escdata
+  - rcax_superpops
+  - rcax_tables
+  - rcax_table_query
+- title: "Package Information"
+  contents: 
+  - rCAX-package
+  - rcax_citation
+- title: "Connecting to API"
+  desc: >
+    Functions for connecting to the API. These are for 
+    internal and developers use.
+  contents: 
+  - rcax_GET
+  - rcax_base
+  - rcax_ua
+  - rcax_key
+  - check_key
+  - rcax_parse
+  - rcax_filter
