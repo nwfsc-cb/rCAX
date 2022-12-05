@@ -2,9 +2,9 @@
 #' 
 #' The table returned by an API query can be filtered using
 #' the filter query param. The value of the param is JSON. An examples are
-#' * `filter=[{"field":"popid","value":"7","type":"string"}]')`
-#' * `filter=[{"field":"popid","value":[7,8],"type":"list"}]')`
-#' * `filter=[{"field":"esu_dps","value":"Salmon, coho(Oregon Coast ESU)","type":"string"}]')`
+#' * `filter=[{"field":"popid","value":"7","type":"string"}]`
+#' * `filter=[{"field":"popid","value":[7,8],"type":"list"}]`
+#' * `filter=[{"field":"esu_dps","value":"Salmon, Chinook (Snake River spring/summer-run ESU)","type":"string"}]`
 #' 
 #' @export
 #' @param x list of property (column) names, values in this format `list(colname=value)`. If the property can take multiple values, this is passed in as `list(colname=c(value1, value2))`

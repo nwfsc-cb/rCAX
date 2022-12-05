@@ -1,15 +1,15 @@
-#' Get nosa table for a popid
+#' Query the NOSA table
 #' 
-#' Returns nosa table sorted by popid and spawningyear. The default
+#' Returns NOSA table sorted by popid and spawningyear. The default
 #' columns to return are "recoverydomain", "esu_dps", "commonpopname",
-#'  "commonname", "run", "popid", "majorpopgroup", "spawningyear", 
+#'  "commonname", "run", "popid", "majorpopgroup", "spawningyear", "tsaij", "tsaej", 
 #'  "nosaij", "nosaej"
 #'    
 #'  `rcax_nosa()` will download 1000 records from the NOSA table. You will 
 #'  probably want to make a filtered query by passing in value to filter on 
 #'  via `flist`. See `rcax_filter()`. Examples for the NOSA table:
 #'  * `rcax_nosa(flist=list(popid=7)` return values for popid 7.
-#'  * `rcax_nosa(flist=list(esu_dps="Salmon, coho (Oregon Coast ESU)")` return values for one ESU See `caxpops$esu_dps` for ESU_DPS names.
+#'  * `rcax_nosa(flist=list(esu_dps="Salmon, Chinook (Snake River spring/summer-run ESU)")` return values for one ESU. Use `rCAX:::caxesu` to see a list of ESU_DPS names.
 #' @details 
 #' The NOSA table_id is "4EF09E86-2AA8-4C98-A983-A272C2C2C7E3" and 
 #'  is set automatically using a saved data frame from a `rcax_tables()` call. The table is saved in `R/sysdata.rda`.

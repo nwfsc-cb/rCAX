@@ -16,9 +16,9 @@ The JSON for the filter query param
 The table returned by an API query can be filtered using
 the filter query param. The value of the param is JSON. An examples are
 \itemize{
-\item \verb{filter=[\{"field":"popid","value":"7","type":"string"\}]')}
-\item \verb{filter=[\{"field":"popid","value":[7,8],"type":"list"\}]')}
-\item \verb{filter=[\{"field":"esu_dps","value":"Salmon, coho(Oregon Coast ESU)","type":"string"\}]')}
+\item \verb{filter=[\{"field":"popid","value":"7","type":"string"\}]}
+\item \verb{filter=[\{"field":"popid","value":[7,8],"type":"list"\}]}
+\item \verb{filter=[\{"field":"esu_dps","value":"Salmon, Chinook (Snake River spring/summer-run ESU)","type":"string"\}]}
 }
 }
 \details{

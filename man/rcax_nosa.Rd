@@ -2,7 +2,7 @@
 % Please edit documentation in R/rcax_nosa.R
 \name{rcax_nosa}
 \alias{rcax_nosa}
-\title{Get nosa table for a popid}
+\title{Query the NOSA table}
 \usage{
 rcax_nosa(
   tablename = "NOSA",
@@ -35,9 +35,9 @@ rcax_nosa(
 data frame if \code{type="data.frame"} (default) and the colnames if \code{type="colnames"}
 }
 \description{
-Returns nosa table sorted by popid and spawningyear. The default
+Returns NOSA table sorted by popid and spawningyear. The default
 columns to return are "recoverydomain", "esu_dps", "commonpopname",
-"commonname", "run", "popid", "majorpopgroup", "spawningyear",
+"commonname", "run", "popid", "majorpopgroup", "spawningyear", "tsaij", "tsaej",
 "nosaij", "nosaej"
 
 \code{rcax_nosa()} will download 1000 records from the NOSA table. You will
@@ -45,7 +45,7 @@ probably want to make a filtered query by passing in value to filter on
 via \code{flist}. See \code{rcax_filter()}. Examples for the NOSA table:
 \itemize{
 \item \verb{rcax_nosa(flist=list(popid=7)} return values for popid 7.
-\item \verb{rcax_nosa(flist=list(esu_dps="Salmon, coho (Oregon Coast ESU)")} return values for one ESU See \code{caxpops$esu_dps} for ESU_DPS names.
+\item \verb{rcax_nosa(flist=list(esu_dps="Salmon, Chinook (Snake River spring/summer-run ESU)")} return values for one ESU. Use \code{rCAX:::caxesu} to see a list of ESU_DPS names.
 }
 }
 \details{

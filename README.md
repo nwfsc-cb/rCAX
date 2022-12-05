@@ -15,7 +15,7 @@ remotes::install_github("nwfsc-math-bio/rCAX")
 
 First you need to get a pull api key from StreamNet. Then run `usethis::edit_r_environ()` to find or create your `.Renviron` file. Open that file and paste in `CAX_KEY = "whateveryourkeyis"`. Then restart R (Session > Restart R in RStudio).
 
-Read the "Basic functions" vignettes on the documentation to get started. There are two main functions `rcax_nosa()` and `rcax_tables()`. `rcax_nosa()` downloads a NOSA table. `rcax_tables()` downloads the CAX table names and ids.
+Read the [Basic functions vignette](https://nwfsc-math-bio.github.io/rCAX/articles/basics.html) to get started. There are two main functions `rcax_nosa()` and `rcax_tables()`. `rcax_nosa()` downloads a NOSA table. `rcax_tables()` downloads the CAX table names and ids.
 
 To filter (subset) the query, you use a filter list and passed into the table functions as `flist`. Example, to retrieve only NOSA data for popid 7, use
 ```
