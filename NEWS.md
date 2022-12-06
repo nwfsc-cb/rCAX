@@ -1,5 +1,6 @@
 rCAX 0.5.0
 ===================
+https://github.com/nwfsc-math-mbio/rCAX/releases/tag/v0.5.0
 
 * Added `rcax_termsofuse()` and a Terms of Use vignette. Add more links in Readme to StreamNet data use policies.
 * Added `rcax_nosa_xport()` which is the data table available on https://www.streamnet.org/data/hli/ when one downloads a NOSA table
@@ -9,6 +10,7 @@ rCAX 0.5.0
 
 rCAX 0.4.0
 ===================
+https://github.com/nwfsc-math-mbio/rCAX/releases/tag/v0.4.0
 
 * added more sysdata: caxpops The Populations table. I had to download table from (StreamNet pop page)[https://www.streamnet.org/cap/current-hli/current-pop/] since the "Populations" table query is throwing an error). Also added caxesus: ESU_DPS names and caxsuperpops: The SuperPopulations table.
 * created `rcax_table_query()` as the base function for all the table query functions. That way I am not repeating the same code for each table.
@@ -23,11 +25,13 @@ rCAX 0.3.0
 
 rCAX 0.2.0
 ===================
+https://github.com/nwfsc-math-mbio/rCAX/releases/tag/v0.2.0
 
 * Cleaned up `rcax_nosa()` and figured out that you can pass in popid as a query param. Subset the columns.
 * Make `rcax_tables()` to get the table ids that we need for queries.
 
 rCAX 0.1.0
 ===================
+https://github.com/nwfsc-math-mbio/rCAX/releases/tag/v0.1.0
 
 * Got the API get function working

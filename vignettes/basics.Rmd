@@ -15,6 +15,14 @@ knitr::opts_chunk$set(
 )
 ```
 
+## Install and load
+
+Install the latest release (if needed)
+```{r eval=FALSE}
+remotes:::install_github("nwfsc-math-bio/rCAX@*release")`
+```
+
+Load the library.
 ```{r setup}
 library(rCAX)
 ```
@@ -47,6 +55,7 @@ colnames(rCAX:::caxpops)
 
 The following table query functions are available:
 
+* `rcax_nosa_xport()` The NOSA table with extra meta data like NMFS_PopID
 * `rcax_nosa()` The NOSA table
 * `rcax_escdata()` The EscData table
 * `rcax_superpops()` The SuperPopulations table

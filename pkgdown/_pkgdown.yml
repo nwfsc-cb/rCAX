@@ -36,11 +36,6 @@ navbar:
       icon: fas fa-file-contract fa-lg
       href: articles/index.html
       
-news:
-  releases:
-  - text: "Version 0.4.0"
-    href: https://github.com/nwfsc-math-mbio/rCAX/releases/tag/v0.4.0
-
 authors:
   Eli Holmes:
     href: https://github.com/eeholmes

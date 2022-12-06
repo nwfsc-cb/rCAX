@@ -5,10 +5,10 @@ rCAX
 
 ## Installation
 
-Development version
+Install the latest GitHub release
 
 ```r
-remotes::install_github("nwfsc-math-bio/rCAX")
+remotes:::install_github("nwfsc-math-bio/rCAX@*release")
 ```
 
 ## Using
