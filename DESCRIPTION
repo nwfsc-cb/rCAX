@@ -11,7 +11,11 @@ Authors@R:
       person(given = "Mari",
              family = "Williams",
              role = c("ctb"),
-             email = "mari.williams@noaa.gov")
+             email = "mari.williams@noaa.gov"),
+      person(given = "Katie",
+             family = "Barnas",
+             role = c("ctb"),
+             email = "katie.barnas@noaa.gov")
       )
 License: MIT + file LICENSE
 URL: https://github.com/nwfsc-math-bio/rCAX

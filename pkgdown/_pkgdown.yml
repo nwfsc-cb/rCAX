@@ -42,9 +42,16 @@ news:
     href: https://github.com/nwfsc-math-mbio/rCAX/releases/tag/v0.4.0
 
 authors:
-  Elizabeth Holmes:
+  Eli Holmes:
     href: https://github.com/eeholmes
   Mari Williams:
+    href: https://github.com/mari-williams
+  Katie Barnas:
+    href: https://github.com/katiebarnas
+  sidebar:
+    roles: [aut, ctb]
+  before: "This package is brought to you by: NWFSC Math Bio"
+
   
 reference:
 - title: "Table Queries"
