@@ -19,7 +19,7 @@ knitr::opts_chunk$set(
 
 Install the latest release (if needed)
 ```{r eval=FALSE}
-remotes:::install_github("nwfsc-math-bio/rCAX@*release")`
+remotes:::install_github("nwfsc-math-bio/rCAX@*release")
 ```
 
 Load the library.
