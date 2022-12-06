@@ -27,7 +27,7 @@ rcax_nosa(flist=list(esu_dps="Salmon, Chinook (Snake River spring/summer-run ESU
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">rCAX</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.5.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.6.0</span>
       </span>
     </div>
 
@@ -168,15 +168,20 @@ is set automatically using a saved data frame from a <code><a href="rcax_tables.
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">a</span> <span class="op">&lt;-</span> <span class="fu">rcax_nosa</span><span class="op">(</span>flist<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>popid<span class="op">=</span><span class="fl">7</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="va">a</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"popid"</span>, <span class="st">"spawningyear"</span>, <span class="st">"nosaij"</span>, <span class="st">"nosaej"</span><span class="op">)</span><span class="op">]</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    popid spawningyear nosaij nosaej</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 31     7         1953   4273   3484</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 46     7         1954    973    816</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16     7         1955    122    106</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17     7         1956   2606   2338</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20     7         1957   1754   1619</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13     7         1958    486    456</span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># return popid of first record</span></span></span>
+<span class="r-in"><span><span class="co"># Note the part after $ is case sensitive</span></span></span>
+<span class="r-in"><span><span class="va">id</span> <span class="op">&lt;-</span> <span class="fu">rcax_nosa</span><span class="op">(</span>qlist<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>limit<span class="op">=</span><span class="fl">1</span><span class="op">)</span><span class="op">)</span><span class="op">$</span><span class="va">popid</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">a</span> <span class="op">&lt;-</span> <span class="fu">rcax_nosa</span><span class="op">(</span>flist<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>popid<span class="op">=</span><span class="va">id</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">a</span> <span class="op">&lt;-</span> <span class="va">a</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"popid"</span>, <span class="st">"spawningyear"</span>, <span class="st">"nosaij"</span>, <span class="st">"nosaej"</span><span class="op">)</span><span class="op">]</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">a</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   popid spawningyear nosaij nosaej</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1    58         1990    922       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2    58         1991   1230       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3    58         1992    739       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4    58         1993    335       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5    58         1994    318       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6    58         1995    460       </span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># to print the first 5 column names</span></span></span>
 <span class="r-in"><span><span class="fu">rcax_nosa</span><span class="op">(</span>type<span class="op">=</span><span class="st">"colnames"</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">]</span></span></span>
@@ -193,7 +198,7 @@ is set automatically using a saved data frame from a <code><a href="rcax_tables.
 
 
       <footer><div class="copyright">
-  <p></p><p>Developed by <a href="https://github.com/eeholmes" class="external-link">Eli Holmes</a>.</p>
+  <p></p><p>NWFSC Math Bio Data and Metrics team: <a href="https://github.com/eeholmes" class="external-link">Eli Holmes</a>, <a href="https://github.com/mari-williams" class="external-link">Mari Williams</a>, <a href="https://github.com/katiebarnas" class="external-link">Katie Barnas</a>.</p>
 </div>
 
 <div class="pkgdown">

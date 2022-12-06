@@ -96,6 +96,7 @@ rcax_table_query <- function(
     if(length(cols)==0) return('The table includes no data. Did you specify cols that do not appear in the table? Use rcax_nosa_xport(type="colnames")" to see the colnames. Names are case insensitive.')
     tab <- tab[,cols]
   }
+  if(!is.null(dim(tab))) rownames(tab) <- NULL
   tab
 }
 

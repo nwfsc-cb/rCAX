@@ -1,35 +1,17 @@
 #' Return SAR table from CAP Fish HLIs Tabular Query
-#' 
-#' Returns SAR table with some additional metadata (such as NMFS_PopID and
-#'  update dates). This is the table that one can download from the 
-#'  [CAP Fish HLIs Tabular Query](https://www.streamnet.org/data/hli/).
-#'    
-#'  `rcax_sar_xport()` will download 1000 records. You will 
-#'  want to make a filtered query by passing in values to filter on 
-#'  via `flist`. Keep in mind that the field names
-#'  and values are case insensitive. Using `POPID`, `popid` and `PopID`
-#'  will have the same effect. Examples:
-#'  * `rcax_sar_xport(flist=list(popid=7)` return values for popid 7.
-#'  * `rcax_sar_xport(flist=list(nmfs_popid=6)` return values for NMFS_PopID 6.
-#'  * `rcax_sar_xport(flist=list(esu_dps="Salmon, Chinook (Snake River spring/summer-run ESU)")` return values for one ESU. Use `rCAX:::caxesu` to see a list of ESU_DPS names.
-#'  
-#' @details 
-#' The table_id is set automatically using a saved data frame from a `rcax_tables()` call. The table is saved in `R/sysdata.rda`.
-#' 
-#' The table has a few columns that do not appear in the Excel files that 
-#' one can download from StreamNet: "species", "publish", "num", 
-#' "hli", "agency", "esudps", "hli_id". "esudps" is a slight variant on
-#'  "esu_dps" and is removed. "num" is a sort flag and is removed.
-#'  "publish" will always be Yes but is left in. The other columns are left in. The colnames are re-sorted into the order found in the downloaded
-#'  Excel files with the extra column added to the end.
 #'  
 #' @export
 #' @template info
 #' @template tableargs
+#' @template xportfuns
 #' @seealso `rcax_nosa_xport()`, `rcax_table_query()`, `rcax_filter()`, `rcax_key()`
 #' @examples 
+#' # return NMFS_PopID of first record
+#' # Note the part after $ is case sensitive
+#' id <- rcax_sar_xport(qlist=list(limit=1))$nmfs_popid
+#' 
 #' a <- rcax_sar_xport(
-#'          flist=list(nmfs_popid=56),
+#'          flist=list(nmfs_popid=id),
 #'          cols=c("nmfs_popid", "outmigrationyear", "sar")
 #'          )
 #' head(a)

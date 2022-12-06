@@ -19,8 +19,13 @@
 #' @template tableargs
 #' @seealso `rcax_nosa_xport()`, `rcax_table_query()`, `rcax_filter()`, `rcax_key()`
 #' @examples 
-#' a <- rcax_nosa(flist=list(popid=7))
-#' a[, c("popid", "spawningyear", "nosaij", "nosaej")] |> head()
+#' # return popid of first record
+#' # Note the part after $ is case sensitive
+#' id <- rcax_nosa(qlist=list(limit=1))$popid
+#' 
+#' a <- rcax_nosa(flist=list(popid=id))
+#' a <- a[, c("popid", "spawningyear", "nosaij", "nosaej")]
+#' head(a)
 #' 
 #' # to print the first 5 column names
 #' rcax_nosa(type="colnames")[1:5]

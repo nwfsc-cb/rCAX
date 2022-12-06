@@ -20,7 +20,7 @@ rcax_escdata() will download 1000 records.'><!-- mathjax --><script src="https:/
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">rCAX</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.5.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.6.0</span>
       </span>
     </div>
 
@@ -150,11 +150,11 @@ is set automatically using a saved data frame from a <code><a href="rcax_tables.
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># First 5 columns of first 5 results</span></span></span>
 <span class="r-in"><span><span class="fu">rcax_escdata</span><span class="op">(</span>cols <span class="op">=</span> <span class="cn">NULL</span>, qlist<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>limit<span class="op">=</span><span class="fl">5</span><span class="op">)</span><span class="op">)</span><span class="op">[</span>,<span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">]</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   ascode countpermile repeatspawners asnid agencyid</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2     98            0                   98       10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1     98            0                   98       10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2     98                                98       15</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 3     98                                98       15</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5     98                                98       15</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1     98                                98       15</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4     98                                98       36</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4     98                                98       15</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5     98                                98       36</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># to print the first 5 column names</span></span></span>
 <span class="r-in"><span><span class="fu">rcax_escdata</span><span class="op">(</span>type<span class="op">=</span><span class="st">"colnames"</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">]</span></span></span>
@@ -170,7 +170,7 @@ is set automatically using a saved data frame from a <code><a href="rcax_tables.
 
 
       <footer><div class="copyright">
-  <p></p><p>Developed by <a href="https://github.com/eeholmes" class="external-link">Eli Holmes</a>.</p>
+  <p></p><p>NWFSC Math Bio Data and Metrics team: <a href="https://github.com/eeholmes" class="external-link">Eli Holmes</a>, <a href="https://github.com/mari-williams" class="external-link">Mari Williams</a>, <a href="https://github.com/katiebarnas" class="external-link">Katie Barnas</a>.</p>
 </div>
 
 <div class="pkgdown">

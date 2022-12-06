@@ -45,7 +45,10 @@ authors:
     href: https://github.com/katiebarnas
   sidebar:
     roles: [aut, ctb]
-  before: "This package is brought to you by: NWFSC Math Bio"
+  before: "This package is brought to you by: NOAA Fisheries Northwest Fisheries Science Center Math Bio Program"
+  footer:
+    roles: [cre, ctb]
+    text: "NWFSC Math Bio Data and Metrics team: "
 
   
 reference:
@@ -55,6 +58,7 @@ reference:
   contents: 
   - rcax_nosa_xport
   - rcax_sar_xport
+  - rcax_pni_xport
   - rcax_nosa
   - rcax_escdata
   - rcax_superpops

@@ -34,34 +34,47 @@ rcax_nosa_xport(
 data frame if \code{type="data.frame"} (default) and the colnames if \code{type="colnames"}
 }
 \description{
-Returns NOSA with some additional metadata (such as NMFS_PopID and
-update dates). This is the table that one can download from the
+Returns the HLI table with some additional metadata (such as NMFS_PopID and update dates).
+This is the table that one can download from the
 \href{https://www.streamnet.org/data/hli/}{CAP Fish HLIs Tabular Query}.
 
-\code{rcax_nosa_xport()} will download 1000 records. You will
-want to make a filtered query by passing in values to filter on
-via \code{flist}. Keep in mind that the field names
-and values are case insensitive. Using \code{POPID}, \code{popid} and \code{PopID}
-will have the same effect. Examples:
+The query will download 1000 records by default; you can change
+this by passing in \code{qlist=list(limit=1100)} for example. To make a
+filtered query e.g. for one ESU or popid) pass in the \code{flist}
+argument. Field names and values are case insensitive, e.g.
+\code{POPID}, \code{popid} and \code{PopID} return the same result.
+If your filter value is not in the table, the returned table
+will be empty. Examples:
 \itemize{
-\item \verb{rcax_nosa_xport(flist=list(popid=7)} return values for popid 7.
-\item \verb{rcax_nosa_xport(flist=list(nmfs_popid=6)} return values for NMFS_PopID 6.
-\item \verb{rcax_nosa_xport(flist=list(esu_dps="Salmon, Chinook (Snake River spring/summer-run ESU)")} return values for one ESU. Use \code{rCAX:::caxesu} to see a list of ESU_DPS names.
+\item \code{flist=list(popid=7)} return values for popid 7.
+\item \code{flist=list(nmfs_popid=6)} return values for NMFS_PopID 6.
+\item \code{flist=list(esu_dps="Salmon, Chinook (Snake River spring/summer-run ESU)")} return values for one ESU. Use \code{rCAX:::caxesu} to see a list of ESU_DPS names.
 }
 }
 \details{
 The table_id is set automatically using a saved data frame from a \code{rcax_tables()} call. The table is saved in \code{R/sysdata.rda}.
 
-The table has a few columns that do not appear in the Excel files that
+The XPORT tables have a few columns that do not appear in the
+Excel files that
 one can download from StreamNet: "species", "publish", "num",
 "hli", "agency", "esudps", "hli_id". "esudps" is a slight variant on
 "esu_dps" and is removed. "num" is a sort flag and is removed.
-"publish" will always be Yes but is left in. The other columns are left in. The colnames are resorted into the order found in the downloaded
-Excel files with the extra column added to the end.
+"publish" will always be Yes but is left in. The other columns are
+left in. The colnames are re-sorted into the order found in the
+downloaded
+Excel files with the extra columns added to the end.
+
+If you want to see the original columns in the original order,
+use \verb{type="colnames} and use that output as the value for
+the \code{cols} argument.
 }
 \examples{
+# return NMFS_PopID of first record
+# Note the part after $ is case sensitive
+id <- rcax_nosa_xport(qlist=list(limit=1))$nmfs_popid
+
 a <- rcax_nosa_xport(
-         flist=list(nmfs_popid=7),
+         flist=list(nmfs_popid=id),
          cols=c("nmfs_popid", "spawningyear", "tsaej", "nosaej")
          )
 head(a)

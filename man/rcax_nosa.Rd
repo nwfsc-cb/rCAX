@@ -53,8 +53,13 @@ The NOSA table_id is "4EF09E86-2AA8-4C98-A983-A272C2C2C7E3" and
 is set automatically using a saved data frame from a \code{rcax_tables()} call. The table is saved in \code{R/sysdata.rda}.
 }
 \examples{
-a <- rcax_nosa(flist=list(popid=7))
-a[, c("popid", "spawningyear", "nosaij", "nosaej")] |> head()
+# return popid of first record
+# Note the part after $ is case sensitive
+id <- rcax_nosa(qlist=list(limit=1))$popid
+
+a <- rcax_nosa(flist=list(popid=id))
+a <- a[, c("popid", "spawningyear", "nosaij", "nosaej")]
+head(a)
 
 # to print the first 5 column names
 rcax_nosa(type="colnames")[1:5]

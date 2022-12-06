@@ -2,7 +2,7 @@ Package: rCAX
 Type: Package
 Title: Coordinated Assessments Client
 Description: An 'API' key is required.
-Version: 0.5.0
+Version: 0.6.0
 Authors@R: 
     c(person(given = "Eli",
              family = "Holmes",
