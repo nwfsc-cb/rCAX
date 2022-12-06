@@ -172,16 +172,15 @@ is set automatically using a saved data frame from a <code><a href="rcax_tables.
     <div id="references">
     <h2>References</h2>
     <p>API docs at <a href="https://www.streamnet.org/resources/exchange-tools/rest-api-documentation/" class="external-link">https://www.streamnet.org/resources/exchange-tools/rest-api-documentation/</a></p>
-<p>This function is modeled off the functions in <a href="https://github.com/ropensci/rredlist" class="external-link">https://github.com/ropensci/rredlist</a></p>
     </div>
     <div id="see-also">
     <h2>See also</h2>
-    <div class="dont-index"><p><code><a href="rcax_table_query.html">rcax_table_query()</a></code>, <code><a href="rcax_filter.html">rcax_filter()</a></code>, <code><a href="rcax_key.html">rcax_key()</a></code></p></div>
+    <div class="dont-index"><p><code><a href="rcax_nosa_xport.html">rcax_nosa_xport()</a></code>, <code><a href="rcax_table_query.html">rcax_table_query()</a></code>, <code><a href="rcax_filter.html">rcax_filter()</a></code>, <code><a href="rcax_key.html">rcax_key()</a></code></p></div>
     </div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">a</span> <span class="op">&lt;-</span> <span class="fu">rcax_nosa</span><span class="op">(</span>qlist<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>popid<span class="op">=</span><span class="fl">7</span><span class="op">)</span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">a</span> <span class="op">&lt;-</span> <span class="fu">rcax_nosa</span><span class="op">(</span>flist<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>popid<span class="op">=</span><span class="fl">7</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">a</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"popid"</span>, <span class="st">"spawningyear"</span>, <span class="st">"nosaij"</span>, <span class="st">"nosaej"</span><span class="op">)</span><span class="op">]</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    popid spawningyear nosaij nosaej</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 31     7         1953   4273   3484</span>
@@ -191,28 +190,8 @@ is set automatically using a saved data frame from a <code><a href="rcax_tables.
 <span class="r-out co"><span class="r-pr">#&gt;</span> 20     7         1957   1754   1619</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 13     7         1958    486    456</span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="fu">rcax_nosa</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>        recoverydomain                                             esu_dps</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 495 Interior Columbia Salmon, Chinook (Snake River spring/summer-run ESU)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 441 Interior Columbia Salmon, Chinook (Snake River spring/summer-run ESU)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3   Interior Columbia Salmon, Chinook (Snake River spring/summer-run ESU)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 634 Interior Columbia Salmon, Chinook (Snake River spring/summer-run ESU)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21  Interior Columbia Salmon, Chinook (Snake River spring/summer-run ESU)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 387 Interior Columbia Salmon, Chinook (Snake River spring/summer-run ESU)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                      commonpopname     commonname    run popid</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 495 Catherine Creek spring Chinook Chinook salmon Spring     7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 441 Catherine Creek spring Chinook Chinook salmon Spring     7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3   Catherine Creek spring Chinook Chinook salmon Spring     7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 634 Catherine Creek spring Chinook Chinook salmon Spring     7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21  Catherine Creek spring Chinook Chinook salmon Spring     7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 387                          GRCAT Chinook salmon spring     7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>           majorpopgroup spawningyear tsaij tsaej nosaij nosaej</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 495 Grande Ronde/Imnaha         1993   268   257    107     99</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 441 Grande Ronde/Imnaha         1997    72    72     72     72</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3   Grande Ronde/Imnaha         2005   146   134     38     35</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 634 Grande Ronde/Imnaha         2010   973   914    463    438</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21  Grande Ronde/Imnaha         2011  1657  1112    615    540</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 387 Grande Ronde/Imnaha         2013                511       </span>
+<span class="r-in"><span><span class="fu">rcax_nosa</span><span class="op">(</span>qlist<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>limit<span class="op">=</span><span class="fl">1</span><span class="op">)</span>, cols<span class="op">=</span><span class="cn">NULL</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "The table includes no data. Did you specify cols that do not appear in the table? Use rcax_nosa_xport(type=\"colnames\")\" to see the colnames. Names are case insensitive."</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># to print the first 5 column names</span></span></span>
 <span class="r-in"><span><span class="fu">rcax_nosa</span><span class="op">(</span>type<span class="op">=</span><span class="st">"colnames"</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">]</span></span></span>

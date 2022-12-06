@@ -51,6 +51,7 @@ reference:
   desc: >
     Main functions for querying the CAX HLI database.
   contents: 
+  - rcax_nosa_xport
   - rcax_nosa
   - rcax_escdata
   - rcax_superpops

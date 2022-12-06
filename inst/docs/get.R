@@ -44,4 +44,7 @@ nosa = httr::GET("https://api.streamnet.org/api/v1/ca.json?table_id=4EF09E86-2AA
 
 data = jsonlite::fromJSON(rawToChar((nosa$content)))
 
-makes a pull successfully - so I think we can pull the whole table if I drop the &page=1&per_page=10
+tab = httr::GET("https://api.streamnet.org/api/v1/ca/1AF2395A-DF16-8615-89AC-409751DA10E4?XApiKey=7A2F1EA9-4882-49E8-B23D-7DC202C2ACA5")
+data = jsonlite::fromJSON(rawToChar((tab$content)))$record_values
+
+b <- rcax_table_query("XPortCA_NOSA_01")

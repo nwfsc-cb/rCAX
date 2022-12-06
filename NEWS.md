@@ -1,12 +1,16 @@
 rCAX 0.5.0
 ===================
 
-* Added `rcax_termsofuse()` and a Terms of Use vignette.
+* Added `rcax_termsofuse()` and a Terms of Use vignette. Add more links in Readme to StreamNet data use policies.
+* Added `rcax_nosa_xport()` which is the data table available on https://www.streamnet.org/data/hli/ when one downloads a NOSA table
+* Made `rcax_table_query()` more robust if the cols passed in do not match what is in the table. It will print a warning and only show cols that do appear. Also I added `tolower(cols)` and `tolower(sortcols)` so that these are case insensitive.
+* Added `nosa_xport_colnames` to `sysdata.rda`. This is somewhat fragile since SteamNet might change the column names. The code to create the system data is in `inst/docs`.
+.
 
 rCAX 0.4.0
 ===================
 
-* added more sysdata: caxpops The Populations table. I had to download table from (StreamNet pop page)[https://www.streamnet.org/cap/current-hli/current-pop/] since the "Populations" table query is throwing an error), caxesus ESU_DPS names, caxsuperpops The SuperPopulations table.
+* added more sysdata: caxpops The Populations table. I had to download table from (StreamNet pop page)[https://www.streamnet.org/cap/current-hli/current-pop/] since the "Populations" table query is throwing an error). Also added caxesus: ESU_DPS names and caxsuperpops: The SuperPopulations table.
 * created `rcax_table_query()` as the base function for all the table query functions. That way I am not repeating the same code for each table.
 * added info to `rcax_table_query()` documentation about the possible query params.
 * added the `rcax_filter()` function to allow filtering the tables. Added examples in basics.Rmd.
