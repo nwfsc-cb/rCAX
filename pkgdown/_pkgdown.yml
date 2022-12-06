@@ -52,9 +52,9 @@ authors:
 
   
 reference:
-- title: "Table Queries"
+- title: "CAP Fish HLIs Tabular Query"
   desc: >
-    Main user functions for querying the CAX HLI database.
+    Functions for returning tables in the same format (columns) as the CAP Fish HLIs Tabular Query.
   contents: 
   - rcax_nosa_xport
   - rcax_sar_xport
@@ -62,7 +62,12 @@ reference:
   - rcax_rpers_xport
   - rcax_juvout_xport
   - rcax_presmolt_xport
+- title: "HLI base table Query"
+  desc: >
+    These are the base tables and are missing metadata (from the Populations table) that are present in the XPort tables.
+  contents: 
   - rcax_nosa
+  - rcax_presmolt
   - rcax_escdata
   - rcax_superpops
   - rcax_tables

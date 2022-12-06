@@ -78,8 +78,8 @@
     </div>
 
     <table class="ref-index"><colgroup><col class="alias"><col class="title"></colgroup><tbody><tr><th colspan="2">
-          <h2 id="table-queries">Table Queries <a href="#table-queries" class="anchor" aria-hidden="true"></a></h2>
-          <p class="section-desc"></p><p>Main user functions for querying the CAX HLI database.</p>
+          <h2 id="cap-fish-hlis-tabular-query">CAP Fish HLIs Tabular Query <a href="#cap-fish-hlis-tabular-query" class="anchor" aria-hidden="true"></a></h2>
+          <p class="section-desc"></p><p>Functions for returning tables in the same format (columns) as the CAP Fish HLIs Tabular Query.</p>
         </th>
       </tr></tbody><tbody><tr><td>
           <p><code><a href="rcax_nosa_xport.html">rcax_nosa_xport()</a></code> </p>
@@ -105,10 +105,18 @@
           <p><code><a href="rcax_presmolt_xport.html">rcax_presmolt_xport()</a></code> </p>
         </td>
         <td><p>Return Presmolt Abundance table from CAP Fish HLIs Tabular Query</p></td>
-      </tr><tr><td>
+      </tr></tbody><tbody><tr><th colspan="2">
+          <h2 id="hli-base-table-query">HLI base table Query <a href="#hli-base-table-query" class="anchor" aria-hidden="true"></a></h2>
+          <p class="section-desc"></p><p>These are the base tables and are missing metadata (from the Populations table) that are present in the XPort tables.</p>
+        </th>
+      </tr></tbody><tbody><tr><td>
           <p><code><a href="rcax_nosa.html">rcax_nosa()</a></code> </p>
         </td>
-        <td><p>Return NOSA table</p></td>
+        <td><p>Return NOSA base table</p></td>
+      </tr><tr><td>
+          <p><code><a href="rcax_presmolt.html">rcax_presmolt()</a></code> </p>
+        </td>
+        <td><p>Return Presmolt Abundance base table</p></td>
       </tr><tr><td>
           <p><code><a href="rcax_escdata.html">rcax_escdata()</a></code> </p>
         </td>
