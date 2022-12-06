@@ -79,20 +79,20 @@
 
     <table class="ref-index"><colgroup><col class="alias"><col class="title"></colgroup><tbody><tr><th colspan="2">
           <h2 id="table-queries">Table Queries <a href="#table-queries" class="anchor" aria-hidden="true"></a></h2>
-          <p class="section-desc"></p><p>Main functions for querying the CAX HLI database.</p>
+          <p class="section-desc"></p><p>Main user functions for querying the CAX HLI database.</p>
         </th>
       </tr></tbody><tbody><tr><td>
           <p><code><a href="rcax_nosa_xport.html">rcax_nosa_xport()</a></code> </p>
         </td>
-        <td><p>Query the NOSA XPort table</p></td>
-      </tr><tr><td>
-          <p><code><a href="rcax_nosa.html">rcax_nosa()</a></code> </p>
-        </td>
-        <td><p>Query the NOSA table</p></td>
+        <td><p>Return NOSA table from CAP Fish HLIs Tabular Query</p></td>
       </tr><tr><td>
           <p><code><a href="rcax_sar_xport.html">rcax_sar_xport()</a></code> </p>
         </td>
-        <td><p>Query the SAR XPort table</p></td>
+        <td><p>Return SAR table from CAP Fish HLIs Tabular Query</p></td>
+      </tr><tr><td>
+          <p><code><a href="rcax_nosa.html">rcax_nosa()</a></code> </p>
+        </td>
+        <td><p>Return NOSA table</p></td>
       </tr><tr><td>
           <p><code><a href="rcax_escdata.html">rcax_escdata()</a></code> </p>
         </td>
@@ -105,10 +105,6 @@
           <p><code><a href="rcax_tables.html">rcax_tables()</a></code> </p>
         </td>
         <td><p>Get the list of CAX tables with ids</p></td>
-      </tr><tr><td>
-          <p><code><a href="rcax_table_query.html">rcax_table_query()</a></code> </p>
-        </td>
-        <td><p>Returns a filtered table or colnames</p></td>
       </tr></tbody><tbody><tr><th colspan="2">
           <h2 id="package-information">Package Information <a href="#package-information" class="anchor" aria-hidden="true"></a></h2>
           <p class="section-desc"></p>
@@ -130,6 +126,10 @@
           <p class="section-desc"></p><p>Functions for connecting to the API. These are for internal and developers use.</p>
         </th>
       </tr></tbody><tbody><tr><td>
+          <p><code><a href="rcax_table_query.html">rcax_table_query()</a></code> </p>
+        </td>
+        <td><p>Returns a filtered table or colnames</p></td>
+      </tr><tr><td>
           <p><code><a href="rcax_GET.html">rcax_GET()</a></code> </p>
         </td>
         <td><p>Make a GET call to API</p></td>

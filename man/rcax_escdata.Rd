@@ -42,7 +42,8 @@ is set automatically using a saved data frame from a \code{rcax_tables()} call. 
 \code{rcax_escdata()} will download 1000 records.
 }
 \examples{
-rcax_escdata(cols = NULL, qlist=list(limit=5))
+# First 5 columns of first 5 results
+rcax_escdata(cols = NULL, qlist=list(limit=5))[,1:5]
 
 # to print the first 5 column names
 rcax_escdata(type="colnames")[1:5]

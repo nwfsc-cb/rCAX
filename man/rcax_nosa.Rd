@@ -2,7 +2,7 @@
 % Please edit documentation in R/rcax_nosa.R
 \name{rcax_nosa}
 \alias{rcax_nosa}
-\title{Query the NOSA table}
+\title{Return NOSA table}
 \usage{
 rcax_nosa(
   tablename = "NOSA",
@@ -55,8 +55,6 @@ is set automatically using a saved data frame from a \code{rcax_tables()} call. 
 \examples{
 a <- rcax_nosa(flist=list(popid=7))
 a[, c("popid", "spawningyear", "nosaij", "nosaej")] |> head()
-
-rcax_nosa(qlist=list(limit=1), cols=NULL)
 
 # to print the first 5 column names
 rcax_nosa(type="colnames")[1:5]

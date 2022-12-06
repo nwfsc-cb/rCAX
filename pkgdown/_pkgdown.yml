@@ -51,15 +51,14 @@ authors:
 reference:
 - title: "Table Queries"
   desc: >
-    Main functions for querying the CAX HLI database.
+    Main user functions for querying the CAX HLI database.
   contents: 
   - rcax_nosa_xport
-  - rcax_nosa
   - rcax_sar_xport
+  - rcax_nosa
   - rcax_escdata
   - rcax_superpops
   - rcax_tables
-  - rcax_table_query
 - title: "Package Information"
   contents: 
   - rCAX-package
@@ -70,6 +69,7 @@ reference:
     Functions for connecting to the API. These are for 
     internal and developers use.
   contents: 
+  - rcax_table_query
   - rcax_GET
   - rcax_base
   - rcax_ua

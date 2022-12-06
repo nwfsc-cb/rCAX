@@ -2,7 +2,7 @@
 % Please edit documentation in R/rcax_sar_xport.R
 \name{rcax_sar_xport}
 \alias{rcax_sar_xport}
-\title{Query the SAR XPort table}
+\title{Return SAR table from CAP Fish HLIs Tabular Query}
 \usage{
 rcax_sar_xport(
   tablename = "XPortCA_SAR_01",
@@ -61,7 +61,7 @@ Excel files with the extra column added to the end.
 }
 \examples{
 a <- rcax_sar_xport(
-         flist=list(nmfs_popid=7),
+         flist=list(nmfs_popid=56),
          cols=c("nmfs_popid", "outmigrationyear", "sar")
          )
 head(a)

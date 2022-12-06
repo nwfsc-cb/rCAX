@@ -1,4 +1,4 @@
-#' Query the NOSA table
+#' Return NOSA table
 #' 
 #' Returns NOSA table sorted by popid and spawningyear. The default
 #' columns to return are "recoverydomain", "esu_dps", "commonpopname",
@@ -21,8 +21,6 @@
 #' @examples 
 #' a <- rcax_nosa(flist=list(popid=7))
 #' a[, c("popid", "spawningyear", "nosaij", "nosaej")] |> head()
-#' 
-#' rcax_nosa(qlist=list(limit=1), cols=NULL)
 #' 
 #' # to print the first 5 column names
 #' rcax_nosa(type="colnames")[1:5]

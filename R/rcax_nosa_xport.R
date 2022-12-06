@@ -1,4 +1,4 @@
-#' Query the NOSA XPort table
+#' Return NOSA table from CAP Fish HLIs Tabular Query
 #' 
 #' Returns NOSA with some additional metadata (such as NMFS_PopID and
 #'  update dates). This is the table that one can download from the 

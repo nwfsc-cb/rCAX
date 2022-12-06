@@ -1,4 +1,4 @@
-#' Query the SAR XPort table
+#' Return SAR table from CAP Fish HLIs Tabular Query
 #' 
 #' Returns SAR table with some additional metadata (such as NMFS_PopID and
 #'  update dates). This is the table that one can download from the 
@@ -29,7 +29,7 @@
 #' @seealso `rcax_nosa_xport()`, `rcax_table_query()`, `rcax_filter()`, `rcax_key()`
 #' @examples 
 #' a <- rcax_sar_xport(
-#'          flist=list(nmfs_popid=7),
+#'          flist=list(nmfs_popid=56),
 #'          cols=c("nmfs_popid", "outmigrationyear", "sar")
 #'          )
 #' head(a)

@@ -2,7 +2,7 @@
 % Please edit documentation in R/rcax_nosa_xport.R
 \name{rcax_nosa_xport}
 \alias{rcax_nosa_xport}
-\title{Query the NOSA XPort table}
+\title{Return NOSA table from CAP Fish HLIs Tabular Query}
 \usage{
 rcax_nosa_xport(
   tablename = "XPortCA_NOSA_01",
