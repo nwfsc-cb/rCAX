@@ -148,7 +148,54 @@ is set automatically using a saved data frame from a <code><a href="rcax_tables.
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">rcax_escdata</span><span class="op">(</span>cols <span class="op">=</span> <span class="cn">NULL</span>, qlist<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>limit<span class="op">=</span><span class="fl">5</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "The table includes no data. Did you specify cols that do not appear in the table? Use rcax_nosa_xport(type=\"colnames\")\" to see the colnames. Names are case insensitive."</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ascode countpermile repeatspawners asnid agencyid countcidisttype</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2     98            0                   98       10                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3     98                                98       15                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5     98                                98       15                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1     98                                98       15                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4     98                                98       36                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   countciuplim compilerrecordid                   begindate</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                               September, 03 2002 00:00:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                                   March, 01 1973 00:00:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                                 October, 01 1961 00:00:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                                November, 01 1979 00:00:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                                   March, 15 1962 00:00:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                     id                   upddate num</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 0000219F-A662-4A16-8F46-ED171C56990A   March, 27 2006 00:00:00   2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 0000578E-E906-41CA-A778-7EC7A8C06DDA     May, 23 2014 00:00:00   3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5 0001112D-987D-4F27-88B3-EF027074AE6A January, 18 2000 16:53:00   5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 00000A70-075A-4AE1-857D-42BC1048939C    June, 01 2011 00:00:00   1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4 00010D89-9D97-44FD-A9F5-D55C75C4EC6E  August, 16 2010 00:00:00   4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                dataentry</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2         IDFG StreamNet</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3   April Waters, ed JLC</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5        Briana Sounhein</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 Disk 97-12, ed 0611 KG</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4               cshannon</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                                                                                                                                                          countcom</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                                                                                                                                                                                                                                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                                                                                                                                                                                                       No counts made this year.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                                                                                                                                                                                                                         Table 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                                                                                                                                                                                                                                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4 No mainstem estimate was developed and a grand total for spring-run spawning was not made.  Tributary estimates were Mill Creek, 2000, Big Chico Creek, 200, Butte Creek, 2000 and there was no estimate for the Feather River.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   publish                   countdate refid sampmethid</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2     Yes September, 03 2002 00:00:00 46758        213</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3     Yes                             50038         98</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5     Yes                             50061        105</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1     Yes                             53391        203</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4     Yes                             90001         98</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                       enddate calcmethid countvalue trendid timessurveyed</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 September, 03 2002 00:00:00        304          0   44227             1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3   October, 31 1973 00:00:00         98              53571              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5   January, 31 1962 00:00:00        304          3   50321              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1   October, 31 1980 00:00:00        314       1024   54227              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4   October, 14 1962 00:00:00         98              90661              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   asmethod assource countcilowlim milessurveyed countcilevel nullflag</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2       98                            2.9820075                    No</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3       98                                                        Yes</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5       98                                  0.3                    No</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1       98                                                         No</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4       98                                                        Yes</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># to print the first 5 column names</span></span></span>
 <span class="r-in"><span><span class="fu">rcax_escdata</span><span class="op">(</span>type<span class="op">=</span><span class="st">"colnames"</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">]</span></span></span>

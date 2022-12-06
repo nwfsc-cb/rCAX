@@ -4,6 +4,7 @@ https://github.com/nwfsc-math-mbio/rCAX/releases/tag/v0.5.0
 
 * Added `rcax_termsofuse()` and a Terms of Use vignette. Add more links in Readme to StreamNet data use policies.
 * Added `rcax_nosa_xport()` which is the data table available on https://www.streamnet.org/data/hli/ when one downloads a NOSA table
+* Added `rcax_sar_xport()` which is the data table available on https://www.streamnet.org/data/hli/ when one downloads a SAR table
 * Made `rcax_table_query()` more robust if the cols passed in do not match what is in the table. It will print a warning and only show cols that do appear. Also I added `tolower(cols)` and `tolower(sortcols)` so that these are case insensitive.
 * Added `nosa_xport_colnames` to `sysdata.rda`. This is somewhat fragile since SteamNet might change the column names. The code to create the system data is in `inst/docs`.
 .

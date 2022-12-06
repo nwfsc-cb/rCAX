@@ -163,7 +163,12 @@ This is a list with the column name and value. See <code><a href="rcax_filter.ht
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">a</span> <span class="op">&lt;-</span> <span class="fu">rcax_table_query</span><span class="op">(</span>tablename<span class="op">=</span><span class="st">"NOSA"</span>, qlist <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>limit<span class="op">=</span><span class="fl">5</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">a</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"popid"</span>, <span class="st">"spawningyear"</span>, <span class="st">"nosaij"</span>, <span class="st">"nosaej"</span><span class="op">)</span><span class="op">]</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in a[, c("popid", "spawningyear", "nosaij", "nosaej")]:</span> incorrect number of dimensions</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   popid spawningyear nosaij nosaej</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1    58         2001   8637       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2   130         2010          1382</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3     7         2005     38     35</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4    13         1967   1778   1715</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5   164         1991          2233</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>

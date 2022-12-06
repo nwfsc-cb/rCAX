@@ -83,6 +83,7 @@
 <p><a href="https://github.com/nwfsc-math-mbio/rCAX/releases/tag/v0.5.0" class="external-link uri">https://github.com/nwfsc-math-mbio/rCAX/releases/tag/v0.5.0</a></p>
 <ul><li>Added <code><a href="../reference/rcax_termsofuse.html">rcax_termsofuse()</a></code> and a Terms of Use vignette. Add more links in Readme to StreamNet data use policies.</li>
 <li>Added <code><a href="../reference/rcax_nosa_xport.html">rcax_nosa_xport()</a></code> which is the data table available on <a href="https://www.streamnet.org/data/hli/" class="external-link uri">https://www.streamnet.org/data/hli/</a> when one downloads a NOSA table</li>
+<li>Added <code><a href="../reference/rcax_sar_xport.html">rcax_sar_xport()</a></code> which is the data table available on <a href="https://www.streamnet.org/data/hli/" class="external-link uri">https://www.streamnet.org/data/hli/</a> when one downloads a SAR table</li>
 <li>Made <code><a href="../reference/rcax_table_query.html">rcax_table_query()</a></code> more robust if the cols passed in do not match what is in the table. It will print a warning and only show cols that do appear. Also I added <code>tolower(cols)</code> and <code>tolower(sortcols)</code> so that these are case insensitive.</li>
 <li>Added <code>nosa_xport_colnames</code> to <code>sysdata.rda</code>. This is somewhat fragile since SteamNet might change the column names. The code to create the system data is in <code>inst/docs</code>. .</li>
 </ul></div>

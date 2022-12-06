@@ -48,3 +48,5 @@ tab = httr::GET("https://api.streamnet.org/api/v1/ca/1AF2395A-DF16-8615-89AC-409
 data = jsonlite::fromJSON(rawToChar((tab$content)))$record_values
 
 b <- rcax_table_query("XPortCA_NOSA_01")
+
+b <- rcax_table_query("XPortCA_SAR_01")
