@@ -6,6 +6,7 @@ rCAX 0.6.0
 * Dynamically find a nmfs_id or popid for the examples so that the examples never return an empty table.
 * in `rcax_table_query()` set rownames to NULL in returned tables
 * Added `ggplot2` to Suggests in DESCRIPTION file since I use it in some examples and will use in vignettes.
+* removed {stringr} and `|>` dependency
 
 rCAX 0.5.0
 ===================
