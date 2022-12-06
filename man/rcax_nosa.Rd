@@ -53,10 +53,10 @@ The NOSA table_id is "4EF09E86-2AA8-4C98-A983-A272C2C2C7E3" and
 is set automatically using a saved data frame from a \code{rcax_tables()} call. The table is saved in \code{R/sysdata.rda}.
 }
 \examples{
-a <- rcax_nosa(qlist=list(popid=7))
+a <- rcax_nosa(flist=list(popid=7))
 a[, c("popid", "spawningyear", "nosaij", "nosaej")] |> head()
 
-rcax_nosa() |> head()
+rcax_nosa(qlist=list(limit=1), cols=NULL)
 
 # to print the first 5 column names
 rcax_nosa(type="colnames")[1:5]
@@ -64,9 +64,7 @@ rcax_nosa(type="colnames")[1:5]
 }
 \references{
 API docs at \url{https://www.streamnet.org/resources/exchange-tools/rest-api-documentation/}
-
-This function is modeled off the functions in \url{https://github.com/ropensci/rredlist}
 }
 \seealso{
-\code{rcax_table_query()}, \code{rcax_filter()}, \code{rcax_key()}
+\code{rcax_nosa_xport()}, \code{rcax_table_query()}, \code{rcax_filter()}, \code{rcax_key()}
 }

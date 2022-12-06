@@ -80,10 +80,22 @@ rcax_table_query <- function(
   # if type is colnames, return that
   if(type=="colnames") return(colnames(tab))
   
+  # the colnames are all in lower case
+  colnames(tab) <- tolower(colnames(tab))
+  cols <- tolower(cols)
+  sortcols <- tolower(sortcols)
+  
   # if type is data.frame, filter and sort
   for(i in sortcols)
     if(i %in% colnames(tab)) tab <- tab[order(tab[[i]]),]
-  if(!is.null(cols)) tab <- tab[,cols]
+  if(!is.null(cols)){
+    if(!all(cols %in% colnames(tab))){
+      warning(paste("Not all names in cols appear in the table. Removing ", paste0(cols[!(cols %in% colnames(tab))], collapse=", ")))
+      cols <- cols[(cols %in% colnames(tab))]
+    }
+  } 
+  if(length(cols)==0) return('The table includes no data. Did you specify cols that do not appear in the table? Use rcax_nosa_xport(type="colnames")" to see the colnames. Names are case insensitive.')
+  tab <- tab[,cols]
   tab
 }
 

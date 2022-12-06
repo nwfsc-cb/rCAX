@@ -17,18 +17,15 @@
 #' @export
 #' @template info
 #' @template tableargs
-#' @seealso `rcax_table_query()`, `rcax_filter()`, `rcax_key()`
+#' @seealso `rcax_nosa_xport()`, `rcax_table_query()`, `rcax_filter()`, `rcax_key()`
 #' @examples 
-#' a <- rcax_nosa(qlist=list(popid=7))
+#' a <- rcax_nosa(flist=list(popid=7))
 #' a[, c("popid", "spawningyear", "nosaij", "nosaej")] |> head()
 #' 
-#' rcax_nosa() |> head()
+#' rcax_nosa(qlist=list(limit=1), cols=NULL)
 #' 
 #' # to print the first 5 column names
 #' rcax_nosa(type="colnames")[1:5]
-#' 
-#' @references 
-#' This function is modeled off the functions in \url{https://github.com/ropensci/rredlist}
 #' 
 rcax_nosa <- function(
     tablename = "NOSA",
