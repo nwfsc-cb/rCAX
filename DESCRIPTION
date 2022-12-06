@@ -31,7 +31,8 @@ Author: Eli Holmes [aut, cre],
   Katie Barnas [ctb]
 Suggests: 
     knitr,
-    rmarkdown
+    rmarkdown,
+    ggplot2
 VignetteBuilder: knitr
 Depends: 
     R (>= 3.0.0)
