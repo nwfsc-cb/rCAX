@@ -1,7 +1,7 @@
 rCAX 0.6.0
 ===================
 
-* Added `rcax_pni_xport()` 
+* Added `rcax_pni_xport()`, `rcax_rpers_xport()`
 * Added template roxygen for all xport functions. Now details and description elements are identical. 
 * Dynamically find a nmfs_id or popid for the examples so that the examples never return an empty table.
 * in `rcax_table_query()` set rownames to NULL in returned tables
