@@ -4,7 +4,7 @@
 #' @template info
 #' @template tableargs
 #' @template basetablefuns
-#' @seealso `rcax_juvout_xport()`, `rcax_table_query()`, `rcax_filter()`, `rcax_key()`
+#' @seealso `rcax_juvout_xport()`, `rcax_table_query()`, `rcax_filter()`
 #' @examples 
 #' # return popid of first record
 #' # Note the part after $ is case sensitive

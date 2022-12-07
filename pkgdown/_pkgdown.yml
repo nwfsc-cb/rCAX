@@ -89,7 +89,16 @@ reference:
   - rcax_GET
   - rcax_base
   - rcax_ua
-  - rcax_key
   - check_key
   - rcax_parse
   - rcax_filter
+
+articles:
+- title:
+  contents:
+  - setup
+  - basics
+  - CAX_Tables
+  - terms
+  - api_get
+  

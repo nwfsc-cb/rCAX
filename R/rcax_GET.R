@@ -31,6 +31,8 @@ rcax_GET <- function(path, key = NULL, query=NULL, ...){
 }
 
 #' Set the base API url
+#' 
+#' "https://api.streamnet.org/api/v1"
 #'
 #' @export
 #' @examples
@@ -46,7 +48,7 @@ rcax_base <- function() "https://api.streamnet.org/api/v1"
 #' @export
 #' @rdname rcax_parse
 rcax_parse <- function(x, parse) {
-  jsonlite::fromJSON(x, parse)
+  jsonlite::fromJSON(x, TRUE)
 }
 
 #' Get the key from the user system environment variable
@@ -57,7 +59,7 @@ rcax_parse <- function(x, parse) {
 #' @export
 #' @rdname check_key
 #' @references 
-#' This function is modeled off the functions in \url{https://github.com/ropensci/rredlist}
+#' This function is modeled off check_key() in \url{https://github.com/ropensci/rredlist}
 check_key <- function(key){
   tmp <- if (is.null(key)) Sys.getenv("CAX_KEY", "") else key
   if (tmp == "") {
@@ -75,12 +77,12 @@ check_key <- function(key){
 #' rcax_ua()
 #' @rdname rcax_ua
 #' @references 
-#' This function is modeled off the functions in \url{https://github.com/ropensci/rredlist}
+#' This function is modeled off rl_ua() in \url{https://github.com/ropensci/rredlist}
 rcax_ua <- function() {
   versions <- c(
     paste0("r-curl/", utils::packageVersion("curl")),
     paste0("crul/", utils::packageVersion("crul")),
-    sprintf("rCAX/%s", utils::packageVersion("rCAX"))
+    paste0("rCAX/", utils::packageVersion("rCAX"))
   )
   paste0(versions, collapse = " ")
 }

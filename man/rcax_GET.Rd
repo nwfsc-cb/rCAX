@@ -9,7 +9,7 @@ rcax_GET(path, key = NULL, query = NULL, ...)
 \arguments{
 \item{path}{what to add after the base api path}
 
-\item{key}{A CAX API token. See \code{\link{rcax_key}}.}
+\item{key}{A CAX API key. See \code{vignette("setup", package = "rCAX")}.}
 
 \item{...}{Curl options passed to \code{\link[crul]{HttpClient}}}
 

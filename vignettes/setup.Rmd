@@ -1,0 +1,50 @@
+---
+title: "Getting Started"
+description: "How to install and setup your API key"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Getting Started}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+This is an R package. Open R (e.g. in RStudio or a terminal), and issue the following commands at the command line.
+
+## Installation
+
+To install from GitHub, you will need the {remotes} package.
+
+```{r eval=FALSE}
+install.packages("remotes") # needed for the next line
+```
+
+Then you can install the latest release:
+```{r eval=FALSE}
+remotes:::install_github("nwfsc-math-bio/rCAX@*release")
+```
+
+Note, you only need to install packages once. After that you load them with a `library(pkgname)` call.
+
+## Set up your API key
+
+Next you need to get a pull api key from StreamNet (contact them). Once you have a key, you need to install the {usethis} package.
+
+```{r eval=FALSE}
+install.packages("usethis") # needed for the next line
+```
+
+Run this code to find or create your `.Renviron` file. It will tell you where the `.Renviron` file is.
+```{r eval=FALSE}
+usethis::edit_r_environ()
+```
+Open that file and paste in `CAX_KEY = "whateveryourkeyis"` into the file and save. 
+
+Now restart R (Session > Restart R in RStudio) and your API will be visible to {rCAX}. You are now ready to use {rCAX}. Go to the [Basic functions vignette](articles/basics.html) to get started and see examples.
+

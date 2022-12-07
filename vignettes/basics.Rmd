@@ -15,12 +15,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-## Install and load
-
-Install the latest release (if needed)
-```{r eval=FALSE}
-remotes:::install_github("nwfsc-math-bio/rCAX@*release")
-```
+See the [Getting Started vignette](articles/setup.html) for instructions on installing and setting-up your API key. Once you have installed {rCAX} and set up your key, you can begin using the package by loading the library.
 
 Load the library.
 ```{r setup}

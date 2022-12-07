@@ -17,7 +17,7 @@
 #' # get one record
 #' rcax_superpops(qlist=list(limit=1))
 #' 
-#' @seealso `rcax_table_query()`, `rcax_filter()`, `rcax_key()`
+#' @seealso `rcax_table_query()`, `rcax_filter()`
 #' 
 rcax_superpops <- function(
     tablename = "SuperPopulations", 

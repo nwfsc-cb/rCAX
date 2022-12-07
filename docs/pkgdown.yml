@@ -5,8 +5,9 @@ articles:
   CAX_Tables: CAX_Tables.html
   api_get: api_get.html
   basics: basics.html
+  setup: setup.html
   terms: terms.html
-last_built: 2022-12-07T00:45Z
+last_built: 2022-12-07T01:43Z
 urls:
   reference: https://nwfsc-math-bio.github.io/rCAX/reference
   article: https://nwfsc-math-bio.github.io/rCAX/articles

@@ -5,7 +5,7 @@
 #'  want to make a filtered query by passing in `flist` as a list with the column name values to filter on.
 #'
 #' @details
-#' The required query parameters are table_id and XAPIKEY. These are set from the information in `GETargs`. table_id is normally looked up from `rcax_tables()` using `tablename` and `XAPIKEY` is looked up from `CAX_KEY` in the user environment (saved in `.Renviron` file. See `rcax_key()` for how to set the key.  The `qlist` argument is any additional query parameters. The following are some of the available extra (meaning not required) query parameters.
+#' The required query parameters are table_id and XAPIKEY. These are set from the information in `GETargs`. table_id is normally looked up from `rcax_tables()` using `tablename` and `XAPIKEY` is looked up from `CAX_KEY` in the user environment (saved in `.Renviron` file. See \code{vignette("setup", package = "rCAX")} for how to set the key.  The `qlist` argument is any additional query parameters. The following are some of the available extra (meaning not required) query parameters.
 #' * page=num Integer of the page selected.
 #' * per_page=num  Integer for the number of records per page.
 #' * limit=num Maximum number of records to return. Default is 1000.

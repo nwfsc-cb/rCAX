@@ -28,7 +28,7 @@ rcax_presmolt(
 
 \item{type}{whether to return the table ("data.frame") or colnames ("colnames"). Default is to return the table as a data frame.}
 
-\item{GETargs}{A list of arguments for the \code{rcax_GET()} call. These do not normally need to be specified by the user. \code{table_id} This is the CAX table id. It is looked up using \code{tablename} and \code{caxpops}. \code{recordloc} This is the name of the record we want in the list returned from the GET call. \code{key} is the API key. See \code{rcax_GET()} for API key details.}
+\item{GETargs}{A list of arguments for the \code{rcax_GET()} call. These do not normally need to be specified by the user. \code{table_id} This is the CAX table id. It is looked up using \code{tablename} and \code{rCAX:::caxpops} (an internal dataset). \code{recordloc} This is the name of the record we want in the list returned from the GET call. \code{key} is the API key. See \code{vignette("setup", package = "rCAX")} for API key details.}
 }
 \value{
 data frame if \code{type="data.frame"} (default) and the colnames if \code{type="colnames"}
@@ -82,5 +82,5 @@ colnames(tab)[1:5]
 API docs at \url{https://www.streamnet.org/resources/exchange-tools/rest-api-documentation/}
 }
 \seealso{
-\code{rcax_presmolt_xport()}, \code{rcax_table_query()}, \code{rcax_filter()}, \code{rcax_key()}
+\code{rcax_presmolt_xport()}, \code{rcax_table_query()}, \code{rcax_filter()}
 }

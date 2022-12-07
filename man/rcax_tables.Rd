@@ -12,7 +12,7 @@ rcax_tables(
 )
 }
 \arguments{
-\item{key}{A CAX API token. See \code{\link{rcax_key}}.}
+\item{key}{A CAX API key. See \code{vignette("setup", package = "rCAX")}.}
 
 \item{parse}{(logical) Whether to parse to list (\code{FALSE}) or data.frame (\code{TRUE}). Default: \code{TRUE}}
 

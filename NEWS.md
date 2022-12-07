@@ -1,3 +1,9 @@
+rCAX 0.7.0
+===================
+
+* Added a setup vignette for how to download and install the package.
+* Removed `rcax_key()`. Not needed.
+
 rCAX 0.6.0
 ===================
 https://github.com/nwfsc-math-bio/rCAX/releases/tag/v0.6.0

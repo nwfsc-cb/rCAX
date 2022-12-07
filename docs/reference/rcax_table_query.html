@@ -127,7 +127,7 @@ want to make a filtered query by passing in <code>flist</code> as a list with th
 
 
 <dt>GETargs</dt>
-<dd><p>A list of arguments for the <code><a href="rcax_GET.html">rcax_GET()</a></code> call. These do not normally need to be specified by the user. <code>table_id</code> This is the CAX table id. It is looked up using <code>tablename</code> and <code>caxpops</code>. <code>recordloc</code> This is the name of the record we want in the list returned from the GET call. <code>key</code> is the API key. See <code><a href="rcax_GET.html">rcax_GET()</a></code> for API key details.</p></dd>
+<dd><p>A list of arguments for the <code><a href="rcax_GET.html">rcax_GET()</a></code> call. These do not normally need to be specified by the user. <code>table_id</code> This is the CAX table id. It is looked up using <code>tablename</code> and <code>rCAX:::caxpops</code> (an internal dataset). <code>recordloc</code> This is the name of the record we want in the list returned from the GET call. <code>key</code> is the API key. See <code><a href="../articles/setup.html">vignette("setup", package = "rCAX")</a></code> for API key details.</p></dd>
 
 </dl></div>
     <div id="value">
@@ -140,7 +140,7 @@ want to make a filtered query by passing in <code>flist</code> as a list with th
     </div>
     <div id="details">
     <h2>Details</h2>
-    <p>The required query parameters are table_id and XAPIKEY. These are set from the information in <code>GETargs</code>. table_id is normally looked up from <code><a href="rcax_tables.html">rcax_tables()</a></code> using <code>tablename</code> and <code>XAPIKEY</code> is looked up from <code>CAX_KEY</code> in the user environment (saved in <code>.Renviron</code> file. See <code><a href="rcax_key.html">rcax_key()</a></code> for how to set the key.  The <code>qlist</code> argument is any additional query parameters. The following are some of the available extra (meaning not required) query parameters.</p><ul><li><p>page=num Integer of the page selected.</p></li>
+    <p>The required query parameters are table_id and XAPIKEY. These are set from the information in <code>GETargs</code>. table_id is normally looked up from <code><a href="rcax_tables.html">rcax_tables()</a></code> using <code>tablename</code> and <code>XAPIKEY</code> is looked up from <code>CAX_KEY</code> in the user environment (saved in <code>.Renviron</code> file. See <code><a href="../articles/setup.html">vignette("setup", package = "rCAX")</a></code> for how to set the key.  The <code>qlist</code> argument is any additional query parameters. The following are some of the available extra (meaning not required) query parameters.</p><ul><li><p>page=num Integer of the page selected.</p></li>
 <li><p>per_page=num  Integer for the number of records per page.</p></li>
 <li><p>limit=num Maximum number of records to return. Default is 1000.</p></li>
 <li><p>agency=character Agency that submitted the record. You can designate one or more (comma-separated) agency acronyms: IDFG, WDFW, ODFW, CRITFC, CCT, NOAA.</p></li>

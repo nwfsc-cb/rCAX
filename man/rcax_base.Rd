@@ -7,7 +7,7 @@
 rcax_base()
 }
 \description{
-Set the base API url
+"https://api.streamnet.org/api/v1"
 }
 \examples{
 rcax_base()

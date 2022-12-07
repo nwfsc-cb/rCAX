@@ -1,5 +1,6 @@
 ---
 title: "CAX Data Terms of Use"
+description: End User License Agreement (EULA) for the CAX HLI data.
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{CAX Data Terms of Use}

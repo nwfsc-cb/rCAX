@@ -13,5 +13,5 @@ check_key(key)
 Saved in \code{CAX_KEY} in the \code{.Renviron} file. Alternatively it can be passed in.
 }
 \references{
-This function is modeled off the functions in \url{https://github.com/ropensci/rredlist}
+This function is modeled off check_key() in \url{https://github.com/ropensci/rredlist}
 }

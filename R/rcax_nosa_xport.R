@@ -4,7 +4,7 @@
 #' @template info
 #' @template tableargs
 #' @template xportfuns
-#' @seealso `rcax_nosa()`, `rcax_table_query()`, `rcax_filter()`, `rcax_key()`
+#' @seealso `rcax_nosa()`, `rcax_table_query()`, `rcax_filter()`
 #' @examples 
 #' # return NMFS_PopID of first record
 #' # Note the part after $ is case sensitive
