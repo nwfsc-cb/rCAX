@@ -2,7 +2,7 @@ Package: rCAX
 Type: Package
 Date: 2022-12-07
 Title: Coordinated Assessments Client
-Description: This package is an R client for the StreamNet Coordinated Assessments HLI REST API.
+Description: This package is an R client for the StreamNet Coordinated Assessments HLI REST API. An API key is required.
 Version: 0.7.0
 Authors@R: 
     c(person(given = "Eli",

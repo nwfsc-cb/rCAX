@@ -16,13 +16,10 @@
 #' rcax_filter(list(commonpopname="GRCAT"))
 #' rcax_filter(list(popid=c(7,8)))
 #' @return The JSON for the filter query param
-#' @author 
-#' EE Holmes
-
 rcax_filter <- function(x){
  assert_is(x, 'list')
  df <- data.frame(field=names(x), value="tmp", type="string")
- for(i in 1:nrow(df)){
+ for(i in seq_len(nrow(df))){
    val <- x[[i]]
    if(length(val)>1){
      val <- list(val)

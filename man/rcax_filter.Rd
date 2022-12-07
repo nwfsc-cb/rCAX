@@ -29,6 +29,3 @@ Note the values are not case sensitive. So a value of \code{Spring} will return 
 rcax_filter(list(commonpopname="GRCAT"))
 rcax_filter(list(popid=c(7,8)))
 }
-\author{
-EE Holmes
-}
