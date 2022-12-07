@@ -1,0 +1,22 @@
+---
+title: "Using CAX HLI data"
+description: "Notes on the CAX data and using it"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Using CAX HLI data}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## About the data
+
+## How data quality is indicated
+
+## Where and how to find the citation information
