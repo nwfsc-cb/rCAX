@@ -152,7 +152,7 @@ metadata, like NMFS_PopID and MPG.</li>
 <code>caxsuperpops</code> The SuperPopulations table.</li>
 </ul>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">rCAX</span><span class="fu">:::</span><span class="va">caxesu</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">2</span><span class="op">]</span></span>
+<code class="sourceCode R"><span><span class="fu">rCAX</span><span class="fu">:::</span><span class="va"><a href="../reference/caxesu.html">caxesu</a></span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">2</span><span class="op">]</span></span>
 <span><span class="co">#&gt; [1] "N/A"                                       </span></span>
 <span><span class="co">#&gt; [2] "Salmon, Chinook (Lower Columbia River ESU)"</span></span></code></pre></div>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
@@ -186,14 +186,24 @@ is the same for the other table functions.</p>
 <div class="section level2">
 <h2 id="show-the-columns-for-the-nosa-table">Show the columns for the NOSA table<a class="anchor" aria-label="anchor" href="#show-the-columns-for-the-nosa-table"></a>
 </h2>
-<p>Get the table and show all the column names. Only first 10 are
-shown.</p>
+<p>Get the table and show all the column names with definitions. Only
+first 10 are shown.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/rcax_nosa.html">rcax_nosa</a></span><span class="op">(</span>type<span class="op">=</span><span class="st">"colnames"</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">]</span></span>
-<span><span class="co">#&gt;  [1] "nosaijupperlimit"   "tsaej"              "age8propupperlimit"</span></span>
-<span><span class="co">#&gt;  [4] "metriclocation"     "popfitnotes"        "cbfwapopname"      </span></span>
-<span><span class="co">#&gt;  [7] "age9proplowerlimit" "phosejalpha"        "contactpersonfirst"</span></span>
-<span><span class="co">#&gt; [10] "compilerrecordid"</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu"><a href="../reference/rcax_nosa.html">rcax_nosa</a></span><span class="op">(</span>type<span class="op">=</span><span class="st">"colnames"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt;                 name</span></span>
+<span><span class="co">#&gt; 1   nosaijupperlimit</span></span>
+<span><span class="co">#&gt; 2              tsaej</span></span>
+<span><span class="co">#&gt; 3 age8propupperlimit</span></span>
+<span><span class="co">#&gt; 4     metriclocation</span></span>
+<span><span class="co">#&gt; 5        popfitnotes</span></span>
+<span><span class="co">#&gt; 6       cbfwapopname</span></span>
+<span><span class="co">#&gt;                                                                      definition</span></span>
+<span><span class="co">#&gt; 1                            Upper limit of the confidence interval for NOSAIJ.</span></span>
+<span><span class="co">#&gt; 2                                     Total spawner abundance, excluding jacks.</span></span>
+<span><span class="co">#&gt; 3                          Upper limit of the confidence interval for Age8Prop.</span></span>
+<span><span class="co">#&gt; 4                     Where this supporting metric is maintained at the source.</span></span>
+<span><span class="co">#&gt; 5 Text description of why the data are not at the scale of a single population.</span></span>
+<span><span class="co">#&gt; 6                       Population name defined by CBFWA for subbasin planning.</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="get-records-from-the-nosa-table">Get records from the NOSA table<a class="anchor" aria-label="anchor" href="#get-records-from-the-nosa-table"></a>

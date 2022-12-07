@@ -59,9 +59,9 @@ The basic functionality is shown with the NOSA table but the syntax is the same 
 
 ## Show the columns for the NOSA table
 
-Get the table and show all the column names. Only first 10 are shown.
+Get the table and show all the column names with definitions. Only first 10 are shown.
 ```{r}
-rcax_nosa(type="colnames")[1:10]
+head(rcax_nosa(type="colnames"))
 ```
 
 ## Get records from the NOSA table

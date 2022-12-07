@@ -15,8 +15,8 @@
 #' a <- a[, c("popid", "spawningyear", "nosaij", "nosaej")]
 #' head(a)
 #' 
-#' # to print the first 5 column names
-#' rcax_nosa(type="colnames")[1:5]
+#' # to print the first column names and definitions
+#' head(rcax_nosa(type="colnames"))
 #' 
 rcax_nosa <- function(
     tablename = "NOSA",

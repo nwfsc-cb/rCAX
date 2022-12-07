@@ -19,14 +19,17 @@
 #' 
 #' The XPORT tables have a few columns that do not appear in the 
 #' Excel files that 
-#' one can download from StreamNet: "species", "publish", "num", 
-#' "hli", "agency", "esudps", "hli_id". "esudps" is a slight variant on
-#'  "esu_dps" and is removed. "num" is a sort flag and is removed.
+#' one can download from StreamNet because they come from the 
+#' html form for the HLI Tablular Query for filtering the data: 
+#' "species", "publish", "num", "hli", "agency", "esudps", "hli_id".
+#'  "esudps" is a slight variant on
+#'  "esu_dps" and is removed. "num" is a sort flag and is removed. "hli"
+#'  is the shortened HLI code and is removed.
 #'  "publish" will always be Yes but is left in. The other columns are
 #'   left in. The colnames are re-sorted into the order found in the
 #'    downloaded
-#'  Excel files with the extra columns added to the end.
+#'  Excel files with the extra columns added to the end. 
 #'  
 #'  If you want to see the original columns in the original order, 
-#'  use `type="colnames` and use that output as the value for 
-#'  the `cols` argument.
+#'  use `type="colnames` and use the name column of that output as
+#'  the value for the `cols` argument.

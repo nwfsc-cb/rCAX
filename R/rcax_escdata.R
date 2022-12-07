@@ -14,8 +14,8 @@
 #' # First 5 columns of first 5 results
 #' rcax_escdata(cols = NULL, qlist=list(limit=5))[,1:5]
 #' 
-#' # to print the first 5 column names
-#' rcax_escdata(type="colnames")[1:5]
+#' # to print the first column names and definitions
+#' head(rcax_escdata(type="colnames"))
 
 rcax_escdata <- function(
     tablename = "EscData", 

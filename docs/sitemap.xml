@@ -37,10 +37,22 @@
     <loc>https://nwfsc-math-bio.github.io/rCAX/news/index.html</loc>
   </url>
   <url>
+    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/cax_column_definitions.html</loc>
+  </url>
+  <url>
+    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/caxesu.html</loc>
+  </url>
+  <url>
+    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/caxtabs.html</loc>
+  </url>
+  <url>
     <loc>https://nwfsc-math-bio.github.io/rCAX/reference/check_key.html</loc>
   </url>
   <url>
     <loc>https://nwfsc-math-bio.github.io/rCAX/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/internal_data.html</loc>
   </url>
   <url>
     <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rCAX-package.html</loc>

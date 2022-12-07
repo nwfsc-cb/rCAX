@@ -144,7 +144,7 @@ will be empty. Examples:</p><ul><li><p><code>flist=list(popid=7)</code> return v
 
 
 <dt>type</dt>
-<dd><p>whether to return the table ("data.frame") or colnames ("colnames"). Default is to return the table as a data frame.</p></dd>
+<dd><p>whether to return the table ("data.frame") or colnames with definitions ("colnames"). Default is to return the table as a data frame.</p></dd>
 
 
 <dt>GETargs</dt>
@@ -164,16 +164,19 @@ will be empty. Examples:</p><ul><li><p><code>flist=list(popid=7)</code> return v
     <p>The table_id is set automatically using a saved data frame from a <code><a href="rcax_tables.html">rcax_tables()</a></code> call. The table is saved in <code>R/sysdata.rda</code>.</p>
 <p>The XPORT tables have a few columns that do not appear in the
 Excel files that
-one can download from StreamNet: "species", "publish", "num",
-"hli", "agency", "esudps", "hli_id". "esudps" is a slight variant on
-"esu_dps" and is removed. "num" is a sort flag and is removed.
+one can download from StreamNet because they come from the
+html form for the HLI Tablular Query for filtering the data:
+"species", "publish", "num", "hli", "agency", "esudps", "hli_id".
+"esudps" is a slight variant on
+"esu_dps" and is removed. "num" is a sort flag and is removed. "hli"
+is the shortened HLI code and is removed.
 "publish" will always be Yes but is left in. The other columns are
 left in. The colnames are re-sorted into the order found in the
 downloaded
 Excel files with the extra columns added to the end.</p>
 <p>If you want to see the original columns in the original order,
-use <code>type="colnames</code> and use that output as the value for
-the <code>cols</code> argument.</p>
+use <code>type="colnames</code> and use the name column of that output as
+the value for the <code>cols</code> argument.</p>
     </div>
     <div id="references">
     <h2>References</h2>
@@ -210,10 +213,22 @@ the <code>cols</code> argument.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2  Steelhead Summer         Interior Columbia</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 3  Steelhead Summer Willamette/Lower Columbia</span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co"># to print the first 5 column names</span></span></span>
-<span class="r-in"><span><span class="fu">rcax_juvout_xport</span><span class="op">(</span>type<span class="op">=</span><span class="st">"colnames"</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">]</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "popid"              "popfitnotes"        "age0proplowerlimit"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [4] "datastatus"         "age4plusprop"      </span>
+<span class="r-in"><span><span class="co"># to print the first column names and definitions</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu">rcax_juvout_xport</span><span class="op">(</span>type<span class="op">=</span><span class="st">"colnames"</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                 name</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1              popid</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2        popfitnotes</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 age0proplowerlimit</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4         datastatus</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5       age4plusprop</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6           age1prop</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                        definition</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                                      StreamNet code for the population of fish.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2   Text description of why the data are not at the scale of a single population.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                            Lower limit of the confidence interval for Age0Prop.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                                                "Draft", "Reviewed", or "Final".</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5 The proportion of natural origin fish that were age 4 (brood year +4) or older.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6          The proportion of natural origin fish that were age 1 (brood year +1).</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># to print the first 5 column names as they appear</span></span></span>
 <span class="r-in"><span><span class="co"># in Excel files downloaded from https://www.streamnet.org/data/hli/</span></span></span>

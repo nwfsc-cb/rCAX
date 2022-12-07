@@ -125,7 +125,7 @@ is set automatically using a saved data frame from a <code><a href="rcax_tables.
 
 
 <dt>type</dt>
-<dd><p>whether to return the table ("data.frame") or colnames ("colnames"). Default is to return the table as a data frame.</p></dd>
+<dd><p>whether to return the table ("data.frame") or colnames with definitions ("colnames"). Default is to return the table as a data frame.</p></dd>
 
 
 <dt>GETargs</dt>
@@ -151,11 +151,22 @@ is set automatically using a saved data frame from a <code><a href="rcax_tables.
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># to get all columns and print the column names</span></span></span>
-<span class="r-in"><span><span class="fu">rcax_superpops</span><span class="op">(</span>type<span class="op">=</span><span class="st">"colnames"</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "popid"         "popfit"        "popfitnotes"   "upddate"      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [5] "contactagency" "num"           "id"            "publish"      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [9] "superpopid"   </span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># print the first columns and definitions</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu">rcax_superpops</span><span class="op">(</span>type<span class="op">=</span><span class="st">"colnames"</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>            name</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1         popid</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2        popfit</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3   popfitnotes</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4       upddate</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5 contactagency</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6           num</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                                                     definition</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                                                                                   StreamNet code for the population of fish.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 Categorization of how the geographic extent of the NOSA/escapement estimate corresponds to the definition of the population.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                                                Text description of why the data are not at the scale of a single population.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                                                                When the record was last modified at the source organization.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                                       Organization or person that is the best contact for questions about a specific record.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                                                                                                       An internal sorting id</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># get one record</span></span></span>
 <span class="r-in"><span><span class="fu">rcax_superpops</span><span class="op">(</span>qlist<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>limit<span class="op">=</span><span class="fl">1</span><span class="op">)</span><span class="op">)</span></span></span>

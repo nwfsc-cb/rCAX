@@ -20,8 +20,8 @@
 #' # First 3 columns
 #' rcax_pni(qlist=list(limit=3))[,1:3]
 #' 
-#' # to print the first 5 column names
-#' rcax_pni(type="colnames")[1:5]
+#' # to print the first column names and definitions
+#' head(rcax_pni(type="colnames"))
 #' 
 #' # to print the first 5 column names as they appear
 #' # in Excel files downloaded from https://www.streamnet.org/data/hli/

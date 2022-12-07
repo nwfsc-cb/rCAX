@@ -4,6 +4,9 @@ rCAX 0.7.0
 * Added a setup vignette for how to download and install the package.
 * Removed `rcax_key()`. Not needed. Cleaned up some {rredlist} refs.
 * Added `rcax_version()` to print the installed versus GitHub version.
+* Added `cax_column_definitions` from the definitions tab in the Excel files output by the HLI Tabular Query.
+* `type="colnames"` now returns a data frame with a name and definition column.
+* Added documentation for the internal data.
 
 rCAX 0.6.0
 ===================

@@ -26,7 +26,7 @@ rcax_nosa_xport(
 
 \item{sortcols}{The columns to sort on for the returned table. The order of sortcols indicates the order of sorting. Start with the smallest group and work outwards, e.g. \code{c("spawningyear", "popid", "MPG")}}
 
-\item{type}{whether to return the table ("data.frame") or colnames ("colnames"). Default is to return the table as a data frame.}
+\item{type}{whether to return the table ("data.frame") or colnames with definitions ("colnames"). Default is to return the table as a data frame.}
 
 \item{GETargs}{A list of arguments for the \code{rcax_GET()} call. These do not normally need to be specified by the user. \code{table_id} This is the CAX table id. It is looked up using \code{tablename} and \code{rCAX:::caxpops} (an internal dataset). \code{recordloc} This is the name of the record we want in the list returned from the GET call. \code{key} is the API key. See \code{vignette("setup", package = "rCAX")} for API key details.}
 }
@@ -56,17 +56,20 @@ The table_id is set automatically using a saved data frame from a \code{rcax_tab
 
 The XPORT tables have a few columns that do not appear in the
 Excel files that
-one can download from StreamNet: "species", "publish", "num",
-"hli", "agency", "esudps", "hli_id". "esudps" is a slight variant on
-"esu_dps" and is removed. "num" is a sort flag and is removed.
+one can download from StreamNet because they come from the
+html form for the HLI Tablular Query for filtering the data:
+"species", "publish", "num", "hli", "agency", "esudps", "hli_id".
+"esudps" is a slight variant on
+"esu_dps" and is removed. "num" is a sort flag and is removed. "hli"
+is the shortened HLI code and is removed.
 "publish" will always be Yes but is left in. The other columns are
 left in. The colnames are re-sorted into the order found in the
 downloaded
 Excel files with the extra columns added to the end.
 
 If you want to see the original columns in the original order,
-use \verb{type="colnames} and use that output as the value for
-the \code{cols} argument.
+use \verb{type="colnames} and use the name column of that output as
+the value for the \code{cols} argument.
 }
 \examples{
 # return NMFS_PopID of first record
@@ -82,8 +85,8 @@ head(a)
 # First 3 columns
 rcax_nosa_xport(qlist=list(limit=3))[,1:3]
 
-# to print the first 5 column names
-rcax_nosa_xport(type="colnames")[1:5]
+# to print the first column names and definitions
+head(rcax_nosa_xport(type="colnames"))
 
 # to print the first 5 column names as they appear
 # in Excel files downloaded from https://www.streamnet.org/data/hli/

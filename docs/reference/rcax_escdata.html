@@ -125,7 +125,7 @@ is set automatically using a saved data frame from a <code><a href="rcax_tables.
 
 
 <dt>type</dt>
-<dd><p>whether to return the table ("data.frame") or colnames ("colnames"). Default is to return the table as a data frame.</p></dd>
+<dd><p>whether to return the table ("data.frame") or colnames with definitions ("colnames"). Default is to return the table as a data frame.</p></dd>
 
 
 <dt>GETargs</dt>
@@ -156,10 +156,15 @@ is set automatically using a saved data frame from a <code><a href="rcax_tables.
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4     98                                98       15</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 5     98                                98       36</span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co"># to print the first 5 column names</span></span></span>
-<span class="r-in"><span><span class="fu">rcax_escdata</span><span class="op">(</span>type<span class="op">=</span><span class="st">"colnames"</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">]</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "ascode"         "countpermile"   "repeatspawners" "asnid"         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [5] "agencyid"      </span>
+<span class="r-in"><span><span class="co"># to print the first column names and definitions</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu">rcax_escdata</span><span class="op">(</span>type<span class="op">=</span><span class="st">"colnames"</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>              name definition</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1          ascode       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2    countpermile       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3  repeatspawners       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4           asnid       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5        agencyid       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6 countcidisttype       &lt;NA&gt;</span>
 </code></pre></div>
     </div>
   </div>

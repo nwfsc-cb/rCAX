@@ -89,8 +89,13 @@ rcax_table_query <- function(
     return("No data were returned. Check that you did not misspell a column name in your filter list (flist).")
   }
   
-  # if type is colnames, return that
-  if(type=="colnames") return(colnames(tab))
+  # if type is colnames, return colnames and definitions if available
+  if(type=="colnames"){
+    coltab <- data.frame(name=colnames(tab), definition=NA)
+    if(any(colnames(tab) %in% cax_column_definitions$name))
+      coltab$definition <- cax_column_definitions$definition[match(colnames(tab), cax_column_definitions$name)]
+    return(coltab)
+  }
   
   # the colnames are all in lower case
   colnames(tab) <- tolower(colnames(tab))

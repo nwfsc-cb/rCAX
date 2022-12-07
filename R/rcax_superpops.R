@@ -11,8 +11,8 @@
 #' @template tableargs
 #' @template info
 #' @examples 
-#' # to get all columns and print the column names
-#' rcax_superpops(type="colnames")
+#' # print the first columns and definitions
+#' head(rcax_superpops(type="colnames"))
 #' 
 #' # get one record
 #' rcax_superpops(qlist=list(limit=1))
