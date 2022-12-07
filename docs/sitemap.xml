@@ -58,6 +58,9 @@
     <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_filter.html</loc>
   </url>
   <url>
+    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_juvout.html</loc>
+  </url>
+  <url>
     <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_juvout_xport.html</loc>
   </url>
   <url>
@@ -73,6 +76,9 @@
     <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_parse.html</loc>
   </url>
   <url>
+    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_pni.html</loc>
+  </url>
+  <url>
     <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_pni_xport.html</loc>
   </url>
   <url>
@@ -82,7 +88,13 @@
     <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_presmolt_xport.html</loc>
   </url>
   <url>
+    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_rpers.html</loc>
+  </url>
+  <url>
     <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_rpers_xport.html</loc>
+  </url>
+  <url>
+    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_sar.html</loc>
   </url>
   <url>
     <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_sar_xport.html</loc>

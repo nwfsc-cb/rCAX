@@ -5,23 +5,33 @@ rCAX <img src="man/figures/logo.png" align="right" width="20%" />
 
 ## Installation
 
-Install the latest GitHub release
+Install the latest GitHub release. You only need to do this once.
 
 ```r
+install.packages("remotes") # needed for the next line
 remotes:::install_github("nwfsc-math-bio/rCAX@*release")
 ```
 
 ## Using
 
-First you need to get a pull api key from StreamNet. Then run `usethis::edit_r_environ()` to find or create your `.Renviron` file. Open that file and paste in `CAX_KEY = "whateveryourkeyis"`. Then restart R (Session > Restart R in RStudio).
+### Set up your API key
 
-Read the [Basic functions vignette](https://nwfsc-math-bio.github.io/rCAX/articles/basics.html) to get started. There are two main functions `rcax_nosa()` and `rcax_tables()`. `rcax_nosa()` downloads a NOSA table. `rcax_tables()` downloads the CAX table names and ids.
+First you need to get a pull api key from StreamNet. Once you have a key, run 
+```
+install.packages("usethis") # needed for the next line
+usethis::edit_r_environ()
+```
+to find or create your `.Renviron` file. Open that file and paste in `CAX_KEY = "whateveryourkeyis"`. Then restart R (Session > Restart R in RStudio).
 
-To filter (subset) the query, you use a filter list and passed into the table functions as `flist`. Example, to retrieve only NOSA data for popid 7, use
+### Download a table
+
+Read the [Basic functions vignette](https://nwfsc-math-bio.github.io/rCAX/articles/basics.html) to get started and see examples.
+
+For example, to retrieve the NOSA data for popid 7, use
 ```
 library(rCAX)
 fl <- list(popid=7)
-a <- rcax_nosa(flist=fl)
+a <- rcax_nosa_xport(flist=fl)
 ```
 
 ## Contributing

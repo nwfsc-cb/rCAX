@@ -80,13 +80,14 @@
 
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.6.0" id="rcax-060">rCAX 0.6.0<a class="anchor" aria-label="anchor" href="#rcax-060"></a></h2>
-<ul><li>Added <code><a href="../reference/rcax_pni_xport.html">rcax_pni_xport()</a></code>, <code><a href="../reference/rcax_rpers_xport.html">rcax_rpers_xport()</a></code>, <code><a href="../reference/rcax_juvout_xport.html">rcax_juvout_xport()</a></code>, <code><a href="../reference/rcax_presmolt_xport.html">rcax_presmolt_xport()</a></code>, <code><a href="../reference/rcax_presmolt.html">rcax_presmolt()</a></code>
+<ul><li>Added <code><a href="../reference/rcax_pni_xport.html">rcax_pni_xport()</a></code>, <code><a href="../reference/rcax_rpers_xport.html">rcax_rpers_xport()</a></code>, <code><a href="../reference/rcax_juvout_xport.html">rcax_juvout_xport()</a></code>, <code><a href="../reference/rcax_presmolt_xport.html">rcax_presmolt_xport()</a></code>, <code><a href="../reference/rcax_presmolt.html">rcax_presmolt()</a></code>, <code><a href="../reference/rcax_pni.html">rcax_pni()</a></code>, <code><a href="../reference/rcax_sar.html">rcax_sar()</a></code>, <code><a href="../reference/rcax_rpers.html">rcax_rpers()</a></code>, <code><a href="../reference/rcax_presmolt.html">rcax_presmolt()</a></code>
 </li>
 <li>Added template roxygen for all xport and basetable functions. Now details and description elements are identical.</li>
 <li>Dynamically find a nmfs_id or popid for the examples so that the examples never return an empty table.</li>
 <li>in <code><a href="../reference/rcax_table_query.html">rcax_table_query()</a></code> set rownames to NULL in returned tables</li>
 <li>Added <code>ggplot2</code> to Suggests in DESCRIPTION file since I use it in some examples and will use in vignettes.</li>
 <li>removed {stringr} and <code>|&gt;</code> dependency</li>
+<li>Added a check that all the flist names appear in the table. Requires an extra GET call but the call will fail otherwise if cols do not match.</li>
 </ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.5.0" id="rcax-050">rCAX 0.5.0<a class="anchor" aria-label="anchor" href="#rcax-050"></a></h2>

@@ -61,12 +61,24 @@ rcax_table_query <- function(
   if(is.null(GETargs$table_id))
     stop("Something wrong. GETargs$table_id is NULL. Perhaps tablename is misspelled? Check the CAX table names from a call to `rcax_tables()`. Alternatively the sysdata `caxtabs` might be out of date. In which case, you will need to look up the correct table_id and pass that into `GETargs`.")
   
+  # error check the flist because it will return a 500 if col is bad
+  if(type!="colnames" && !is.null(flist) && length(flist)!=0){
+    tmp <- list(table_id = GETargs$table_id, limit=1)
+    tabcols <- colnames(rcax_parse(rcax_GET("ca", GETargs$key, query = tmp, ...), TRUE)[[GETargs$recordloc]])
+    if(!all(names(flist) %in% tabcols)){
+      badcols <- names(flist)[!(names(flist) %in% tabcols)]
+      stop(paste("Not all flist names appear in the table. The bad names are:", paste0(badcols, collapse=", "), "\n Use type='colnames' to print the column names."), call. = FALSE)
+    }
+  }
+  
   # set up query list
   query_list <- list(table_id = GETargs$table_id)
   if(!is.null(qlist)) query_list <- c(query_list, qlist)
-  if(!is.null(flist)) query_list <- c(query_list, list(filter=rcax_filter(flist)))
   # if just returning colnames, set limit to 1
-  if(type=="colnames") query_list$limit <- 1
+  if(type=="colnames") 
+    query_list$limit <- 1
+  else
+    if(!is.null(flist)) query_list <- c(query_list, list(filter=rcax_filter(flist)))
   
   # Make API call
   tab <- rcax_parse(rcax_GET("ca", GETargs$key, query=query_list, ...), GETargs$parse)

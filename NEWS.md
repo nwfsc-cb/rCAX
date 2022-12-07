@@ -1,12 +1,13 @@
 rCAX 0.6.0
 ===================
 
-* Added `rcax_pni_xport()`, `rcax_rpers_xport()`, `rcax_juvout_xport()`, `rcax_presmolt_xport()`, `rcax_presmolt()`
+* Added `rcax_pni_xport()`, `rcax_rpers_xport()`, `rcax_juvout_xport()`, `rcax_presmolt_xport()`, `rcax_presmolt()`, `rcax_pni()`, `rcax_sar()`, `rcax_rpers()`, `rcax_presmolt()`
 * Added template roxygen for all xport and basetable functions. Now details and description elements are identical. 
 * Dynamically find a nmfs_id or popid for the examples so that the examples never return an empty table.
 * in `rcax_table_query()` set rownames to NULL in returned tables
 * Added `ggplot2` to Suggests in DESCRIPTION file since I use it in some examples and will use in vignettes.
 * removed {stringr} and `|>` dependency
+* Added a check that all the flist names appear in the table. Requires an extra GET call but the call will fail otherwise if cols do not match.
 
 rCAX 0.5.0
 ===================
