@@ -13,7 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
-      CAX_KEY: ${{ secrets.CAX_KEY }}
       R_KEEP_PKG_SOURCE: yes
     steps:
       - uses: actions/checkout@v3
@@ -24,7 +23,7 @@ jobs:
       
       - name: Create and populate .Renviron file
         run: |
-          echo CAX_KEY="$CAX_KEY" >> ~/.Renviron
+          echo CAX_KEY="${{ secrets.CAX_KEY }}" >> ~/.Renviron
         shell: bash
 
       - uses: r-lib/actions/setup-r-dependencies@v2
