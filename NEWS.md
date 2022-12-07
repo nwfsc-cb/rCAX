@@ -2,7 +2,7 @@ rCAX 0.7.0
 ===================
 
 * Added a setup vignette for how to download and install the package.
-* Removed `rcax_key()`. Not needed.
+* Removed `rcax_key()`. Not needed. Cleaned up some {rredlist} refs.
 
 rCAX 0.6.0
 ===================
