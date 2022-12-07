@@ -7,6 +7,7 @@ rCAX 0.7.0
 * Added `cax_column_definitions` from the definitions tab in the Excel files output by the HLI Tabular Query.
 * `type="colnames"` now returns a data frame with a name and definition column.
 * Added documentation for the internal data.
+* Added RCMD check badge and workflow, did some minor cleanup to pass check.
 
 rCAX 0.6.0
 ===================

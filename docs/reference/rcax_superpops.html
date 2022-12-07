@@ -20,7 +20,7 @@ rcax_superpops() will download 1000 records. Pass in flist to filter.'><meta pro
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">rCAX</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.6.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.7.0</span>
       </span>
     </div>
 
@@ -130,6 +130,10 @@ is set automatically using a saved data frame from a <code><a href="rcax_tables.
 
 <dt>GETargs</dt>
 <dd><p>A list of arguments for the <code><a href="rcax_GET.html">rcax_GET()</a></code> call. These do not normally need to be specified by the user. <code>table_id</code> This is the CAX table id. It is looked up using <code>tablename</code> and <code>rCAX:::caxpops</code> (an internal dataset). <code>recordloc</code> This is the name of the record we want in the list returned from the GET call. <code>key</code> is the API key. See <code><a href="../articles/setup.html">vignette("setup", package = "rCAX")</a></code> for API key details.</p></dd>
+
+
+<dt>...</dt>
+<dd><p>Curl options passed to <code><a href="https://docs.ropensci.org/crul/reference/HttpClient.html" class="external-link">HttpClient</a></code></p></dd>
 
 </dl></div>
     <div id="value">
