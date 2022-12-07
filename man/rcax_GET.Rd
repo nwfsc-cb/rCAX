@@ -11,9 +11,9 @@ rcax_GET(path, key = NULL, query = NULL, ...)
 
 \item{key}{A CAX API key. See \code{vignette("setup", package = "rCAX")}.}
 
-\item{...}{Curl options passed to \code{\link[crul]{HttpClient}}}
+\item{query}{a list of query parameters with their values, e.g. \code{list(param=value)}}
 
-\item{parse}{(logical) Whether to parse to list (\code{FALSE}) or data.frame (\code{TRUE}). Default: \code{TRUE}}
+\item{...}{Curl options passed to \code{\link[crul]{HttpClient}}}
 }
 \description{
 Make a GET call to API

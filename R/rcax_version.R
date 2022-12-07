@@ -19,7 +19,7 @@ rcax_version <- function(){
   vers <- jsonlite::fromJSON(rawToChar((temp$content)))$tag_name
   vers <- substring(vers, 2, last = 1000000L)
   
-  cat(paste("Installed:", packageVersion("rCAX"), "   Version on GitHub:", vers))
+  cat(paste("Installed:", utils::packageVersion("rCAX"), "   Version on GitHub:", vers))
   invisible(vers)
 }
 

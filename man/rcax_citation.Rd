@@ -4,7 +4,7 @@
 \alias{rcax_citation}
 \title{Get the citation CAX version}
 \usage{
-rcax_citation(...)
+rcax_citation()
 }
 \value{
 API citation as character string

@@ -57,7 +57,7 @@ rcax_table_query <- function(
   # get the table_id
   if(is.null(tablename) & is.null(GETargs$table_id))
     stop("Need either tablename or GETargs$table_id specified.")
-  if(is.null(GETargs$table_id)) GETargs$table_id <- subset(rCAX:::caxtabs, name==tablename)$id
+  if(is.null(GETargs$table_id)) GETargs$table_id <- subset(caxtabs, caxtabs$name==tablename)$id
   if(is.null(GETargs$table_id))
     stop("Something wrong. GETargs$table_id is NULL. Perhaps tablename is misspelled? Check the CAX table names from a call to `rcax_tables()`. Alternatively the sysdata `caxtabs` might be out of date. In which case, you will need to look up the correct table_id and pass that into `GETargs`.")
   

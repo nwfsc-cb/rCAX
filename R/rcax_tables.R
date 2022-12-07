@@ -2,8 +2,10 @@
 #' 
 #' @export
 #' @param cols the columns to return. default is name, description and id. use cols=NULL to get all the columns
+#' @param key A CAX API key. See \code{vignette("setup", package = "rCAX")}.
+#' @param ... Curl options passed to \code{\link[crul]{HttpClient}}
+#' @param parse (logical) Whether to parse to list (\code{FALSE}) or data.frame (\code{TRUE}). Default: \code{TRUE}
 #' @template info
-#' @template getargs
 #' @examples
 #' a <- rcax_tables(cols=NULL)
 #' colnames(a)

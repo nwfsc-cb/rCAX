@@ -1,3 +1,5 @@
+[![R-check](https://github.com/nwfsc-math-bio/rCAX/actions/workflows/check-release.yaml/badge.svg)](https://github.com/nwfsc-math-bio/rCAX/actions/workflows/check-release.yaml)
+
 rCAX <img src="man/figures/logo.png" align="right" width="20%" />
 ========
 

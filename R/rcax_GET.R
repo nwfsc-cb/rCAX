@@ -10,8 +10,10 @@
 #' 
 #' @export
 #' @param path what to add after the base api path
+#' @param query a list of query parameters with their values, e.g. `list(param=value)`
+#' @param key A CAX API key. See \code{vignette("setup", package = "rCAX")}.
+#' @param ... Curl options passed to \code{\link[crul]{HttpClient}}
 #' @template info
-#' @template getargs
 #' @examples \dontrun{
 #' rcax_GET("ca/tables")
 #' }
@@ -63,7 +65,6 @@ rcax_parse <- function(x, parse) {
 check_key <- function(key){
   tmp <- if (is.null(key)) Sys.getenv("CAX_KEY", "") else key
   if (tmp == "") {
-    rcax_use_cax()
     stop("need an API key for CAX data", call. = FALSE)
   } else {
     tmp

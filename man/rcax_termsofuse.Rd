@@ -4,7 +4,7 @@
 \alias{rcax_termsofuse}
 \title{Get CAX HLI data Terms of Use}
 \usage{
-rcax_termsofuse(...)
+rcax_termsofuse()
 }
 \value{
 Text of the terms of us
