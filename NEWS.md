@@ -1,5 +1,6 @@
 rCAX 0.6.0
 ===================
+https://github.com/nwfsc-math-bio/rCAX/releases/tag/v0.6.0
 
 * Added `rcax_pni_xport()`, `rcax_rpers_xport()`, `rcax_juvout_xport()`, `rcax_presmolt_xport()`, `rcax_presmolt()`, `rcax_pni()`, `rcax_sar()`, `rcax_rpers()`, `rcax_presmolt()`
 * Added template roxygen for all xport and basetable functions. Now details and description elements are identical. 
