@@ -36,11 +36,7 @@ a <- rcax_nosa_xport(flist=fl)
 
 ## Contributing
 
-Fork and put in a pull request.
-
-## Reference
-
-The core API functions in this package are modeled off [rredlist](https://github.com/ropensci/rredlist). The rest of the functions were written by EE Holmes.
+Fork and put in a pull request!
 
 <hr>
 
