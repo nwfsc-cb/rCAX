@@ -34,6 +34,11 @@ fl <- list(popid=7)
 a <- rcax_nosa_xport(flist=fl)
 ```
 
+### Check the versions
+
+You can check your installed version versus that on GitHub at any time using `rcax_version()`.
+
+
 ## Contributing
 
 Fork and put in a pull request!

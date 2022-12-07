@@ -78,6 +78,7 @@ reference:
 - title: "Package Information"
   contents: 
   - rCAX-package
+  - rcax_version
   - rcax_citation
   - rcax_termsofuse
 - title: "Connecting to API"
@@ -101,4 +102,3 @@ articles:
   - CAX_Tables
   - terms
   - api_get
-  
