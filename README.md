@@ -1,7 +1,5 @@
 [![github](https://img.shields.io/github/v/release/nwfsc-math-bio/rCAX?color=brightgreen&label=GitHub)](https://github.com/nwfsc-math-bio/rCAX/releases/latest)
-<!-- Wait until I have API key to use
 [![check-release](https://github.com/nwfsc-math-bio/rCAX/actions/workflows/check-release.yaml/badge.svg)](https://github.com/nwfsc-math-bio/rCAX/actions/workflows/check-release.yaml)
--->
 
 rCAX <img src="man/figures/logo.png" align="right" width="20%" />
 ========
