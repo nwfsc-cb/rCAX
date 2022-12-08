@@ -1,6 +1,6 @@
 #' Returns a filtered table or colnames
 #'
-#' This is the base function for queries to most of the CAX tables, e.g. `rcax_nosa()`
+#' This is the base function for queries for most of the CAX tables.
 #' Default queries will download 1000 records. You will
 #'  want to make a filtered query by passing in `flist` as a list with the column name values to filter on.
 #'
@@ -94,7 +94,7 @@ rcax_table_query <- function(
     coltab <- data.frame(name=colnames(tab), definition=NA)
     if(any(colnames(tab) %in% cax_column_definitions$name))
       coltab$definition <- cax_column_definitions$definition[match(colnames(tab), cax_column_definitions$name)]
-    return(coltab)
+    return(coltab[order(coltab$name),])
   }
   
   # the colnames are all in lower case
@@ -117,3 +117,70 @@ rcax_table_query <- function(
   tab
 }
 
+#' Returns the colnames to use for tables
+#' 
+#' Returns the columns in the same order as the downloaded 
+#' Excel files have in https://www.streamnet.org/data/hli. Adds on
+#' a few extra columns. The colnames are saved as internal data in 
+#' R/sysdata.rda and defined in inst/docs/create_sysdata.R
+#' 
+#' * NOSA: Natural origin spawner abundance
+#' * SAR: SAR
+#' * PNI: PNI
+#' * RperS: Recruits per spawner
+#' * JuvOut: Short for JuvenileOutmigrants.
+#' * PreSmolt: Short for PresmoltAbundance.
+#' 
+#' @export
+#' @param hli The HLI short name: NOSA, SAR, PNI, RperS, JuvOut, or PreSmolt
+#' @param type XPort table or base table
+#' @return A vector of column names
+#' @rdname rcax_table_cols
+#' @examples
+#' # Show the first 5 colnames
+#' rcax_xport_cols("NOSA")[1:5]
+rcax_table_cols <- function(hli, type=c("xport", "base")){
+  type <- match.arg(type)
+  if(type=="xport"){
+    tab <- list(
+      NOSA = nosa_xport_colnames,
+      SAR = sar_xport_colnames,
+      PNI = pni_xport_colnames,
+      JuvOut = juvout_xport_colnames,
+      PreSmolt = presmolt_xport_colnames,
+      RperS = rpers_xport_colnames
+    )
+    cols <- c(tab[[hli]], "species", "agency", "hli", "publish")
+  }
+  if(type=="base") cols <- NULL
+  return(cols)
+}
+
+#' Returns the default sort columns for tables
+#' 
+#' * NOSA = c("spawningyear", "popid")
+#' * SAR = c("outmigrationyear", "popid")
+#' * PNI = c("spawningyear", "popid")
+#' * JuvOut = c("outmigrationyear", "popid")
+#' * PreSmolt = c("surveyyear", "popid")
+#' * RperS = c("broodyear", "popid")
+#' 
+#' @export
+#' @param hli The HLI short name: NOSA, SAR, PNI, RperS, JuvOut, or PreSmolt
+#' @param type XPort table or base table
+#' @return A vector of column names for sorting
+#' @rdname rcax_table_sortcols
+#' @examples
+#' rcax_sortcols("NOSA")
+rcax_table_sortcols <- function(hli, type=c("xport", "base")){
+  type <- match.arg(type)
+  tab <- list(
+    NOSA = c("spawningyear", "popid"),
+    SAR = c("outmigrationyear", "popid"),
+    PNI = c("spawningyear", "popid"),
+    JuvOut = c("outmigrationyear", "popid"),
+    PreSmolt = c("surveyyear", "popid"),
+    RperS = c("broodyear", "popid")
+  )
+  return(tab[[hli]])
+}

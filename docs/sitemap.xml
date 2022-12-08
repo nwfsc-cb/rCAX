@@ -73,6 +73,12 @@
     <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_filter.html</loc>
   </url>
   <url>
+    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_hli.html</loc>
+  </url>
+  <url>
+    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_hli_xport.html</loc>
+  </url>
+  <url>
     <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_juvout.html</loc>
   </url>
   <url>
@@ -118,7 +124,16 @@
     <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_superpops.html</loc>
   </url>
   <url>
+    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_table_cols.html</loc>
+  </url>
+  <url>
+    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_table_name.html</loc>
+  </url>
+  <url>
     <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_table_query.html</loc>
+  </url>
+  <url>
+    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_table_sortcols.html</loc>
   </url>
   <url>
     <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_tables.html</loc>

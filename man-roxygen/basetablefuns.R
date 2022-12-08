@@ -1,6 +1,13 @@
 #' @description 
 #' Returns the base HLI table which is missing the
-#'  additional metadata (such as NMFS_PopID and update dates) found in the XPort tables.
+#'  additional metadata (such as NMFS_PopID and update dates) found in the XPort tables. The HLI is specified using its short code: 
+#' 
+#' * NOSA: Natural Origin Spawner Abundance
+#' * SAR: Smolt to Adult Ratios
+#' * PNI: Proportionate Natural Influence of supplementation hatcheries
+#' * RperS: Recruits per Spawner
+#' * JuvOut: Juvenile Outmigrants
+#' * PreSmolt: Presmolt Abundance
 #'  
 #'  The query will download 1000 records by default; you can change
 #' this by passing in `qlist=list(limit=1100)` for example. To make a

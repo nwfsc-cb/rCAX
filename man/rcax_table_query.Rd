@@ -16,8 +16,6 @@ rcax_table_query(
 )
 }
 \arguments{
-\item{tablename}{(character) The CAX name for the table; ignored if \code{GETargs$table_id} passed in.}
-
 \item{flist}{A filter for the query. See details and \code{rcax_filter()}}
 
 \item{qlist}{Additional query params. See \code{rcax_table_query()} for details.}
@@ -28,7 +26,7 @@ rcax_table_query(
 
 \item{type}{whether to return the table ("data.frame") or colnames with definitions ("colnames"). Default is to return the table as a data frame.}
 
-\item{GETargs}{A list of arguments for the \code{rcax_GET()} call. These do not normally need to be specified by the user. \code{table_id} This is the CAX table id. It is looked up using \code{tablename} and \code{rCAX:::caxpops} (an internal dataset). \code{recordloc} This is the name of the record we want in the list returned from the GET call. \code{key} is the API key. See \code{vignette("setup", package = "rCAX")} for API key details.}
+\item{GETargs}{A list of arguments for the \code{rcax_GET()} call. These do not normally need to be specified by the user. \code{table_id} This is the CAX table id. It is looked up using \code{tablename} and \code{rCAX:::caxpops} (an internal dataset). If \code{table_id} is passed in via \code{GETargs}, it wil override the default table id lookup. \code{recordloc} This is the name of the record we want in the list returned from the GET call. \code{key} is the API key. See \code{vignette("setup", package = "rCAX")} for API key details.}
 
 \item{...}{Curl options passed to \code{\link[crul]{HttpClient}}}
 }
@@ -36,7 +34,7 @@ rcax_table_query(
 data frame if \code{type="data.frame"} (default) and the colnames if \code{type="colnames"}
 }
 \description{
-This is the base function for queries to most of the CAX tables, e.g. \code{rcax_nosa()}
+This is the base function for queries for most of the CAX tables.
 Default queries will download 1000 records. You will
 want to make a filtered query by passing in \code{flist} as a list with the column name values to filter on.
 }

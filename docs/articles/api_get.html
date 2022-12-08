@@ -120,7 +120,7 @@
 <p>The main behind the scenes function is
 <code>rcax_GET(path, key = NULL, query=NULL, ...)</code> which appears
 in functions <code><a href="../reference/rcax_table_query.html">rcax_table_query()</a></code> and
-<code>rcax_table()</code>.</p>
+<code><a href="../reference/rcax_tables.html">rcax_tables()</a></code>.</p>
 <div class="section level2">
 <h2 id="rcax_get-params">rcax_GET params<a class="anchor" aria-label="anchor" href="#rcax_get-params"></a>
 </h2>
@@ -129,7 +129,7 @@ in functions <code><a href="../reference/rcax_table_query.html">rcax_table_query
 </h3>
 <p><code>path</code> is whatever comes after
 <code>https://api.streamnet.org/api/v1</code> in an API call.</p>
-<p>So for tables the url is</p>
+<p>For HLI tables the url is</p>
 <pre><code>https://api.streamnet.org/api/v1/ca</code></pre>
 <p>so <code>path="ca"</code>. I don’t think you need
 <code>ca.json</code> since json is the default. But maybe would be good
@@ -151,20 +151,37 @@ after <code>?</code> in the url for an API call). So like this:</p>
 </div>
 </div>
 <div class="section level2">
-<h2 id="rcax_nosa">rcax_nosa<a class="anchor" aria-label="anchor" href="#rcax_nosa"></a>
+<h2 id="cax-query-url">CAX Query URL<a class="anchor" aria-label="anchor" href="#cax-query-url"></a>
 </h2>
-<p>So if we look at the <code><a href="../reference/rcax_nosa.html">rcax_nosa()</a></code> code, you’ll see</p>
-<pre><code><span><span class="va">rcax_nosa_</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">table_id</span>, <span class="va">extra</span> <span class="op">=</span> <span class="cn">NULL</span>, <span class="va">key</span> <span class="op">=</span> <span class="cn">NULL</span>, <span class="va">...</span><span class="op">)</span> <span class="op">{</span><span class="op">}</span></span></code></pre>
-<p>and then</p>
-<pre><code><span><span class="fu"><a href="../reference/rcax_GET.html">rcax_GET</a></span><span class="op">(</span><span class="st">"ca"</span>, <span class="va">key</span>, query<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>table_id<span class="op">=</span><span class="va">table_id</span><span class="op">)</span>, <span class="va">extra</span><span class="op">)</span><span class="op">)</span></span></code></pre>
-<p>so it is specifying that the url should be</p>
+<p>The basic format of a query to the CAX API will look like this</p>
+<pre><code>https://api.streamnet.org/api/v1/ca.json?table_id=4EF09E86-2AA8-4C98-A983-A272C2C2C7E3&amp;XApiKey=&lt;your stored key&gt;&amp;filter=[{"field":"popid","value":"7","type":"string"}] </code></pre>
+<p>Here we are filtering on popid equal to 7 using the filter specified
+with JSON. See <code><a href="../reference/rcax_filter.html">rcax_filter()</a></code> for a function to create the
+JSON from a list of colnames and values.</p>
+<p>The <code><a href="../reference/rcax_GET.html">rcax_GET()</a></code> call would look like</p>
+<pre><code>qlist &lt;- list(
+  table_id=4EF09E86-2AA8-4C98-A983-A272C2C2C7E3,
+  filter=rcax_filter(list(popid=7))
+)
+rcax_GET("ca", query=qlist)</code></pre>
+<p>This will make the API URL</p>
 <pre><code>https://api.streamnet.org/api/v1/ca</code></pre>
-<p>Ignore the key. For the query list, it is making the list table_id
-and any extra query params (as a list).</p>
-<p>For example if we wanted this call</p>
-<pre><code>https://api.streamnet.org/api/v1/ca.json?table_id=4EF09E86-2AA8-4C98-A983-A272C2C2C7E3&amp;XApiKey=7A2F1EA9-4882-49E8-B23D-7DC202C2ACA5&amp;page=1&amp;per_page=10</code></pre>
-<p>we do</p>
-<pre><code><span><span class="fu"><a href="../reference/rcax_GET.html">rcax_GET</a></span><span class="op">(</span><span class="st">"ca"</span>, <span class="va">key</span>, query<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>table_id<span class="op">=</span><span class="va">table_id</span>, page<span class="op">=</span><span class="fl">1</span>, per_page<span class="op">=</span><span class="fl">10</span><span class="op">)</span><span class="op">)</span></span></code></pre>
+<p>We don’t need to pass in a key. <code><a href="../reference/rcax_GET.html">rcax_GET()</a></code> will look
+this up from the <code>.REnviron</code> file using
+<code><a href="../reference/check_key.html">check_key()</a></code>.</p>
+</div>
+<div class="section level2">
+<h2 id="finding-the-table_id">Finding the table_id<a class="anchor" aria-label="anchor" href="#finding-the-table_id"></a>
+</h2>
+<p>The <code>table_id</code> are stored in <code>rCAX:::caxtabs</code>
+as internal data using a call to <code><a href="../reference/rcax_tables.html">rcax_tables()</a></code>. The
+function returns the name and id for the tables in the CAX API.
+<code>caxtabs</code> will need to be updated or checked
+periodically.</p>
+<p>In <code><a href="../reference/rcax_table_query.html">rcax_table_query()</a></code>, the <code>table_id</code> is
+looked up using a table name. The table names for the HLI short code
+names are hard coded in <code><a href="../reference/rcax_table_name.html">rcax_table_name()</a></code>. If the names
+change, they should be updated here.</p>
 </div>
   </div>
 
