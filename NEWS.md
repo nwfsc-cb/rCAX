@@ -8,6 +8,7 @@ rCAX 0.7.0
 * `type="colnames"` now returns a data frame with a name and definition column.
 * Added documentation for the internal data.
 * Added RCMD check badge and workflow, did some minor cleanup to pass check.
+* Added CITATION
 
 rCAX 0.6.0
 ===================
