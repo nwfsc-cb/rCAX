@@ -11,7 +11,7 @@ Authors@R:
              email = "eli.holmes@noaa.gov"),
       person(given = "Mari",
              family = "Williams",
-             role = c("ctb"),
+             role = c("aut"),
              email = "mari.williams@noaa.gov"),
       person(given = "Katie",
              family = "Barnas",
@@ -28,7 +28,7 @@ RoxygenNote: 7.2.1
 Roxygen: list(markdown = TRUE)
 NeedsCompilation: no
 Author: Eli Holmes [aut, cre],
-  Mari Williams [ctb],
+  Mari Williams [aut],
   Katie Barnas [ctb]
 Suggests: 
     knitr,

@@ -6,5 +6,8 @@
 #' rcax_citation()
 #' 
 rcax_citation <- function() {
-  sprintf('Coordinated Assessments. <https://www.streamnet.org/home/data-maps/fish-hlis/>. See also citation information at <https://www.streamnet.org/resources/citing-sn/>')
+  print(citation("rCAX"), bibtex=FALSE)
+  cat(
+    'To cite the CAX HLI data, see citation information at:\n\n  Citing StreamNet Content, Database Queries <https://www.streamnet.org/resources/citing-sn/>'
+  )
 }
