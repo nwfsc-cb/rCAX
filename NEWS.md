@@ -1,5 +1,6 @@
 rCAX 0.8.0
 ===================
+https://github.com/nwfsc-math-bio/rCAX/releases/tag/v0.8.0
 
 * Condensed all the `_xport` functions into one function `rcax_hli_xport()` with argument `hli` to specify which HLI.
 * Condensed all the individual HLI functions into one function `rcax_hli()` with argument `hli` to specify which HLI.

@@ -63,13 +63,18 @@ rcax_parse <- function(x, parse) {
 #' @references 
 #' This function is modeled off check_key() in \url{https://github.com/ropensci/rredlist}
 check_key <- function(key){
-  tmp <- if (is.null(key)) Sys.getenv("CAX_KEY", "") else key
-  if (tmp == "") {
-    stop("need an API key for CAX data", call. = FALSE)
-  } else {
-    tmp
-  }
+  rCAXkey
+  # tmp <- if (is.null(key)) Sys.getenv("CAX_KEY", "") else key
+  # if (tmp == "") {
+  #   stop("need an API key for CAX data", call. = FALSE)
+  # } else {
+  #   tmp
+  # }
 }
+
+#' @method print rcax_zzz
+#' @export
+print.rcax_zzz <- function(x, ...) cat("")
 
 #' Make the user agent string
 #'
