@@ -32,5 +32,5 @@ R/sysdata.rda and defined in inst/docs/create_sysdata.R
 }
 \examples{
 # Show the first 5 colnames
-rcax_xport_cols("NOSA")[1:5]
+rcax_table_cols("NOSA")[1:5]
 }

@@ -17,6 +17,7 @@
 #' This is a list with the column name and value. See `rcax_filter()` for the filtering code which writes the filter query parameter that is added to the GET query. See `rcax_filter()` for examples of how one passes in `flist`.
 #'
 #' @export
+#' @param tablename The name of the table in the CAX API. See `rcax_tables()` for the names.
 #' @template info
 #' @template tableargs
 #' @seealso `rcax_GET()`, `rcax_nosa()`, `rcax_escdata()`, `rcax_superpops()`
@@ -138,7 +139,7 @@ rcax_table_query <- function(
 #' @rdname rcax_table_cols
 #' @examples
 #' # Show the first 5 colnames
-#' rcax_xport_cols("NOSA")[1:5]
+#' rcax_table_cols("NOSA")[1:5]
 rcax_table_cols <- function(hli, type=c("xport", "base")){
   type <- match.arg(type)
   if(type=="xport"){
@@ -171,7 +172,7 @@ rcax_table_cols <- function(hli, type=c("xport", "base")){
 #' @return A vector of column names for sorting
 #' @rdname rcax_table_sortcols
 #' @examples
-#' rcax_sortcols("NOSA")
+#' rcax_table_sortcols("NOSA")
 rcax_table_sortcols <- function(hli, type=c("xport", "base")){
   type <- match.arg(type)
   tab <- list(

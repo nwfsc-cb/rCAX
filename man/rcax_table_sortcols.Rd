@@ -25,5 +25,5 @@ A vector of column names for sorting
 }
 }
 \examples{
-rcax_sortcols("NOSA")
+rcax_table_sortcols("NOSA")
 }

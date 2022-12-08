@@ -16,6 +16,8 @@ rcax_table_query(
 )
 }
 \arguments{
+\item{tablename}{The name of the table in the CAX API. See \code{rcax_tables()} for the names.}
+
 \item{flist}{A filter for the query. See details and \code{rcax_filter()}}
 
 \item{qlist}{Additional query params. See \code{rcax_table_query()} for details.}
