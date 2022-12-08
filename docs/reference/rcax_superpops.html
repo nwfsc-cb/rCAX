@@ -105,7 +105,7 @@ is set automatically using a saved data frame from a <code><a href="rcax_tables.
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>tablename</dt>
-<dd><p>(character) The CAX name for the table; ignored if <code>GETargs$table_id</code> passed in.</p></dd>
+<dd><p>The name of the table in the CAX API. See <code><a href="../articles/CAX_Tables.html">vignette("CAX_Tables", package = "rCAX")</a></code></p></dd>
 
 
 <dt>flist</dt>
@@ -129,7 +129,7 @@ is set automatically using a saved data frame from a <code><a href="rcax_tables.
 
 
 <dt>GETargs</dt>
-<dd><p>A list of arguments for the <code><a href="rcax_GET.html">rcax_GET()</a></code> call. These do not normally need to be specified by the user. <code>table_id</code> This is the CAX table id. It is looked up using <code>tablename</code> and <code>rCAX:::caxpops</code> (an internal dataset). <code>recordloc</code> This is the name of the record we want in the list returned from the GET call. <code>key</code> is the API key. See <code><a href="../articles/setup.html">vignette("setup", package = "rCAX")</a></code> for API key details.</p></dd>
+<dd><p>A list of arguments for the <code><a href="rcax_GET.html">rcax_GET()</a></code> call. These do not normally need to be specified by the user. <code>table_id</code> This is the CAX table id. It is looked up using <code>tablename</code> and <code>rCAX:::caxpops</code> (an internal dataset). If <code>table_id</code> is passed in via <code>GETargs</code>, it wil override the default table id lookup. <code>recordloc</code> This is the name of the record we want in the list returned from the GET call. <code>key</code> is the API key. See <code><a href="../articles/setup.html">vignette("setup", package = "rCAX")</a></code> for API key details.</p></dd>
 
 
 <dt>...</dt>
@@ -158,19 +158,19 @@ is set automatically using a saved data frame from a <code><a href="rcax_tables.
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># print the first columns and definitions</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu">rcax_superpops</span><span class="op">(</span>type<span class="op">=</span><span class="st">"colnames"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>            name</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1         popid</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5 contactagency</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7            id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6           num</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2        popfit</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 3   popfitnotes</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4       upddate</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 contactagency</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6           num</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1         popid</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                                                     definition</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                                                                                   StreamNet code for the population of fish.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                                       Organization or person that is the best contact for questions about a specific record.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7                                                                                 Value used by computer to identify a record.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                                                                                                       An internal sorting id</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2 Categorization of how the geographic extent of the NOSA/escapement estimate corresponds to the definition of the population.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 3                                                Text description of why the data are not at the scale of a single population.</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                                                                When the record was last modified at the source organization.</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                                       Organization or person that is the best contact for questions about a specific record.</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                                                                                                       An internal sorting id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                                                                                   StreamNet code for the population of fish.</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># get one record</span></span></span>
 <span class="r-in"><span><span class="fu">rcax_superpops</span><span class="op">(</span>qlist<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>limit<span class="op">=</span><span class="fl">1</span><span class="op">)</span><span class="op">)</span></span></span>

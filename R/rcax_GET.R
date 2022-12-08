@@ -87,3 +87,45 @@ rcax_ua <- function() {
   )
   paste0(versions, collapse = " ")
 }
+
+#' Return table name given the HLI short name
+#' 
+#' * NOSA: Natural origin spawner abundance
+#' * SAR: SAR
+#' * PNI: PNI
+#' * RperS: Recruits per spawner
+#' * JuvOut: Short for JuvenileOutmigrants.
+#' * PreSmolt: Short for PresmoltAbundance.
+#' 
+#' @export
+#' @param hli The HLI short name: NOSA, SAR, PNI, RperS, JuvOut, or PreSmolt
+#' @param type XPort table or base table
+#' @examples
+#' rcax_table_name("NOSA", type="xport")
+#' @rdname rcax_table_name
+rcax_table_name <- function(hli, type=c("xport", "base")){
+  type <- match.arg(type)
+  if(type=="xport"){
+  tab <- list(
+    NOSA = "XPortCA_NOSA_01",
+    SAR = "XPortCA_SAR_01",
+    PNI = "XPortCA_PNI_01",
+    JuvOut = "XPortCA_JuvenileOutmigrants_01",
+    PreSmolt = "XPortCA_PresmoltAbundance_01",
+    RperS = "XPortCA_RperS_01"
+  )
+  }
+  if(type=="base"){
+    tab <- list(
+      NOSA = "NOSA",
+      SAR = "SAR",
+      PNI = "PNI",
+      JuvOut = "JuvenileOutmigrants",
+      PreSmolt = "PresmoltAbundance",
+      RperS = "RperS"
+    )
+  }
+  return(tab[[hli]])
+}
+
+

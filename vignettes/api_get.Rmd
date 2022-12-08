@@ -19,7 +19,7 @@ knitr::opts_chunk$set(
 library(rCAX)
 ```
 
-The main behind the scenes function is `rcax_GET(path, key = NULL, query=NULL, ...)` which appears in functions `rcax_table_query()` and `rcax_table()`.
+The main behind the scenes function is `rcax_GET(path, key = NULL, query=NULL, ...)` which appears in functions `rcax_table_query()` and `rcax_tables()`.
 
 ## rcax_GET params
 
@@ -27,7 +27,7 @@ The main behind the scenes function is `rcax_GET(path, key = NULL, query=NULL, .
 
 `path` is whatever comes after `https://api.streamnet.org/api/v1` in an API call. 
 
-So for tables the url is
+For HLI tables the url is
 ```
 https://api.streamnet.org/api/v1/ca
 ```
@@ -44,27 +44,30 @@ This has to be a LIST of your query parameters (stuff that appears after `?` in 
 list(table_id="whatevertableidis")
 ```
 
-## rcax_nosa
+## CAX Query URL
 
-So if we look at the `rcax_nosa()` code, you'll see
+The basic format of a query to the CAX API will look like this
 ```
-rcax_nosa_ <- function(table_id, extra = NULL, key = NULL, ...) {}
+https://api.streamnet.org/api/v1/ca.json?table_id=4EF09E86-2AA8-4C98-A983-A272C2C2C7E3&XApiKey=<your stored key>&filter=[{"field":"popid","value":"7","type":"string"}] 
 ```
-and then
+Here we are filtering on popid equal to 7 using the filter specified with JSON. See `rcax_filter()` for a function to create the JSON from a list of colnames and values.
+
+The `rcax_GET()` call would look like
 ```
-rcax_GET("ca", key, query=c(list(table_id=table_id), extra))
+qlist <- list(
+  table_id=4EF09E86-2AA8-4C98-A983-A272C2C2C7E3,
+  filter=rcax_filter(list(popid=7))
+)
+rcax_GET("ca", query=qlist)
 ```
-so it is specifying that the url should be 
+This will make the API URL
 ```
 https://api.streamnet.org/api/v1/ca
 ```
-Ignore the key. For the query list, it is making the list table_id and any extra query params (as a list).
+We don't need to pass in a key. `rcax_GET()` will look this up from the `.REnviron` file using `check_key()`. 
 
-For example if we wanted this call 
-```
-https://api.streamnet.org/api/v1/ca.json?table_id=4EF09E86-2AA8-4C98-A983-A272C2C2C7E3&XApiKey=7A2F1EA9-4882-49E8-B23D-7DC202C2ACA5&page=1&per_page=10
-```
-we do
-```
-rcax_GET("ca", key, query=list(table_id=table_id, page=1, per_page=10))
-```
+## Finding the table_id
+
+The `table_id` are stored in `rCAX:::caxtabs` as internal data using a call to `rcax_tables()`. The function returns the name and id for the tables in the CAX API. `caxtabs` will need to be updated or checked periodically.
+
+In `rcax_table_query()`, the `table_id` is looked up using a table name. The table names for the HLI short code names are hard coded in `rcax_table_name()`. If the names change, they should be updated here.

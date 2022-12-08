@@ -80,7 +80,13 @@
 
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.8.0" id="rcax-080">rCAX 0.8.0<a class="anchor" aria-label="anchor" href="#rcax-080"></a></h2>
-<ul><li>Added CITATION</li>
+<ul><li>Condensed all the <code>_xport</code> functions into one function <code><a href="../reference/rcax_hli_xport.html">rcax_hli_xport()</a></code> with argument <code>hli</code> to specify which HLI.</li>
+<li>Condensed all the individual HLI functions into one function <code><a href="../reference/rcax_hli.html">rcax_hli()</a></code> with argument <code>hli</code> to specify which HLI.</li>
+<li>Cleaned up the API vignette as it was out of date. Updated <code>basics.Rmd</code> given the changes to the functions.</li>
+<li>Added <code><a href="../reference/rcax_table_name.html">rcax_table_name()</a></code> to look up the table based on XPort versus base and for a HLI short code.</li>
+<li>Added <code><a href="../reference/rcax_table_cols.html">rcax_table_cols()</a></code> and <code><a href="../reference/rcax_table_sortcols.html">rcax_table_sortcols()</a></code> to return these based on XPort versus base and for a HLI short code.</li>
+<li>Added ‘hli’ and ‘hli_id’ to the <code>cax_column_definitions</code> internal data.</li>
+<li>Added CITATION</li>
 </ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.7.0" id="rcax-070">rCAX 0.7.0<a class="anchor" aria-label="anchor" href="#rcax-070"></a></h2>
@@ -97,7 +103,7 @@
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.6.0" id="rcax-060">rCAX 0.6.0<a class="anchor" aria-label="anchor" href="#rcax-060"></a></h2>
 <p><a href="https://github.com/nwfsc-math-bio/rCAX/releases/tag/v0.6.0" class="external-link uri">https://github.com/nwfsc-math-bio/rCAX/releases/tag/v0.6.0</a></p>
-<ul><li>Added <code><a href="../reference/rcax_pni_xport.html">rcax_pni_xport()</a></code>, <code><a href="../reference/rcax_rpers_xport.html">rcax_rpers_xport()</a></code>, <code><a href="../reference/rcax_juvout_xport.html">rcax_juvout_xport()</a></code>, <code><a href="../reference/rcax_presmolt_xport.html">rcax_presmolt_xport()</a></code>, <code><a href="../reference/rcax_presmolt.html">rcax_presmolt()</a></code>, <code><a href="../reference/rcax_pni.html">rcax_pni()</a></code>, <code><a href="../reference/rcax_sar.html">rcax_sar()</a></code>, <code><a href="../reference/rcax_rpers.html">rcax_rpers()</a></code>, <code><a href="../reference/rcax_presmolt.html">rcax_presmolt()</a></code>
+<ul><li>Added <code>rcax_pni_xport()</code>, <code>rcax_rpers_xport()</code>, <code>rcax_juvout_xport()</code>, <code>rcax_presmolt_xport()</code>, <code>rcax_presmolt()</code>, <code>rcax_pni()</code>, <code>rcax_sar()</code>, <code>rcax_rpers()</code>, <code>rcax_presmolt()</code>
 </li>
 <li>Added template roxygen for all xport and basetable functions. Now details and description elements are identical.</li>
 <li>Dynamically find a nmfs_id or popid for the examples so that the examples never return an empty table.</li>
@@ -110,8 +116,8 @@
 <h2 class="page-header" data-toc-text="0.5.0" id="rcax-050">rCAX 0.5.0<a class="anchor" aria-label="anchor" href="#rcax-050"></a></h2>
 <p><a href="https://github.com/nwfsc-math-mbio/rCAX/releases/tag/v0.5.0" class="external-link uri">https://github.com/nwfsc-math-mbio/rCAX/releases/tag/v0.5.0</a></p>
 <ul><li>Added <code><a href="../reference/rcax_termsofuse.html">rcax_termsofuse()</a></code> and a Terms of Use vignette. Add more links in Readme to StreamNet data use policies.</li>
-<li>Added <code><a href="../reference/rcax_nosa_xport.html">rcax_nosa_xport()</a></code> which is the data table available on <a href="https://www.streamnet.org/data/hli/" class="external-link uri">https://www.streamnet.org/data/hli/</a> when one downloads a NOSA table</li>
-<li>Added <code><a href="../reference/rcax_sar_xport.html">rcax_sar_xport()</a></code> which is the data table available on <a href="https://www.streamnet.org/data/hli/" class="external-link uri">https://www.streamnet.org/data/hli/</a> when one downloads a SAR table</li>
+<li>Added <code>rcax_nosa_xport()</code> which is the data table available on <a href="https://www.streamnet.org/data/hli/" class="external-link uri">https://www.streamnet.org/data/hli/</a> when one downloads a NOSA table</li>
+<li>Added <code>rcax_sar_xport()</code> which is the data table available on <a href="https://www.streamnet.org/data/hli/" class="external-link uri">https://www.streamnet.org/data/hli/</a> when one downloads a SAR table</li>
 <li>Made <code><a href="../reference/rcax_table_query.html">rcax_table_query()</a></code> more robust if the cols passed in do not match what is in the table. It will print a warning and only show cols that do appear. Also I added <code>tolower(cols)</code> and <code>tolower(sortcols)</code> so that these are case insensitive.</li>
 <li>Added <code>nosa_xport_colnames</code> to <code>sysdata.rda</code>. This is somewhat fragile since SteamNet might change the column names. The code to create the system data is in <code>inst/docs</code>.</li>
 </ul></div>
@@ -131,7 +137,7 @@
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.2.0" id="rcax-020">rCAX 0.2.0<a class="anchor" aria-label="anchor" href="#rcax-020"></a></h2>
 <p><a href="https://github.com/nwfsc-math-mbio/rCAX/releases/tag/v0.2.0" class="external-link uri">https://github.com/nwfsc-math-mbio/rCAX/releases/tag/v0.2.0</a></p>
-<ul><li>Cleaned up <code><a href="../reference/rcax_nosa.html">rcax_nosa()</a></code> and figured out that you can pass in popid as a query param. Subset the columns.</li>
+<ul><li>Cleaned up <code>rcax_nosa()</code> and figured out that you can pass in popid as a query param. Subset the columns.</li>
 <li>Make <code><a href="../reference/rcax_tables.html">rcax_tables()</a></code> to get the table ids that we need for queries.</li>
 </ul></div>
     <div class="section level2">

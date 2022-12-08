@@ -8,6 +8,7 @@
 #'  `rcax_escdata()` will download 1000 records. 
 #'  
 #' @export
+#' @param tablename The name of the table in the CAX API. See \code{vignette("CAX_Tables", package = "rCAX")}
 #' @template tableargs
 #' @template info
 #' @examples 

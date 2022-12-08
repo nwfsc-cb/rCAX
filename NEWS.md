@@ -1,8 +1,13 @@
 rCAX 0.8.0
 ===================
 
+* Condensed all the `_xport` functions into one function `rcax_hli_xport()` with argument `hli` to specify which HLI.
+* Condensed all the individual HLI functions into one function `rcax_hli()` with argument `hli` to specify which HLI.
+* Cleaned up the API vignette as it was out of date. Updated `basics.Rmd` given the changes to the functions.
+* Added `rcax_table_name()` to look up the table based on XPort versus base and for a HLI short code.
+* Added `rcax_table_cols()` and `rcax_table_sortcols()` to return these based on XPort versus base and for a HLI short code.
+* Added 'hli' and 'hli_id' to the `cax_column_definitions` internal data.
 * Added CITATION
-
 
 rCAX 0.7.0
 ===================
