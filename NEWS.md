@@ -1,5 +1,12 @@
+rCAX 0.8.0
+===================
+
+* Added CITATION
+
+
 rCAX 0.7.0
 ===================
+https://github.com/nwfsc-math-bio/rCAX/releases/tag/v0.7.0
 
 * Added a setup vignette for how to download and install the package.
 * Removed `rcax_key()`. Not needed. Cleaned up some {rredlist} refs.
@@ -8,7 +15,6 @@ rCAX 0.7.0
 * `type="colnames"` now returns a data frame with a name and definition column.
 * Added documentation for the internal data.
 * Added RCMD check badge and workflow, did some minor cleanup to pass check.
-* Added CITATION
 
 rCAX 0.6.0
 ===================
