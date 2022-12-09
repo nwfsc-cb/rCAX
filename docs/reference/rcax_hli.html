@@ -145,11 +145,11 @@ will be empty. Examples:</p><ul><li><p><code>flist=list(popid=7)</code> return v
 
 
 <dt>cols</dt>
-<dd><p>column names to return. Use cols=NULL if you want all columns</p></dd>
+<dd><p>column names to return. Use cols=NULL if you want all columns. Names are case insensitive.</p></dd>
 
 
 <dt>sortcols</dt>
-<dd><p>The columns to sort on for the returned table. The order of sortcols indicates the order of sorting. Start with the smallest group and work outwards, e.g. <code>c("spawningyear", "popid", "MPG")</code></p></dd>
+<dd><p>The columns to sort on for the returned table. The order of sortcols indicates the order of sorting. Start with the smallest group and work outwards, e.g. <code>c("spawningyear", "popid", "MPG")</code>. Names are case insensitive.</p></dd>
 
 
 <dt>type</dt>
@@ -157,7 +157,7 @@ will be empty. Examples:</p><ul><li><p><code>flist=list(popid=7)</code> return v
 
 
 <dt>GETargs</dt>
-<dd><p>A list of arguments for the <code><a href="rcax_GET.html">rcax_GET()</a></code> call. These do not normally need to be specified by the user. <code>table_id</code> This is the CAX table id. It is looked up using <code>tablename</code> and <code>rCAX:::caxpops</code> (an internal dataset). If <code>table_id</code> is passed in via <code>GETargs</code>, it wil override the default table id lookup. <code>recordloc</code> This is the name of the record we want in the list returned from the GET call. <code>key</code> is the API key. See <code><a href="../articles/setup.html">vignette("setup", package = "rCAX")</a></code> for API key details.</p></dd>
+<dd><p>A list of arguments for the <code><a href="rcax_GET.html">rcax_GET()</a></code> call. These do not need to be specified by the user unless the user wants to change the default values. <code>table_id</code> This is the CAX table id. It is looked up using <code>tablename</code> and <code>rCAX:::caxpops</code> (an internal dataset). If <code>table_id</code> is passed in via <code>GETargs</code>, it wil override the default table id lookup. <code>recordloc</code> This is the name of the record we want in the list returned from the GET call. <code>key</code> is the API key.</p></dd>
 
 
 <dt>...</dt>

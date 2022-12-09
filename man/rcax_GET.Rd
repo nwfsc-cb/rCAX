@@ -9,7 +9,7 @@ rcax_GET(path, key = NULL, query = NULL, ...)
 \arguments{
 \item{path}{what to add after the base api path}
 
-\item{key}{A CAX API key. See \code{vignette("setup", package = "rCAX")}.}
+\item{key}{A CAX API key. See details.}
 
 \item{query}{a list of query parameters with their values, e.g. \code{list(param=value)}}
 
@@ -19,13 +19,15 @@ rcax_GET(path, key = NULL, query = NULL, ...)
 Make a GET call to API
 }
 \details{
-You will need an API key to make GET queries. Contact Streamnet to request a pull key or guest key. https://www.streamnet.org/resources/exchange-tools/rest-api-documentation/
+API Key: rCAX includes a "read-only" API key. Thus for normal
+read-only use, you
+do not need an API key. If you need to use your
+own key, see the instructions in \code{vignette("api_get", package = "rCAX")}.
 
-After getting your key set it as CAX_KEY in your \code{.Renviron} file by pasting this text into that file. \code{CAX_KEY='youractualkeynotthisstring'}
-
-To find (and create if necessary) your \code{.Renviron} file, use \code{usethis::edit_r_environ()}
-then open that file and paste in the key text above.
-After you edit the file, you will need to restart R. If you are in RStudio use Session > Restart R.
+User Agent String: \code{rcax_ua()} sets the user agent string that is passed
+to the CAX REST API. If the rCAX package code is reused (for another
+package), make sure to change the user agent string to indicate that
+the queries are from another package.
 }
 \examples{
 \dontrun{

@@ -1,3 +1,10 @@
+rCAX 0.9.0
+===================
+
+* Removed API key info as rCAX now includes an internal read-only key
+* Add plot to basics.Rmd
+* Allow cols and sortcols in `rcax_table_query()` to be numbers, although the results might be non-intuitive for `rcax_hli_xport()` since the number will refer to the column order in the table before the columns are sorted into the order found in the downloaded Excel files.
+
 rCAX 0.8.0
 ===================
 https://github.com/nwfsc-math-bio/rCAX/releases/tag/v0.8.0

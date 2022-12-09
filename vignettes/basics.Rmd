@@ -15,7 +15,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-See the [Getting Started vignette](articles/setup.html) for instructions on installing and setting-up your API key. Once you have installed {rCAX} and set up your key, you can begin using the package by loading the library.
+See the [Getting Started vignette](articles/setup.html) for instructions on installing {rCAX}. Once you have installed {rCAX}, you can begin using the package by loading the library.
 
 Load the library.
 ```{r setup}
@@ -60,20 +60,37 @@ head(tab)
 Return data for a single ESU. The ESU/DPS names must be exact and are case sensitive. Use `rCAX:::caxesu` to see the ESU/DPS names.
 ```{r}
 tab <- rcax_hli_xport("NOSA",
-  flist = list(esu_dps = "Salmon, Chinook (Snake River fall-run ESU)"),
-  cols=c("popid", "spawningyear", "tsaej", "nosaej"))
+  flist = list(esu_dps = "Salmon, chum (Columbia River ESU)")
+)
 ```
-
+We can then plot:
+```{r}
+library(ggplot2)
+# Convert tsaej to a number
+tab$tsaej <- as.numeric(tab$tsaej)
+# plot
+ggplot(
+  subset(tab, spawningyear>2000), 
+  aes(x=spawningyear, y=log(tsaej), color=waterbody)) +
+  geom_line(na.rm = TRUE) +
+  ggtitle("log(total spawners)")
+```
 Keep in mind that not all ESU and DPS are in the CAX database for each HLI. Go to https://www.streamnet.org/data/hli/ to do a search to quickly see what is available in different HLI tables.
 
 ## Filtering
+
+### Single value
 
 The `flist` argument is a list with the columns and values you want to filter on. Here are some examples:
 
 Filter based on one value.
 ```
-flist = list(esu_dps = "Steelhead (Middle Columbia River DPS)")
+f <- list(esu_dps = "Steelhead (Middle Columbia River DPS)")
+f <-  list(popid = 7)
 ```
+
+
+### Multiple value
 
 Filter based on multiple values. In this case, data with popid 7, 8 or 9 are returned.
 ```

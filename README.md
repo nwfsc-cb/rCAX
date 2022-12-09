@@ -15,26 +15,16 @@ install.packages("remotes") # needed for the next line
 remotes:::install_github("nwfsc-math-bio/rCAX@*release")
 ```
 
-## Using
-
-### Set up your API key
-
-First you need to get a pull api key from StreamNet. Once you have a key, run 
-```
-install.packages("usethis") # needed for the next line
-usethis::edit_r_environ()
-```
-to find or create your `.Renviron` file. Open that file and paste in `CAX_KEY = "whateveryourkeyis"`. Then restart R (Session > Restart R in RStudio).
-
-### Download a table
+## Download a table
 
 Read the [Basic functions vignette](https://nwfsc-math-bio.github.io/rCAX/articles/basics.html) to get started and see examples.
 
-For example, to retrieve the NOSA data for popid 7, use
+To retrieve the NOSA data for popid 7 that is the same as the file that one can download from [CAP Fish HLIs Tabular Query](https://www.streamnet.org/data/hli/), use
+
 ```
 library(rCAX)
-fl <- list(popid=7)
-a <- rcax_nosa_xport(flist=fl)
+f <- list(popid=7)
+tab <- rcax_hli_xport("NOSA", flist = f)
 ```
 
 ### Check the versions

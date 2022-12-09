@@ -35,7 +35,7 @@ so `path="ca"`. I don't think you need `ca.json` since json is the default. But 
 
 ### key
 
-You should have saved this in your `.Renviron` file but if you didn't, you can pass that in in quotes, so like `key="whateveryourkeyis"`.
+The API key. rCAX includes a read-only API key but if you need to use your own, see section below.
 
 ### query
 
@@ -66,8 +66,24 @@ https://api.streamnet.org/api/v1/ca
 ```
 We don't need to pass in a key. `rcax_GET()` will look this up from the `.REnviron` file using `check_key()`. 
 
-## Finding the table_id
+## Finding the table id
 
 The `table_id` are stored in `rCAX:::caxtabs` as internal data using a call to `rcax_tables()`. The function returns the name and id for the tables in the CAX API. `caxtabs` will need to be updated or checked periodically.
 
 In `rcax_table_query()`, the `table_id` is looked up using a table name. The table names for the HLI short code names are hard coded in `rcax_table_name()`. If the names change, they should be updated here.
+
+## API key
+
+{rCAX} includes a "read-only" API key. Thus for normal read-only use, you
+do not need an API key. If you need to use your own key, contact StreamNet. You can pass in your own key into calls via `GETargs$key`. 
+
+Alternatively you can set it as as an environment variable called `CAX_KEY` in your `.Renviron` file by pasting this text into that file: `CAX_KEY='youractualkeynotthisstring'`. To do this, install the {usethis} package.
+```{r eval=FALSE}
+install.packages("usethis")
+```
+Then run this code to find or create your `.Renviron` file. It will tell you where the `.Renviron` file is.
+```{r eval=FALSE}
+usethis::edit_r_environ()
+```
+Open that file and paste in `CAX_KEY = "whateveryourkeyis"` into the file and save. After you edit the file, you will need to restart R. If you are in
+RStudio use Session > Restart R. Now your API will be visible to {rCAX}. 
