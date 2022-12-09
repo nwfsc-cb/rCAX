@@ -41,4 +41,4 @@ If your version is out of date, update with another call to `install_github()` (
 ## API key
 
 {rCAX} includes a "read-only" API key. Thus you
-do not need an API key to use {rCAX}. If you need to use your own key, see \code{vignette("api_get", package = "rCAX")}.
+do not need an API key to use {rCAX}. If you need to use your own key, see vignette on the [API GET function](api_get.html).

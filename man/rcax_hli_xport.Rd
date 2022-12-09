@@ -75,9 +75,11 @@ left in. The colnames are re-sorted into the order found in the
 downloaded
 Excel files with the extra columns added to the end.
 
+The table columns are sorted into the order that appears in
+\href{https://www.streamnet.org/data/hli/}{CAP Fish HLIs Tabular Query}.
 If you want to see the original columns in the original order,
-use \verb{type="colnames} and use the name column of that output as
-the value for the \code{cols} argument.
+use \code{cols=1:50}, say, to see the first 50 columns in the original
+order.
 }
 \examples{
 # return NMFS_PopID of second record

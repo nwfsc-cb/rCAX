@@ -35,6 +35,8 @@
 #'    downloaded
 #'  Excel files with the extra columns added to the end. 
 #'  
-#'  If you want to see the original columns in the original order, 
-#'  use `type="colnames` and use the name column of that output as
-#'  the value for the `cols` argument.
+#'  The table columns are sorted into the order that appears in 
+#'  [CAP Fish HLIs Tabular Query](https://www.streamnet.org/data/hli/).
+#'   If you want to see the original columns in the original order, 
+#'  use `cols=1:50`, say, to see the first 50 columns in the original
+#'   order.

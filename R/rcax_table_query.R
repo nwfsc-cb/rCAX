@@ -38,10 +38,10 @@ rcax_table_query <- function(
   assert_is(tablename, 'character')
   assert_is(flist, 'list')
   assert_is(qlist, 'list')
-  assert_is(cols, c("numeric", "character"))
-  if(inherits(cols, "numeric")) if(any(cols<1)) stop("If cols is a number must be greater than 0.")
-  assert_is(sortcols, c("numeric", "character"))
-  if(inherits(sortcols, "numeric")) if(any(sortcols<1)) stop("If sortcols is a number must be greater than 0.")
+  assert_is(cols, c("integer", "numeric", "character"))
+  if(inherits(cols, c("integer", "numeric"))) if(any(cols<1)) stop("If cols is a number must be greater than 0.")
+  assert_is(sortcols, c("integer", "numeric", "character"))
+  if(inherits(sortcols, c("integer", "numeric"))) if(any(sortcols<1)) stop("If sortcols is a number must be greater than 0.")
   assert_is(GETargs, 'list')
   
   # Update GETargs list with any values that the user passed in
@@ -104,7 +104,7 @@ rcax_table_query <- function(
   colnames(tab) <- tolower(colnames(tab))
   if(!is.null(cols)){
     if(inherits(cols, "character")) cols <- tolower(cols)
-    if(inherits(cols, "numeric")){
+    if(inherits(cols, c("integer", "numeric"))){
       cols <- colnames(tab)[cols]
       if(any(is.na(cols))) warning("cols is an integer and should be between 1 and the numbers of columns in the table. some numbers are not in the table, i.e. negative, 0, or greater than the number of columns. erroneous numbers are dropped.")
       cols <- cols[!is.na(cols)]
@@ -112,7 +112,7 @@ rcax_table_query <- function(
   }
   if(!is.null(sortcols)){
     if(inherits(sortcols, "character")) sortcols <- tolower(sortcols)
-    if(inherits(sortcols, "numeric")){
+    if(inherits(sortcols, c("integer", "numeric"))){
       sortcols <- colnames(tab)[sortcols]
       if(any(is.na(sortcols))) warning("sortcols is an integer and should be between 1 and the numbers of columns in the table. some numbers are not in the table, i.e.  greater than the number of columns. erroneous numbers are dropped.")
       sortcols <- sortcols[!is.na(sortcols)]

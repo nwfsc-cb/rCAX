@@ -15,7 +15,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-See the [Getting Started vignette](articles/setup.html) for instructions on installing {rCAX}. Once you have installed {rCAX}, you can begin using the package by loading the library.
+See the [Getting Started vignette](setup.html) for instructions on installing {rCAX}. Once you have installed {rCAX}, you can begin using the package by loading the library.
 
 Load the library.
 ```{r setup}
@@ -75,6 +75,7 @@ ggplot(
   geom_line(na.rm = TRUE) +
   ggtitle("log(total spawners)")
 ```
+
 Keep in mind that not all ESU and DPS are in the CAX database for each HLI. Go to https://www.streamnet.org/data/hli/ to do a search to quickly see what is available in different HLI tables.
 
 ## Filtering
