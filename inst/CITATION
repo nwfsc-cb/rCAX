@@ -9,3 +9,9 @@ year = year,
 institution = "Northwest Fisheries Science Center, Math Bio Program",
 doi = "xxx/xxx")
 
+bibentry(
+bibtype = "Misc",
+year = "https://www.streamnet.org/home/data-maps/fish-hlis/",
+title = "Coordinated Assessments Partnership (CAP) fish high-level indicators (HLIs)",
+note = "For details on citing StreamNet content see: https://www.streamnet.org/resources/citing-sn/")
+
