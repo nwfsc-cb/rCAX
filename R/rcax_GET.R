@@ -1,17 +1,20 @@
 #' Make a GET call to API
 #' 
-#' @details You will need an API key to make GET queries. Contact Streamnet to request a pull key or guest key. https://www.streamnet.org/resources/exchange-tools/rest-api-documentation/
-#' 
-#' After getting your key set it as CAX_KEY in your `.Renviron` file by pasting this text into that file. `CAX_KEY='youractualkeynotthisstring'`
-#' 
-#' To find (and create if necessary) your `.Renviron` file, use `usethis::edit_r_environ()` 
-#' then open that file and paste in the key text above.
-#' After you edit the file, you will need to restart R. If you are in RStudio use Session > Restart R.
+#' @details 
+#' API Key: rCAX includes a "read-only" API key. Thus for normal 
+#' read-only use, you
+#' do not need an API key. If you need to use your
+#' own key, see the instructions in \code{vignette("api_get", package = "rCAX")}.
+#'  
+#' User Agent String: `rcax_ua()` sets the user agent string that is passed
+#' to the CAX REST API. If the rCAX package code is reused (for another 
+#' package), make sure to change the user agent string to indicate that
+#' the queries are from another package.
 #' 
 #' @export
 #' @param path what to add after the base api path
 #' @param query a list of query parameters with their values, e.g. `list(param=value)`
-#' @param key A CAX API key. See \code{vignette("setup", package = "rCAX")}.
+#' @param key A CAX API key. See details.
 #' @param ... Curl options passed to \code{\link[crul]{HttpClient}}
 #' @template info
 #' @examples \dontrun{
@@ -63,13 +66,13 @@ rcax_parse <- function(x, parse) {
 #' @references 
 #' This function is modeled off check_key() in \url{https://github.com/ropensci/rredlist}
 check_key <- function(key){
-  rCAXkey
-  # tmp <- if (is.null(key)) Sys.getenv("CAX_KEY", "") else key
-  # if (tmp == "") {
-  #   stop("need an API key for CAX data", call. = FALSE)
-  # } else {
-  #   tmp
-  # }
+  key <- rCAXkey
+  tmp <- if (is.null(key)) Sys.getenv("CAX_KEY", "") else key
+  if (tmp == "") {
+    stop("need an API key for CAX data", call. = FALSE)
+  } else {
+    tmp
+  }
 }
 
 #' @method print rcax_zzz
@@ -111,14 +114,14 @@ rcax_ua <- function() {
 rcax_table_name <- function(hli, type=c("xport", "base")){
   type <- match.arg(type)
   if(type=="xport"){
-  tab <- list(
-    NOSA = "XPortCA_NOSA_01",
-    SAR = "XPortCA_SAR_01",
-    PNI = "XPortCA_PNI_01",
-    JuvOut = "XPortCA_JuvenileOutmigrants_01",
-    PreSmolt = "XPortCA_PresmoltAbundance_01",
-    RperS = "XPortCA_RperS_01"
-  )
+    tab <- list(
+      NOSA = "XPortCA_NOSA_01",
+      SAR = "XPortCA_SAR_01",
+      PNI = "XPortCA_PNI_01",
+      JuvOut = "XPortCA_JuvenileOutmigrants_01",
+      PreSmolt = "XPortCA_PresmoltAbundance_01",
+      RperS = "XPortCA_RperS_01"
+    )
   }
   if(type=="base"){
     tab <- list(

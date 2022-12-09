@@ -115,11 +115,11 @@ want to make a filtered query by passing in <code>flist</code> as a list with th
 
 
 <dt>cols</dt>
-<dd><p>column names to return. Use cols=NULL if you want all columns</p></dd>
+<dd><p>column names to return. Use cols=NULL if you want all columns. Names are case insensitive.</p></dd>
 
 
 <dt>sortcols</dt>
-<dd><p>The columns to sort on for the returned table. The order of sortcols indicates the order of sorting. Start with the smallest group and work outwards, e.g. <code>c("spawningyear", "popid", "MPG")</code></p></dd>
+<dd><p>The columns to sort on for the returned table. The order of sortcols indicates the order of sorting. Start with the smallest group and work outwards, e.g. <code>c("spawningyear", "popid", "MPG")</code>. Names are case insensitive.</p></dd>
 
 
 <dt>type</dt>
@@ -127,7 +127,7 @@ want to make a filtered query by passing in <code>flist</code> as a list with th
 
 
 <dt>GETargs</dt>
-<dd><p>A list of arguments for the <code><a href="rcax_GET.html">rcax_GET()</a></code> call. These do not normally need to be specified by the user. <code>table_id</code> This is the CAX table id. It is looked up using <code>tablename</code> and <code>rCAX:::caxpops</code> (an internal dataset). If <code>table_id</code> is passed in via <code>GETargs</code>, it wil override the default table id lookup. <code>recordloc</code> This is the name of the record we want in the list returned from the GET call. <code>key</code> is the API key. See <code><a href="../articles/setup.html">vignette("setup", package = "rCAX")</a></code> for API key details.</p></dd>
+<dd><p>A list of arguments for the <code><a href="rcax_GET.html">rcax_GET()</a></code> call. These do not need to be specified by the user unless the user wants to change the default values. <code>table_id</code> This is the CAX table id. It is looked up using <code>tablename</code> and <code>rCAX:::caxpops</code> (an internal dataset). If <code>table_id</code> is passed in via <code>GETargs</code>, it wil override the default table id lookup. <code>recordloc</code> This is the name of the record we want in the list returned from the GET call. <code>key</code> is the API key.</p></dd>
 
 
 <dt>...</dt>
@@ -156,11 +156,10 @@ This is a list with the column name and value. See <code><a href="rcax_filter.ht
     <div id="references">
     <h2>References</h2>
     <p>API docs at <a href="https://www.streamnet.org/resources/exchange-tools/rest-api-documentation/" class="external-link">https://www.streamnet.org/resources/exchange-tools/rest-api-documentation/</a></p>
-<p>This function was originally modeled off the functions in <a href="https://github.com/ropensci/rredlist" class="external-link">https://github.com/ropensci/rredlist</a> but was greatly modified.</p>
     </div>
     <div id="see-also">
     <h2>See also</h2>
-    <div class="dont-index"><p><code><a href="rcax_GET.html">rcax_GET()</a></code>, <code>rcax_nosa()</code>, <code><a href="rcax_escdata.html">rcax_escdata()</a></code>, <code><a href="rcax_superpops.html">rcax_superpops()</a></code></p></div>
+    <div class="dont-index"><p><code><a href="rcax_GET.html">rcax_GET()</a></code>, <code><a href="rcax_hli.html">rcax_hli()</a></code>, <code><a href="rcax_hli_xport.html">rcax_hli_xport()</a></code>, <code><a href="rcax_escdata.html">rcax_escdata()</a></code>, <code><a href="rcax_superpops.html">rcax_superpops()</a></code></p></div>
     </div>
 
     <div id="ref-examples">

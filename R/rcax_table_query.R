@@ -20,13 +20,10 @@
 #' @param tablename The name of the table in the CAX API. See `rcax_tables()` for the names.
 #' @template info
 #' @template tableargs
-#' @seealso `rcax_GET()`, `rcax_nosa()`, `rcax_escdata()`, `rcax_superpops()`
+#' @seealso `rcax_GET()`, `rcax_hli()`, `rcax_hli_xport()`, `rcax_escdata()`, `rcax_superpops()`
 #' @examples
 #' a <- rcax_table_query(tablename="NOSA", qlist = list(limit=5))
 #' a[, c("popid", "spawningyear", "nosaij", "nosaej")]
-#'
-#' @references
-#' This function was originally modeled off the functions in \url{https://github.com/ropensci/rredlist} but was greatly modified.
 #'
 rcax_table_query <- function(
     tablename = NULL,
@@ -41,7 +38,12 @@ rcax_table_query <- function(
   assert_is(tablename, 'character')
   assert_is(flist, 'list')
   assert_is(qlist, 'list')
+  assert_is(cols, c("numeric", "character"))
+  if(inherits(cols, "numeric")) if(any(cols<1)) stop("If cols is a number must be greater than 0.")
+  assert_is(sortcols, c("numeric", "character"))
+  if(inherits(sortcols, "numeric")) if(any(sortcols<1)) stop("If sortcols is a number must be greater than 0.")
   assert_is(GETargs, 'list')
+  
   # Update GETargs list with any values that the user passed in
   if (!missing(GETargs)) {
     formal.args <- formals(sys.function(sysP <- sys.parent()))
@@ -100,8 +102,22 @@ rcax_table_query <- function(
   
   # the colnames are all in lower case
   colnames(tab) <- tolower(colnames(tab))
-  if(!is.null(cols)) cols <- tolower(cols)
-  if(!is.null(sortcols)) sortcols <- tolower(sortcols)
+  if(!is.null(cols)){
+    if(inherits(cols, "character")) cols <- tolower(cols)
+    if(inherits(cols, "numeric")){
+      cols <- colnames(tab)[cols]
+      if(any(is.na(cols))) warning("cols is an integer and should be between 1 and the numbers of columns in the table. some numbers are not in the table, i.e. negative, 0, or greater than the number of columns. erroneous numbers are dropped.")
+      cols <- cols[!is.na(cols)]
+    }
+  }
+  if(!is.null(sortcols)){
+    if(inherits(sortcols, "character")) sortcols <- tolower(sortcols)
+    if(inherits(sortcols, "numeric")){
+      sortcols <- colnames(tab)[sortcols]
+      if(any(is.na(sortcols))) warning("sortcols is an integer and should be between 1 and the numbers of columns in the table. some numbers are not in the table, i.e.  greater than the number of columns. erroneous numbers are dropped.")
+      sortcols <- sortcols[!is.na(sortcols)]
+    }
+  }
   
   # if type is data.frame, filter and sort
   for(i in sortcols)

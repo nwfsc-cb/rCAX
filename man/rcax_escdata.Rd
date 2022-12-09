@@ -22,13 +22,13 @@ rcax_escdata(
 
 \item{qlist}{Additional query params. See \code{rcax_table_query()} for details.}
 
-\item{cols}{column names to return. Use cols=NULL if you want all columns}
+\item{cols}{column names to return. Use cols=NULL if you want all columns. Names are case insensitive.}
 
-\item{sortcols}{The columns to sort on for the returned table. The order of sortcols indicates the order of sorting. Start with the smallest group and work outwards, e.g. \code{c("spawningyear", "popid", "MPG")}}
+\item{sortcols}{The columns to sort on for the returned table. The order of sortcols indicates the order of sorting. Start with the smallest group and work outwards, e.g. \code{c("spawningyear", "popid", "MPG")}. Names are case insensitive.}
 
 \item{type}{whether to return the table ("data.frame") or colnames with definitions ("colnames"). Default is to return the table as a data frame.}
 
-\item{GETargs}{A list of arguments for the \code{rcax_GET()} call. These do not normally need to be specified by the user. \code{table_id} This is the CAX table id. It is looked up using \code{tablename} and \code{rCAX:::caxpops} (an internal dataset). If \code{table_id} is passed in via \code{GETargs}, it wil override the default table id lookup. \code{recordloc} This is the name of the record we want in the list returned from the GET call. \code{key} is the API key. See \code{vignette("setup", package = "rCAX")} for API key details.}
+\item{GETargs}{A list of arguments for the \code{rcax_GET()} call. These do not need to be specified by the user unless the user wants to change the default values. \code{table_id} This is the CAX table id. It is looked up using \code{tablename} and \code{rCAX:::caxpops} (an internal dataset). If \code{table_id} is passed in via \code{GETargs}, it wil override the default table id lookup. \code{recordloc} This is the name of the record we want in the list returned from the GET call. \code{key} is the API key.}
 
 \item{...}{Curl options passed to \code{\link[crul]{HttpClient}}}
 }
@@ -38,8 +38,7 @@ data frame if \code{type="data.frame"} (default) and the colnames if \code{type=
 \description{
 Returns EscData table sorted by refid and countdate.
 
-The EscData table_id is "F11B5228-F716-487B-807D-0DD04B96EEB8" and
-is set automatically using a saved data frame from a \code{rcax_tables()} call. The table is saved in \code{R/sysdata.rda}.
+The EscData table_id is set automatically using a saved data frame from a \code{rcax_tables()} call. The table is saved in \code{R/sysdata.rda}.
 
 \code{rcax_escdata()} will download 1000 records.
 }

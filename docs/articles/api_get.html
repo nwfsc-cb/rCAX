@@ -138,9 +138,8 @@ to add that to make code more robust.</p>
 <div class="section level3">
 <h3 id="key">key<a class="anchor" aria-label="anchor" href="#key"></a>
 </h3>
-<p>You should have saved this in your <code>.Renviron</code> file but if
-you didn’t, you can pass that in in quotes, so like
-<code>key="whateveryourkeyis"</code>.</p>
+<p>The API key. rCAX includes a read-only API key but if you need to use
+your own, see section below.</p>
 </div>
 <div class="section level3">
 <h3 id="query">query<a class="anchor" aria-label="anchor" href="#query"></a>
@@ -171,7 +170,7 @@ this up from the <code>.REnviron</code> file using
 <code><a href="../reference/check_key.html">check_key()</a></code>.</p>
 </div>
 <div class="section level2">
-<h2 id="finding-the-table_id">Finding the table_id<a class="anchor" aria-label="anchor" href="#finding-the-table_id"></a>
+<h2 id="finding-the-table-id">Finding the table id<a class="anchor" aria-label="anchor" href="#finding-the-table-id"></a>
 </h2>
 <p>The <code>table_id</code> are stored in <code>rCAX:::caxtabs</code>
 as internal data using a call to <code><a href="../reference/rcax_tables.html">rcax_tables()</a></code>. The
@@ -182,6 +181,28 @@ periodically.</p>
 looked up using a table name. The table names for the HLI short code
 names are hard coded in <code><a href="../reference/rcax_table_name.html">rcax_table_name()</a></code>. If the names
 change, they should be updated here.</p>
+</div>
+<div class="section level2">
+<h2 id="api-key">API key<a class="anchor" aria-label="anchor" href="#api-key"></a>
+</h2>
+<p>{rCAX} includes a “read-only” API key. Thus for normal read-only use,
+you do not need an API key. If you need to use your own key, contact
+StreamNet. You can pass in your own key into calls via
+<code>GETargs$key</code>.</p>
+<p>Alternatively you can set it as as an environment variable called
+<code>CAX_KEY</code> in your <code>.Renviron</code> file by pasting this
+text into that file: <code>CAX_KEY='youractualkeynotthisstring'</code>.
+To do this, install the {usethis} package.</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"usethis"</span><span class="op">)</span></span></code></pre></div>
+<p>Then run this code to find or create your <code>.Renviron</code>
+file. It will tell you where the <code>.Renviron</code> file is.</p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">usethis</span><span class="fu">::</span><span class="fu"><a href="https://usethis.r-lib.org/reference/edit.html" class="external-link">edit_r_environ</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p>Open that file and paste in
+<code>CAX_KEY = "whateveryourkeyis"</code> into the file and save. After
+you edit the file, you will need to restart R. If you are in RStudio use
+Session &gt; Restart R. Now your API will be visible to {rCAX}.</p>
 </div>
   </div>
 

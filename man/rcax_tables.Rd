@@ -5,18 +5,15 @@
 \title{Get the list of CAX tables with ids}
 \usage{
 rcax_tables(
-  key = NULL,
-  parse = TRUE,
   cols = c("name", "id", "description"),
+  GETargs = list(table_id = NULL, recordloc = "records", key = NULL, parse = TRUE),
   ...
 )
 }
 \arguments{
-\item{key}{A CAX API key. See \code{vignette("setup", package = "rCAX")}.}
-
-\item{parse}{(logical) Whether to parse to list (\code{FALSE}) or data.frame (\code{TRUE}). Default: \code{TRUE}}
-
 \item{cols}{the columns to return. default is name, description and id. use cols=NULL to get all the columns}
+
+\item{GETargs}{A list of arguments for the \code{rcax_GET()} call. These do not need to be specified by the user unless the user wants to change the default values. \code{table_id} This is the CAX table id. It is looked up using \code{tablename} and \code{rCAX:::caxpops} (an internal dataset). If \code{table_id} is passed in via \code{GETargs}, it wil override the default table id lookup. \code{recordloc} This is the name of the record we want in the list returned from the GET call. \code{key} is the API key.}
 
 \item{...}{Curl options passed to \code{\link[crul]{HttpClient}}}
 }

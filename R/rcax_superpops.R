@@ -2,8 +2,7 @@
 #' 
 #' Returns SuperPopulations table
 #'  
-#'  The SuperPopulations table_id is "009A08FE-6479-44FC-9B6F-01C55E2C8BA3" and 
-#'  is set automatically using a saved data frame from a `rcax_tables()` call. The table is saved in `R/sysdata.rda`.
+#'  The SuperPopulations table_id is set automatically using a saved data frame from a `rcax_tables()` call. The table is saved in `R/sysdata.rda`.
 #'  
 #'  `rcax_superpops()` will download 1000 records. Pass in `flist` to filter.
 #'  
@@ -13,7 +12,8 @@
 #' @template info
 #' @examples 
 #' # print the first columns and definitions
-#' head(rcax_superpops(type="colnames"))
+#' a <- rcax_superpops(type="colnames")
+#' paste(a$name, a$definition, sep=": ")[1:5]
 #' 
 #' # get one record
 #' rcax_superpops(qlist=list(limit=1))
@@ -27,9 +27,10 @@ rcax_superpops <- function(
     cols = NULL, 
     sortcols = c("popid"),
     type = c("data.frame", "colnames"), 
-    GETargs = list(table_id = NULL, recordloc = "records", key = NULL, parse = TRUE),  ...) {  
-  
+    GETargs = list(table_id = NULL, recordloc = "records", key = NULL, parse = TRUE),  ...) { 
+
   # API call and table filtering and sorting
+  # error checking happens here
   rcax_table_query(
     tablename = tablename, 
     flist = flist, qlist = qlist, 

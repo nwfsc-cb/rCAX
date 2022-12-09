@@ -1,6 +1,6 @@
 ---
 title: "Getting Started"
-description: "How to install and setup your API key"
+description: "How to install and load rCAX"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Getting Started}
@@ -30,21 +30,15 @@ Then you can install the latest release:
 remotes:::install_github("nwfsc-math-bio/rCAX@*release")
 ```
 
-Note, you only need to install packages once. After that you load them with a `library(pkgname)` call.
+Note, you only need to install packages once. After that you load them with a `library(pkgname)` call. To check if you have the latest rCAX using
 
-## Set up your API key
-
-Next you need to get a pull api key from StreamNet (contact them). Once you have a key, you need to install the {usethis} package.
-
-```{r eval=FALSE}
-install.packages("usethis") # needed for the next line
+```{r}
+library(rCAX)
+rcax_version()
 ```
+If your version is out of date, update with another call to `install_github()` (above).
 
-Run this code to find or create your `.Renviron` file. It will tell you where the `.Renviron` file is.
-```{r eval=FALSE}
-usethis::edit_r_environ()
-```
-Open that file and paste in `CAX_KEY = "whateveryourkeyis"` into the file and save. 
+## API key
 
-Now restart R (Session > Restart R in RStudio) and your API will be visible to {rCAX}. You are now ready to use {rCAX}. Go to the [Basic functions vignette](articles/basics.html) to get started and see examples.
-
+{rCAX} includes a "read-only" API key. Thus you
+do not need an API key to use {rCAX}. If you need to use your own key, see \code{vignette("api_get", package = "rCAX")}.
