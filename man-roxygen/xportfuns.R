@@ -1,5 +1,6 @@
 #' @description 
-#' Returns the HLI table with some additional metadata (such as NMFS_PopID and update dates). 
+#' Returns the HLI table with some additional metadata, such as NMFS_PopID and update dates,
+#' in the default `tabletype="xport` case.
 #' This is the table that one can download from the 
 #' [CAP Fish HLIs Tabular Query](https://www.streamnet.org/data/hli/). The HLI is specified using its short code: 
 #' 
@@ -24,8 +25,7 @@
 #' @details 
 #' The XPORT tables have a few columns that do not appear in the 
 #' Excel files that 
-#' one can download from StreamNet because they come from the 
-#' html form for the HLI Tablular Query for filtering the data: 
+#' one can download from StreamNet: 
 #' "species", "publish", "num", "hli", "agency", "esudps", "hli_id".
 #'  "esudps" is a slight variant on
 #'  "esu_dps" and is removed. "num" is a sort flag and is removed. "hli_id"
@@ -40,3 +40,9 @@
 #'   If you want to see the original columns in the original order, 
 #'  use `cols=1:50`, say, to see the first 50 columns in the original
 #'   order.
+#'   
+#'   If `tabletype="base"` is used, the base tables without the added metadata are 
+#'   returned. The data are the same just missing the extra metadata.
+#'   
+#'  If you want to see only the column names use `type="colnames`.
+

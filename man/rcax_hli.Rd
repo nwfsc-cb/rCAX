@@ -2,7 +2,7 @@
 % Please edit documentation in R/rcax_hli.R
 \name{rcax_hli}
 \alias{rcax_hli}
-\title{Return HLI base tables}
+\title{Return fish HLI tables from Coordinated Assessments data eXchange}
 \usage{
 rcax_hli(
   hli = c("NOSA", "SAR", "PNI", "PreSmolt", "JuvOut", "RperS"),
@@ -11,12 +11,13 @@ rcax_hli(
   cols = NULL,
   sortcols = NULL,
   type = c("data.frame", "colnames"),
+  tabletype = c("xport", "base"),
   GETargs = list(table_id = NULL, recordloc = "records", key = NULL, parse = TRUE),
   ...
 )
 }
 \arguments{
-\item{hli}{The HLI short name}
+\item{hli}{The HLI short name: NOSA, SAR, PNI, PreSmolt, JuvOut, RperS}
 
 \item{flist}{A filter for the query. See details and \code{rcax_filter()}}
 
@@ -28,6 +29,8 @@ rcax_hli(
 
 \item{type}{whether to return the table ("data.frame") or colnames with definitions ("colnames"). Default is to return the table as a data frame.}
 
+\item{tabletype}{"xport" (default) or "base". XPort has additional useful metadata.}
+
 \item{GETargs}{A list of arguments for the \code{rcax_GET()} call. These do not need to be specified by the user unless the user wants to change the default values. \code{table_id} This is the CAX table id. It is looked up using \code{tablename} and \code{rCAX:::caxpops} (an internal dataset). If \code{table_id} is passed in via \code{GETargs}, it wil override the default table id lookup. \code{recordloc} This is the name of the record we want in the list returned from the GET call. \code{key} is the API key.}
 
 \item{...}{Curl options passed to \code{\link[crul]{HttpClient}}}
@@ -36,8 +39,10 @@ rcax_hli(
 data frame if \code{type="data.frame"} (default) and the colnames if \code{type="colnames"}
 }
 \description{
-Returns the base HLI table which is missing the
-additional metadata (such as NMFS_PopID and update dates) found in the XPort tables. The HLI is specified using its short code:
+Returns the HLI table with some additional metadata, such as NMFS_PopID and update dates,
+in the default \verb{tabletype="xport} case.
+This is the table that one can download from the
+\href{https://www.streamnet.org/data/hli/}{CAP Fish HLIs Tabular Query}. The HLI is specified using its short code:
 \itemize{
 \item NOSA: Natural Origin Spawner Abundance
 \item SAR: Smolt to Adult Ratios
@@ -56,23 +61,47 @@ If your filter value is not in the table, the returned table
 will be empty. Examples:
 \itemize{
 \item \code{flist=list(popid=7)} return values for popid 7.
+\item \code{flist=list(nmfs_popid=6)} return values for NMFS_PopID 6.
 \item \code{flist=list(esu_dps="Salmon, Chinook (Snake River spring/summer-run ESU)")} return values for one ESU. Use \code{rCAX:::caxesu} to see a list of ESU_DPS names.
 }
 }
 \details{
-The table_id is set automatically using a saved data frame from a \code{rcax_tables()} call. The table is saved in \code{R/sysdata.rda}.
+The XPORT tables have a few columns that do not appear in the
+Excel files that
+one can download from StreamNet:
+"species", "publish", "num", "hli", "agency", "esudps", "hli_id".
+"esudps" is a slight variant on
+"esu_dps" and is removed. "num" is a sort flag and is removed. "hli_id"
+is an internal reference id and is removed.
+"publish" will always be Yes but is left in. The other columns are
+left in. The colnames are re-sorted into the order found in the
+downloaded
+Excel files with the extra columns added to the end.
 
-If you want to see only the column names use
-\verb{type="colnames}.
+The table columns are sorted into the order that appears in
+\href{https://www.streamnet.org/data/hli/}{CAP Fish HLIs Tabular Query}.
+If you want to see the original columns in the original order,
+use \code{cols=1:50}, say, to see the first 50 columns in the original
+order.
+
+If \code{tabletype="base"} is used, the base tables without the added metadata are
+returned. The data are the same just missing the extra metadata.
+
+If you want to see only the column names use \verb{type="colnames}.
 }
 \examples{
-# return popid of first record
+# return NMFS_PopID of second record
 # Note the part after $ is case sensitive
-id <- rcax_hli("NOSA", qlist=list(limit=1))$popid
+id <- rcax_hli("NOSA", qlist=list(limit=2))$nmfs_popid[2]
 
-a <- rcax_hli("NOSA", flist=list(popid=id))
-a <- a[, c("popid", "spawningyear", "nosaij", "nosaej")]
+a <- rcax_hli("NOSA",
+         flist=list(nmfs_popid=id),
+         cols=c("nmfs_popid", "spawningyear", "tsaej", "nosaej")
+         )
 head(a)
+
+# First 3 columns
+rcax_hli("NOSA", qlist=list(limit=3))[,1:3]
 
 # to print the first column names and definitions
 head(rcax_hli("NOSA", type="colnames"))
@@ -82,5 +111,5 @@ head(rcax_hli("NOSA", type="colnames"))
 API docs at \url{https://www.streamnet.org/resources/exchange-tools/rest-api-documentation/}
 }
 \seealso{
-\code{rcax_hli_xport()}, \code{rcax_table_query()}, \code{rcax_filter()}
+\code{rcax_table_query()}, \code{rcax_filter()}, \code{rcax_table_name}
 }

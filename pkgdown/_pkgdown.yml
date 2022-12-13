@@ -54,17 +54,9 @@ authors:
 reference:
 - title: "CAP Fish HLIs Query Functions"
   desc: >
-    Functions for returning HLI tables.
+    Function for returning HLI tables. This is the main user function.
   contents: 
-  - rcax_hli_xport
   - rcax_hli
-- title: "Additional API tables"
-  desc: >
-    Additional tables (not HLI) available in the CAX API.
-  contents: 
-  - rcax_escdata
-  - rcax_superpops
-  - rcax_tables
 - title: "Internal data"
   desc: >
     There are a few internal data sets that may be useful. These are accessed by the data name with rCAX:::
@@ -78,6 +70,13 @@ reference:
   - rcax_version
   - rcax_citation
   - rcax_termsofuse
+- title: "Additional API tables"
+  desc: >
+    Additional tables (not HLI) available in the CAX API.
+  contents: 
+  - rcax_escdata
+  - rcax_superpops
+  - rcax_tables
 - title: "Connecting to API"
   desc: >
     Functions for connecting to the API. These are for 

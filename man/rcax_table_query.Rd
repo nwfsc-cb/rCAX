@@ -2,7 +2,7 @@
 % Please edit documentation in R/rcax_table_query.R
 \name{rcax_table_query}
 \alias{rcax_table_query}
-\title{Returns a filtered table or colnames}
+\title{Return tables by table name from Coordinated Assessments data eXchange}
 \usage{
 rcax_table_query(
   tablename = NULL,
@@ -63,5 +63,5 @@ a[, c("popid", "spawningyear", "nosaij", "nosaej")]
 API docs at \url{https://www.streamnet.org/resources/exchange-tools/rest-api-documentation/}
 }
 \seealso{
-\code{rcax_GET()}, \code{rcax_hli()}, \code{rcax_hli_xport()}, \code{rcax_escdata()}, \code{rcax_superpops()}
+\code{rcax_GET()}, \code{rcax_hli()}, \code{rcax_escdata()}, \code{rcax_superpops()}
 }

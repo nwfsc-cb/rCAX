@@ -1,4 +1,4 @@
-#' Returns a filtered table or colnames
+#' Return tables by table name from Coordinated Assessments data eXchange 
 #'
 #' This is the base function for queries for most of the CAX tables.
 #' Default queries will download 1000 records. You will
@@ -20,7 +20,7 @@
 #' @param tablename The name of the table in the CAX API. See `rcax_tables()` for the names.
 #' @template info
 #' @template tableargs
-#' @seealso `rcax_GET()`, `rcax_hli()`, `rcax_hli_xport()`, `rcax_escdata()`, `rcax_superpops()`
+#' @seealso `rcax_GET()`, `rcax_hli()`, `rcax_escdata()`, `rcax_superpops()`
 #' @examples
 #' a <- rcax_table_query(tablename="NOSA", qlist = list(limit=5))
 #' a[, c("popid", "spawningyear", "nosaij", "nosaej")]
