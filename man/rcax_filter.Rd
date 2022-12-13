@@ -24,6 +24,13 @@ the filter query param. The value of the param is JSON. An examples are
 \details{
 The property names in \code{x} are the column names in a table being returned by \code{rcax_table_query()}.
 Note the values are not case sensitive. So a value of \code{Spring} will return the data with \code{Spring} and \code{spring}.
+
+{crul} properly formats the filter given the JSON. For reference, here
+is a url example. Note that in the filter double quotes are required.
+A single quote will not filter.
+
+\if{html}{\out{<div class="sourceCode">}}\preformatted{httr::GET('https://api.streamnet.org/api/v1/ca.json?table_id=4EF09E86-2AA8-4C98-A983-A272C2C2C7E3&XApiKey=C4F5F084-EBE3-4ED6-8AF1-125EC54E6E52&filter=[\{"field":"esu_dps","value":"Salmon,\%20coho\%20(Oregon\%20Coast\%20ESU)","type":"string"\}]')
+}\if{html}{\out{</div>}}
 }
 \examples{
 rcax_filter(list(commonpopname="GRCAT"))

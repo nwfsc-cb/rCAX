@@ -112,6 +112,10 @@ the filter query param. The value of the param is JSON. An examples are</p><ul><
     <h2>Details</h2>
     <p>The property names in <code>x</code> are the column names in a table being returned by <code><a href="rcax_table_query.html">rcax_table_query()</a></code>.
 Note the values are not case sensitive. So a value of <code>Spring</code> will return the data with <code>Spring</code> and <code>spring</code>.</p>
+<p>crul properly formats the filter given the JSON. For reference, here
+is a url example. Note that in the filter double quotes are required.
+A single quote will not filter.</p>
+<p></p><div class="sourceCode"><pre><code><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>httr<span class="sc">::</span><span class="fu">GET</span>(<span class="st">'https://api.streamnet.org/api/v1/ca.json?table_id=4EF09E86-2AA8-4C98-A983-A272C2C2C7E3&amp;XApiKey=C4F5F084-EBE3-4ED6-8AF1-125EC54E6E52&amp;filter=[{"field":"esu_dps","value":"Salmon,%20coho%20(Oregon%20Coast%20ESU)","type":"string"}]'</span>)</span></code></pre><p></p></div>
     </div>
 
     <div id="ref-examples">
