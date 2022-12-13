@@ -1,4 +1,4 @@
-#' Return tables from CAP Fish HLIs Tabular Query
+#' Return fish HLI tables from Coordinated Assessments data eXchange 
 #'  
 #' @export
 #' @param hli The HLI short name
