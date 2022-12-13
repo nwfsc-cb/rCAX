@@ -75,3 +75,10 @@ qlist <- function(x, ...) {
   return(c(x, ...))
 }
 
+.onAttach <- function(lib, pkg){
+  msg <- "Access and use of data in the CAX databases requires acceptance of the terms of use: type rcax_termsofuse() at the command line to see the terms."
+  if(!interactive())
+    msg <- rcax_version()
+  packageStartupMessage(msg)      
+  invisible()
+}
