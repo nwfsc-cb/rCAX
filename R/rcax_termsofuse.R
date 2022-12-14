@@ -2,9 +2,9 @@
 #'
 #' @export
 #' @return Text of the terms of us
-#' @examples \dontrun{
+#' @examples 
 #' rcax_termsofuse()
-#' }
+#' 
 #' 
 rcax_termsofuse <- function() {
 str <-  sprintf('IMPORTANT!  BE SURE TO CAREFULLY READ AND UNDERSTAND THE TERMS AND CONDITIONS SET FORTH IN THIS END-USER LICENSE AGREEMENT (EULA).  YOU ARE NOT AUTHORIZED TO ACCESS OR USE THE DATA IN THIS DATABASE UNLESS AND UNTIL YOU ACCEPT THE TERMS OF THIS EULA.

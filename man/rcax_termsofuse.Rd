@@ -13,8 +13,7 @@ Text of the terms of us
 Get CAX HLI data Terms of Use
 }
 \examples{
-\dontrun{
 rcax_termsofuse()
-}
+
 
 }

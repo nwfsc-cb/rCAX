@@ -30,10 +30,15 @@ Then you can install the latest release:
 remotes:::install_github("nwfsc-math-bio/rCAX@*release")
 ```
 
-Note, you only need to install packages once. After that you load them with a `library(pkgname)` call. To check if you have the latest rCAX using
+Note, you only need to install packages once. 
+
+After installing, you load load the package with a `library(pkgname)` call. 
 
 ```{r}
 library(rCAX)
+```
+To check if you have the latest rCAX use
+```{r}
 rcax_version()
 ```
 If your version is out of date, update with another call to `install_github()` (above).

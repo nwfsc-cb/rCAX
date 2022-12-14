@@ -51,9 +51,6 @@ paste(a$name, a$definition, sep=": ")[1:5]
 rcax_superpops(qlist=list(limit=1))
 
 }
-\references{
-API docs at \url{https://www.streamnet.org/resources/exchange-tools/rest-api-documentation/}
-}
 \seealso{
 \code{rcax_table_query()}, \code{rcax_filter()}
 }

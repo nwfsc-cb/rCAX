@@ -41,7 +41,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">rCAX</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.9.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.10.0</span>
       </span>
     </div>
 
@@ -120,72 +120,62 @@ instructions on installing {rCAX}. Once you have installed {rCAX}, you
 can begin using the package by loading the library.</p>
 <p>Load the library.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/nwfsc-math-bio/rCAX" class="external-link">rCAX</a></span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/nwfsc-math-bio/rCAX" class="external-link">rCAX</a></span><span class="op">)</span></span>
+<span><span class="co">#&gt; Access and use of data in the CAX databases requires acceptance of the terms of use: rcax_termsofuse().</span></span></code></pre></div>
+<p>Read the terms of use:</p>
+<pre><code><span><span class="fu"><a href="../reference/rcax_termsofuse.html">rcax_termsofuse</a></span><span class="op">(</span><span class="op">)</span></span></code></pre>
 <div class="section level2">
-<h2 id="table-queries">Table queries<a class="anchor" aria-label="anchor" href="#table-queries"></a>
+<h2 id="hli-queries">HLI queries<a class="anchor" aria-label="anchor" href="#hli-queries"></a>
 </h2>
-<p>The following table query functions are available:</p>
+<p>The main user function is <code><a href="../reference/rcax_hli.html">rcax_hli()</a></code> which returns HLI
+tables from Coordinated Assessments data eXchange with extra meta data
+such as NMFS_PopID as returned from the <a href="https://www.streamnet.org/data/hli/" class="external-link">CAP Fish HLIs Tabular
+Query</a>.</p>
+<p>The basic <code><a href="../reference/rcax_hli.html">rcax_hli()</a></code> functionality is shown with the
+NOSA HLI but the syntax is the same for all the HLI:</p>
 <ul>
-<li>
-<code><a href="../reference/rcax_hli_xport.html">rcax_hli_xport()</a></code> The HLI tables with extra meta data
-like NMFS_PopID as returned from the <a href="https://www.streamnet.org/data/hli/" class="external-link">CAP Fish HLIs Tabular
-Query</a>
-</li>
-<li>
-<code><a href="../reference/rcax_hli.html">rcax_hli()</a></code> The base HLI tables</li>
-<li>
-<code><a href="../reference/rcax_escdata.html">rcax_escdata()</a></code> The EscData table</li>
-<li>
-<code><a href="../reference/rcax_superpops.html">rcax_superpops()</a></code> The SuperPopulations table</li>
+<li>NOSA: Natural Origin Spawner Abundance</li>
+<li>SAR: Smolt to Adult Ratios</li>
+<li>PNI: Proportionate Natural Influence of supplementation
+hatcheries</li>
+<li>RperS: Recruits per Spawner</li>
+<li>JuvOut: Juvenile Outmigrants</li>
+<li>PreSmolt: Presmolt Abundance</li>
 </ul>
-<p>The basic functionality is shown with the NOSA table but the syntax
-is the same for the other table functions.</p>
 </div>
 <div class="section level2">
 <h2 id="show-the-columns-for-the-nosa-tables">Show the columns for the NOSA tables<a class="anchor" aria-label="anchor" href="#show-the-columns-for-the-nosa-tables"></a>
 </h2>
 <p>Get the table and show all the column names with definitions. Only
 first 10 are shown.</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu"><a href="../reference/rcax_hli.html">rcax_hli</a></span><span class="op">(</span><span class="st">"NOSA"</span>, type<span class="op">=</span><span class="st">"colnames"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt;                        name</span></span>
-<span><span class="co">#&gt; 99                age10prop</span></span>
-<span><span class="co">#&gt; 39      age10proplowerlimit</span></span>
-<span><span class="co">#&gt; 21      age10propupperlimit</span></span>
-<span><span class="co">#&gt; 100           age11plusprop</span></span>
-<span><span class="co">#&gt; 101 age11plusproplowerlimit</span></span>
-<span><span class="co">#&gt; 58  age11pluspropupperlimit</span></span>
+<span><span class="co">#&gt; 107               age10prop</span></span>
+<span><span class="co">#&gt; 41      age10proplowerlimit</span></span>
+<span><span class="co">#&gt; 24      age10propupperlimit</span></span>
+<span><span class="co">#&gt; 108           age11plusprop</span></span>
+<span><span class="co">#&gt; 109 age11plusproplowerlimit</span></span>
+<span><span class="co">#&gt; 62  age11pluspropupperlimit</span></span>
 <span><span class="co">#&gt;                                                                            definition</span></span>
-<span><span class="co">#&gt; 99           The proportion of natural origin fish that were age 10 (brood year +10).</span></span>
-<span><span class="co">#&gt; 39                              Lower limit of the confidence interval for Age10Prop.</span></span>
-<span><span class="co">#&gt; 21                              Upper limit of the confidence interval for Age10Prop.</span></span>
-<span><span class="co">#&gt; 100 The proportion of natural origin fish that were age 11 (brood year +11) or older.</span></span>
-<span><span class="co">#&gt; 101                         Lower limit of the confidence interval for Age11PlusProp.</span></span>
-<span><span class="co">#&gt; 58                          Upper limit of the confidence interval for Age11PlusProp.</span></span></code></pre></div>
-<p>Show the column names for the XPort versus base tables. The XPort
-tables have extra meta data.</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">basecols</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/rcax_hli.html">rcax_hli</a></span><span class="op">(</span><span class="st">"NOSA"</span>, type<span class="op">=</span><span class="st">"colnames"</span><span class="op">)</span><span class="op">$</span><span class="va">name</span></span>
-<span><span class="va">xportcols</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/rcax_hli_xport.html">rcax_hli_xport</a></span><span class="op">(</span><span class="st">"NOSA"</span>, type<span class="op">=</span><span class="st">"colnames"</span><span class="op">)</span><span class="op">$</span><span class="va">name</span></span>
-<span><span class="va">xportcols</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/which.html" class="external-link">which</a></span><span class="op">(</span><span class="op">!</span><span class="op">(</span><span class="va">xportcols</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="va">basecols</span><span class="op">)</span><span class="op">)</span><span class="op">]</span></span>
-<span><span class="co">#&gt;  [1] "agency"          "contactagy"      "datasetversion"  "esapopname"     </span></span>
-<span><span class="co">#&gt;  [5] "esudps"          "hli"             "hli_id"          "hli_lastupdated"</span></span>
-<span><span class="co">#&gt;  [9] "lastmodifiedon"  "lastupdated"     "locationname"    "nmfs_popid"     </span></span>
-<span><span class="co">#&gt; [13] "populationname"  "snloaddate"      "species"         "trtmethod"</span></span></code></pre></div>
+<span><span class="co">#&gt; 107          The proportion of natural origin fish that were age 10 (brood year +10).</span></span>
+<span><span class="co">#&gt; 41                              Lower limit of the confidence interval for Age10Prop.</span></span>
+<span><span class="co">#&gt; 24                              Upper limit of the confidence interval for Age10Prop.</span></span>
+<span><span class="co">#&gt; 108 The proportion of natural origin fish that were age 11 (brood year +11) or older.</span></span>
+<span><span class="co">#&gt; 109                         Lower limit of the confidence interval for Age11PlusProp.</span></span>
+<span><span class="co">#&gt; 62                          Upper limit of the confidence interval for Age11PlusProp.</span></span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="get-records-from-the-nosa-xport-table">Get records from the NOSA XPort table<a class="anchor" aria-label="anchor" href="#get-records-from-the-nosa-xport-table"></a>
+<h2 id="get-records-for-the-nosa-hli-table">Get records for the NOSA HLI table<a class="anchor" aria-label="anchor" href="#get-records-for-the-nosa-hli-table"></a>
 </h2>
 <p>Here the columns returned are restricted by <code>cols</code>. The
 table is filtered with <code>flist</code> to be just the columns with
 <code>nmfs_popid</code> equal to 7. Note the <code>cols</code> argument
 is case insensitive, <code>NMFS_PopID</code> and <code>nmfs_popid</code>
 are the same, but the column names in the returned tables will all be
-lower case. The <code><a href="../reference/rcax_hli_xport.html">rcax_hli_xport()</a></code> function is used which
-returns the table with extra meta data, like <code>NMFS_PopID</code>
-included.</p>
+lower case.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">tab</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/rcax_hli_xport.html">rcax_hli_xport</a></span><span class="op">(</span><span class="st">"NOSA"</span>,</span>
+<code class="sourceCode R"><span><span class="va">tab</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/rcax_hli.html">rcax_hli</a></span><span class="op">(</span><span class="st">"NOSA"</span>,</span>
 <span>  flist <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>nmfs_popid <span class="op">=</span> <span class="fl">7</span><span class="op">)</span>,</span>
 <span>  cols<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"NMFS_PopID"</span>, <span class="st">"spawningyear"</span>, <span class="st">"tsaej"</span>, <span class="st">"nosaej"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">tab</span><span class="op">)</span></span>
@@ -200,7 +190,7 @@ included.</p>
 case sensitive. Use <code>rCAX:::caxesu</code> to see the ESU/DPS
 names.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">tab</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/rcax_hli_xport.html">rcax_hli_xport</a></span><span class="op">(</span><span class="st">"NOSA"</span>,</span>
+<code class="sourceCode R"><span><span class="va">tab</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/rcax_hli.html">rcax_hli</a></span><span class="op">(</span><span class="st">"NOSA"</span>,</span>
 <span>  flist <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>esu_dps <span class="op">=</span> <span class="st">"Salmon, chum (Columbia River ESU)"</span><span class="op">)</span></span>
 <span><span class="op">)</span></span></code></pre></div>
 <p>We can then plot:</p>
@@ -214,7 +204,7 @@ names.</p>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">spawningyear</span>, y<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html" class="external-link">log</a></span><span class="op">(</span><span class="va">tsaej</span><span class="op">)</span>, color<span class="op">=</span><span class="va">waterbody</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html" class="external-link">geom_line</a></span><span class="op">(</span>na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">ggtitle</a></span><span class="op">(</span><span class="st">"log(total spawners)"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="basics_files/figure-html/unnamed-chunk-6-1.png" width="700"></p>
+<p><img src="basics_files/figure-html/unnamed-chunk-5-1.png" width="700"></p>
 <p>Keep in mind that not all ESU and DPS are in the CAX database for
 each HLI. Go to <a href="https://www.streamnet.org/data/hli/" class="external-link uri">https://www.streamnet.org/data/hli/</a> to do a search to
 quickly see what is available in different HLI tables.</p>
@@ -232,7 +222,7 @@ you want to filter on. Here are some examples:</p>
 <span><span class="va">f</span> <span class="op">&lt;-</span>  <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>popid <span class="op">=</span> <span class="fl">7</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="section level3">
-<h3 id="multiple-value">Multiple value<a class="anchor" aria-label="anchor" href="#multiple-value"></a>
+<h3 id="multiple-values">Multiple values<a class="anchor" aria-label="anchor" href="#multiple-values"></a>
 </h3>
 <p>Filter based on multiple values. In this case, data with popid 7, 8
 or 9 are returned.</p>
@@ -254,7 +244,7 @@ multiple values with multiple columns. This works</p>
 <p>The default maximum number of records is 1000. You can increase (or
 decrease) this by passing in the limit query parameter.</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">tab</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/rcax_hli_xport.html">rcax_hli_xport</a></span><span class="op">(</span><span class="st">"NOSA"</span>,</span>
+<code class="sourceCode R"><span><span class="va">tab</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/rcax_hli.html">rcax_hli</a></span><span class="op">(</span><span class="st">"NOSA"</span>,</span>
 <span>  qlist <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>limit<span class="op">=</span><span class="fl">1</span><span class="op">)</span>,</span>
 <span>  cols<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"popid"</span>, <span class="st">"spawningyear"</span>, <span class="st">"tsaej"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">tab</span></span>
@@ -262,7 +252,7 @@ decrease) this by passing in the limit query parameter.</p>
 <span><span class="co">#&gt; 1    58         2001</span></span></code></pre></div>
 <p>Increase the limit to 2000 to ensure all the data are returned. Not
 run.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>tab <span class="ot">&lt;-</span> <span class="fu">rcax_hli_xport</span>(<span class="st">"NOSA"</span>,</span>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>tab <span class="ot">&lt;-</span> <span class="fu">rcax_hli</span>(<span class="st">"NOSA"</span>,</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">flist =</span> <span class="fu">list</span>(<span class="at">esu_dps=</span><span class="st">"Salmon, Chinook (Snake River spring/summer-run ESU)"</span>)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">qlist =</span> <span class="fu">list</span>(<span class="at">limit=</span><span class="dv">2000</span>),</span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">cols=</span><span class="fu">c</span>(<span class="st">"popid"</span>, <span class="st">"spawningyear"</span>, <span class="st">"tsaej"</span>))</span>
@@ -298,9 +288,12 @@ metadata, like NMFS_PopID and MPG.</li>
 <code>caxsuperpops</code> The SuperPopulations table.</li>
 </ul>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">rCAX</span><span class="fu">:::</span><span class="va"><a href="../reference/caxesu.html">caxesu</a></span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">2</span><span class="op">]</span></span>
-<span><span class="co">#&gt; [1] "N/A"                                       </span></span>
-<span><span class="co">#&gt; [2] "Salmon, Chinook (Lower Columbia River ESU)"</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">rCAX</span><span class="fu">:::</span><span class="va"><a href="../reference/caxesu.html">caxesu</a></span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">]</span></span>
+<span><span class="co">#&gt; [1] "N/A"                                                </span></span>
+<span><span class="co">#&gt; [2] "Salmon, Chinook (Lower Columbia River ESU)"         </span></span>
+<span><span class="co">#&gt; [3] "Salmon, Chinook (Puget Sound ESU)"                  </span></span>
+<span><span class="co">#&gt; [4] "Salmon, Chinook (Snake River fall-run ESU)"         </span></span>
+<span><span class="co">#&gt; [5] "Salmon, Chinook (Snake River spring/summer-run ESU)"</span></span></code></pre></div>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="fu">rCAX</span><span class="fu">:::</span><span class="va">caxpops</span><span class="op">)</span></span>
 <span><span class="co">#&gt;  [1] "popid"               "recoverydomain"      "esu_dps"            </span></span>

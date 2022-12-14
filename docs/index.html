@@ -41,7 +41,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">rCAX</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.9.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.10.0</span>
       </span>
     </div>
 
@@ -107,9 +107,9 @@
 
 
 <div class="section level1">
-<div class="page-header"><h1 id="rcax-">rCAX <img src="reference/figures/logo.png" align="right" width="20%"><a class="anchor" aria-label="anchor" href="#rcax-"></a>
+<div class="page-header"><h1 id="rcax-">rCAX <img src="reference/figures/logo.png" align="right" width="20%" hspace="20" vspace="20"><a class="anchor" aria-label="anchor" href="#rcax-"></a>
 </h1></div>
-<p><code>rCAX</code> is an R client for the <a href="https://www.streamnet.org/resources/exchange-tools/rest-api-documentation/" class="external-link">Coordinated Assessments API</a>. Make sure to review the <a href="https://nwfsc-math-bio.github.io/rCAX/articles/terms.html">StreamNet Terms of Use</a> for these data, the <a href="https://www.streamnet.org/resources/exchange-tools/data-agreements/" class="external-link">StreamNet Data Policy</a> and the <a href="https://www.streamnet.org/resources/citing-sn/" class="external-link">citation information</a> for database queries.</p>
+<p><code>rCAX</code> is an R client for the <a href="https://www.streamnet.org/resources/exchange-tools/rest-api-documentation/" class="external-link">Coordinated Assessments API</a>. Coordinated Assessments data eXchange (CAX) is developed by the Coordinated Assessments Partnership (CAP). CAP is a collaborative process to efficiently share and provide access to standardized derived information, such as fish population-scale high-level indicators (HLIs) and supporting metrics. Participants in CAP include state fish and wildlife management agencies, tribes, federal agencies such as National Oceanic and Atmospheric Administration Fisheries (NOAA Fisheries) and Bonneville Power Administration (BPA), and others. CAP is co-sponsored by StreamNet and Pacific Northwest Aquatic Monitoring Partnership (PNAMP). Make sure to review the <a href="https://nwfsc-math-bio.github.io/rCAX/articles/terms.html">StreamNet Terms of Use</a> for these data, the <a href="https://www.streamnet.org/resources/exchange-tools/data-agreements/" class="external-link">StreamNet Data Policy</a> and the citation information from <a href="https://www.streamnet.org/resources/citing-sn/" class="external-link">StreamNet</a> and <a href="https://www.pnamp.org/project/data-citation-and-attribution" class="external-link">PNAMP</a> for database queries.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
@@ -122,10 +122,10 @@
 <h2 id="download-a-table">Download a table<a class="anchor" aria-label="anchor" href="#download-a-table"></a>
 </h2>
 <p>Read the <a href="https://nwfsc-math-bio.github.io/rCAX/articles/basics.html">Basic functions vignette</a> to get started and see examples.</p>
-<p>To retrieve the NOSA data for popid 7 that is the same as the file that one can download from <a href="https://www.streamnet.org/data/hli/" class="external-link">CAP Fish HLIs Tabular Query</a>, use</p>
+<p>To retrieve the NOSA data for NMFS_popid 7 that is the same as the file that one can download from <a href="https://www.streamnet.org/data/hli/" class="external-link">CAP Fish HLIs Tabular Query</a>, use</p>
 <pre><code><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/nwfsc-math-bio/rCAX" class="external-link">rCAX</a></span><span class="op">)</span></span>
 <span><span class="va">f</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>popid<span class="op">=</span><span class="fl">7</span><span class="op">)</span></span>
-<span><span class="va">tab</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/rcax_hli_xport.html">rcax_hli_xport</a></span><span class="op">(</span><span class="st">"NOSA"</span>, flist <span class="op">=</span> <span class="va">f</span><span class="op">)</span></span></code></pre>
+<span><span class="va">tab</span> <span class="op">&lt;-</span> <span class="fu">rcax_hli_xport</span><span class="op">(</span><span class="st">"NOSA"</span>, flist <span class="op">=</span> <span class="va">f</span><span class="op">)</span></span></code></pre>
 <div class="section level3">
 <h3 id="check-the-versions">Check the versions<a class="anchor" aria-label="anchor" href="#check-the-versions"></a>
 </h3>

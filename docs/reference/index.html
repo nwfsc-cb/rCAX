@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">rCAX</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.9.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.10.0</span>
       </span>
     </div>
 
@@ -79,32 +79,12 @@
 
     <table class="ref-index"><colgroup><col class="alias"><col class="title"></colgroup><tbody><tr><th colspan="2">
           <h2 id="cap-fish-hlis-query-functions">CAP Fish HLIs Query Functions <a href="#cap-fish-hlis-query-functions" class="anchor" aria-hidden="true"></a></h2>
-          <p class="section-desc"></p><p>Functions for returning HLI tables.</p>
+          <p class="section-desc"></p><p>Function for returning HLI tables. This is the main user function.</p>
         </th>
       </tr></tbody><tbody><tr><td>
-          <p><code><a href="rcax_hli_xport.html">rcax_hli_xport()</a></code> </p>
-        </td>
-        <td><p>Return tables from CAP Fish HLIs Tabular Query</p></td>
-      </tr><tr><td>
           <p><code><a href="rcax_hli.html">rcax_hli()</a></code> </p>
         </td>
-        <td><p>Return HLI base tables</p></td>
-      </tr></tbody><tbody><tr><th colspan="2">
-          <h2 id="additional-api-tables">Additional API tables <a href="#additional-api-tables" class="anchor" aria-hidden="true"></a></h2>
-          <p class="section-desc"></p><p>Additional tables (not HLI) available in the CAX API.</p>
-        </th>
-      </tr></tbody><tbody><tr><td>
-          <p><code><a href="rcax_escdata.html">rcax_escdata()</a></code> </p>
-        </td>
-        <td><p>Get EscData table</p></td>
-      </tr><tr><td>
-          <p><code><a href="rcax_superpops.html">rcax_superpops()</a></code> </p>
-        </td>
-        <td><p>Get SuperPopulations table</p></td>
-      </tr><tr><td>
-          <p><code><a href="rcax_tables.html">rcax_tables()</a></code> </p>
-        </td>
-        <td><p>Get the list of CAX tables with ids</p></td>
+        <td><p>Return fish HLI tables from Coordinated Assessments data eXchange</p></td>
       </tr></tbody><tbody><tr><th colspan="2">
           <h2 id="internal-data">Internal data <a href="#internal-data" class="anchor" aria-hidden="true"></a></h2>
           <p class="section-desc"></p><p>There are a few internal data sets that may be useful. These are accessed by the data name with rCAX:::</p>
@@ -142,13 +122,29 @@
         </td>
         <td><p>Get CAX HLI data Terms of Use</p></td>
       </tr></tbody><tbody><tr><th colspan="2">
+          <h2 id="additional-api-tables">Additional API tables <a href="#additional-api-tables" class="anchor" aria-hidden="true"></a></h2>
+          <p class="section-desc"></p><p>Additional tables (not HLI) available in the CAX API.</p>
+        </th>
+      </tr></tbody><tbody><tr><td>
+          <p><code><a href="rcax_escdata.html">rcax_escdata()</a></code> </p>
+        </td>
+        <td><p>Get EscData table</p></td>
+      </tr><tr><td>
+          <p><code><a href="rcax_superpops.html">rcax_superpops()</a></code> </p>
+        </td>
+        <td><p>Get SuperPopulations table</p></td>
+      </tr><tr><td>
+          <p><code><a href="rcax_tables.html">rcax_tables()</a></code> </p>
+        </td>
+        <td><p>Get the list of CAX tables with ids</p></td>
+      </tr></tbody><tbody><tr><th colspan="2">
           <h2 id="connecting-to-api">Connecting to API <a href="#connecting-to-api" class="anchor" aria-hidden="true"></a></h2>
           <p class="section-desc"></p><p>Functions for connecting to the API. These are for internal and developers use.</p>
         </th>
       </tr></tbody><tbody><tr><td>
           <p><code><a href="rcax_table_query.html">rcax_table_query()</a></code> </p>
         </td>
-        <td><p>Returns a filtered table or colnames</p></td>
+        <td><p>Return tables by table name from Coordinated Assessments data eXchange</p></td>
       </tr><tr><td>
           <p><code><a href="rcax_GET.html">rcax_GET()</a></code> </p>
         </td>

@@ -49,6 +49,3 @@ rcax_escdata(cols = NULL, qlist=list(limit=5))[,1:5]
 # to print the first column names and definitions
 head(rcax_escdata(type="colnames"))
 }
-\references{
-API docs at \url{https://www.streamnet.org/resources/exchange-tools/rest-api-documentation/}
-}

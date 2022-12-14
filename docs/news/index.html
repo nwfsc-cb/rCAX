@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">rCAX</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.9.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.10.0</span>
       </span>
     </div>
 
@@ -79,15 +79,23 @@
     </div>
 
     <div class="section level2">
+<h2 class="page-header" data-toc-text="0.10.0" id="rcax-0100">rCAX 0.10.0<a class="anchor" aria-label="anchor" href="#rcax-0100"></a></h2>
+<ul><li>merged <code><a href="../reference/rcax_hli.html">rcax_hli()</a></code> and <code>rcax_hli_xport()</code>
+</li>
+<li>a message terms of use is not written when the package is loaded</li>
+<li>documentation: cleaned up basics.Rmd, only have api ref for the base api functions, edited the Readme</li>
+</ul></div>
+    <div class="section level2">
 <h2 class="page-header" data-toc-text="0.9.0" id="rcax-090">rCAX 0.9.0<a class="anchor" aria-label="anchor" href="#rcax-090"></a></h2>
+<p><a href="https://github.com/nwfsc-math-bio/rCAX/releases/tag/v0.9.0" class="external-link uri">https://github.com/nwfsc-math-bio/rCAX/releases/tag/v0.9.0</a></p>
 <ul><li>Removed API key info as rCAX now includes an internal read-only key</li>
 <li>Add plot to basics.Rmd</li>
-<li>Allow cols and sortcols in <code><a href="../reference/rcax_table_query.html">rcax_table_query()</a></code> to be numbers, although the results might be non-intuitive for <code><a href="../reference/rcax_hli_xport.html">rcax_hli_xport()</a></code> since the number will refer to the column order in the table before the columns are sorted into the order found in the downloaded Excel files.</li>
+<li>Allow cols and sortcols in <code><a href="../reference/rcax_table_query.html">rcax_table_query()</a></code> to be numbers, although the results might be non-intuitive for <code>rcax_hli_xport()</code> since the number will refer to the column order in the table before the columns are sorted into the order found in the downloaded Excel files.</li>
 </ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.8.0" id="rcax-080">rCAX 0.8.0<a class="anchor" aria-label="anchor" href="#rcax-080"></a></h2>
 <p><a href="https://github.com/nwfsc-math-bio/rCAX/releases/tag/v0.8.0" class="external-link uri">https://github.com/nwfsc-math-bio/rCAX/releases/tag/v0.8.0</a></p>
-<ul><li>Condensed all the <code>_xport</code> functions into one function <code><a href="../reference/rcax_hli_xport.html">rcax_hli_xport()</a></code> with argument <code>hli</code> to specify which HLI.</li>
+<ul><li>Condensed all the <code>_xport</code> functions into one function <code>rcax_hli_xport()</code> with argument <code>hli</code> to specify which HLI.</li>
 <li>Condensed all the individual HLI functions into one function <code><a href="../reference/rcax_hli.html">rcax_hli()</a></code> with argument <code>hli</code> to specify which HLI.</li>
 <li>Cleaned up the API vignette as it was out of date. Updated <code>basics.Rmd</code> given the changes to the functions.</li>
 <li>Added <code><a href="../reference/rcax_table_name.html">rcax_table_name()</a></code> to look up the table based on XPort versus base and for a HLI short code.</li>

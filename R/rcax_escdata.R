@@ -9,7 +9,6 @@
 #' @export
 #' @param tablename The name of the table in the CAX API. See \code{vignette("CAX_Tables", package = "rCAX")}
 #' @template tableargs
-#' @template info
 #' @examples 
 #' # First 5 columns of first 5 results
 #' rcax_escdata(cols = NULL, qlist=list(limit=5))[,1:5]

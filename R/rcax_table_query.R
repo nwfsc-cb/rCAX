@@ -18,7 +18,7 @@
 #'
 #' @export
 #' @param tablename The name of the table in the CAX API. See `rcax_tables()` for the names.
-#' @template info
+#' @template apiref
 #' @template tableargs
 #' @seealso `rcax_GET()`, `rcax_hli()`, `rcax_escdata()`, `rcax_superpops()`
 #' @examples

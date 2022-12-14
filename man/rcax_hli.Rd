@@ -107,9 +107,6 @@ rcax_hli("NOSA", qlist=list(limit=3))[,1:3]
 head(rcax_hli("NOSA", type="colnames"))
 
 }
-\references{
-API docs at \url{https://www.streamnet.org/resources/exchange-tools/rest-api-documentation/}
-}
 \seealso{
-\code{rcax_table_query()}, \code{rcax_filter()}, \code{rcax_table_name}
+\code{rcax_table_query()}, \code{rcax_filter()}, \code{rcax_table_name()}
 }

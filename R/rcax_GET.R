@@ -16,7 +16,7 @@
 #' @param query a list of query parameters with their values, e.g. `list(param=value)`
 #' @param key A CAX API key. See details.
 #' @param ... Curl options passed to \code{\link[crul]{HttpClient}}
-#' @template info
+#' @template apiref
 #' @examples \dontrun{
 #' rcax_GET("ca/tables")
 #' }

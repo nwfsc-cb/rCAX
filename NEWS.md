@@ -1,5 +1,13 @@
+rCAX 0.10.0
+===================
+
+* merged `rcax_hli()` and `rcax_hli_xport()`
+* a message terms of use is not written when the package is loaded
+* documentation: cleaned up basics.Rmd, only have api ref for the base api functions, edited the Readme
+
 rCAX 0.9.0
 ===================
+https://github.com/nwfsc-math-bio/rCAX/releases/tag/v0.9.0
 
 * Removed API key info as rCAX now includes an internal read-only key
 * Add plot to basics.Rmd

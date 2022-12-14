@@ -3,10 +3,9 @@
 #' @export
 #' @param hli The HLI short name: NOSA, SAR, PNI, PreSmolt, JuvOut, RperS
 #' @param tabletype "xport" (default) or "base". XPort has additional useful metadata.
-#' @template info
 #' @template tableargs
 #' @template xportfuns
-#' @seealso `rcax_table_query()`, `rcax_filter()`, `rcax_table_name`
+#' @seealso `rcax_table_query()`, `rcax_filter()`, `rcax_table_name()`
 #' @examples 
 #' # return NMFS_PopID of second record
 #' # Note the part after $ is case sensitive

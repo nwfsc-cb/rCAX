@@ -9,7 +9,6 @@
 #' @export
 #' @param tablename The name of the table in the CAX API. See \code{vignette("CAX_Tables", package = "rCAX")}
 #' @template tableargs
-#' @template info
 #' @examples 
 #' # print the first columns and definitions
 #' a <- rcax_superpops(type="colnames")
