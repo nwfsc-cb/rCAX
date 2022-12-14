@@ -21,17 +21,25 @@ Load the library.
 ```{r setup}
 library(rCAX)
 ```
+Read the terms of use:
+```
+rcax_termsofuse()
+```
 
-## Table queries
+## HLI queries
 
-The following table query functions are available:
+The main user function is `rcax_hli()` which returns HLI tables from Coordinated Assessments data eXchange with extra 
+meta data such as NMFS_PopID as returned from the [CAP Fish HLIs Tabular Query](https://www.streamnet.org/data/hli/).
 
-* `rcax_hli_xport()` The HLI tables with extra meta data like NMFS_PopID as returned from the [CAP Fish HLIs Tabular Query](https://www.streamnet.org/data/hli/)
-* `rcax_hli()` The base HLI tables
-* `rcax_escdata()` The EscData table
-* `rcax_superpops()` The SuperPopulations table
+The  basic `rcax_hli()` functionality is shown with the NOSA HLI but the syntax is the same for all the HLI: 
 
-The basic functionality is shown with the NOSA table but the syntax is the same for the other table functions.
+* NOSA: Natural Origin Spawner Abundance
+* SAR: Smolt to Adult Ratios
+* PNI: Proportionate Natural Influence of supplementation hatcheries
+* RperS: Recruits per Spawner
+* JuvOut: Juvenile Outmigrants
+* PreSmolt: Presmolt Abundance
+
 
 ## Show the columns for the NOSA tables
 
@@ -40,18 +48,11 @@ Get the table and show all the column names with definitions. Only first 10 are 
 head(rcax_hli("NOSA", type="colnames"))
 ```
 
-Show the column names for the XPort versus base tables. The XPort tables have extra meta data.
-```{r}
-basecols <- rcax_hli("NOSA", type="colnames")$name
-xportcols <- rcax_hli_xport("NOSA", type="colnames")$name
-xportcols[which(!(xportcols %in% basecols))]
-```
+## Get records for the NOSA HLI table
 
-## Get records from the NOSA XPort table
-
-Here the columns returned are restricted by `cols`. The table is filtered with `flist` to be just the columns with `nmfs_popid` equal to 7. Note the `cols` argument is case insensitive, `NMFS_PopID` and `nmfs_popid` are the same, but the column names in the returned tables will all be lower case. The `rcax_hli_xport()` function is used which returns the table with extra meta data, like `NMFS_PopID` included.
+Here the columns returned are restricted by `cols`. The table is filtered with `flist` to be just the columns with `nmfs_popid` equal to 7. Note the `cols` argument is case insensitive, `NMFS_PopID` and `nmfs_popid` are the same, but the column names in the returned tables will all be lower case.
 ```{r}
-tab <- rcax_hli_xport("NOSA",
+tab <- rcax_hli("NOSA",
   flist = list(nmfs_popid = 7),
   cols=c("NMFS_PopID", "spawningyear", "tsaej", "nosaej"))
 head(tab)
@@ -59,7 +60,7 @@ head(tab)
 
 Return data for a single ESU. The ESU/DPS names must be exact and are case sensitive. Use `rCAX:::caxesu` to see the ESU/DPS names.
 ```{r}
-tab <- rcax_hli_xport("NOSA",
+tab <- rcax_hli("NOSA",
   flist = list(esu_dps = "Salmon, chum (Columbia River ESU)")
 )
 ```
@@ -91,7 +92,7 @@ f <-  list(popid = 7)
 ```
 
 
-### Multiple value
+### Multiple values
 
 Filter based on multiple values. In this case, data with popid 7, 8 or 9 are returned.
 ```
@@ -116,7 +117,7 @@ flist = list(esu_dps = "Salmon, Chinook (Snake River spring/summer-run ESU)", ru
 The default maximum number of records is 1000. You can increase (or decrease) this by passing in the limit query parameter.
 
 ```{r}
-tab <- rcax_hli_xport("NOSA",
+tab <- rcax_hli("NOSA",
   qlist = list(limit=1),
   cols=c("popid", "spawningyear", "tsaej"))
 tab
@@ -124,7 +125,7 @@ tab
 
 Increase the limit to 2000 to ensure all the data are returned. Not run.
 ```{r eval=FALSE}
-tab <- rcax_hli_xport("NOSA",
+tab <- rcax_hli("NOSA",
   flist = list(esu_dps="Salmon, Chinook (Snake River spring/summer-run ESU)")
   qlist = list(limit=2000),
   cols=c("popid", "spawningyear", "tsaej"))
@@ -148,7 +149,7 @@ These are internal data sets. Access with `rCAX:::`
 * `caxsuperpops` The SuperPopulations table.
 
 ```{r}
-rCAX:::caxesu[1:2]
+rCAX:::caxesu[1:5]
 ```
 
 ```{r}
