@@ -36,6 +36,11 @@ You can check your installed version versus that on GitHub at any time using `rc
 
 Fork and put in a pull request!
 
+## Contributors
+
+[![Contributors](https://contrib.rocks/image?repo=nwfsc-math-bio/rCAX)](https://github.com/nwfsc-math-bio/rCAX/graphs/contributors)
+
+
 <hr>
 
 ### Disclaimer
