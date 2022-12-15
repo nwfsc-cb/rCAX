@@ -76,7 +76,7 @@ reference:
   contents: 
   - rcax_escdata
   - rcax_superpops
-  - rcax_tables
+  - rcax_datasets
 - title: "Connecting to API"
   desc: >
     Functions for connecting to the API. These are for 

@@ -1,4 +1,4 @@
-#' Get the list of CAX tables with ids
+#' Get the list of CAX datasets (tables) with ids
 #' 
 #' @export
 #' @param cols the columns to return. default is name, description and id. use cols=NULL to get all the columns
@@ -6,12 +6,12 @@
 #' @param ... Curl options passed to \code{\link[crul]{HttpClient}}
 #' @template apiref
 #' @examples
-#' a <- rcax_tables(cols=NULL)
+#' a <- rcax_datasets(cols=NULL)
 #' colnames(a)
 #' 
 #' head(a[,1:2])
 #' 
-rcax_tables <- function(cols = c("name", "id", "description"), GETargs = list(table_id = NULL, recordloc = "records", key = NULL, parse = TRUE), ...) {
+rcax_datasets <- function(cols = c("name", "id", "description"), GETargs = list(table_id = NULL, recordloc = "records", key = NULL, parse = TRUE), ...) {
   assert_is(cols, c('integer', 'character'))
   
   # api call; output is in $tables

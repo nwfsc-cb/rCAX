@@ -2,7 +2,7 @@
 #' 
 #' Returns EscData table sorted by refid and countdate. 
 #'  
-#'  The EscData table_id is set automatically using a saved data frame from a `rcax_tables()` call. The table is saved in `R/sysdata.rda`.
+#'  The EscData table_id is set automatically using a saved data frame from a `rcax_datasets()` call. The table is saved in `R/sysdata.rda`.
 #'  
 #'  `rcax_escdata()` will download 1000 records. 
 #'  

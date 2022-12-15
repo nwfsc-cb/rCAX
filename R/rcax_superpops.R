@@ -2,7 +2,7 @@
 #' 
 #' Returns SuperPopulations table
 #'  
-#'  The SuperPopulations table_id is set automatically using a saved data frame from a `rcax_tables()` call. The table is saved in `R/sysdata.rda`.
+#'  The SuperPopulations table_id is set automatically using a saved data frame from a `rcax_datasets()` call. The table is saved in `R/sysdata.rda`.
 #'  
 #'  `rcax_superpops()` will download 1000 records. Pass in `flist` to filter.
 #'  

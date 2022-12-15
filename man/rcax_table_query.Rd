@@ -16,7 +16,7 @@ rcax_table_query(
 )
 }
 \arguments{
-\item{tablename}{The name of the table in the CAX API. See \code{rcax_tables()} for the names.}
+\item{tablename}{The name of the table in the CAX API. See \code{rcax_datasets()} for the names.}
 
 \item{flist}{A filter for the query. See details and \code{rcax_filter()}}
 
@@ -41,7 +41,7 @@ Default queries will download 1000 records. You will
 want to make a filtered query by passing in \code{flist} as a list with the column name values to filter on.
 }
 \details{
-The required query parameters are table_id and XAPIKEY. These are set from the information in \code{GETargs}. table_id is normally looked up from \code{rcax_tables()} using \code{tablename} and \code{XAPIKEY} is looked up from \code{CAX_KEY} in the user environment (saved in \code{.Renviron} file. See \code{vignette("setup", package = "rCAX")} for how to set the key.  The \code{qlist} argument is any additional query parameters. The following are some of the available extra (meaning not required) query parameters.
+The required query parameters are table_id and XAPIKEY. These are set from the information in \code{GETargs}. table_id is normally looked up from \code{rcax_datasets()} using the \code{tablename}.  The \code{qlist} argument is any additional query parameters. The following are some of the available extra (meaning not required) query parameters.
 \itemize{
 \item page=num Integer of the page selected.
 \item per_page=num  Integer for the number of records per page.

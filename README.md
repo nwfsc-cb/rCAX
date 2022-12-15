@@ -23,8 +23,8 @@ To retrieve the NOSA data for NMFS_popid 7 that is the same as the file that one
 
 ```
 library(rCAX)
-f <- list(popid=7)
-tab <- rcax_hli_xport("NOSA", flist = f)
+f <- list(nmfs_popid=7)
+tab <- rcax_hli("NOSA", flist = f)
 ```
 
 ### Check the versions

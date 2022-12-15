@@ -5,7 +5,7 @@
 #'  want to make a filtered query by passing in `flist` as a list with the column name values to filter on.
 #'
 #' @details
-#' The required query parameters are table_id and XAPIKEY. These are set from the information in `GETargs`. table_id is normally looked up from `rcax_tables()` using `tablename` and `XAPIKEY` is looked up from `CAX_KEY` in the user environment (saved in `.Renviron` file. See \code{vignette("setup", package = "rCAX")} for how to set the key.  The `qlist` argument is any additional query parameters. The following are some of the available extra (meaning not required) query parameters.
+#' The required query parameters are table_id and XAPIKEY. These are set from the information in `GETargs`. table_id is normally looked up from `rcax_datasets()` using the `tablename`.  The `qlist` argument is any additional query parameters. The following are some of the available extra (meaning not required) query parameters.
 #' * page=num Integer of the page selected.
 #' * per_page=num  Integer for the number of records per page.
 #' * limit=num Maximum number of records to return. Default is 1000.
@@ -17,7 +17,7 @@
 #' This is a list with the column name and value. See `rcax_filter()` for the filtering code which writes the filter query parameter that is added to the GET query. See `rcax_filter()` for examples of how one passes in `flist`.
 #'
 #' @export
-#' @param tablename The name of the table in the CAX API. See `rcax_tables()` for the names.
+#' @param tablename The name of the table in the CAX API. See `rcax_datasets()` for the names.
 #' @template apiref
 #' @template tableargs
 #' @seealso `rcax_GET()`, `rcax_hli()`, `rcax_escdata()`, `rcax_superpops()`
@@ -62,7 +62,7 @@ rcax_table_query <- function(
     stop("Need either tablename or GETargs$table_id specified.")
   if(is.null(GETargs$table_id)) GETargs$table_id <- subset(caxtabs, caxtabs$name==tablename)$id
   if(is.null(GETargs$table_id))
-    stop("Something wrong. GETargs$table_id is NULL. Perhaps tablename is misspelled? Check the CAX table names from a call to `rcax_tables()`. Alternatively the sysdata `caxtabs` might be out of date. In which case, you will need to look up the correct table_id and pass that into `GETargs`.")
+    stop("Something wrong. GETargs$table_id is NULL. Perhaps tablename is misspelled? Check the CAX table names from a call to `rcax_datasets()`. Alternatively the sysdata `caxtabs` might be out of date. In which case, you will need to look up the correct table_id and pass that into `GETargs`.")
   
   # error check the flist because it will return a 500 if col is bad
   if(type!="colnames" && !is.null(flist) && length(flist)!=0){

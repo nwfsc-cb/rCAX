@@ -136,7 +136,7 @@ tab
 
 Only the name and id columns are shown.
 ```{r}
-tab <- rcax_tables(cols=c("name", "id"))
+tab <- rcax_datasets(cols=c("name", "id"))
 head(tab)
 ```
 

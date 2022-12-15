@@ -19,7 +19,7 @@ knitr::opts_chunk$set(
 library(rCAX)
 ```
 
-The main behind the scenes function is `rcax_GET(path, key = NULL, query=NULL, ...)` which appears in functions `rcax_table_query()` and `rcax_tables()`.
+The main behind the scenes function is `rcax_GET(path, key = NULL, query=NULL, ...)` which appears in functions `rcax_table_query()` and `rcax_datasets()`.
 
 ## rcax_GET params
 
@@ -68,7 +68,7 @@ We don't need to pass in a key. `rcax_GET()` will look this up from the `.REnvir
 
 ## Finding the table id
 
-The `table_id` are stored in `rCAX:::caxtabs` as internal data using a call to `rcax_tables()`. The function returns the name and id for the tables in the CAX API. `caxtabs` will need to be updated or checked periodically.
+The `table_id` are stored in `rCAX:::caxtabs` as internal data using a call to `rcax_datasets()`. The function returns the name and id for the tables in the CAX API. `caxtabs` will need to be updated or checked periodically.
 
 In `rcax_table_query()`, the `table_id` is looked up using a table name. The table names for the HLI short code names are hard coded in `rcax_table_name()`. If the names change, they should be updated here.
 

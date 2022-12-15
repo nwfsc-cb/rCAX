@@ -1,9 +1,9 @@
 ---
-title: "CAX Tables"
-description: "This vignette shows the available tables along with their table ids needed for API queries."
+title: "CAX Datasets"
+description: "This vignette shows the available datasets (tables) along with their table ids needed for API queries."
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{CAX Tables}
+  %\VignetteIndexEntry{CAX Datasets}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -19,10 +19,10 @@ knitr::opts_chunk$set(
 library(rCAX)
 ```
 
-The tables available in CAX along with their descriptions are:
+The datasets available in CAX along with their descriptions are:
 
 ```{r}
-tab <- rcax_tables()
+tab <- rcax_datasets()
 knitr::kable(tab[,c("name","description")])
 ```
 

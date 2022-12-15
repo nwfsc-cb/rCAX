@@ -103,7 +103,7 @@ want to make a filtered query by passing in <code>flist</code> as a list with th
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>tablename</dt>
-<dd><p>The name of the table in the CAX API. See <code><a href="rcax_tables.html">rcax_tables()</a></code> for the names.</p></dd>
+<dd><p>The name of the table in the CAX API. See <code><a href="rcax_datasets.html">rcax_datasets()</a></code> for the names.</p></dd>
 
 
 <dt>flist</dt>
@@ -144,7 +144,7 @@ want to make a filtered query by passing in <code>flist</code> as a list with th
     </div>
     <div id="details">
     <h2>Details</h2>
-    <p>The required query parameters are table_id and XAPIKEY. These are set from the information in <code>GETargs</code>. table_id is normally looked up from <code><a href="rcax_tables.html">rcax_tables()</a></code> using <code>tablename</code> and <code>XAPIKEY</code> is looked up from <code>CAX_KEY</code> in the user environment (saved in <code>.Renviron</code> file. See <code><a href="../articles/setup.html">vignette("setup", package = "rCAX")</a></code> for how to set the key.  The <code>qlist</code> argument is any additional query parameters. The following are some of the available extra (meaning not required) query parameters.</p><ul><li><p>page=num Integer of the page selected.</p></li>
+    <p>The required query parameters are table_id and XAPIKEY. These are set from the information in <code>GETargs</code>. table_id is normally looked up from <code><a href="rcax_datasets.html">rcax_datasets()</a></code> using the <code>tablename</code>.  The <code>qlist</code> argument is any additional query parameters. The following are some of the available extra (meaning not required) query parameters.</p><ul><li><p>page=num Integer of the page selected.</p></li>
 <li><p>per_page=num  Integer for the number of records per page.</p></li>
 <li><p>limit=num Maximum number of records to return. Default is 1000.</p></li>
 <li><p>agency=character Agency that submitted the record. You can designate one or more (comma-separated) agency acronyms: IDFG, WDFW, ODFW, CRITFC, CCT, NOAA.</p></li>

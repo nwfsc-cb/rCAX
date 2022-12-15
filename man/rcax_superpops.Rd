@@ -38,7 +38,7 @@ data frame if \code{type="data.frame"} (default) and the colnames if \code{type=
 \description{
 Returns SuperPopulations table
 
-The SuperPopulations table_id is set automatically using a saved data frame from a \code{rcax_tables()} call. The table is saved in \code{R/sysdata.rda}.
+The SuperPopulations table_id is set automatically using a saved data frame from a \code{rcax_datasets()} call. The table is saved in \code{R/sysdata.rda}.
 
 \code{rcax_superpops()} will download 1000 records. Pass in \code{flist} to filter.
 }
