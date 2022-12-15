@@ -52,6 +52,8 @@ rcax_base <- function() "https://api.streamnet.org/api/v1"
 #' @seealso `rcax_GET()` for examples
 #' @export
 #' @rdname rcax_parse
+#' @references 
+#' This function is modeled off `rl_parse()` in \url{https://github.com/ropensci/rredlist}
 rcax_parse <- function(x, parse) {
   jsonlite::fromJSON(x, TRUE)
 }
@@ -86,7 +88,7 @@ print.rcax_zzz <- function(x, ...) cat("")
 #' rcax_ua()
 #' @rdname rcax_ua
 #' @references 
-#' This function is modeled off rl_ua() in \url{https://github.com/ropensci/rredlist}
+#' This function is modeled off `rl_ua()` in \url{https://github.com/ropensci/rredlist}
 rcax_ua <- function() {
   versions <- c(
     paste0("r-curl/", utils::packageVersion("curl")),
