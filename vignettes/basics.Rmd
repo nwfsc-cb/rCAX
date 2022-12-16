@@ -1,6 +1,6 @@
 ---
 title: "Basic functions"
-description: "This vignette shows the functions for querying the CAX tables."
+description: "This vignette shows the functions for querying the CAX tables, with a focus on Endangered Species Act Listed ESUs/DPSs."
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Basic functions}
@@ -28,10 +28,10 @@ rcax_termsofuse()
 
 ## HLI queries
 
-The main user function is `rcax_hli()` which returns HLI tables from Coordinated Assessments data eXchange with extra 
-meta data such as NMFS_PopID as returned from the [CAP Fish HLIs Tabular Query](https://www.streamnet.org/data/hli/).
+The main user function is `rcax_hli()` which returns HLI tables from Coordinated Assessments data eXchange with 
+meta data such as NMFS_PopID as returned from the [CAP Fish HLIs Tabular Query](https://www.streamnet.org/data/hli/) or [CAX](https://cax.streamnet.org).
 
-The  basic `rcax_hli()` functionality is shown with the NOSA HLI but the syntax is the same for all the HLI: 
+The  basic `rcax_hli()` functionality is shown with the NOSA HLI but the syntax is the same for all the HLI tables: 
 
 * NOSA: Natural Origin Spawner Abundance
 * SAR: Smolt to Adult Ratios
@@ -41,7 +41,7 @@ The  basic `rcax_hli()` functionality is shown with the NOSA HLI but the syntax 
 * PreSmolt: Presmolt Abundance
 
 
-## Show the columns for the NOSA tables
+## Show the columns for the NOSA table
 
 Get the table and show all the column names with definitions. Only first 10 are shown.
 ```{r}
@@ -77,7 +77,7 @@ ggplot(
   ggtitle("log(total spawners)")
 ```
 
-Keep in mind that not all ESU and DPS are in the CAX database for each HLI. Go to https://www.streamnet.org/data/hli/ to do a search to quickly see what is available in different HLI tables.
+Keep in mind that not all ESUs or DPSs are in the CAX database for each HLI, nor are all populations for each ESU or DPS. Go to https://www.streamnet.org/data/hli/ to do a search to quickly see what is available in different HLI tables.
 
 ## Filtering
 
@@ -146,7 +146,7 @@ These are internal data sets. Access with `rCAX:::`
 
 * `caxesu` The ESU and DPS names, which appear in the `esu_dps` column in tables.
 * `caxpops` The Populations table with all the population metadata, like NMFS_PopID and MPG.
-* `caxsuperpops` The SuperPopulations table.
+* `caxsuperpops` The SuperPopulations table with the metadata describing which populations are included in each superpopulation. These are used when the data, e.g. Genetic Stock Identification, cannot separate data to the population level.
 
 ```{r}
 rCAX:::caxesu[1:5]
