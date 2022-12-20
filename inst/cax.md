@@ -33,7 +33,7 @@ This data is provided to the CAX by agencies and tribes in order to increase col
 
 ## How data quality is indicated
 How do I filter?
-For the VR/SR datasets, CAX data is initially filtered for ESA listed population data by NMFS_POPID. Note - this does not include superpops data, that has to be separately queried.
+For the VR/SR datasets, CAX data is initially filtered for ESA listed population data by NMFS_POPID. POPID numbers are consecutive within an ESU. Note - this does not include superpops data, that has to be separately queried.
 
 
 
