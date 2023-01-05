@@ -47,12 +47,13 @@ In order to access, share, or use these datasets you agree that:
 ## About the data
 
 These data are provided to the CAX by agencies and tribes in order to increase collaboration opportunities and consistency in analyses. StreamNet and CAP host and help develop the Data Exchange Standards, but responsibility and rights are retained by the data providers. Data accessibility or versioning access requests should be directed to `project@streamnet.org` and questions about the datasets or appropriate use should be directed towards the Contact Agency (`contactagency` column) or the Contact Person (`contactpersonfirst`, `contactpersonlast`, `contactphone` and `contactemail` columns). 
+
 ## How data quality is indicated
 
 For the VR/SR datasets, CAX data is initially filtered for ESA listed population data by NMFS_POPID (`nmfs_popid`). POPID numbers are consecutive within an ESU. Note - this does not include superpops data, that has to be separately queried.
 
 
-## Where and how to find the citation information
+## How to cite downloaded data
 
 The metadata columns from the downloaded HLI data provide the necessary information to produce a citation. The columns that you need are described below.
 
@@ -64,7 +65,7 @@ Dataset Name (date range). Type of data. Data provider and contributor/s. Protoc
 
 Salmon, Chinook (Snake River spring/summer-run ESU) East Fork South Fork Salmon River - summer (1987-2018). Natural Origin Spawner Abundance. Nez Perce Tribe and Idaho Department of Fish and Game. Protocols and methods available at https://www.monitoringresources.org/Document/Protocol/Details/2246. Accessed from www.cax.streamnet.org version May 26 2020 10:00PM by Mari Williams, NOAAF NWFSC/PSMFC.
 
-### Metadata columns
+### Metadata columns needed for creating citations
 
 * Dataset name:   `esapopname` column.
 * Date range: For NOSA tables, the year is in the `spawningyear` column. min and max of this column gives the data range.
