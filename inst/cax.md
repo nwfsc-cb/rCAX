@@ -39,20 +39,22 @@ For the VR/SR datasets, CAX data is initially filtered for ESA listed population
 
 ## Where and how to find the citation information
 
-The metadata columns provide the necessary information to produce a citation.
+The metadata columns from the downloaded HLI data provide the necessary information to produce a citation. The columns that you need are described below.
 
-Recommended dataset citation format:
+**Recommended dataset citation format:**
 
 Dataset Name (date range). Type of data. Data provider and contributor/s. Protocol and methods available at website. Data accessed by consumer name version or date accessed from website. 
 
+**Example:**
+
 Salmon, Chinook (Snake River spring/summer-run ESU) East Fork South Fork Salmon River - summer (1987-2018). Natural Origin Spawner Abundance. Nez Perce Tribe and Idaho Department of Fish and Game. Protocols and methods available at https://www.monitoringresources.org/Document/Protocol/Details/2246. Accessed from www.cax.streamnet.org vers May 26 2020 10:00PM by Mari Williams, NOAAF NWFSC/PSMFC.
 
+### Columns with the metadata
 
-
-### Dataset name - hli$ESAPOPNAME 
-### Date range - min hli$spawningyear and max hli$spawningyear.
-### Type of data - HLI name. this is not exactly correct. for true NOSA yes, but there are escapements within the nosa table defined as such.
-### Data provider - hli$ContactAgency hli$otherdatasources.
-### Protocol and methods availabile at hli$protmethurl.
-### Data accessed by username.
-### Data version hli$datasetversion.
+* Dataset name:   `esapopname` column.
+* Date range: For NOSA tables, the year is in the `spawningyear` column. min and max of this column gives the data range.
+* Type of data: The HLI name is generally what the data type is. However, for NOSA (Natural origin spawner abundance) tables, you will need to look at the notes for each data row as data are escapement (natural and non-natural origin).
+* Data provider: the `contactagency` and `otherdatasources` columns.
+* Protocol and methods: `protmethurl` column.
+* Data accessed by: Your name.
+* Data version: `datasetversion` column name.
