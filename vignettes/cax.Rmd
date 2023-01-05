@@ -1,3 +1,20 @@
+---
+title: "Using CAX HLI data"
+description: "About the CAX data, using it, and citing it"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Using CAX HLI data}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
 # Using CAX HLI data
 IMPORTANT! BE SURE TO CAREFULLY READ AND UNDERSTAND THE TERMS AND CONDITIONS SET FORTH IN THIS END-USER LICENSE AGREEMENT. YOU WILL BE ASKED TO REVIEW AND EITHER ACCEPT OR NOT ACCEPT THE TERMS OF THE EULA. YOU ARE NOT AUTHORIZED TO ACCESS OR USE THE DATA IN THIS DATABASE UNLESS AND UNTIL YOU ACCEPT THE TERMS OF THIS EULA.
 

@@ -14,6 +14,9 @@ rcax_parse(x, parse)
 \description{
 Parse results from API call
 }
+\references{
+This function is modeled off \code{rl_parse()} in \url{https://github.com/ropensci/rredlist}
+}
 \seealso{
 \code{rcax_GET()} for examples
 }

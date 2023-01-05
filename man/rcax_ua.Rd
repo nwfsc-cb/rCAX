@@ -13,5 +13,5 @@ Make the user agent string
 rcax_ua()
 }
 \references{
-This function is modeled off rl_ua() in \url{https://github.com/ropensci/rredlist}
+This function is modeled off \code{rl_ua()} in \url{https://github.com/ropensci/rredlist}
 }

@@ -4,3 +4,4 @@ docs
 pkgdown/
 man-roxygen/
 .github/
+inst/img

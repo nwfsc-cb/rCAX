@@ -1,7 +1,7 @@
 [![github](https://img.shields.io/github/v/release/nwfsc-math-bio/rCAX?color=brightgreen&label=GitHub)](https://github.com/nwfsc-math-bio/rCAX/releases/latest)
 [![check-release](https://github.com/nwfsc-math-bio/rCAX/actions/workflows/check-release.yaml/badge.svg)](https://github.com/nwfsc-math-bio/rCAX/actions/workflows/check-release.yaml)
 
-rCAX <img src="man/figures/logo.png" align="right" width="20%"  hspace="20" vspace="20"/>
+rCAX <img src="man/figures/logo2.png" align="right" width="20%"  hspace="20" vspace="20"/>
 ========
 
 `rCAX` is an R client for the [Coordinated Assessments API](https://www.streamnet.org/resources/exchange-tools/rest-api-documentation/). Coordinated Assessments data eXchange (CAX) is developed by the Coordinated Assessments Partnership (CAP). CAP is a collaborative process to efficiently share and provide access to standardized derived information, such as fish population-scale high-level indicators (HLIs) and supporting metrics. Participants in CAP include state fish and wildlife management agencies, tribes, federal agencies such as National Oceanic and Atmospheric Administration Fisheries (NOAA Fisheries) and Bonneville Power Administration (BPA), and others. CAP is co-sponsored by StreamNet and Pacific Northwest Aquatic Monitoring Partnership (PNAMP). Make sure to review the [StreamNet Terms of Use](https://nwfsc-math-bio.github.io/rCAX/articles/terms.html) for these data, the [StreamNet Data Policy](https://www.streamnet.org/resources/exchange-tools/data-agreements/) and the citation information from [StreamNet](https://www.streamnet.org/resources/citing-sn/) and [PNAMP](https://www.pnamp.org/project/data-citation-and-attribution) for database queries.
@@ -17,7 +17,7 @@ remotes:::install_github("nwfsc-math-bio/rCAX@*release")
 
 ## Download a table
 
-Read the [Basic functions vignette](https://nwfsc-math-bio.github.io/rCAX/articles/basics.html) to get started and see examples.
+Read about the [CAX data and terms](https://nwfsc-math-bio.github.io/rCAX/articles/cax.html). Then read the [Basic functions vignette](https://nwfsc-math-bio.github.io/rCAX/articles/basics.html) to get started and see examples of how to make queries.
 
 To retrieve the NOSA data for NMFS_popid 7 that is the same as the file that one can download from [CAP Fish HLIs Tabular Query](https://www.streamnet.org/data/hli/), use
 
