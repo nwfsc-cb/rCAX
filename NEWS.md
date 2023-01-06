@@ -3,7 +3,7 @@ rCAX 0.10.0
 
 * merged `rcax_hli()` and `rcax_hli_xport()`
 * a message terms of use is not written when the package is loaded
-* documentation: cleaned up basics.Rmd, only have api ref for the base api functions, edited the Readme
+* documentation: cleaned up basics.Rmd, only have api ref for the base api functions, edited the Readme. Added cax.Rmd with more details on the CAX database.
 * renamed `rcax_tables()` to `rcax_datasets()` to match pycax package
 
 rCAX 0.9.0
