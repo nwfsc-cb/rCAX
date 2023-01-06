@@ -81,20 +81,30 @@ Keep in mind that not all ESUs or DPSs are in the CAX database for each HLI, nor
 
 ## Filtering
 
+Querying for columns with specific values is filtering and filter specification is via the `flist` argument. The `flist` argument is a list with the columns and values you want to filter on. A query with the `flist` argument takes this form:
+```
+tab <- rcax_hli("NOSA",
+  flist = list(...))
+```
+
 ### Single value
-
-The `flist` argument is a list with the columns and values you want to filter on. Here are some examples:
-
-Filter based on one value.
+thi
+Filter based on one value. This shows examples of how you might specify the `flist` argument in a `rcax_hli()` call:
 ```
-f <- list(esu_dps = "Steelhead (Middle Columbia River DPS)")
-f <-  list(popid = 7)
+flist = list(esu_dps = "Steelhead (Middle Columbia River DPS)")
+flist = list(popid = 7)
 ```
+For example, you could use
+```
+tab <- rcax_hli("NOSA",
+  flist = list(popid = 7))
+```
+to retreive only data for popid 7.
 
 
 ### Multiple values
 
-Filter based on multiple values. In this case, data with popid 7, 8 or 9 are returned.
+You can also filter based on multiple values. In this case, data with popid 7, 8 or 9 are returned.
 ```
 flist = list(popid = c(7,8,9))
 ```
@@ -114,7 +124,7 @@ flist = list(esu_dps = "Salmon, Chinook (Snake River spring/summer-run ESU)", ru
 
 ## Change the number of records returned
 
-The default maximum number of records is 1000. You can increase (or decrease) this by passing in the limit query parameter.
+The default maximum number of records is 1000. You can increase (or decrease) this by passing in the limit query parameter using the `qlist` argument.
 
 ```{r}
 tab <- rcax_hli("NOSA",

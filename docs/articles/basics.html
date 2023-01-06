@@ -212,20 +212,31 @@ quickly see what is available in different HLI tables.</p>
 <div class="section level2">
 <h2 id="filtering">Filtering<a class="anchor" aria-label="anchor" href="#filtering"></a>
 </h2>
+<p>Querying for columns with specific values is filtering and filter
+specification is via the <code>flist</code> argument. The
+<code>flist</code> argument is a list with the columns and values you
+want to filter on. A query with the <code>flist</code> argument takes
+this form:</p>
+<pre><code><span><span class="va">tab</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/rcax_hli.html">rcax_hli</a></span><span class="op">(</span><span class="st">"NOSA"</span>,</span>
+<span>  flist <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="va">...</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 <div class="section level3">
 <h3 id="single-value">Single value<a class="anchor" aria-label="anchor" href="#single-value"></a>
 </h3>
-<p>The <code>flist</code> argument is a list with the columns and values
-you want to filter on. Here are some examples:</p>
-<p>Filter based on one value.</p>
-<pre><code><span><span class="va">f</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>esu_dps <span class="op">=</span> <span class="st">"Steelhead (Middle Columbia River DPS)"</span><span class="op">)</span></span>
-<span><span class="va">f</span> <span class="op">&lt;-</span>  <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>popid <span class="op">=</span> <span class="fl">7</span><span class="op">)</span></span></code></pre>
+<p>thi Filter based on one value. This shows examples of how you might
+specify the <code>flist</code> argument in a <code><a href="../reference/rcax_hli.html">rcax_hli()</a></code>
+call:</p>
+<pre><code><span><span class="va">flist</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>esu_dps <span class="op">=</span> <span class="st">"Steelhead (Middle Columbia River DPS)"</span><span class="op">)</span></span>
+<span><span class="va">flist</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>popid <span class="op">=</span> <span class="fl">7</span><span class="op">)</span></span></code></pre>
+<p>For example, you could use</p>
+<pre><code><span><span class="va">tab</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/rcax_hli.html">rcax_hli</a></span><span class="op">(</span><span class="st">"NOSA"</span>,</span>
+<span>  flist <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>popid <span class="op">=</span> <span class="fl">7</span><span class="op">)</span><span class="op">)</span></span></code></pre>
+<p>to retreive only data for popid 7.</p>
 </div>
 <div class="section level3">
 <h3 id="multiple-values">Multiple values<a class="anchor" aria-label="anchor" href="#multiple-values"></a>
 </h3>
-<p>Filter based on multiple values. In this case, data with popid 7, 8
-or 9 are returned.</p>
+<p>You can also filter based on multiple values. In this case, data with
+popid 7, 8 or 9 are returned.</p>
 <pre><code><span><span class="va">flist</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>popid <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">7</span>,<span class="fl">8</span>,<span class="fl">9</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 <p>Filter based on two columns. Here we getting the the summer run data
 for one ESU. The values in <code>flist</code> are not case sensitive so
@@ -242,8 +253,9 @@ multiple values with multiple columns. This works</p>
 <h2 id="change-the-number-of-records-returned">Change the number of records returned<a class="anchor" aria-label="anchor" href="#change-the-number-of-records-returned"></a>
 </h2>
 <p>The default maximum number of records is 1000. You can increase (or
-decrease) this by passing in the limit query parameter.</p>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+decrease) this by passing in the limit query parameter using the
+<code>qlist</code> argument.</p>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">tab</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/rcax_hli.html">rcax_hli</a></span><span class="op">(</span><span class="st">"NOSA"</span>,</span>
 <span>  qlist <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>limit<span class="op">=</span><span class="fl">1</span><span class="op">)</span>,</span>
 <span>  cols<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"popid"</span>, <span class="st">"spawningyear"</span>, <span class="st">"tsaej"</span><span class="op">)</span><span class="op">)</span></span>
@@ -252,17 +264,17 @@ decrease) this by passing in the limit query parameter.</p>
 <span><span class="co">#&gt; 1    58         2001</span></span></code></pre></div>
 <p>Increase the limit to 2000 to ensure all the data are returned. Not
 run.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>tab <span class="ot">&lt;-</span> <span class="fu">rcax_hli</span>(<span class="st">"NOSA"</span>,</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">flist =</span> <span class="fu">list</span>(<span class="at">esu_dps=</span><span class="st">"Salmon, Chinook (Snake River spring/summer-run ESU)"</span>)</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">qlist =</span> <span class="fu">list</span>(<span class="at">limit=</span><span class="dv">2000</span>),</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">cols=</span><span class="fu">c</span>(<span class="st">"popid"</span>, <span class="st">"spawningyear"</span>, <span class="st">"tsaej"</span>))</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>tab</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>tab <span class="ot">&lt;-</span> <span class="fu">rcax_hli</span>(<span class="st">"NOSA"</span>,</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">flist =</span> <span class="fu">list</span>(<span class="at">esu_dps=</span><span class="st">"Salmon, Chinook (Snake River spring/summer-run ESU)"</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">qlist =</span> <span class="fu">list</span>(<span class="at">limit=</span><span class="dv">2000</span>),</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">cols=</span><span class="fu">c</span>(<span class="st">"popid"</span>, <span class="st">"spawningyear"</span>, <span class="st">"tsaej"</span>))</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>tab</span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="show-the-available-tables">Show the available tables<a class="anchor" aria-label="anchor" href="#show-the-available-tables"></a>
 </h2>
 <p>Only the name and id columns are shown.</p>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">tab</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/rcax_datasets.html">rcax_datasets</a></span><span class="op">(</span>cols<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"name"</span>, <span class="st">"id"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">tab</span><span class="op">)</span></span>
 <span><span class="co">#&gt;                           name                                   id</span></span>
@@ -290,14 +302,14 @@ metadata describing which populations are included in each
 superpopulation. These are used when the data, e.g. Genetic Stock
 Identification, cannot separate data to the population level.</li>
 </ul>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">rCAX</span><span class="fu">:::</span><span class="va"><a href="../reference/caxesu.html">caxesu</a></span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">]</span></span>
 <span><span class="co">#&gt; [1] "N/A"                                                </span></span>
 <span><span class="co">#&gt; [2] "Salmon, Chinook (Lower Columbia River ESU)"         </span></span>
 <span><span class="co">#&gt; [3] "Salmon, Chinook (Puget Sound ESU)"                  </span></span>
 <span><span class="co">#&gt; [4] "Salmon, Chinook (Snake River fall-run ESU)"         </span></span>
 <span><span class="co">#&gt; [5] "Salmon, Chinook (Snake River spring/summer-run ESU)"</span></span></code></pre></div>
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="fu">rCAX</span><span class="fu">:::</span><span class="va">caxpops</span><span class="op">)</span></span>
 <span><span class="co">#&gt;  [1] "popid"               "recoverydomain"      "esu_dps"            </span></span>
 <span><span class="co">#&gt;  [4] "majorpopgroup"       "populationname"      "esapopname"         </span></span>
