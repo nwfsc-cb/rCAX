@@ -31,18 +31,28 @@ In order to access, share, or use these datasets you agree that:
 
 This data is provided to the CAX by agencies and tribes in order to increase collaboration opportunities and consistency in analyses. StreamNet and CAP host and help develop the Data Exchange Standards, which includes some metadata requirements for successful submission, but responsibility and rights are retained by the data providers. Data accessibility or versioning access requests should be directed to project@streamnet.org and questions about the datasets or appropriate use should be directed to the data provider using the information provided in columns ContactAgency, ContactPersonFirst, contactpersonlast, contactphone, and contactemail for each data row - these will generally be consistent per dataset. 
 
-## How data quality is indicated
+## Data quality, standards, and key metadata columns
 
-The CAP has endeavored to provide sufficient metadata for basic usability, protocol and methods links to MonitoringRsources.org or reports, and contact information specific to the dataset. Data submissions are not available to the public through CAX until the submitter has completed their QA/QC and set the record column 'publish' to 'yes'. Additionally, there is a 'DataStatus' column with options "Draft", "Reviewed", or "Final". These should be considered the best available data at the time of submission for the Contact Agency. CAX was developed to be dynamic with versioning, so data should not be expected to be kept static. If a previous version of the dataset is needed, contact project@streamnet.org with the information in 'DataSetVersion'.
-Data submitters associate their data with established populations or develop populations or superpopulations to best describe their data. The 'PopFit' column has three options, "portion", "same", and "multiple". The submitter may provide multiple indicator calculations based on different expansion factors or methods, such as portion of a population, the whole population, or superpopulations that cannot be parsed through the data available, or different data streams such as PIT tag, Genetic Stock Identification, or spawning ground surveys. They indicate the dataset they consider to be the best estimate of the available data for the HLI in the column 'BestValue'. 
+The CAP has endeavored to provide sufficient metadata for usability, protocol and methods links to MonitoringRsources.org or reports, and contact information specific to the dataset. Data submissions are not available to the public through CAX until the submitter has completed their QA/QC and set the record column 'publish' to 'yes'. These data should be considered the best available data at the time of submission for the Contact Agency and should match other online repositories where their data might be available. Additionally, there is a 'DataStatus' column with options "Draft", "Reviewed", or "Final" and you may find that while most data in a timeseries will be "Final", the most recent years available may still hold the "Draft" or "Reviewed" status. CAX was developed to be dynamic with versioning, so data should not be expected to be kept static. If a previous version of the dataset is needed, contact project@streamnet.org with the information in 'DataSetVersion'.
+
+### NMFS_POPID
+The column NMFS_POPID is the unique identifier that NOAA Fisheries uses internally for datasets. The data available will include portion, same, and multiple popfit datasets for listed stocks where available. 
+
+### PopFit
+Data submitters associate their data with established populations or develop populations or superpopulations to best describe their data. The 'PopFit' column has three options, "portion", "same", and "multiple". 
+
+### BestValue
+The submitter may provide multiple indicator calculations based on different expansion factors or methods, such as portion of a population, the whole population, or superpopulations that cannot be parsed through the data available, or different data streams such as PIT tag, Genetic Stock Identification, or spawning ground surveys. They indicate the dataset they consider to be the best estimate of the available data for the HLI in the column 'BestValue'. 
+
+### NullRecord
 Null records are included to provide information and peripheral information when HLI estimates cannot be calculated. See column 'NullRecord' and 'Comments'.
 For data within the Natural Origin Spawner Abundance (NOSA) there is a column for 'EstimateType' that was developed when it became clear that some data was not available at the spawner abundance level, but instead at the escapement level. One of the two should be indicated and any details about prespawn mortality should be included in the methods/protocol documentation available. 
-Many of the fields have Alpha, Upper, and Lower limits included when the data is available.
-ESA listed populations are used for the datasets developed for NOAA Fisheries analysis. CAX data is initially filtered for ESA listed population data by NMFS_POPID. Superpopulations of listed populations do not have an associated NMFS_POPID and will have to be filtered separately. WAIT DID WE DO THIS???
 
-## Datasets and comparability across time, populations, and ESU/DPSs
-Method numbers
-Data sets
+### Alpha, UpperLimit, and LowerLimit
+Many of the fields have Alpha, Upper, and Lower limits included when the data is available.
+
+### MethodNumber
+
 
 
 ## Where and how to find the citation information
