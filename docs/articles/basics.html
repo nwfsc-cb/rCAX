@@ -177,7 +177,7 @@ lower case.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">tab</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/rcax_hli.html">rcax_hli</a></span><span class="op">(</span><span class="st">"NOSA"</span>,</span>
 <span>  flist <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>nmfs_popid <span class="op">=</span> <span class="fl">7</span><span class="op">)</span>,</span>
-<span>  cols<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"NMFS_PopID"</span>, <span class="st">"spawningyear"</span>, <span class="st">"tsaej"</span>, <span class="st">"nosaej"</span><span class="op">)</span><span class="op">)</span></span>
+<span>  cols<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"nmfs_popid"</span>, <span class="st">"spawningyear"</span>, <span class="st">"tsaej"</span>, <span class="st">"nosaej"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">tab</span><span class="op">)</span></span>
 <span><span class="co">#&gt;   nmfs_popid spawningyear tsaej nosaej</span></span>
 <span><span class="co">#&gt; 1          7         1964  3020       </span></span>
@@ -222,7 +222,7 @@ this form:</p>
 <div class="section level3">
 <h3 id="single-value">Single value<a class="anchor" aria-label="anchor" href="#single-value"></a>
 </h3>
-<p>thi Filter based on one value. This shows examples of how you might
+<p>Filter based on one value. This shows examples of how you might
 specify the <code>flist</code> argument in a <code><a href="../reference/rcax_hli.html">rcax_hli()</a></code>
 call:</p>
 <pre><code><span><span class="va">flist</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>esu_dps <span class="op">=</span> <span class="st">"Steelhead (Middle Columbia River DPS)"</span><span class="op">)</span></span>
@@ -230,7 +230,7 @@ call:</p>
 <p>For example, you could use</p>
 <pre><code><span><span class="va">tab</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/rcax_hli.html">rcax_hli</a></span><span class="op">(</span><span class="st">"NOSA"</span>,</span>
 <span>  flist <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>popid <span class="op">=</span> <span class="fl">7</span><span class="op">)</span><span class="op">)</span></span></code></pre>
-<p>to retreive only data for popid 7.</p>
+<p>to retrieve only data for popid 7.</p>
 </div>
 <div class="section level3">
 <h3 id="multiple-values">Multiple values<a class="anchor" aria-label="anchor" href="#multiple-values"></a>
@@ -333,7 +333,7 @@ Identification, cannot separate data to the population level.</li>
 
       <footer><div class="copyright">
   <p></p>
-<p>NWFSC Math Bio Data and Metrics team: <a href="https://github.com/eeholmes" class="external-link">Eli Holmes</a>, <a href="https://github.com/mari-williams" class="external-link">Mari Williams</a>, <a href="https://github.com/katiebarnas" class="external-link">Katie Barnas</a>.</p>
+<p>NW Fisheries Science Center Math Bio Data and Metrics team: <a href="https://github.com/eeholmes" class="external-link">Eli Holmes</a>, <a href="https://github.com/mari-williams" class="external-link">Mari Williams</a>, <a href="https://github.com/katiebarnas" class="external-link">Katie Barnas</a>.</p>
 </div>
 
 <div class="pkgdown">

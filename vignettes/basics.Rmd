@@ -54,7 +54,7 @@ Here the columns returned are restricted by `cols`. The table is filtered with `
 ```{r}
 tab <- rcax_hli("NOSA",
   flist = list(nmfs_popid = 7),
-  cols=c("NMFS_PopID", "spawningyear", "tsaej", "nosaej"))
+  cols=c("nmfs_popid", "spawningyear", "tsaej", "nosaej"))
 head(tab)
 ```
 
@@ -88,7 +88,7 @@ tab <- rcax_hli("NOSA",
 ```
 
 ### Single value
-thi
+
 Filter based on one value. This shows examples of how you might specify the `flist` argument in a `rcax_hli()` call:
 ```
 flist = list(esu_dps = "Steelhead (Middle Columbia River DPS)")
@@ -99,7 +99,7 @@ For example, you could use
 tab <- rcax_hli("NOSA",
   flist = list(popid = 7))
 ```
-to retreive only data for popid 7.
+to retrieve only data for popid 7.
 
 
 ### Multiple values

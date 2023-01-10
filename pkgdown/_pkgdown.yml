@@ -48,7 +48,7 @@ authors:
   before: "This package is brought to you by: NOAA Fisheries Northwest Fisheries Science Center Math Bio Program"
   footer:
     roles: [aut, ctb]
-    text: "NWFSC Math Bio Data and Metrics team: "
+    text: "NW Fisheries Science Center Math Bio Data and Metrics team: "
 
   
 reference:

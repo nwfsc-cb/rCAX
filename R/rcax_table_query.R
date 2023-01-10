@@ -139,7 +139,7 @@ rcax_table_query <- function(
 #' Returns the columns in the same order as the downloaded 
 #' Excel files have in https://www.streamnet.org/data/hli. Adds on
 #' a few extra columns. The colnames are saved as internal data in 
-#' R/sysdata.rda and defined in inst/docs/create_sysdata.R
+#' `R/sysdata.rda` and defined in `inst/docs/create_sysdata.R`
 #' 
 #' * NOSA: Natural origin spawner abundance
 #' * SAR: SAR

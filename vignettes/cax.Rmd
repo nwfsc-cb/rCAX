@@ -55,7 +55,7 @@ The CAP has endeavored to provide sufficient metadata for basic usability, proto
 Data submitters associate their data with established populations or develop populations or superpopulations to best describe their data. The `popfit` column has three options, "portion", "same", and "multiple". The submitter may provide multiple indicator calculations based on different expansion factors or methods, such as portion of a population, the whole population, or superpopulations that cannot be parsed through the data available, or different data streams such as PIT tag, Genetic Stock Identification, or spawning ground surveys. They indicate the dataset they consider to be the best estimate of the available data for the HLI in the column `bestvalue`. 
 Null records are included to provide information and peripheral information when HLI estimates cannot be calculated. See column `nullrecord` and `comments`.
 
-For data within the Natural Origin Spawner Abundance (NOSA) HLI tables, there is a column `estimatetype` that was developed when it became clear that some data were not available at the spawner abundance level, but instead at the escapement level. One of the two, "spawner abundance" or "escapement", should be indicated and any details about prespawn mortality should be included in the methods/protocol documentation column. 
+For data within the Natural Origin Spawner Abundance (NOSA) HLI tables, there is a column `estimatetype` that was developed when it became clear that some data were not available at the natural origin spawner abundance level, but instead at the escapement level (natural plus non-natural escapement). One of the two, "NOSA" or "escapement", should be indicated and any details about prespawning mortality should be included in the methods/protocol documentation. 
 
 Datasets for ESA listed populations were developed for NOAA Fisheries analysis and will have the column `esapopname`. These ESA listed population data will also have a value for `nmfs_popid` which corresponds to the NMFS PopID used by NOAA Fisheries. 
 
@@ -69,7 +69,7 @@ Dataset Name (date range). Type of data. Data provider and contributor/s. Protoc
 
 **Example:**
 
-Salmon, Chinook (Snake River spring/summer-run ESU) East Fork South Fork Salmon River - summer (1987-2018). Natural Origin Spawner Abundance. Nez Perce Tribe and Idaho Department of Fish and Game. Protocols and methods available at https://www.monitoringresources.org/Document/Protocol/Details/2246. Accessed from www.cax.streamnet.org vers May 26 2020 10:00PM by Mari Williams, NOAAF NWFSC/PSMFC.
+Salmon, Chinook (Snake River spring/summer-run ESU) East Fork South Fork Salmon River - summer (1987-2018). Natural Origin Spawner Abundance. Nez Perce Tribe and Idaho Department of Fish and Game. Protocols and methods available at https://www.monitoringresources.org/Document/Protocol/Details/2246. Accessed from www.cax.streamnet.org version May 26 2020 10:00PM by Mari Williams, NOAA Fisheries NWFSC/PSMFC.
 
 ### Columns with the metadata
 

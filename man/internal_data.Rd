@@ -12,12 +12,12 @@ with \verb{rCAX:::}. For example, \code{rCAX:::caxesu} shows the list of ESU/DPS
 \details{
 Internal data
 \itemize{
-\item caxsuperpops: the SuperPopulations table
-\item caxtabs: the API table names and their table_ids. Used to look up table_id
-\item caxpops: the Populations table
-\item caxesu: the list of ESU/DPS names. Useful for filtering.
-\item nosa_xport_colnames, sar_xport_colnames, pni_xport_colnames, rpers_xport_colnames, presmolt_xport_colnames,juvout_xport_colnames: the column names that appear in the HLI Tabular Query output so that rCAX _xport functions produce the same columns in the same order.
-\item cax_column_definitions: a data frame with column name and definitions. Produced from the HLI Tabular Query Excel files
+\item \code{caxsuperpops}: the SuperPopulations table
+\item \code{caxtabs}: the API table names and their table_ids. Used to look up table_id
+\item \code{caxpops}: the Populations table
+\item \code{caxesu}: the list of ESU/DPS names. Useful for filtering.
+\item \code{nosa_xport_colnames}, \code{sar_xport_colnames}, \code{pni_xport_colnames}, \code{rpers_xport_colnames}, \code{presmolt_xport_colnames}, \code{juvout_xport_colnames}: the column names that appear in the HLI Tabular Query output so that rCAX \verb{_xport} functions produce the same columns in the same order.
+\item \code{cax_column_definitions}: a data frame with column name and definitions. Produced from the HLI Tabular Query Excel files
 }
 }
 \examples{

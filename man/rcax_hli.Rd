@@ -21,7 +21,7 @@ rcax_hli(
 
 \item{flist}{A filter for the query. See details and \code{rcax_filter()}}
 
-\item{qlist}{Additional query params. See \code{rcax_table_query()} for details.}
+\item{qlist}{Additional query parameters. See \code{rcax_table_query()} for details.}
 
 \item{cols}{column names to return. Use cols=NULL if you want all columns. Names are case insensitive.}
 
@@ -31,7 +31,7 @@ rcax_hli(
 
 \item{tabletype}{"xport" (default) or "base". XPort has additional useful metadata.}
 
-\item{GETargs}{A list of arguments for the \code{rcax_GET()} call. These do not need to be specified by the user unless the user wants to change the default values. \code{table_id} This is the CAX table id. It is looked up using \code{tablename} and \code{rCAX:::caxpops} (an internal dataset). If \code{table_id} is passed in via \code{GETargs}, it wil override the default table id lookup. \code{recordloc} This is the name of the record we want in the list returned from the GET call. \code{key} is the API key.}
+\item{GETargs}{A list of arguments for the \code{rcax_GET()} call. These do not need to be specified by the user unless the user wants to change the default values. \code{table_id} This is the CAX table id. It is looked up using \code{tablename} and \code{rCAX:::caxpops} (an internal dataset). If \code{table_id} is passed in via \code{GETargs}, it will override the default table id lookup. \code{recordloc} This is the name of the record we want in the list returned from the GET call. \code{key} is the API key.}
 
 \item{...}{Curl options passed to \code{\link[crul]{HttpClient}}}
 }
@@ -66,7 +66,7 @@ will be empty. Examples:
 }
 }
 \details{
-The XPORT tables have a few columns that do not appear in the
+The XPort tables have a few columns that do not appear in the
 Excel files that
 one can download from StreamNet:
 "species", "publish", "num", "hli", "agency", "esudps", "hli_id".

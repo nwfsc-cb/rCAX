@@ -1,7 +1,7 @@
 #' Create filter to add to GET call
 #' 
 #' The table returned by an API query can be filtered using
-#' the filter query param. The value of the param is JSON. An examples are
+#' the filter query parameter. The value of the parameter is JSON. Examples are
 #' * `filter=[{"field":"popid","value":"7","type":"string"}]`
 #' * `filter=[{"field":"popid","value":[7,8],"type":"list"}]`
 #' * `filter=[{"field":"esu_dps","value":"Salmon, Chinook (Snake River spring/summer-run ESU)","type":"string"}]`
@@ -22,7 +22,7 @@
 #' @examples 
 #' rcax_filter(list(commonpopname="GRCAT"))
 #' rcax_filter(list(popid=c(7,8)))
-#' @return The JSON for the filter query param
+#' @return The JSON for the filter query parameter
 rcax_filter <- function(x){
  assert_is(x, 'list')
  df <- data.frame(field=names(x), value="tmp", type="string")

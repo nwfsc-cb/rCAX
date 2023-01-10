@@ -10,11 +10,11 @@ rcax_filter(x)
 \item{x}{list of property (column) names, values in this format \code{list(colname=value)}. If the property can take multiple values, this is passed in as \code{list(colname=c(value1, value2))}}
 }
 \value{
-The JSON for the filter query param
+The JSON for the filter query parameter
 }
 \description{
 The table returned by an API query can be filtered using
-the filter query param. The value of the param is JSON. An examples are
+the filter query parameter. The value of the parameter is JSON. Examples are
 \itemize{
 \item \verb{filter=[\{"field":"popid","value":"7","type":"string"\}]}
 \item \verb{filter=[\{"field":"popid","value":[7,8],"type":"list"\}]}

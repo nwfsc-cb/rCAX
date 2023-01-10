@@ -174,25 +174,60 @@ database.</p></li>
 </h3>
 <p>These data are provided to the CAX by agencies and tribes in order to
 increase collaboration opportunities and consistency in analyses.
-StreamNet and CAP host and help develop the Data Exchange Standards, but
+StreamNet and CAP host and help develop the Data Exchange Standards,
+which includes some metadata requirements for successful submission, but
 responsibility and rights are retained by the data providers. Data
-accessibility or versioning access requests should be directed to
-<code>project@streamnet.org</code> and questions about the datasets or
-appropriate use should be directed towards the Contact Agency
-(<code>contactagency</code> column) or the Contact Person
-(<code>contactpersonfirst</code>, <code>contactpersonlast</code>,
-<code>contactphone</code> and <code>contactemail</code> columns).</p>
+accessibility or versioning access requests should be directed to <a href="mailto:project@streamnet.org">project@streamnet.org</a> and
+questions about the datasets or appropriate use should be directed to
+the data provider using the information provided in
+columns<code>contactagency</code>, <code>contactpersonfirst</code>,
+<code>contactpersonlast</code>, <code>contactphone</code>, and
+<code>contactemail</code> for each data row. These columns will
+generally be consistent per dataset.</p>
 </div>
 <div class="section level3">
 <h3 id="how-data-quality-is-indicated">How data quality is indicated<a class="anchor" aria-label="anchor" href="#how-data-quality-is-indicated"></a>
 </h3>
-<p>For the VR/SR datasets, CAX data is initially filtered for ESA listed
-population data by NMFS_POPID (<code>nmfs_popid</code>). POPID numbers
-are consecutive within an ESU. Note - this does not include superpops
-data, that has to be separately queried.</p>
+<p>The CAP has endeavored to provide sufficient metadata for basic
+usability, protocol and methods links to <a href="MonitoringResources.org">MonitoringResources.org</a> or reports,
+and contact information specific to the dataset. Data submissions are
+not available to the public through CAX until the submitter has
+completed their QA/QC and set the record column ‘publish’ to ‘yes’.
+Additionally, there is a <code>datastatus</code> column with options
+“Draft”, “Reviewed”, or “Final”. These should be considered the best
+available data at the time of submission for the Contact Agency. CAX was
+developed to be dynamic with versioning, so data should not be expected
+to be kept static. If a previous version of the dataset is needed,
+contact <a href="mailto:project@streamnet.org">project@streamnet.org</a>
+with the information in the column <code>datasetversion</code>.</p>
+<p>Data submitters associate their data with established populations or
+develop populations or superpopulations to best describe their data. The
+<code>popfit</code> column has three options, “portion”, “same”, and
+“multiple”. The submitter may provide multiple indicator calculations
+based on different expansion factors or methods, such as portion of a
+population, the whole population, or superpopulations that cannot be
+parsed through the data available, or different data streams such as PIT
+tag, Genetic Stock Identification, or spawning ground surveys. They
+indicate the dataset they consider to be the best estimate of the
+available data for the HLI in the column <code>bestvalue</code>. Null
+records are included to provide information and peripheral information
+when HLI estimates cannot be calculated. See column
+<code>nullrecord</code> and <code>comments</code>.</p>
+<p>For data within the Natural Origin Spawner Abundance (NOSA) HLI
+tables, there is a column <code>estimatetype</code> that was developed
+when it became clear that some data were not available at the natural
+origin spawner abundance level, but instead at the escapement level
+(natural plus non-natural escapement). One of the two, “NOSA” or
+“escapement”, should be indicated and any details about prespawning
+mortality should be included in the methods/protocol documentation.</p>
+<p>Datasets for ESA listed populations were developed for NOAA Fisheries
+analysis and will have the column <code>esapopname</code>. These ESA
+listed population data will also have a value for
+<code>nmfs_popid</code> which corresponds to the NMFS PopID used by NOAA
+Fisheries.</p>
 </div>
 <div class="section level3">
-<h3 id="how-to-cite-downloaded-data">How to cite downloaded data<a class="anchor" aria-label="anchor" href="#how-to-cite-downloaded-data"></a>
+<h3 id="where-and-how-to-find-the-citation-information">Where and how to find the citation information<a class="anchor" aria-label="anchor" href="#where-and-how-to-find-the-citation-information"></a>
 </h3>
 <p>The metadata columns from the downloaded HLI data provide the
 necessary information to produce a citation. The columns that you need
@@ -200,26 +235,27 @@ are described below.</p>
 <p><strong>Recommended dataset citation format:</strong></p>
 <p>Dataset Name (date range). Type of data. Data provider and
 contributor/s. Protocol and methods available at website. Data accessed
-by consumer name, version or date accessed from website.</p>
+by consumer name version or date accessed from website.</p>
 <p><strong>Example:</strong></p>
 <p>Salmon, Chinook (Snake River spring/summer-run ESU) East Fork South
 Fork Salmon River - summer (1987-2018). Natural Origin Spawner
 Abundance. Nez Perce Tribe and Idaho Department of Fish and Game.
 Protocols and methods available at <a href="https://www.monitoringresources.org/Document/Protocol/Details/2246" class="external-link uri">https://www.monitoringresources.org/Document/Protocol/Details/2246</a>.
 Accessed from www.cax.streamnet.org version May 26 2020 10:00PM by Mari
-Williams, NOAAF NWFSC/PSMFC.</p>
+Williams, NOAA Fisheries NWFSC/PSMFC.</p>
 <div class="section level4">
-<h4 id="metadata-columns-needed-for-creating-citations">Metadata columns needed for creating citations<a class="anchor" aria-label="anchor" href="#metadata-columns-needed-for-creating-citations"></a>
+<h4 id="columns-with-the-metadata">Columns with the metadata<a class="anchor" aria-label="anchor" href="#columns-with-the-metadata"></a>
 </h4>
 <ul>
 <li>Dataset name: <code>esapopname</code> column.</li>
 <li>Date range: For NOSA tables, the year is in the
 <code>spawningyear</code> column. min and max of this column gives the
 data range.</li>
-<li>Type of data: The HLI name is generally what the data type is.
-However, for NOSA (Natural origin spawner abundance) tables, you will
-need to look at the notes for each data row as data are escapement
-(natural and non-natural origin).</li>
+<li>Type of data: The name in the <code>hli</code> column is generally
+what the data type is. However, for NOSA (Natural origin spawner
+abundance) tables, you will need to look at the notes for each data row
+as some NOSA data are natural origin spawner abundance and some are
+escapement (natural plus non-natural origin).</li>
 <li>Data provider: the <code>contactagency</code> and
 <code>otherdatasources</code> columns.</li>
 <li>Protocol and methods: <code>protmethurl</code> column.</li>
@@ -243,7 +279,7 @@ need to look at the notes for each data row as data are escapement
 
       <footer><div class="copyright">
   <p></p>
-<p>NWFSC Math Bio Data and Metrics team: <a href="https://github.com/eeholmes" class="external-link">Eli Holmes</a>, <a href="https://github.com/mari-williams" class="external-link">Mari Williams</a>, <a href="https://github.com/katiebarnas" class="external-link">Katie Barnas</a>.</p>
+<p>NW Fisheries Science Center Math Bio Data and Metrics team: <a href="https://github.com/eeholmes" class="external-link">Eli Holmes</a>, <a href="https://github.com/mari-williams" class="external-link">Mari Williams</a>, <a href="https://github.com/katiebarnas" class="external-link">Katie Barnas</a>.</p>
 </div>
 
 <div class="pkgdown">

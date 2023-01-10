@@ -18,7 +18,7 @@ A vector of column names
 Returns the columns in the same order as the downloaded
 Excel files have in https://www.streamnet.org/data/hli. Adds on
 a few extra columns. The colnames are saved as internal data in
-R/sysdata.rda and defined in inst/docs/create_sysdata.R
+\code{R/sysdata.rda} and defined in \code{inst/docs/create_sysdata.R}
 }
 \details{
 \itemize{

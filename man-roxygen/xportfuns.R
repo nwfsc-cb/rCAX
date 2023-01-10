@@ -23,7 +23,7 @@
 #'  * `flist=list(esu_dps="Salmon, Chinook (Snake River spring/summer-run ESU)")` return values for one ESU. Use `rCAX:::caxesu` to see a list of ESU_DPS names.
 #'  
 #' @details 
-#' The XPORT tables have a few columns that do not appear in the 
+#' The XPort tables have a few columns that do not appear in the 
 #' Excel files that 
 #' one can download from StreamNet: 
 #' "species", "publish", "num", "hli", "agency", "esudps", "hli_id".

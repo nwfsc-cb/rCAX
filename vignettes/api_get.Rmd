@@ -21,7 +21,7 @@ library(rCAX)
 
 The main behind the scenes function is `rcax_GET(path, key = NULL, query=NULL, ...)` which appears in functions `rcax_table_query()` and `rcax_datasets()`.
 
-## rcax_GET params
+## `rcax_GET` arguments
 
 ### path
 
@@ -31,7 +31,7 @@ For HLI tables the url is
 ```
 https://api.streamnet.org/api/v1/ca
 ```
-so `path="ca"`. I don't think you need `ca.json` since json is the default. But maybe would be good to add that to make code more robust.
+so `path="ca"`. I don't think you need `ca.json` since JSON is the default. But maybe would be good to add that to make code more robust.
 
 ### key
 

@@ -83,14 +83,15 @@
 <ul><li>merged <code><a href="../reference/rcax_hli.html">rcax_hli()</a></code> and <code>rcax_hli_xport()</code>
 </li>
 <li>a message terms of use is not written when the package is loaded</li>
-<li>documentation: cleaned up basics.Rmd, only have api ref for the base api functions, edited the Readme. Added cax.Rmd with more details on the CAX database.</li>
+<li>documentation: cleaned up <code>basics.Rmd</code>, only have API reference for the base API functions, edited the Readme. Added <code>cax.Rmd</code> with more details on the CAX database.</li>
 <li>renamed <code>rcax_tables()</code> to <code><a href="../reference/rcax_datasets.html">rcax_datasets()</a></code> to match pycax package</li>
 </ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.9.0" id="rcax-090">rCAX 0.9.0<a class="anchor" aria-label="anchor" href="#rcax-090"></a></h2>
 <p><a href="https://github.com/nwfsc-math-bio/rCAX/releases/tag/v0.9.0" class="external-link uri">https://github.com/nwfsc-math-bio/rCAX/releases/tag/v0.9.0</a></p>
 <ul><li>Removed API key info as rCAX now includes an internal read-only key</li>
-<li>Add plot to basics.Rmd</li>
+<li>Add plot to <code>basics.Rmd</code>
+</li>
 <li>Allow cols and sortcols in <code><a href="../reference/rcax_table_query.html">rcax_table_query()</a></code> to be numbers, although the results might be non-intuitive for <code>rcax_hli_xport()</code> since the number will refer to the column order in the table before the columns are sorted into the order found in the downloaded Excel files.</li>
 </ul></div>
     <div class="section level2">
@@ -121,12 +122,12 @@
 <p><a href="https://github.com/nwfsc-math-bio/rCAX/releases/tag/v0.6.0" class="external-link uri">https://github.com/nwfsc-math-bio/rCAX/releases/tag/v0.6.0</a></p>
 <ul><li>Added <code>rcax_pni_xport()</code>, <code>rcax_rpers_xport()</code>, <code>rcax_juvout_xport()</code>, <code>rcax_presmolt_xport()</code>, <code>rcax_presmolt()</code>, <code>rcax_pni()</code>, <code>rcax_sar()</code>, <code>rcax_rpers()</code>, <code>rcax_presmolt()</code>
 </li>
-<li>Added template roxygen for all xport and basetable functions. Now details and description elements are identical.</li>
-<li>Dynamically find a nmfs_id or popid for the examples so that the examples never return an empty table.</li>
+<li>Added template roxygen for all XPort and base table functions. Now details and description elements are identical.</li>
+<li>Dynamically find a NMFS PopID or PopID for the examples so that the examples never return an empty table.</li>
 <li>in <code><a href="../reference/rcax_table_query.html">rcax_table_query()</a></code> set rownames to NULL in returned tables</li>
 <li>Added <code>ggplot2</code> to Suggests in DESCRIPTION file since I use it in some examples and will use in vignettes.</li>
 <li>removed {stringr} and <code>|&gt;</code> dependency</li>
-<li>Added a check that all the flist names appear in the table. Requires an extra GET call but the call will fail otherwise if cols do not match.</li>
+<li>Added a check that all the <code>flist</code> names appear in the table. Requires an extra GET call but the call will fail otherwise if cols do not match.</li>
 </ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.5.0" id="rcax-050">rCAX 0.5.0<a class="anchor" aria-label="anchor" href="#rcax-050"></a></h2>
@@ -135,25 +136,26 @@
 <li>Added <code>rcax_nosa_xport()</code> which is the data table available on <a href="https://www.streamnet.org/data/hli/" class="external-link uri">https://www.streamnet.org/data/hli/</a> when one downloads a NOSA table</li>
 <li>Added <code>rcax_sar_xport()</code> which is the data table available on <a href="https://www.streamnet.org/data/hli/" class="external-link uri">https://www.streamnet.org/data/hli/</a> when one downloads a SAR table</li>
 <li>Made <code><a href="../reference/rcax_table_query.html">rcax_table_query()</a></code> more robust if the cols passed in do not match what is in the table. It will print a warning and only show cols that do appear. Also I added <code>tolower(cols)</code> and <code>tolower(sortcols)</code> so that these are case insensitive.</li>
-<li>Added <code>nosa_xport_colnames</code> to <code>sysdata.rda</code>. This is somewhat fragile since SteamNet might change the column names. The code to create the system data is in <code>inst/docs</code>.</li>
+<li>Added <code>nosa_xport_colnames</code> to <code>sysdata.rda</code>. This is somewhat fragile since StreamNet might change the column names. The code to create the system data is in <code>inst/docs</code>.</li>
 </ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.4.0" id="rcax-040">rCAX 0.4.0<a class="anchor" aria-label="anchor" href="#rcax-040"></a></h2>
 <p><a href="https://github.com/nwfsc-math-mbio/rCAX/releases/tag/v0.4.0" class="external-link uri">https://github.com/nwfsc-math-mbio/rCAX/releases/tag/v0.4.0</a></p>
-<ul><li>added more sysdata: caxpops The Populations table. I had to download table from (StreamNet pop page)[<a href="https://www.streamnet.org/cap/current-hli/current-pop/" class="external-link uri">https://www.streamnet.org/cap/current-hli/current-pop/</a>] since the “Populations” table query is throwing an error). Also added caxesus: ESU_DPS names and caxsuperpops: The SuperPopulations table.</li>
+<ul><li>added more sysdata: <code>caxpops</code> The Populations table. I had to download table from <a href="https://www.streamnet.org/cap/current-hli/current-pop/" class="external-link">StreamNet</a> since the “Populations” table query is throwing an error). Also added <code>caxesu</code>: ESU_DPS names and <code>caxsuperpops</code>: The SuperPopulations table.</li>
 <li>created <code><a href="../reference/rcax_table_query.html">rcax_table_query()</a></code> as the base function for all the table query functions. That way I am not repeating the same code for each table.</li>
-<li>added info to <code><a href="../reference/rcax_table_query.html">rcax_table_query()</a></code> documentation about the possible query params.</li>
-<li>added the <code><a href="../reference/rcax_filter.html">rcax_filter()</a></code> function to allow filtering the tables. Added examples in basics.Rmd.</li>
+<li>added info to <code><a href="../reference/rcax_table_query.html">rcax_table_query()</a></code> documentation about the possible query parameters.</li>
+<li>added the <code><a href="../reference/rcax_filter.html">rcax_filter()</a></code> function to allow filtering the tables. Added examples in <code>basics.Rmd</code>.</li>
 </ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.3.0" id="rcax-030">rCAX 0.3.0<a class="anchor" aria-label="anchor" href="#rcax-030"></a></h2>
 <ul><li>Add the tables vignette.</li>
-<li>Add CAX table dataframe to sysdata.rda</li>
+<li>Add CAX table dataframe to <code>sysdata.rda</code>
+</li>
 </ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.2.0" id="rcax-020">rCAX 0.2.0<a class="anchor" aria-label="anchor" href="#rcax-020"></a></h2>
 <p><a href="https://github.com/nwfsc-math-mbio/rCAX/releases/tag/v0.2.0" class="external-link uri">https://github.com/nwfsc-math-mbio/rCAX/releases/tag/v0.2.0</a></p>
-<ul><li>Cleaned up <code>rcax_nosa()</code> and figured out that you can pass in popid as a query param. Subset the columns.</li>
+<ul><li>Cleaned up <code>rcax_nosa()</code> and figured out that you can pass in popid as a query parameter. Subset the columns.</li>
 <li>Make <code>rcax_tables()</code> to get the table ids that we need for queries.</li>
 </ul></div>
     <div class="section level2">
@@ -171,7 +173,7 @@
 
 
       <footer><div class="copyright">
-  <p></p><p>NWFSC Math Bio Data and Metrics team: <a href="https://github.com/eeholmes" class="external-link">Eli Holmes</a>, <a href="https://github.com/mari-williams" class="external-link">Mari Williams</a>, <a href="https://github.com/katiebarnas" class="external-link">Katie Barnas</a>.</p>
+  <p></p><p>NW Fisheries Science Center Math Bio Data and Metrics team: <a href="https://github.com/eeholmes" class="external-link">Eli Holmes</a>, <a href="https://github.com/mari-williams" class="external-link">Mari Williams</a>, <a href="https://github.com/katiebarnas" class="external-link">Katie Barnas</a>.</p>
 </div>
 
 <div class="pkgdown">
