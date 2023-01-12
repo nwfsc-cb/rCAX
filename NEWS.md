@@ -1,7 +1,8 @@
 rCAX 1.0.0
 ===================
 
-* First production release
+* First production release.
+
 
 rCAX 0.10.0
 ===================
