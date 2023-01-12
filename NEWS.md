@@ -1,3 +1,8 @@
+rCAX 1.0.0
+===================
+
+* First production release
+
 rCAX 0.10.0
 ===================
 
@@ -5,6 +10,8 @@ rCAX 0.10.0
 * a message terms of use is not written when the package is loaded
 * documentation: cleaned up `basics.Rmd`, only have API reference for the base API functions, edited the Readme. Added `cax.Rmd` with more details on the CAX database.
 * renamed `rcax_tables()` to `rcax_datasets()` to match pycax package
+* Added "About CAX" vignette `cax.Rmd`
+* Some clean-up related to spelling check
 
 rCAX 0.9.0
 ===================

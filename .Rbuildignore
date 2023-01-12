@@ -5,3 +5,6 @@ pkgdown/
 man-roxygen/
 .github/
 inst/img
+inst/docs
+inst/WORDLIST
+inst/.DS_Store
