@@ -1,8 +1,8 @@
-rCAX 1.0.0
+rCAX 1.0.1
 ===================
 
 * First production release.
-
+* Updated CITATION with DOI; updated DESCRIPTION with better title
 
 rCAX 0.10.0
 ===================

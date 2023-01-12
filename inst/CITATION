@@ -6,8 +6,8 @@ bibtype = "TechReport",
 title = paste0(meta$Package, ": ", meta$Title, ". ", note),
 author = "E. E. Holmes and M. Williams",
 year = year, 
-institution = "Northwest Fisheries Science Center, Math Bio Program",
-doi = "xxx/xxx")
+institution = "NOAA Fisheries, Northwest Fisheries Science Center, Math Bio Program",
+doi = "10.5281/zenodo.7402463")
 
 bibentry(
 bibtype = "Misc",
