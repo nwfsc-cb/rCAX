@@ -1,3 +1,8 @@
+rCAX 1.0.2
+===================
+
+* Added info on accessing an API key saved in a `.Renviron` file in the `api-get.Rmd` vignette.
+
 rCAX 1.0.1
 ===================
 
