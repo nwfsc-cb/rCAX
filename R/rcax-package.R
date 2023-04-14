@@ -1,5 +1,7 @@
 #' @title rCAX
 #' @description This package is an R client for the StreamNet Coordinated Assessments HLI REST API.
+#' 
+#' Documentation: https://nwfsc-math-bio.github.io/rCAX/
 #'
 #' @section Authentication:
 #' The rCAX R package includes a pull key so that you can query the CAX database. Should you
