@@ -18,7 +18,7 @@ Authors@R:
              role = c("ctb"),
              email = "katie.barnas@noaa.gov")
       )
-License: MIT + file LICENSE
+License: CC0 + file LICENSE
 URL: https://github.com/nwfsc-math-bio/rCAX
 BugReports: https://github.com/nwfsc-math-bio/rCAX/issues
 Encoding: UTF-8
