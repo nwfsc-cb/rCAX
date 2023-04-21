@@ -86,4 +86,4 @@ Then run this code to find or create your `.Renviron` file. It will tell you whe
 usethis::edit_r_environ()
 ```
 Open that file and paste in `CAX_KEY = "whateveryourkeyis"` into the file and save. After you edit the file, you will need to restart R. If you are in
-RStudio use Session > Restart R. Now your API will be visible to {rCAX}. 
+RStudio use Session > Restart R. Now your API will be visible to {rCAX}. Note, if for some reason, you need to access to this key in your code, use `Sys.getenv("CAX_KEY", "")`. This retrieves variables defined in the `.Renviron` file, which are loaded into the system environment when you start up R.
