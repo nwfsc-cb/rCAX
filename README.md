@@ -1,5 +1,5 @@
-[![github](https://img.shields.io/github/v/release/nwfsc-math-bio/rCAX?color=brightgreen&label=GitHub)](https://github.com/nwfsc-math-bio/rCAX/releases/latest)
-[![check-release](https://github.com/nwfsc-math-bio/rCAX/actions/workflows/check-release.yaml/badge.svg)](https://github.com/nwfsc-math-bio/rCAX/actions/workflows/check-release.yaml)
+[![github](https://img.shields.io/github/v/release/nwfsc-cb/rCAX?color=brightgreen&label=GitHub)](https://github.com/nwfsc-cb/rCAX/releases/latest)
+[![check-release](https://github.com/nwfsc-cb/rCAX/actions/workflows/check-release.yaml/badge.svg)](https://github.com/nwfsc-cb/rCAX/actions/workflows/check-release.yaml)
 
 rCAX <img src="man/figures/logo2.png" align="right" width="20%"  hspace="20" vspace="20"/>
 ========
