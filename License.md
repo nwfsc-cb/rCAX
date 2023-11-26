@@ -1,7 +1,7 @@
 # License
 
-The rCAX package as a whole is distributed under GPL-3 ([GNU GENERAL PUBLIC
-LICENSE version 3](https://www.tldrlegal.com/license/gnu-general-public-license-v3-gpl-3)).
+The rCAX package as a whole is distributed under [GNU GENERAL PUBLIC
+LICENSE version 3](https://www.tldrlegal.com/license/gnu-general-public-license-v3-gpl-3) (GPL-3).
 
 In addition this software has the following license addendum:
 
