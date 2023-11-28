@@ -1,4 +1,4 @@
-url: https://nwfsc-math-bio.github.io/rCAX/
+url: https://nwfsc-cb.github.io/rCAX/
 
 navbar:
   structure:
@@ -24,12 +24,12 @@ navbar:
     sourcecode:
       text: Source Code
       icon: fab fa-github fa-lg
-      href: https://github.com/nwfsc-math-bio/rCAX
+      href: https://github.com/nwfsc-cb/rCAX
 
     issue:
       text: Issues
       icon: fas fa-question-circle fa-lg
-      href: https://github.com/nwfsc-math-bio/rCAX/issues/
+      href: https://github.com/nwfsc-cb/rCAX/issues/
 
     articles:
       text: Vignettes

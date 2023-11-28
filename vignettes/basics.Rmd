@@ -1,9 +1,9 @@
 ---
-title: "Basic functions"
-description: "This vignette shows the functions for querying the CAX tables, with a focus on Endangered Species Act Listed ESUs/DPSs."
+title: "Basic HLI queries"
+description: "This vignette shows the functions for querying the CAX tables, with a focus on the HLI indicators for Endangered Species Act Listed ESUs/DPSs."
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Basic functions}
+  %\VignetteIndexEntry{Basic HLI queries}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -14,6 +14,10 @@ knitr::opts_chunk$set(
   comment = "#>"
 )
 ```
+
+This vignette focuses on the Coordinated Assessment Program (CAP) standardized high-level indicators  (HLI) tables. See the CAP [HLI](https://www.streamnet.org/cap/current-hli/) webpage for details on each indicator. The tables returned in this vignette are the same data returned via the [CAP Fish HLIs Tabular Query](https://www.streamnet.org/data/hli/?index=1&perpage=10) GUI.  Note CAP includes other datasets (tables) and {rCAX} will return these also. See the [CAX Datasets](CAX_Tables.html) vignette.
+
+## Getting started
 
 See the [Getting Started vignette](setup.html) for instructions on installing {rCAX}. Once you have installed {rCAX}, you can begin using the package by loading the library.
 

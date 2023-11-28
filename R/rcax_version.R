@@ -9,7 +9,7 @@
 #' 
 rcax_version <- function(){
   cli <- crul::HttpClient$new(
-    url = "https://api.github.com/repos/nwfsc-math-bio/rCAX/releases/latest",
+    url = "https://api.github.com/repos/nwfsc-cb/rCAX/releases/latest",
     opts = list(useragent = rcax_ua())
   )
   temp <- cli$get()

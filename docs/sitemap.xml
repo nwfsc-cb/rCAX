@@ -1,162 +1,114 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/404.html</loc>
+    <loc>https://nwfsc-cb.github.io/rCAX/404.html</loc>
   </url>
   <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/LICENSE-text.html</loc>
+    <loc>https://nwfsc-cb.github.io/rCAX/LICENSE-text.html</loc>
   </url>
   <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/articles/CAX_Tables.html</loc>
+    <loc>https://nwfsc-cb.github.io/rCAX/LICENSE_ADDENDUM.html</loc>
   </url>
   <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/articles/api_get.html</loc>
+    <loc>https://nwfsc-cb.github.io/rCAX/License.html</loc>
   </url>
   <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/articles/basic_use.html</loc>
+    <loc>https://nwfsc-cb.github.io/rCAX/articles/CAX_Tables.html</loc>
   </url>
   <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/articles/basics.html</loc>
+    <loc>https://nwfsc-cb.github.io/rCAX/articles/api_get.html</loc>
   </url>
   <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/articles/cax.html</loc>
+    <loc>https://nwfsc-cb.github.io/rCAX/articles/basics.html</loc>
   </url>
   <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/articles/index.html</loc>
+    <loc>https://nwfsc-cb.github.io/rCAX/articles/cax.html</loc>
   </url>
   <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/articles/setup.html</loc>
+    <loc>https://nwfsc-cb.github.io/rCAX/articles/index.html</loc>
   </url>
   <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/articles/terms.html</loc>
+    <loc>https://nwfsc-cb.github.io/rCAX/articles/setup.html</loc>
   </url>
   <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/authors.html</loc>
+    <loc>https://nwfsc-cb.github.io/rCAX/articles/terms.html</loc>
   </url>
   <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/index.html</loc>
+    <loc>https://nwfsc-cb.github.io/rCAX/authors.html</loc>
   </url>
   <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/news/index.html</loc>
+    <loc>https://nwfsc-cb.github.io/rCAX/index.html</loc>
   </url>
   <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/cax_column_definitions.html</loc>
+    <loc>https://nwfsc-cb.github.io/rCAX/news/index.html</loc>
   </url>
   <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/caxesu.html</loc>
+    <loc>https://nwfsc-cb.github.io/rCAX/reference/cax_column_definitions.html</loc>
   </url>
   <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/caxtabs.html</loc>
+    <loc>https://nwfsc-cb.github.io/rCAX/reference/caxesu.html</loc>
   </url>
   <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/check_key.html</loc>
+    <loc>https://nwfsc-cb.github.io/rCAX/reference/caxtabs.html</loc>
   </url>
   <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/index.html</loc>
+    <loc>https://nwfsc-cb.github.io/rCAX/reference/check_key.html</loc>
   </url>
   <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/internal_data.html</loc>
+    <loc>https://nwfsc-cb.github.io/rCAX/reference/index.html</loc>
   </url>
   <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rCAX-package.html</loc>
+    <loc>https://nwfsc-cb.github.io/rCAX/reference/internal_data.html</loc>
   </url>
   <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_GET.html</loc>
+    <loc>https://nwfsc-cb.github.io/rCAX/reference/rCAX-package.html</loc>
   </url>
   <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_base.html</loc>
+    <loc>https://nwfsc-cb.github.io/rCAX/reference/rcax_GET.html</loc>
   </url>
   <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_citation.html</loc>
+    <loc>https://nwfsc-cb.github.io/rCAX/reference/rcax_base.html</loc>
   </url>
   <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_datasets.html</loc>
+    <loc>https://nwfsc-cb.github.io/rCAX/reference/rcax_citation.html</loc>
   </url>
   <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_escdata.html</loc>
+    <loc>https://nwfsc-cb.github.io/rCAX/reference/rcax_datasets.html</loc>
   </url>
   <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_filter.html</loc>
+    <loc>https://nwfsc-cb.github.io/rCAX/reference/rcax_escdata.html</loc>
   </url>
   <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_hli.html</loc>
+    <loc>https://nwfsc-cb.github.io/rCAX/reference/rcax_filter.html</loc>
   </url>
   <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_hli_xport.html</loc>
+    <loc>https://nwfsc-cb.github.io/rCAX/reference/rcax_hli.html</loc>
   </url>
   <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_juvout.html</loc>
+    <loc>https://nwfsc-cb.github.io/rCAX/reference/rcax_parse.html</loc>
   </url>
   <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_juvout_xport.html</loc>
+    <loc>https://nwfsc-cb.github.io/rCAX/reference/rcax_superpops.html</loc>
   </url>
   <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_key.html</loc>
+    <loc>https://nwfsc-cb.github.io/rCAX/reference/rcax_table_cols.html</loc>
   </url>
   <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_nosa.html</loc>
+    <loc>https://nwfsc-cb.github.io/rCAX/reference/rcax_table_name.html</loc>
   </url>
   <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_nosa_xport.html</loc>
+    <loc>https://nwfsc-cb.github.io/rCAX/reference/rcax_table_query.html</loc>
   </url>
   <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_parse.html</loc>
+    <loc>https://nwfsc-cb.github.io/rCAX/reference/rcax_table_sortcols.html</loc>
   </url>
   <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_pni.html</loc>
+    <loc>https://nwfsc-cb.github.io/rCAX/reference/rcax_termsofuse.html</loc>
   </url>
   <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_pni_xport.html</loc>
+    <loc>https://nwfsc-cb.github.io/rCAX/reference/rcax_ua.html</loc>
   </url>
   <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_presmolt.html</loc>
-  </url>
-  <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_presmolt_xport.html</loc>
-  </url>
-  <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_rpers.html</loc>
-  </url>
-  <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_rpers_xport.html</loc>
-  </url>
-  <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_sar.html</loc>
-  </url>
-  <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_sar_xport.html</loc>
-  </url>
-  <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_superpops.html</loc>
-  </url>
-  <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_table_cols.html</loc>
-  </url>
-  <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_table_name.html</loc>
-  </url>
-  <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_table_query.html</loc>
-  </url>
-  <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_table_sortcols.html</loc>
-  </url>
-  <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_tables.html</loc>
-  </url>
-  <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_termsofuse.html</loc>
-  </url>
-  <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_ua.html</loc>
-  </url>
-  <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_use_cax.html</loc>
-  </url>
-  <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rcax_version.html</loc>
-  </url>
-  <url>
-    <loc>https://nwfsc-math-bio.github.io/rCAX/reference/rl_citation.html</loc>
+    <loc>https://nwfsc-cb.github.io/rCAX/reference/rcax_version.html</loc>
   </url>
 </urlset>

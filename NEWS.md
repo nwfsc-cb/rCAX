@@ -1,3 +1,9 @@
+rCAX 1.0.3
+===================
+
+* updated urls to nwfsc-cb from nwfsc-math-bio when Math Bio GitHub was merged into the CB org.
+* updated the license to GPL-3
+
 rCAX 1.0.2
 ===================
 
@@ -22,7 +28,7 @@ rCAX 0.10.0
 
 rCAX 0.9.0
 ===================
-https://github.com/nwfsc-math-bio/rCAX/releases/tag/v0.9.0
+https://github.com/nwfsc-cb/rCAX/releases/tag/v0.9.0
 
 * Removed API key info as rCAX now includes an internal read-only key
 * Add plot to `basics.Rmd`
@@ -30,7 +36,7 @@ https://github.com/nwfsc-math-bio/rCAX/releases/tag/v0.9.0
 
 rCAX 0.8.0
 ===================
-https://github.com/nwfsc-math-bio/rCAX/releases/tag/v0.8.0
+https://github.com/nwfsc-cb/rCAX/releases/tag/v0.8.0
 
 * Condensed all the `_xport` functions into one function `rcax_hli_xport()` with argument `hli` to specify which HLI.
 * Condensed all the individual HLI functions into one function `rcax_hli()` with argument `hli` to specify which HLI.
@@ -42,7 +48,7 @@ https://github.com/nwfsc-math-bio/rCAX/releases/tag/v0.8.0
 
 rCAX 0.7.0
 ===================
-https://github.com/nwfsc-math-bio/rCAX/releases/tag/v0.7.0
+https://github.com/nwfsc-cb/rCAX/releases/tag/v0.7.0
 
 * Added a setup vignette for how to download and install the package.
 * Removed `rcax_key()`. Not needed. Cleaned up some {rredlist} refs.
@@ -54,7 +60,7 @@ https://github.com/nwfsc-math-bio/rCAX/releases/tag/v0.7.0
 
 rCAX 0.6.0
 ===================
-https://github.com/nwfsc-math-bio/rCAX/releases/tag/v0.6.0
+https://github.com/nwfsc-cb/rCAX/releases/tag/v0.6.0
 
 * Added `rcax_pni_xport()`, `rcax_rpers_xport()`, `rcax_juvout_xport()`, `rcax_presmolt_xport()`, `rcax_presmolt()`, `rcax_pni()`, `rcax_sar()`, `rcax_rpers()`, `rcax_presmolt()`
 * Added template roxygen for all XPort and base table functions. Now details and description elements are identical. 
