@@ -27,7 +27,7 @@ install.packages("remotes") # needed for the next line
 
 Then you can install the latest release:
 ```{r eval=FALSE}
-remotes:::install_github("nwfsc-math-bio/rCAX@*release")
+remotes:::install_github("nwfsc-cb/rCAX@*release")
 ```
 
 Note, you only need to install packages once. 
