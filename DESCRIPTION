@@ -1,9 +1,9 @@
 Package: rCAX
 Type: Package
-Date: 2023-02-28
+Date: 2023-11-28
 Title: Coordinated Assessments REST API R Client
 Description: This package is an R client for the StreamNet Coordinated Assessments HLI REST API.
-Version: 1.0.2
+Version: 1.0.3
 Authors@R: 
     c(person(given = "Eli",
              family = "Holmes",
@@ -19,8 +19,8 @@ Authors@R:
              email = "katie.barnas@noaa.gov")
       )
 License: CC0 + file LICENSE
-URL: https://github.com/nwfsc-math-bio/rCAX
-BugReports: https://github.com/nwfsc-math-bio/rCAX/issues
+URL: https://github.com/nwfsc-cb/rCAX
+BugReports: https://github.com/nwfsc-cb/rCAX/issues
 Encoding: UTF-8
 Language: en-US
 Imports: crul (>= 1.3), jsonlite (>= 1.8), utils
