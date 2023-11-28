@@ -12,12 +12,12 @@ Install the latest GitHub release. You only need to do this once.
 
 ```r
 install.packages("remotes") # needed for the next line
-remotes:::install_github("nwfsc-math-bio/rCAX@*release")
+remotes:::install_github("nwfsc-cb/rCAX@*release")
 ```
 
 ## Download a table
 
-Read about the [CAX data and terms](https://nwfsc-math-bio.github.io/rCAX/articles/cax.html). Then read the [Basic functions vignette](https://nwfsc-math-bio.github.io/rCAX/articles/basics.html) to get started and see examples of how to make queries.
+Read about the [CAX data and terms](https://nwfsc-cb.github.io/rCAX/articles/cax.html). Then read the [Basic functions vignette](https://nwfsc-cb.github.io/rCAX/articles/basics.html) to get started and see examples of how to make queries.
 
 To retrieve the NOSA data for NMFS_popid 7 that is the same as the file that one can download from [CAP Fish HLIs Tabular Query](https://www.streamnet.org/data/hli/), use
 
@@ -38,7 +38,7 @@ Fork and put in a pull request!
 
 ## Contributors
 
-[![Contributors](https://contrib.rocks/image?repo=nwfsc-math-bio/rCAX)](https://github.com/nwfsc-math-bio/rCAX/graphs/contributors)
+[![Contributors](https://contrib.rocks/image?repo=nwfsc-math-bio/rCAX)](https://github.com/nwfsc-cb/rCAX/graphs/contributors)
 
 
 <hr>
