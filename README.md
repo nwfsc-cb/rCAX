@@ -1,6 +1,6 @@
 [![github](https://img.shields.io/github/v/release/nwfsc-cb/rCAX?color=brightgreen&label=GitHub)](https://github.com/nwfsc-cb/rCAX/releases/latest)
 [![check-release](https://github.com/nwfsc-cb/rCAX/actions/workflows/check-release.yaml/badge.svg)](https://github.com/nwfsc-cb/rCAX/actions/workflows/check-release.yaml)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10214433.svg)](https://doi.org/10.5281/zenodo.7402463)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7402463.svg)](https://doi.org/10.5281/zenodo.7402463)
 
 
 rCAX <img src="man/figures/logo2.png" align="right" width="20%"  hspace="20" vspace="20"/>
@@ -44,7 +44,7 @@ Fork and put in a pull request! The documentation is provided via a pkgdown site
 
 ## Citation
 
-Holmes, E.E., Williams, M., Barnas, K. (2023). rCAX: Coordinated Assessments REST API R Interface (v1.0.3). [Software]. Zenodo. https://doi.org/10.5281/zenodo.740246
+Holmes, E.E., Williams, M., Barnas, K. (2023). rCAX: Coordinated Assessments REST API R Interface (v1.0.3). [Software]. Zenodo. https://doi.org/10.5281/zenodo.7402463
 
 
 <hr>
