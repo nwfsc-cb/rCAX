@@ -45,8 +45,7 @@ Fork and put in a pull request! The documentation is provided via a pkgdown site
 
 ## Citation
 
-Holmes, E.E., Williams, M., Barnas, K. (2023). rCAX: Coordinated Assessments REST API R Interface (v1.0.3). [Software]. Zenodo. https://doi.org/10.5281/zenodo.7402463
-
+Holmes EE, Williams M (2023). “rCAX: Coordinated Assessments REST API R Client. R package version 1.0.3.” NOAA Fisheries, Northwest Fisheries Science Center, Math Bio Program. doi:10.5281/zenodo.7402463.
 
 <hr>
 
