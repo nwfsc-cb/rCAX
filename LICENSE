@@ -1,8 +1,11 @@
 # License
 
-The rCAX package as a whole is distributed under [GNU GENERAL PUBLIC
-LICENSE version 3](https://www.tldrlegal.com/license/gnu-general-public-license-v3-gpl-3) (GPL-3).
+Copyright 2022. U.S. Federal Government (in countries where recognized) for E.E. Holmes and K. Barnas.
+Copyright 2022. Mari Williams workng as a contractor for NOAA Fisheries.
 
-In addition this software has the following license addendum:
+Licensed under the Apache License, Version 2.0 (the "License"). You may obtain a copy of the License at
 
-This project is work of the [United States government](https://www.usa.gov/) by US federal employees in the Department of Commerce as part of their official duties. Software code created by U.S. Government employees is not subject to copyright in the United States (17 U.S.C. §105). The United States/Department of Commerce reserves all rights to seek and obtain copyright protection in countries other than the United States for Software authored in its entirety by the Department of Commerce. To this end, the Department of Commerce hereby grants to Recipient a royalty-free, nonexclusive license to use, copy, and create derivative works of the Software outside of the United States.
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+
