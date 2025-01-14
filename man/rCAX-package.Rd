@@ -7,6 +7,8 @@
 \title{rCAX}
 \description{
 This package is an R client for the StreamNet Coordinated Assessments HLI REST API.
+
+Documentation: https://nwfsc-cb.github.io/rCAX/
 }
 \section{Authentication}{
 
@@ -14,4 +16,26 @@ The rCAX R package includes a pull key so that you can query the CAX database. S
 need to use your own key see the vignette on the API functions.
 }
 
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/nwfsc-cb/rCAX}
+  \item Report bugs at \url{https://github.com/nwfsc-cb/rCAX/issues}
+}
+
+}
+\author{
+\strong{Maintainer}: Eli Holmes \email{eli.holmes@noaa.gov}
+
+Authors:
+\itemize{
+  \item Mari Williams \email{mari.williams@noaa.gov}
+}
+
+Other contributors:
+\itemize{
+  \item Katie Barnas \email{katie.barnas@noaa.gov} [contributor]
+}
+
+}
 \keyword{package}

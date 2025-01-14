@@ -12,7 +12,7 @@
 <link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png">
 <link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png">
 <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png">
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
@@ -27,7 +27,7 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
-    
+
 
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -50,34 +50,34 @@
 <li>
   <a href="../index.html">
     <span class="fas fa-home fa-lg"></span>
-     
+
   </a>
 </li>
 <li>
   <a href="../reference/index.html">
     <span class="far fa-file-code fa-lg"></span>
-     
+
     Functions
   </a>
 </li>
 <li>
   <a href="https://github.com/nwfsc-cb/rCAX" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
+
     Source Code
   </a>
 </li>
 <li>
   <a href="https://github.com/nwfsc-cb/rCAX/issues/" class="external-link">
     <span class="fas fa-question-circle fa-lg"></span>
-     
+
     Issues
   </a>
 </li>
 <li>
   <a href="../articles/index.html">
     <span class="fas fa-file-contract fa-lg"></span>
-     
+
     Vignettes
   </a>
 </li>
@@ -89,7 +89,7 @@
 <li>
   <a href="https://github.com/nwfsc-cb/rCAX/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
+
   </a>
 </li>
       </ul>
@@ -100,7 +100,7 @@
 </div>
 <!--/.navbar -->
 
-      
+
 
       </header><div class="row">
   <div class="col-md-9 contents">
@@ -161,19 +161,19 @@ first 10 are shown.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu"><a href="../reference/rcax_hli.html">rcax_hli</a></span><span class="op">(</span><span class="st">"NOSA"</span>, type<span class="op">=</span><span class="st">"colnames"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt;                        name</span></span>
-<span><span class="co">#&gt; 107               age10prop</span></span>
-<span><span class="co">#&gt; 41      age10proplowerlimit</span></span>
+<span><span class="co">#&gt; 110               age10prop</span></span>
+<span><span class="co">#&gt; 43      age10proplowerlimit</span></span>
 <span><span class="co">#&gt; 24      age10propupperlimit</span></span>
-<span><span class="co">#&gt; 108           age11plusprop</span></span>
-<span><span class="co">#&gt; 109 age11plusproplowerlimit</span></span>
-<span><span class="co">#&gt; 62  age11pluspropupperlimit</span></span>
+<span><span class="co">#&gt; 111           age11plusprop</span></span>
+<span><span class="co">#&gt; 112 age11plusproplowerlimit</span></span>
+<span><span class="co">#&gt; 65  age11pluspropupperlimit</span></span>
 <span><span class="co">#&gt;                                                                            definition</span></span>
-<span><span class="co">#&gt; 107          The proportion of natural origin fish that were age 10 (brood year +10).</span></span>
-<span><span class="co">#&gt; 41                              Lower limit of the confidence interval for Age10Prop.</span></span>
+<span><span class="co">#&gt; 110          The proportion of natural origin fish that were age 10 (brood year +10).</span></span>
+<span><span class="co">#&gt; 43                              Lower limit of the confidence interval for Age10Prop.</span></span>
 <span><span class="co">#&gt; 24                              Upper limit of the confidence interval for Age10Prop.</span></span>
-<span><span class="co">#&gt; 108 The proportion of natural origin fish that were age 11 (brood year +11) or older.</span></span>
-<span><span class="co">#&gt; 109                         Lower limit of the confidence interval for Age11PlusProp.</span></span>
-<span><span class="co">#&gt; 62                          Upper limit of the confidence interval for Age11PlusProp.</span></span></code></pre></div>
+<span><span class="co">#&gt; 111 The proportion of natural origin fish that were age 11 (brood year +11) or older.</span></span>
+<span><span class="co">#&gt; 112                         Lower limit of the confidence interval for Age11PlusProp.</span></span>
+<span><span class="co">#&gt; 65                          Upper limit of the confidence interval for Age11PlusProp.</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="get-records-for-the-nosa-hli-table">Get records for the NOSA HLI table<a class="anchor" aria-label="anchor" href="#get-records-for-the-nosa-hli-table"></a>
@@ -202,10 +202,15 @@ names.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">tab</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/rcax_hli.html">rcax_hli</a></span><span class="op">(</span><span class="st">"NOSA"</span>,</span>
 <span>  flist <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>esu_dps <span class="op">=</span> <span class="st">"Salmon, chum (Columbia River ESU)"</span><span class="op">)</span></span>
-<span><span class="op">)</span></span></code></pre></div>
+<span><span class="op">)</span></span>
+<span><span class="co">#&gt; Warning in rcax_table_query(tablename = tablename, flist = flist, qlist =</span></span>
+<span><span class="co">#&gt; qlist, : Not all names in cols appear in the table. Removing cbfwapopname,</span></span>
+<span><span class="co">#&gt; trtmethod, dataentrynotes</span></span></code></pre></div>
 <p>We can then plot:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
+<span><span class="co">#&gt; Error in get(paste0(generic, ".", class), envir = get_method_env()) : </span></span>
+<span><span class="co">#&gt;   object 'type_sum.accel' not found</span></span>
 <span><span class="co"># Convert tsaej to a number</span></span>
 <span><span class="va">tab</span><span class="op">$</span><span class="va">tsaej</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html" class="external-link">as.numeric</a></span><span class="op">(</span><span class="va">tab</span><span class="op">$</span><span class="va">tsaej</span><span class="op">)</span></span>
 <span><span class="co"># plot</span></span>
@@ -333,9 +338,7 @@ Identification, cannot separate data to the population level.</li>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
 
-        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
-    </nav>
-</div>
+      </div>
 
 </div>
 
@@ -348,16 +351,16 @@ Identification, cannot separate data to the population level.</li>
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.1.</p>
 </div>
 
       </footer>
 </div>
 
-  
 
 
-  
+
+
 
   </body>
 </html>

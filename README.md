@@ -37,7 +37,7 @@ You can check your installed version versus that on GitHub at any time using `rc
 
 ## Contributing
 
-Fork and put in a pull request! The documentation is provided via a pkgdown site. After changing files run `pkgdown::build_site()`.
+Fork and put in a pull request! The documentation is provided via a pkgdown site. After changing files run `pkgdown::build_site(lazy=FALSE)`.
 
 ## Contributors
 
