@@ -1,6 +1,7 @@
 [![github](https://img.shields.io/github/v/release/nwfsc-cb/rCAX?color=brightgreen&label=GitHub)](https://github.com/nwfsc-cb/rCAX/releases/latest)
 [![check-release](https://github.com/nwfsc-cb/rCAX/actions/workflows/check-release.yaml/badge.svg)](https://github.com/nwfsc-cb/rCAX/actions/workflows/check-release.yaml)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7402463.svg)](https://doi.org/10.5281/zenodo.7402463)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 
 rCAX <img src="man/figures/logo2.png" align="right" width="20%"  hspace="20" vspace="20"/>
